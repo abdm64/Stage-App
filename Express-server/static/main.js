@@ -1099,6 +1099,9 @@ var InsertComponent = /** @class */ (function () {
         //
         req.send(null);
         var data = parseInt(req.response);
+        if (data == null) {
+            data = 0;
+        }
         num = data + 1;
         return num;
     };
