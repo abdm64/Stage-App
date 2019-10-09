@@ -708,7 +708,7 @@ var AuthService = /** @class */ (function () {
         var authData = {
             email: email, password: password
         };
-        this.http.post('http://localhost:3000/api/user/sign', authData).subscribe(function (response) {
+        this.http.post('http://172.16.60.34:3000/api/user/sign', authData).subscribe(function (response) {
             console.log(response);
         });
     };
@@ -717,7 +717,7 @@ var AuthService = /** @class */ (function () {
         var authData = {
             email: email, password: password
         };
-        this.http.post('http://localhost:3000/api/user/login', authData).subscribe(function (response) {
+        this.http.post('http://172.16.60.34:3000/api/user/login', authData).subscribe(function (response) {
             _this.router.navigate(['suivi']);
             localStorage.setItem("auth", 'true');
         }, function (error) {
@@ -955,7 +955,7 @@ var ExcelService = /** @class */ (function () {
     }
     ExcelService.prototype.exportEx = function (gte, lte) {
         var _this = this;
-        this.http.get('http://localhost:3000/api/students/data/date/' + gte + '/' + lte)
+        this.http.get('http://172.16.60.34:3000/api/students/data/date/' + gte + '/' + lte)
             .subscribe(function (data) {
             console.log(data.students);
             _this.exportAsExcelFile(data.students, 'stagetest');
@@ -1095,7 +1095,7 @@ var InsertComponent = /** @class */ (function () {
     InsertComponent.prototype.getMatricule = function () {
         var num = 0;
         var req = new XMLHttpRequest();
-        req.open('GET', "http://localhost:3000/api/students/numberEnd", false);
+        req.open('GET', "http://172.16.60.34:3000/api/students/numberEnd", false);
         //
         req.send(null);
         var data = parseInt(req.response);
@@ -1694,7 +1694,7 @@ var StudentService = /** @class */ (function () {
             return this.students;
         }
         else {
-            this.http.get('http://localhost:3000/api/students/data').
+            this.http.get('http://172.16.60.34:3000/api/students/data').
                 subscribe(function (postData) {
                 _this.students = postData.students;
                 _this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](_this.students));
@@ -1706,7 +1706,7 @@ var StudentService = /** @class */ (function () {
     };
     StudentService.prototype.addStudent = function (data) {
         var _this = this;
-        this.http.post('http://localhost:3000/api/students/insertData', data).
+        this.http.post('http://172.16.60.34:3000/api/students/insertData', data).
             subscribe(function (respanse) {
             _this.result = "is ready to go";
         }, function (error) {
@@ -1716,7 +1716,7 @@ var StudentService = /** @class */ (function () {
         this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](this.students));
     };
     StudentService.prototype.deleteStudent = function (matricule) {
-        this.http.delete('http://localhost:3000/api/students/deleteData/' + matricule).subscribe(function (val) {
+        this.http.delete('http://172.16.60.34:3000/api/students/deleteData/' + matricule).subscribe(function (val) {
             console.log("DELETE call successful value returned in body", val);
         }, function (response) {
             console.log("DELETE call in error", response);
@@ -1725,7 +1725,7 @@ var StudentService = /** @class */ (function () {
         });
     };
     StudentService.prototype.updateStudent = function (matricule, data) {
-        this.http.put('http://localhost:3000/api/students/update/' + matricule, data).subscribe(function (data) {
+        this.http.put('http://172.16.60.34:3000/api/students/update/' + matricule, data).subscribe(function (data) {
             console.log("PUT Request is successful ", data);
         }, function (error) {
             console.log("error", error, data);

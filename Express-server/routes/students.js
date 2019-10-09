@@ -65,7 +65,7 @@ app.use(bodyParser.json())
 
 
 
-//index route  which is home url =localhost:5000  because / means home
+//index route  which is home url =172.16.60.34:5000  because / means home
 //prepare the API
 /*
 app.get('/',(req,res)=>{

@@ -1,9 +1,7 @@
 const express =require('express');
 
  const mongoose =require('mongoose');
- const bodyParser = require('body-parser');
- const cors = require('cors');
-
+ 
  const app = express.Router();
 
  mongoose.Promise = global.Promise;
@@ -14,7 +12,7 @@ const express =require('express');
 
 
 
-  mongoose.connect("mongodb://localhost/test",{
+  mongoose.connect("mongodb://mongo/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })

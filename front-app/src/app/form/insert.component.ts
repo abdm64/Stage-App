@@ -22,7 +22,7 @@ export class InsertComponent implements OnInit {
     var num = 0 ;
 
     let  req = new XMLHttpRequest();
-    req.open('GET', `http://localhost:3000/api/students/numberEnd`, false);
+    req.open('GET', `http://172.16.60.34:3000/api/students/numberEnd`, false);
 
     //
     req.send(null)

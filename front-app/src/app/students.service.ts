@@ -16,14 +16,14 @@ export class  StudentService{
 
     }
 
-    getStudents(){ 
+    getStudents(){
        // return [...this.students];          copy of array not original
        // return this.students;     //mais observables mieux
        //                   msg!!!!!!!!!!!!!!!
      if (this.students) {
        return this.students;
      } else {
-      this.http.get<{students:Students[]}>('http://localhost:3000/api/students/data').
+      this.http.get<{students:Students[]}>('http://172.16.60.34:3000/api/students/data').
       subscribe((postData)=>{
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
@@ -42,7 +42,7 @@ export class  StudentService{
     addStudent(data: any){
 
 
-   this.http.post('http://localhost:3000/api/students/insertData', data).
+   this.http.post('http://172.16.60.34:3000/api/students/insertData', data).
         subscribe(respanse => {
           this.result = "is ready to go" ;
         }, error => {
@@ -56,7 +56,7 @@ export class  StudentService{
     }
 
     deleteStudent(matricule : Number){
-      this.http.delete('http://localhost:3000/api/students/deleteData/'+matricule).subscribe((val) => {
+      this.http.delete('http://172.16.60.34:3000/api/students/deleteData/'+matricule).subscribe((val) => {
         console.log("DELETE call successful value returned in body",
                     val);
     },
@@ -70,7 +70,7 @@ export class  StudentService{
     }
 
     updateStudent(matricule : Number,data : any){
-      this.http.put('http://localhost:3000/api/students/update/'+matricule, data).subscribe(
+      this.http.put('http://172.16.60.34:3000/api/students/update/'+matricule, data).subscribe(
         data  => {
 
           console.log("PUT Request is successful ", data);

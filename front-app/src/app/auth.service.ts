@@ -35,7 +35,7 @@ createUser(email : string, password: string){
         email: email, password : password
     }
 
-    this.http.post('http://localhost:3000/api/user/sign', authData).subscribe(response => {
+    this.http.post('http://172.16.60.34:3000/api/user/sign', authData).subscribe(response => {
 
     console.log(response);
     })
@@ -49,7 +49,7 @@ login(email : string, password: string){
         email: email, password : password
     }
 
-    this.http.post<{token : string}>('http://localhost:3000/api/user/login', authData).subscribe(response => {
+    this.http.post<{token : string}>('http://172.16.60.34:3000/api/user/login', authData).subscribe(response => {
             this.router.navigate(['suivi'])
             localStorage.setItem("auth",'true')
 

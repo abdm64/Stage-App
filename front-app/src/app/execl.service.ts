@@ -15,7 +15,7 @@ export class ExcelService {
 
   exportEx(gte:String , lte:String){
 
-     this.http.get('http://localhost:3000/api/students/data/date/'+gte+'/'+lte)
+     this.http.get('http://172.16.60.34:3000/api/students/data/date/'+gte+'/'+lte)
      .subscribe(
        (data: any)  => {
 
