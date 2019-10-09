@@ -200,7 +200,14 @@ app.delete("/api/students/delete",function (req,res) {
   app.get('/api/students/numberEnd',(req,res)=>{
 
   Students.findOne({}, {}, { sort: { _id :  -1} }, function(err, post) {
-    res.json(post.matricule)
+    if (post == null) {
+
+      res.send(1)
+
+    } else{
+      res.json(post.matricule)
+    }
+    
   });
 })
 
