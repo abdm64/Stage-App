@@ -28,7 +28,9 @@ export class InsertComponent implements OnInit {
     req.send(null)
 
       let data =  parseInt(req.response);
-
+  if (data == null) {
+ data = 0
+  }
       num = data + 1;
 
 
