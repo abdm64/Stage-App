@@ -1,0 +1,93 @@
+
+
+<!--<mat-accordion multi="true" class="card" style="width: 18rem;" >
+
+    <div class="card" *ngFor="let  student of students">
+        <div>
+            Nom:{{student.nom}}
+        </div>
+
+
+        <div>
+            Prenom:{{student.prenom}}
+
+        </div>
+
+
+    </div>
+
+</mat-accordion>
+-->
+
+<div class="medicaments">
+    <!--  -->
+    <mat-card  *ngFor="let  student of students"
+        [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
+
+        <mat-card-header>
+            <mat-card-title>{{student.nom + " " + student.prenom}} </mat-card-title>
+            <mat-card-subtitle class="DCI">
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+            <div class="row">
+                <mat-icon class="prefix" svgIcon="therapy"></mat-icon>
+                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                    <mat-label>THEME</mat-label>
+                    <input matInput class="input" [value]= "''"  disabled>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-icon class="prefix" svgIcon="input_way"></mat-icon>
+                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                    <mat-label>Class Pharmacologique</mat-label>
+                    <input matInput class="input" [value]="'inconue'"  disabled>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-icon class="prefix" svgIcon="labo"></mat-icon>
+                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                    <mat-label>Laboratoire</mat-label>
+                    <input matInput class="input"
+                        [value]=""   disabled>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-icon class="prefix" svgIcon="price"></mat-icon>
+                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                    <mat-label>Prix</mat-label>
+                    <input matInput class="input"
+                        disabled>
+                </mat-form-field>
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions align="center">
+            <button mat-button color="primary">see more</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
+<!--
+<div class="pagination">
+    <button mat-raised-button color="primary" class="load"  >
+        <mat-icon>keyboard_arrow_down</mat-icon>Load more
+
+    </button>
+</div>
+-->
+
+<mat-menu #rootMenu="matMenu">
+<button mat-menu-item >
+<mat-icon>arrow_upward</mat-icon>ascending
+</button>
+<button mat-menu-item >
+<mat-icon>arrow_downward</mat-icon>Descending
+</button>
+<mat-divider></mat-divider>
+<button mat-menu-item [matMenuTriggerFor]="subMenu">attribute</button>
+</mat-menu>
+<mat-menu #subMenu="matMenu" class="submenu" >
+<button  mat-menu-item ></button>
+</mat-menu>
+

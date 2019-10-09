@@ -1,0 +1,60 @@
+const express =require('express');
+
+ const mongoose =require('mongoose');
+ const bodyParser = require('body-parser');
+ const cors = require('cors');
+
+ const app = express.Router();
+
+ mongoose.Promise = global.Promise;
+
+
+ //connect to  mongoose
+
+
+
+
+  mongoose.connect("mongodb://localhost/test",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+ })
+
+  require('../models/Student');
+ const Students = mongoose.model( 'Students');
+
+
+ app.get('/api/students/data/date/:gte/:lte',(req,res, next)=>{
+
+  Students.find( { dateDebut : { $gte: req.params.gte, $lte: req.params.lte } }, { _id : false}).then(documents =>{
+       res.status(200).json({
+          // message :"fetched !",
+           students:documents
+       });
+   });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ module.exports = app;

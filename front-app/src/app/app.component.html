@@ -1,0 +1,23 @@
+<div class="content-container">
+    <a #redirect href="https://github.com/mahmoudBens/Nomenclature-des-medicaments-en-algerie" style="display: none "></a>
+    <mat-toolbar [color]="'primary'" class="toolbar" style="max-width:50000px;">
+        <div class="toolbar-container">
+            <span>RH Project</span>
+            <div class="navs">
+
+                <button routerLinkActive="active" mat-button routerLink="/insert">Insert</button>
+
+                <button mat-button routerLink="/suivi">Manage</button>
+                <button mat-button (click)="export()">Export</button>
+
+
+
+            </div>
+        </div>
+    </mat-toolbar>
+
+
+
+
+    <router-outlet></router-outlet>
+</div>

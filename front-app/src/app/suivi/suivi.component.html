@@ -1,0 +1,125 @@
+
+
+
+
+
+<mat-sidenav-container class="sidenav-container" >
+        <mat-sidenav #sidenav class="mat-elevation-z4 sidenav" mode="over">
+            <div class=" mat-display-3 logo">
+                Stages
+            </div>
+            <mat-nav-list>
+                <mat-list-item>
+                    <mat-icon matListIcon>home</mat-icon>
+                    <h3 matLine>home</h3>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListIcon>live_help</mat-icon>
+                    <h3 matLine>about</h3>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListIcon>cloud_download</mat-icon>
+                    <h3 matLine>donwload Data</h3>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+        <div class="container">
+            <div class="filter" [formGroup]="form">
+                <button mat-icon-button class="search-icon search" (click)="searchInput.focus()">
+                    <mat-icon aria-label="label">search</mat-icon>
+                </button>
+                <button mat-icon-button class="search-icon menu" (click)="sidenav.open()">
+                    <mat-icon aria-label="label">menu</mat-icon>
+                </button>
+                <input #searchInput placeholder="Search..." type="text" class="mat-body-strong" formControlName="search">
+                <mat-select placeholder="Filter By" formControlName="filter">
+                    <mat-option *ngFor="let item of filterList;let i = index;" [value]="i">
+
+                    </mat-option>
+                </mat-select>
+                <button mat-icon-button class="settings">
+                    <mat-icon>settings</mat-icon>
+                </button>
+            </div>
+            <div class="content">
+                <div class="info">
+                    <div class="text">
+                        <span class="title">Stagiaires <button mat-icon-button color="warn">
+                                <mat-icon>info_outline</mat-icon>
+                            </button></span>
+                        <p class="description">A total of {{ students.length }} <span class="number"></span> Stagiaires</p>
+                    </div>
+
+                </div>
+                <ng-container *ngIf="!loading; else elseTemplate">
+                    <div class="separation"></div>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <mat-progress-bar [mode]="type" [value]="progress" style="width: 100%"></mat-progress-bar>
+                </ng-template>
+
+                <div class="medicaments">
+                    <!--  let item of filterData -->
+                    <mat-card *ngFor="let student of students | load : end ; trackBy:tracbyfn;let i = index; "
+                        [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
+                       <div class="remboursement" [ngClass]="{'isremb': student.attestation}"></div>
+                        <mat-card-header>
+                            <mat-card-title>{{student.nom + " " +student.prenom}}</mat-card-title>
+                            <mat-card-subtitle class="DCI">{{student.email| lowercase }}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content class="card-content">
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="therapy"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Date debut</mat-label>
+                                    <input matInput class="input" [value]="student.dateDebut | date:'yyyy-MM-dd'" disabled>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="input_way"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Date fin</mat-label>
+                                    <input matInput class="input" [value]="student.dateFin | date:'yyyy-MM-dd' " disabled>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="labo"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Encadreur</mat-label>
+                                    <input matInput class="input"
+                                        [value]="student.encadreur" disabled>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="price"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Type de stage</mat-label>
+                                    <input matInput class="input" [value]="student.typeStage"
+                                        disabled>
+                                </mat-form-field>
+                            </div>
+
+                        </mat-card-content>
+                        <mat-card-actions align="center">
+
+                            <button mat-button color="primary" (click)="onCreatePdf(student)">  <mat-icon >picture_as_pdf</mat-icon>   </button>
+                            <button mat-button color="primary" (click)="openDialog(student.matricule)"><mat-icon>edit</mat-icon></button>
+                            <button mat-button color="warn" (click)= " openDialogDelete(student)"><mat-icon >delete</mat-icon></button>
+
+                        </mat-card-actions>
+                    </mat-card>
+
+                </div>
+                <!---->
+                <div class="pagination">
+                    <button mat-raised-button color="primary" class="load" (click)="setLoad(end+9)" [disabled]="rest === 0">
+                        <mat-icon>keyboard_arrow_down</mat-icon>Load more
+                        ({{rest}})
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </mat-sidenav-container>

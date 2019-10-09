@@ -1,0 +1,24 @@
+
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <p></p>
+  <form #exportForm="ngForm" >
+  <div class="row">
+    <mat-form-field class="col-6">
+        <input matInput [matDatepicker]="debut" placeholder="DATE DEBUT"  name="dateDebut" ngModel>
+        <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
+        <mat-datepicker #debut></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+          <input matInput [matDatepicker]="fin" placeholder="DATE FIN"  name="dateFin" ngModel>
+          <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
+          <mat-datepicker #fin></mat-datepicker>
+        </mat-form-field>
+
+</div></form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="export(exportForm)">Export</button>
+  <button mat-button  cdkFocusInitial>Ok</button>
+</div>

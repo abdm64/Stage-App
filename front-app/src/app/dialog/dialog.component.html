@@ -1,0 +1,213 @@
+<!--h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button  cdkFocusInitial>Ok</button>
+</div>
+-->
+<div class="md-dialog-container">
+
+
+
+
+<form  [formGroup]="angForm" >
+  <div class="container">
+    <div class="row">
+
+    <div class="col">
+
+
+    <mat-card class = "information">
+    <div >
+
+
+
+      <h1 color = "primary">Persenal information</h1>
+    <mat-form-field >
+      <input matInput placeholder="NOM" name="nom"  [value]="student.nom"  formControlName="nom"   >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="PRENOM" name="prenom" [value]="student.prenom" formControlName="prenom">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="SEXE" name = "sexe" [value]="student.sexe" formControlName="sexe" >
+          <mat-option value="HOMME">HOMME</mat-option>
+          <mat-option value="FEMME">FEMME</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="DATE DE NAISSANCE" name="dateNaissance" [value]="student.dateNaissance"  formControlName="dateNaissance" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="WILAYA" name="wilaya"  [value]="student.wilaya" formControlName="wilaya">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="N° DE TÉLÉPHONE" name="nTelephone"  [value]="student.nTelephone" formControlName="nTelephone">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="ADRESSE MAIL" name="email"  [value]="student.email"  formControlName="email">
+    </mat-form-field>
+
+  </div>
+
+
+  </mat-card>
+
+  </div>
+  <div class="col">
+
+  <mat-card >
+
+    <div class="example-container">
+        <h1>Stage information</h1>
+
+        <mat-form-field>
+          <input matInput placeholder="ETABLISSEMENT"  name="etablissement"  [value]="student.etablissement" formControlName="etablissement" >
+        </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="DIPLÔME PREPARÉ"  name="diplome" [value]="student.diplome" formControlName="diplome">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="THEME DU STAGE" name="theme" [value]="student.theme" formControlName="theme" >
+        </mat-form-field>
+
+
+      <div class="row">
+          <mat-form-field class="col-6">
+              <mat-select placeholder="TYPE DE STAGE" name="typeStage" [value]="student.typeStage" formControlName="typeStage" >
+                <mat-option value="Projet de fin d'etude">Projet de fin d'études</mat-option>
+                <mat-option value="Stage de découverte">Stage de découverte</mat-option>
+                <mat-option value="Stage rémunéré">Stage rémunéré</mat-option>
+              </mat-select>
+            </mat-form-field>
+      <mat-form-field class="col-6">
+          <mat-select placeholder="TYPE DE RAPPORT" name="typeRapport" [value]="student.typeRapport"  formControlName="typeRapport"  >
+            <mat-option value="Rapport">Rapport</mat-option>
+            <mat-option value="Memoire">Mémoire</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        </div>
+  <div class="row">
+        <mat-form-field class="col-6">
+            <input matInput [matDatepicker]="debut" placeholder="DATE DEBUT" name="dateDebut" [value]="student.dateDebut" formControlName="dateDebut" >
+            <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
+            <mat-datepicker #debut></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="col-6">
+              <input matInput [matDatepicker]="fin" placeholder="DATE FIN"  name="dateFin" [value]="student.dateFin" formControlName="dateFin" >
+              <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
+              <mat-datepicker #fin></mat-datepicker>
+            </mat-form-field>
+  </div>
+
+      <mat-form-field>
+
+        <mat-select placeholder="Nombre de passage par semaine" name="nbJoursPresence"  [value]="student.nbJoursPresence" formControlName="nbJoursPresence">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="RECOMENDATION" name="recommandation" [value]="student.recommandation" formControlName="recommandation" >
+      </mat-form-field>
+
+
+    </div>
+
+  </mat-card>
+
+  </div>
+  <div class="col">
+
+  <mat-card  >
+
+    <div class="example-container">
+        <h1>Encadreur information </h1>
+      <mat-form-field>
+        <input matInput placeholder="NOM"  name="encadreur" [value]="student.encadreur" formControlName="encadreur" >
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input matInput placeholder="IDENTIFIENT" name="encadreurID" [value]="student.encadreurID"  formControlName="encadreurID">
+      </mat-form-field>
+
+
+      <mat-form-field>
+          <input matInput placeholder="EMAIL " name="encadreurmMail" [value]="student.encadreurmMail" formControlName="encadreurmMail" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="DEPARTEMENT" name="encadreurDEP" [value]="student.encadreurDEP" formControlName="encadreurDEP" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="SECTEUR" name="encadreurSec" [value]="student.encadreurSec" formControlName="encadreurSec" >
+        </mat-form-field>
+
+
+          <mat-form-field>
+          <mat-select placeholder="FONCTION" name="encadreurmOrg"  [value]="student.encadreurmOrg" formControlName="encadreurmOrg"  >
+              <mat-option value="manager">Manager</mat-option>
+              <mat-option value="Team Leader">Team Leader</mat-option>
+              <mat-option value="Superviseur">Superviseur</mat-option>
+              <mat-option value="Enginner">Enginner</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" [value]="student.attestation" formControlName="attestation" >
+                <mat-option value="true" >OUI</mat-option>
+                <mat-option value="false">NO</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+
+
+                <input matInput placeholder=""   [hidden]="true" name="matricule" formControlName="matricule" >
+
+    </div>
+
+  </mat-card>
+
+  </div>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <div class="col-4"> </div>
+    <div class="col-4">  </div>
+    <div class="col-4">
+      <div class="row">
+          <div class=col-4 > </div>
+          <div class=col-4 > </div>
+
+          <div class=col-4 >  <button mat-flat-button color="primary" type= "submit" (click) = "onClickSubmit()" >CONFIRM</button> </div>
+
+      </div>
+
+    </div>
+</div>
+
+
+  </div>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
