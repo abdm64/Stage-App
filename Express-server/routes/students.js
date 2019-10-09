@@ -18,7 +18,7 @@
 
 
 
-  mongoose.connect("mongodb://database/test",{
+  mongoose.connect("mongodb://mongo/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
@@ -67,6 +67,7 @@ app.use(bodyParser.json())
 
 //index route  which is home url =localhost:5000  because / means home
 //prepare the API
+/*
 app.get('/',(req,res)=>{
     //dsfk
 
@@ -74,6 +75,7 @@ app.get('/',(req,res)=>{
 
 
 })
+*/
 //get all data
 /* app.get('/api/student/data',(req,res)=>{
 

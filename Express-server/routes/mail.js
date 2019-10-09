@@ -15,8 +15,8 @@ cron.schedule('40 10 * * *', () => {
 });
 */
 
-cron.schedule('* * * * *', () => {
-
+cron.schedule('00 10 * * *', () => {
+   info()
 
 });
 
@@ -33,7 +33,7 @@ const Students = mongoose.model( 'Students');
 
 
 
-info()
+//info()
 
 
 
@@ -48,12 +48,7 @@ info()
 
 
     return documents
-
-
-  });
-
-
-//console.log(data)
+ });
 return data
 
 }
@@ -65,44 +60,49 @@ return data
 function getNbDay(datefin){
   const d1 = new Date(Date.now())
   const d2 = new Date(datefin)
+  
+ const same = d1.getTime() - d2.getTime() ;
 
-
-
-  const same = d1.getTime() - d2.getTime() ;
-
-  const days = (same / (60*60*24*1000))
-
-
+  const days = (same / (60*60*24*1000));
 
 
 return days
 
 }
+
 function getDateFin(students){
 
 
 for (let item of students) {
 
- if (getNbDay(item.dateFin) < 7){
+  console.log(getNbDay(item.dateFin))
+  console.log(item.dateFin)
+if(getNbDay(item.dateFin) >= 0) {
 
+ if (getNbDay(item.dateFin) <= 7){
+
+ 
 
   console.log(item.nom)
+  transporter.sendMail(Options(item), function(err, data) {
+    if(err)  console.log(err) ;
 
-envoyerMail(item)
+    else console.log('sent') ;
+ });
+  
 
  } else {
 
-  // not send email
+  console.log(" il a deja fini son stage")
+}
 
-  console.log("email not sent")
-
-
-
- }
-
+}else{
+  console.log("il lui reste plus que 7 jours")
+}
 }
 return true
 }
+
 
 
 async function info(){
@@ -110,14 +110,14 @@ async function info(){
   const b = await getDateFin(a);
 }
 
-function envoyerMail(item){
-  const output = `<h4>Bonjour Fatma  </h4>
-  <p> Le stagiaire `+item.nom+' '+item.prenom+` va terminer son stage dans une semaine</p>`;
 
+
+
+  
   // create reusable transporter object using the default SMTP transport
 
   let transporter = nodemailer.createTransport({
-    service : 'Gmail',
+    service : 'gmail',
 
     auth: {
            user: 'notifcationstage@gmail.com',
@@ -130,48 +130,26 @@ function envoyerMail(item){
   });
 
   // setup email data with unicode symbols
-  let mailOptions = {
+  function Options(item){
+    const output = `<h4>Bonjour </h4>
+  <p> Le stagiaire  `+item.nom+` `+item.prenom +`  va terminer son stage dans une semaine.</p>
+  <p> Ce mail a été envoyé automatiquement par la plateforme de suivi des stagiaires.</p>
+  <p> Cordialement.</p>`;
+
+
+    let mailOptions = {
       from: 'notifcationstage@gmail.com', // sender address
-      to: 'gingfrix64@gmail.com', // list of receivers
-      subject: 'Notifction date fine ' +' '+ item.nom, // Subject line
+      to: 'menadsafaa@gmail.com', // list of receivers
+      subject: 'Notification date fin de stagiaire '+item.nom+' '+item.prenom, // Subject line
       text: 'Hello world?', // plain text body
       html: output // html body
   };
 
   // send mail with defined transport object
-  transporter.sendMail(mailOptions, function(err, data) {
-
-        if (err){
-          console.log(err) ;
-        }
-        else{
-          console.log('email sent');
-        }
-
-  });
+  return mailOptions
+  }
+  
+  
 
 
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  module.exports = app;
+module.exports = app;

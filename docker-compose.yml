@@ -2,19 +2,14 @@ version: '2'
 
 
 services:
-  angular:  
-    build: front-app 
-    ports:
-      - "4200:4200" 
-
   express: 
     build: Express-server 
     ports:
       - "3000:3000"
-    links:
-      - database
+    depends_on:
+      - mongo
 
-  database: 
+  mongo: 
     image: mongo 
     ports:
       - "27017:27017"

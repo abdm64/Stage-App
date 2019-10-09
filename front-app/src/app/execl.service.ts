@@ -17,13 +17,14 @@ export class ExcelService {
 
      this.http.get('http://localhost:3000/api/students/data/date/'+gte+'/'+lte)
      .subscribe(
-      data  => {
+       (data: any)  => {
 
-      //  console.log(data.students);
+        console.log(data.students);
 
-      // this.exportAsExcelFile(data.students,'stagetest')
+       this.exportAsExcelFile(data.students,'stagetest')
 
          // this.students = data;
+
 
 
         },
