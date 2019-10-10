@@ -16,32 +16,32 @@
 
     <h1 color = "primary">Personal informations</h1>
   <mat-form-field >
-    <input matInput placeholder = "NOM" name="nom" ngModel>
+    <input matInput placeholder = "NOM" name="nom" required ngModel>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="PRENOM" name="prenom" ngModel>
+    <input matInput placeholder="PRENOM" name="prenom" required  ngModel>
   </mat-form-field>
   <mat-form-field>
-      <mat-select placeholder="SEXE" name = "sexe" ngModel>
+      <mat-select placeholder="SEXE" name = "sexe" required  ngModel>
         <mat-option value="HOMME">HOMME</mat-option>
         <mat-option value="FEMME">FEMME</mat-option>
       </mat-select>
     </mat-form-field>
 
   <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="DATE DE NAISSANCE" name="dateNaissance"  ngModel >
+      <input matInput [matDatepicker]="picker" placeholder="DATE DE NAISSANCE" name="dateNaissance"   required  ngModel >
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="WILAYA" name="wilaya" ngModel>
+    <input matInput placeholder="WILAYA" name="wilaya"  required ngModel>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="N° DE TÉLÉPHONE" name="nTelephone"  ngModel>
+    <input matInput placeholder="N° DE TÉLÉPHONE" name="nTelephone" required  ngModel>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="ADRESSE MAIL" name="email" ngModel >
+    <input matInput placeholder="ADRESSE MAIL" name="email" required  ngModel >
   </mat-form-field>
 
 </div>
@@ -58,27 +58,27 @@
       <h1>Stage informations</h1>
 
       <mat-form-field>
-        <input matInput placeholder="ETABLISSEMENT"  name="etablissement" ngModel>
+        <input matInput placeholder="ETABLISSEMENT"  name="etablissement" required  ngModel>
       </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="DIPLÔME PREPARÉ"  name="diplome" ngModel>
+      <input matInput placeholder="DIPLÔME PREPARÉ"  name="diplome" required  ngModel>
     </mat-form-field>
     <mat-form-field>
-        <input matInput placeholder="THEME DU STAGE" name="theme" ngModel >
+        <input matInput placeholder="THEME DU STAGE" name="theme" required  ngModel >
       </mat-form-field>
 
 
     <div class="row">
         <mat-form-field class="col-6">
-            <mat-select placeholder="TYPE DE STAGE" name="typeStage" ngModel>
+            <mat-select placeholder="TYPE DE STAGE" name="typeStage" required  ngModel>
               <mat-option value="Projet de fin d'etude">Projet de fin d'études</mat-option>
               <mat-option value="Stage de découverte">Stage de découverte</mat-option>
               <mat-option value="Stage rémunéré">Stage rémunéré</mat-option>
             </mat-select>
           </mat-form-field>
     <mat-form-field class="col-6">
-        <mat-select placeholder="TYPE DE RAPPORT" name="typeRapport" ngModel >
+        <mat-select placeholder="TYPE DE RAPPORT" name="typeRapport" required  ngModel >
           <mat-option value="Rapport">Rapport</mat-option>
           <mat-option value="Memoire">Mémoire</mat-option>
         </mat-select>
@@ -88,13 +88,13 @@
       </div>
 <div class="row">
       <mat-form-field class="col-6">
-          <input matInput [matDatepicker]="debut" placeholder="DATE DEBUT" name="dateDebut" ngModel>
+          <input matInput [matDatepicker]="debut" placeholder="DATE DEBUT" name="dateDebut"  required  ngModel>
           <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
           <mat-datepicker #debut></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="col-6">
-            <input matInput [matDatepicker]="fin" placeholder="DATE FIN"  name="dateFin" ngModel>
+            <input matInput [matDatepicker]="fin" placeholder="DATE FIN"  name="dateFin" required  ngModel>
             <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
             <mat-datepicker #fin></mat-datepicker>
           </mat-form-field>
@@ -102,7 +102,7 @@
 
     <mat-form-field>
 
-      <mat-select placeholder="Nombre de passage par semaine" name="nbJoursPresence" ngModel >
+      <mat-select placeholder="Nombre de passage par semaine" name="nbJoursPresence" required  ngModel >
           <mat-option value="1">1</mat-option>
           <mat-option value="2">2</mat-option>
           <mat-option value="3">3</mat-option>
@@ -110,7 +110,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="RECOMENDATION" name="recommandation" ngModel >
+      <input matInput placeholder="RECOMENDATION" name="recommandation" required  ngModel >
     </mat-form-field>
 
 
@@ -126,28 +126,28 @@
   <div class="example-container">
       <h1>Encadreur informations </h1>
     <mat-form-field>
-      <input matInput placeholder="NOM"  name="encadreur" ngModel >
+      <input matInput placeholder="NOM"  name="encadreur" required  ngModel >
     </mat-form-field>
 
 
     <mat-form-field>
-      <input matInput placeholder="IDENTIFIENT" name="encadreurID" ngModel >
+      <input matInput placeholder="IDENTIFIENT" name="encadreurID"  required ngModel >
     </mat-form-field>
 
 
     <mat-form-field>
-        <input matInput placeholder="EMAIL " name="encadreurmMail" ngModel >
+        <input matInput placeholder="EMAIL " name="encadreurmMail"  required ngModel >
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="DEPARTEMENT" name="encadreurDEP" ngModel >
+        <input matInput placeholder="DEPARTEMENT" name="encadreurDEP" required  ngModel >
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="SECTEUR" name="encadreurSec" ngModel >
+        <input matInput placeholder="SECTEUR" name="encadreurSec" required  ngModel >
       </mat-form-field>
 
 
         <mat-form-field>
-        <mat-select placeholder="FONCTION" name="encadreurmOrg" ngModel >
+        <mat-select placeholder="FONCTION" name="encadreurmOrg" required  ngModel >
             <mat-option value="manager">Manager</mat-option>
             <mat-option value="Team Leader">Team Leader</mat-option>
             <mat-option value="Superviseur">Superviseur</mat-option>
@@ -155,7 +155,7 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" ngModel>
+          <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" required  ngModel>
               <mat-option value="true" >OUI</mat-option>
               <mat-option value="false">NO</mat-option>
 

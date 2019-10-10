@@ -13,7 +13,13 @@ app.use(mail)
 app.use(userRoutes);
 app.use(exelData);
 app.use(express.static(__dirname + '/static'))
-app.get('/*',(req,res)=> res.sendFile(path.join(__dirname)));
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'static/index.html'), function(err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    })
+  })
 
 const port =process.env.PORT || 3000;
 
