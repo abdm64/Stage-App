@@ -34,6 +34,7 @@ export const fade = trigger('fade', [
 })
 export class SuiviComponent implements OnInit {
   students: Students[] =[];
+  studentsCopy: Students[] =[];
 private studentSub:Subscription;
 
 
@@ -45,6 +46,7 @@ private studentSub:Subscription;
 
 
 fetchArray : any[]
+searchTerm = '';
 
   end = 9;
   rest = 0;
@@ -150,17 +152,14 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students =students;
-
-        this.rests = students.length  - this.end
+        this.studentsCopy = students ;
+        this.rests = Math.max(this.students.length - this.end, 0)
 
 
       }
 
     );
-    if ( this.rests < 0)  {
 
-      this.rests === 0
-    }
 
 
 
@@ -327,6 +326,23 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     pdf.create().open();
 
   }
+
+
+  search(): void {
+    let term = this.searchTerm;
+    this.students = this.studentsCopy.filter(function(student) {
+
+        return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
+    });
+    this.rests = Math.max(this.students.length - this.end, 0)
+
+
+
+
+
+
+ }
+
 
 
 

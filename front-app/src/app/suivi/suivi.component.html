@@ -7,24 +7,20 @@
 
 
         <div class="container">
-           <!--
 
-             <form id = "filter">
 
-              <label >filter data by name</label>
-              <input type="text" [(ngModel)]="term" name = "term">
 
-            </form>
-            -->
+
+
             <div class="filter" [formGroup]="form">
-                <button mat-icon-button class="search-icon search" (click)="searchInput.focus()">
+                <button mat-icon-button class="search-icon search" >
                     <mat-icon aria-label="label">search</mat-icon>
                 </button>
-                <button mat-icon-button class="search-icon menu" (click)="sidenav.open()">
+                <button mat-icon-button class="search-icon menu" >
                     <mat-icon aria-label="label">menu</mat-icon>
                 </button>
-                <input #searchInput placeholder="Search..." type="text" class="mat-body-strong" formControlName="search">
-                <mat-select placeholder=" " formControlName="filter">
+                <input  [(ngModel)] = "searchTerm" (ngModelChange) = "search()"  placeholder="Search..." type="text" class="mat-body-strong" formControlName="search" />
+                <mat-select placeholder=" " >
                     <mat-option *ngFor="let item of filterList;let i = index;" [value]="i">
 
                     </mat-option>
@@ -50,12 +46,12 @@
                 </ng-template>
 
                 <div class="medicaments">
-                    <!--  let item of filterData -->
-                    <mat-card *ngFor="let student of students | load : end ;let i = index;  "
+
+                    <mat-card *ngFor="let student of students | load : end ;let i = index ;"
                         [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
                        <div class="remboursement" [ngClass]="{'isremb': student.attestation}"></div>
                         <mat-card-header>
-                            <mat-card-title>{{student.nom  + " " +student.prenom   }}</mat-card-title>
+                            <mat-card-title>{{student.nom  + " " +student.prenom  }}</mat-card-title>
                             <mat-card-subtitle class="DCI">{{student.email  }}
                             </mat-card-subtitle>
                         </mat-card-header>

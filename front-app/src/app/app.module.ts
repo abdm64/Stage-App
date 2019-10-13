@@ -65,7 +65,7 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent] ,
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     HttpClientModule,
     AppRoutingModule,
     ...material,

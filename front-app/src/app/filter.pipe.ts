@@ -1,21 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'myfilter',
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(students: Array<any> , ...term: any): any {
-
-    //check search if undefined
-    if (term === undefined) return null ;
-    //reuren the updated students
-
-    return students.filter(function(student){
-
-      return null
-    })
-
-  }
-
+  transform(items: any[], filter: Object): any {
+    if (!items || !filter) {
+        return items;
+    }
+    // filter items array, items which match and return true will be
+    // kept, false will be filtered out
+    return items.filter(item => item.name.indexOf(filter.name) !== -1);
+}
 }
