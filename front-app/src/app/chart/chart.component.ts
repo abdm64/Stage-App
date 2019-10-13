@@ -60,7 +60,7 @@ for (let  name of data as any) {
       name : a,
       number : count
     }
-array.push(obj)
+array.push(obj )
 
 
 

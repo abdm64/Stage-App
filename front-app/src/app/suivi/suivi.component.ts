@@ -131,12 +131,12 @@ fetchArray : any[]
 
 /////////////////////////////////////////////////////////////*
 
-openDialog(matricule : Number): void { // hadi dialog ta3 click hadik
+openDialog(student : any): void { // hadi dialog ta3 click hadik
   const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
     width: '60%',
 
 
-    data:matricule
+    data:student
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -150,13 +150,17 @@ openDialog(matricule : Number): void { // hadi dialog ta3 click hadik
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students =students;
+
         this.rests = students.length  - this.end
 
 
       }
 
     );
-    this.rests = this.students.length  - this.end
+    if ( this.rests < 0)  {
+
+      this.rests === 0
+    }
 
 
 
@@ -251,6 +255,7 @@ openDialog(matricule : Number): void { // hadi dialog ta3 click hadik
 
     });
   }
+
   async onCreatePdf(student : any){
 
 

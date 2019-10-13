@@ -46,6 +46,7 @@ export class  StudentService{
    this.http.post(this.baseUrlLocal+':3000/api/students/insertData', data).
         subscribe(respanse => {
           this.result = "is ready to go" ;
+          console.log(respanse)
         }, error => {
           this.result  = error.message ;
 
