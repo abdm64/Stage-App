@@ -12,6 +12,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
+  baseUrlLocal = "http://localhost";
+  baseUrlProd = "http://172.16.60.34"
 /* */
   constructor( public studentsService: StudentService ,private _snackBar: MatSnackBar, http:HttpClient) {
 
@@ -22,7 +24,7 @@ export class InsertComponent implements OnInit {
     var num = 0 ;
 
     let  req = new XMLHttpRequest();
-    req.open('GET', `http://172.16.60.34:3000/api/students/numberEnd`, false);
+    req.open('GET', this.baseUrlLocal+`:3000/api/students/numberEnd`, false);
 
     //
     req.send(null)
@@ -55,21 +57,21 @@ console.log(form.value)
 
 
 
-     //  form.reset()
+       form.reset()
 
        // console.log(this.studentsService.result)
 
 
 
 
-this.openSnackBar(this.studentsService.result, "Close");
+this.openSnackBar("operation succeeded", "Close");
 
 
   }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-      duration: 3000,
+      duration: 5000,
     });
   }
 

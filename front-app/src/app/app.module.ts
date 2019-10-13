@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -37,6 +38,8 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import {AuthGuard} from './auth.guard';
 import { ExcelService } from './execl.service';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
+import { ChartComponent } from './chart/chart.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -55,7 +58,9 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     MsgConfirmComponent,
     LoginPageComponent,
     SignupPageComponent,
-    ExcelWindowComponent
+    ExcelWindowComponent,
+    ChartComponent,
+    FilterPipe
   ],
     entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent] ,
   imports: [
@@ -76,7 +81,8 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
 
     MatSnackBarModule,
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChartsModule
 
 
 

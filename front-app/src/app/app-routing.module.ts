@@ -8,6 +8,7 @@ import { SuiviComponent } from './suivi/suivi.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import {AuthGuard} from './auth.guard';
+import { ChartComponent } from './chart/chart.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'insert', component: InsertComponent,canActivate : [AuthGuard] },
   { path: '', component: LoginPageComponent },
   { path: 'sign', component: SignupPageComponent },
+  { path: 'chart', component: ChartComponent }
 
 
 

@@ -1,5 +1,5 @@
 // tslint:disable: curly
-import{Students} from '../../../models/Student';
+import { Students } from '../../../models/Student';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -8,13 +8,14 @@ import { debounceTime, map, delay } from 'rxjs/operators';
 import { MatIconRegistry, MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { Apollo } from 'apollo-angular';
+
 import gql from 'graphql-tag';
 import { StudentService } from '../students.service';
 import { DialogOverviewExampleDialog } from '../dialog/dialog.component';
 import { PdfMakeWrapper, Txt, Columns, Img } from 'pdfmake-wrapper';
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { DatePipe} from '@angular/common';
+import { FilterPipe } from '../filter.pipe'
 
 
 export const fade = trigger('fade', [
@@ -28,7 +29,8 @@ export const fade = trigger('fade', [
   selector: 'app-suivi',
   templateUrl: './suivi.component.html',
   styleUrls: ['./suivi.component.scss'],
-  animations: [fade]
+  animations: [fade],
+
 })
 export class SuiviComponent implements OnInit {
   students: Students[] =[];
@@ -46,6 +48,8 @@ fetchArray : any[]
 
   end = 9;
   rest = 0;
+  rests = 0 ;
+
   ascending = false;
   totalMedics: any;
   loading = false;
@@ -90,8 +94,8 @@ fetchArray : any[]
     }
   `;
 
-  constructor(public datepipe : DatePipe, public studentsService :StudentService ,private fb: FormBuilder, private http: HttpClient,public dialog: MatDialog, private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer, private apollo: Apollo) {
+  constructor(public datepipe : DatePipe,  private fb: FormBuilder ,public studentsService :StudentService ,public dialog: MatDialog, private matIconRegistry: MatIconRegistry,
+              private domSanitizer: DomSanitizer) {
     /* form init */
     this.form = new FormGroup({
       search: this.searchObj,
@@ -119,7 +123,7 @@ fetchArray : any[]
       this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/description.svg')
     );
     /* get data length */
-    this.apollo.watchQuery<any>({ query: this.totalQuery }).valueChanges.subscribe(v => this.totalMedics = v.data.totalMedics);
+    //this.apollo.watchQuery<any>({ query: this.totalQuery }).valueChanges.subscribe(v => this.totalMedics = v.data.totalMedics);
   }
 
 
@@ -127,64 +131,39 @@ fetchArray : any[]
 
 /////////////////////////////////////////////////////////////*
 
+openDialog(matricule : Number): void { // hadi dialog ta3 click hadik
+  const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+    width: '60%',
 
-  openDialog(matricule : Number): void { // hadi dialog ta3 click hadik
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '60%',
 
+    data:matricule
+  });
 
-      data:matricule
-    });
+  dialogRef.afterClosed().subscribe(result => {
 
-    dialogRef.afterClosed().subscribe(result => {
+  });
+}
 
-    });
-  }
   ngOnInit() {
-    //window.location.reload()
+
     this.studentsService.getStudents();
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students =students;
+        this.rests = students.length  - this.end
 
-
-        //this.fetchArray = this.students
- (this.getDateFin(this.students))
 
       }
 
     );
+    this.rests = this.students.length  - this.end
 
 
 
-    this.Datafetch(0);
-    this.searchObj.valueChanges
-      .pipe(map(v => { this.loading = true; this.type = 'query'; return v; }))
-      .pipe(debounceTime(1700)).subscribe(v => this.filter());
+
+
      }
-  private Datafetch(cpt) {
-    const step = 500;
-    this.loading = true;
-    this.type = 'determinate';
-    this.apollo.watchQuery<any>({ query: this.dataQuery, variables: { start: cpt * step, end: (cpt + 1) * step } }).valueChanges
-      .pipe(delay(150)).subscribe((v) => {
-        if (v.data.medicaments.length > 0) {
-          this.data.push(...v.data.medicaments);
-          this.filterData = this.data;
-          this.Datafetch(cpt + 1);
-        } else {
-          this.type = 'query';
-          setTimeout(() => {
-            this.loading = false;
-          }, 2000);
-        }
-        this.setLoading();
-        if (cpt === 0)
-          this.filterList = Object.keys(this.data[0]).map(val => val.toLocaleLowerCase().replace(new RegExp('_', 'g'), ' '));
 
-        this.setLoad(9);
-      });
-  }
   setLoading() {
     /*
       total ====> 100%
@@ -240,17 +219,23 @@ fetchArray : any[]
     }
   }
   setLoad(val) {
+
     this.end = val;
+    this.rests = this.students.length  - this.end
     if (this.students.length === 0)
       this.rest = 0;
+
     else
       this.rest = Math.max(this.students.length - this.end, 0);
+      this.rests = Math.max(this.students.length - this.end, 0);
+
 }
+/*
   tracbyfn(index, item) {
     return index + item.ID;
   }
 
-
+*/
 
   ngOnDestroy(){
     this.studentSub.unsubscribe();
@@ -267,7 +252,7 @@ fetchArray : any[]
     });
   }
   async onCreatePdf(student : any){
-    console.log(student.nom)
+
 
 
     const pdf = new PdfMakeWrapper();
@@ -338,57 +323,11 @@ fetchArray : any[]
 
   }
 
-  getNbDay(datefin : any){
-    const d1 = new Date(Date.now())
-    const d2 = new Date(datefin)
-
-
-
-    const same = d1.getTime() - d2.getTime() ;
-
-    const days = (same / (60*60*24*1000))
-
-
-
-
-  return days
-
-  }
-getDateFin(students : any){
-
- // send email  but there is a lot of problem to fix here we should make exute one at  the day
-
- document.cookie = 'preventSpam;max-age=604800'
-
- if (document.cookie) {
-console.log("cookie is here")
-
-
-
-  for (let item of students) {
-
-   if (this.getNbDay(item.dateFin) < 7){
-
-
-    console.log("send email")
-   } else {
-
-    // not send email
-
-    console.log("email not sen")
-
-
-
-   }
-
-  }
-}
 
 
 
 
 
-}
 
 
 

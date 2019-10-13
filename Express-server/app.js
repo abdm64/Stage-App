@@ -8,6 +8,7 @@ const path = require('path');
 //app.use(index);
 
 const app = express();
+
 app.use(students);
 app.use(mail)
 app.use(userRoutes);

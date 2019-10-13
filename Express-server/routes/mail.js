@@ -15,13 +15,13 @@ cron.schedule('40 10 * * *', () => {
 });
 */
 
-cron.schedule('00 10 * * *', () => {
+cron.schedule('02 12 * * *', () => {
    info()
 
 });
 
 
-mongoose.connect("mongodb://172.16.60.34/test",{
+mongoose.connect("mongodb://localhost/test",{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -77,9 +77,9 @@ for (let item of students) {
 
   console.log(getNbDay(item.dateFin))
   console.log(item.dateFin)
-if(getNbDay(item.dateFin) >= 0) {
+if(getNbDay(item.dateFin) <= 0) {
 
- if (getNbDay(item.dateFin) <= 7){
+ if (getNbDay(item.dateFin) >= -7){
 
  
 
@@ -93,11 +93,11 @@ if(getNbDay(item.dateFin) >= 0) {
 
  } else {
 
-  console.log(" il a deja fini son stage")
+  console.log(" il lui reste plus que 7 jours")
 }
 
 }else{
-  console.log("il lui reste plus que 7 jours")
+  console.log("il a deja fini son stage")
 }
 }
 return true

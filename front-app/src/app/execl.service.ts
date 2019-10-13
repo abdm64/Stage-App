@@ -10,12 +10,13 @@ const EXCEL_EXTENSION = '.xlsx';
 @Injectable()
 export class ExcelService {
 
-
+  baseUrlLocal = "http://localhost";
+  baseUrlProd = "http://172.16.60.34"
   constructor(private http:HttpClient) { }
 
   exportEx(gte:String , lte:String){
 
-     this.http.get('http://172.16.60.34:3000/api/students/data/date/'+gte+'/'+lte)
+     this.http.get(this.baseUrlLocal+':3000/api/students/data/date/'+gte+'/'+lte)
      .subscribe(
        (data: any)  => {
 

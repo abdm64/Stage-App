@@ -18,7 +18,7 @@
 
 
 
-  mongoose.connect("mongodb://mongo/test",{
+  mongoose.connect("mongodb://localhost/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
@@ -90,13 +90,15 @@ app.get('/',(req,res)=>{
 
 app.get('/api/students/data',(req,res, next)=>{
 
-    Students.find().then(documents =>{
-         res.status(200).json({
-
-             students:documents
-         });
-     });
-    });
+  Students.find({}, {}, { sort: { _id :  -1} }, function(err, docs) {
+    
+      res.status(201).json({
+        students : docs
+      })
+    
+    
+  });
+})
 
 
 
@@ -206,6 +208,21 @@ app.delete("/api/students/delete",function (req,res) {
     
   });
 })
+app.get('/api/students/enc',(req,res)=>{
+  var arrayEnc = []
+ 
+  Students.find().then(documents =>{
+    for (docment in documents) {
+        arrayEnc.push(documents[docment].encadreur)
+    }
+
+    
+    res.status(200).send(arrayEnc)
+    
+});
+
+})
+
 
 
 

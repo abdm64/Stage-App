@@ -4,26 +4,18 @@
 
 
 <mat-sidenav-container class="sidenav-container" >
-        <mat-sidenav #sidenav class="mat-elevation-z4 sidenav" mode="over">
-            <div class=" mat-display-3 logo">
-                Stages
-            </div>
-            <mat-nav-list>
-                <mat-list-item>
-                    <mat-icon matListIcon>home</mat-icon>
-                    <h3 matLine>home</h3>
-                </mat-list-item>
-                <mat-list-item>
-                    <mat-icon matListIcon>live_help</mat-icon>
-                    <h3 matLine>about</h3>
-                </mat-list-item>
-                <mat-list-item>
-                    <mat-icon matListIcon>cloud_download</mat-icon>
-                    <h3 matLine>donwload Data</h3>
-                </mat-list-item>
-            </mat-nav-list>
-        </mat-sidenav>
+
+
         <div class="container">
+           <!--
+
+             <form id = "filter">
+
+              <label >filter data by name</label>
+              <input type="text" [(ngModel)]="term" name = "term">
+
+            </form>
+            -->
             <div class="filter" [formGroup]="form">
                 <button mat-icon-button class="search-icon search" (click)="searchInput.focus()">
                     <mat-icon aria-label="label">search</mat-icon>
@@ -32,15 +24,14 @@
                     <mat-icon aria-label="label">menu</mat-icon>
                 </button>
                 <input #searchInput placeholder="Search..." type="text" class="mat-body-strong" formControlName="search">
-                <mat-select placeholder="Filter By" formControlName="filter">
+                <mat-select placeholder=" " formControlName="filter">
                     <mat-option *ngFor="let item of filterList;let i = index;" [value]="i">
 
                     </mat-option>
                 </mat-select>
-                <button mat-icon-button class="settings">
-                    <mat-icon>settings</mat-icon>
-                </button>
+
             </div>
+
             <div class="content">
                 <div class="info">
                     <div class="text">
@@ -60,12 +51,12 @@
 
                 <div class="medicaments">
                     <!--  let item of filterData -->
-                    <mat-card *ngFor="let student of students | load : end ; trackBy:tracbyfn;let i = index; "
+                    <mat-card *ngFor="let student of students | load : end ;let i = index;  "
                         [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
                        <div class="remboursement" [ngClass]="{'isremb': student.attestation}"></div>
                         <mat-card-header>
-                            <mat-card-title>{{student.nom + " " +student.prenom}}</mat-card-title>
-                            <mat-card-subtitle class="DCI">{{student.email| lowercase }}
+                            <mat-card-title>{{student.nom  + " " +student.prenom   }}</mat-card-title>
+                            <mat-card-subtitle class="DCI">{{student.email  }}
                             </mat-card-subtitle>
                         </mat-card-header>
                         <mat-card-content class="card-content">
@@ -113,9 +104,10 @@
                 </div>
                 <!---->
                 <div class="pagination">
-                    <button mat-raised-button color="primary" class="load" (click)="setLoad(end+9)" [disabled]="rest === 0">
+                    <button mat-raised-button color="primary" class="load" (click)="setLoad(end+9)" [disabled] = " end >  students.length"  >
                         <mat-icon>keyboard_arrow_down</mat-icon>Load more
-                        ({{rest}})
+                          {{ rests }}
+
                     </button>
                 </div>
             </div>
