@@ -147,6 +147,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
+    console.log(localStorage.getItem("user"))
 
     this.studentsService.getStudents();
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
@@ -272,13 +273,16 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     pdf.add( new Columns([ '', ' Département des Ressources Humaines  ' ]).columnGap(200).fontSize(8).bold().end);
     pdf.add( new Columns([ '', ' Tél. : 0770 85 2110 / 05  -  Fax : 0770 85 2117 / 27 / 07  ' ]).columnGap(100).fontSize(8).bold().end);
     pdf.add( new Columns([ '', ' E-Mail: jobs@otalgerie.com' ]).columnGap(200).bold().fontSize(8).end);
-    pdf.add(await new Img('../assets/logo.png').build());
+    //pdf.header('this is header')
+
+
+    pdf.add(await new Img('../assets/logo.png').alignment('left').build());
 
     pdf.add(pdf.ln(2));
     pdf.add(new Txt('CERTIFICAT DE STAGE').alignment('center').bold().fontSize(20).end );
     pdf.add(new Txt('_________________________________________________________________________________').alignment('center').italics().bold().end );
 
-    pdf.add(pdf.ln(4));
+    pdf.add(pdf.ln(3));
 
     pdf.add( new Txt([  'Je soussignée,Mme. Fatma TILIOUINE agissant en qualité de Digital Learning &                                       '  ]).alignment('center').end);
 
@@ -332,7 +336,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     let term = this.searchTerm;
     this.students = this.studentsCopy.filter(function(student) {
 
-        return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
+        return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.encadreur.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0|| student.diplome.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
     });
     this.rests = Math.max(this.students.length - this.end, 0)
 

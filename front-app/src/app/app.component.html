@@ -1,21 +1,68 @@
+
+
+
+
 <div class="content-container">
-    <a #redirect href="https://github.com/mahmoudBens/Nomenclature-des-medicaments-en-algerie" style="display: none "></a>
+<!--
+
     <mat-toolbar [color]="'primary'" class="toolbar" style="max-width:50000px;">
         <div class="toolbar-container">
             <span>RH Project</span>
             <div class="navs">
 
-                <button routerLinkActive="active" mat-button routerLink="/insert">Insert</button>
+                <button routerLinkActive="active" mat-button routerLink="/insert"><mat-icon>add</mat-icon></button>
 
-                <button mat-button routerLink="/suivi">Manage</button>
+                <button mat-button routerLink="/suivi">
+                  <mat-icon>home</mat-icon>
+                 </button>
                 <button mat-button (click)="export()">Export</button>
-                <button mat-button (click)="logout()" color ="warn">Logout</button>
+
+                <button mat-button  (click)="logout()"  >
+                    <mat-icon>exit_to_app</mat-icon>
+
+                  </button>
 
 
 
             </div>
         </div>
     </mat-toolbar>
+
+ -->
+
+ <mat-toolbar color="primary">
+    <span class="fill-remaining-space">
+      <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <span (mouseleave)="menuTrigger.closeMenu()">
+          <button mat-menu-item >
+              <mat-icon>person_pin</mat-icon>
+            <span>{{ user }}</span>
+          </button>
+        <button mat-menu-item routerLink="/suivi">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-menu-item routerLink="/insert" >
+          <mat-icon>add</mat-icon>
+          <span>ADD</span>
+        </button>
+        <button mat-menu-item  (click)="export()">
+          <mat-icon>cloud_download</mat-icon>
+          <span>EXPORT FOR EXEL</span>
+        </button>
+        <button mat-menu-item (click)="logout()" >
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </span>
+      </mat-menu>
+    </span>
+    <span class="fill-remaining-space">Gestion de Stagiere</span>
+  </mat-toolbar>
+
 
 
 

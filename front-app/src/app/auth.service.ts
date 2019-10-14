@@ -54,6 +54,7 @@ login(email : string, password: string){
     this.http.post<{token : string}>(this.baseUrlLocal+':3000/api/user/login', authData).subscribe(response => {
             this.router.navigate(['suivi'])
             localStorage.setItem("auth",'true')
+            localStorage.setItem("user",authData.email)
 
 
     }, error => {

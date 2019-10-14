@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 
 
-declare const baseUrlLocal = "http://localhost";
-declare const baseUrlProd = "http://172.16.60.34"
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  user : String = " "
 
   constructor(public dialog: MatDialog ,public router: Router) {
 
@@ -24,6 +24,10 @@ export class AppComponent {
       }
 
     });
+  }
+  ngOnInit() {
+    console.log(localStorage.getItem("user"))
+    this.user = localStorage.getItem("user") ;
   }
 
   export()
@@ -43,6 +47,7 @@ logout()
 {
   console.log("logout")
   localStorage.removeItem("auth");
+  localStorage.removeItem("user");
   this.router.navigate(['/'])
 
 
