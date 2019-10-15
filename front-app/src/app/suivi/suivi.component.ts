@@ -1,21 +1,18 @@
-// tslint:disable: curly
+
 import { Students } from '../../../models/Student';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { debounceTime, map, delay } from 'rxjs/operators';
 import { MatIconRegistry, MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, transition, style, animate } from '@angular/animations';
-
 import gql from 'graphql-tag';
 import { StudentService } from '../students.service';
 import { DialogOverviewExampleDialog } from '../dialog/dialog.component';
 import { PdfMakeWrapper, Txt, Columns, Img } from 'pdfmake-wrapper';
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { DatePipe} from '@angular/common';
-import { FilterPipe } from '../filter.pipe'
+
 
 
 export const fade = trigger('fade', [

@@ -21,6 +21,7 @@ export class MsgConfirmComponent implements OnInit {
     console.log(this.data)
     this.studentService.deleteStudent(this.data.matricule)
     this.dialogRef.close();
+    location.reload();
 
   }
   noDelete(){

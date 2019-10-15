@@ -117,11 +117,20 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="RECOMENDATION" name="recommandation" required  ngModel >
+      <input matInput placeholder="RECOMENDATION" name="recommandation"  ngModel >
     </mat-form-field>
 
 
   </div>
+
+  <mat-form-field>
+
+      <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" required  ngModel>
+          <mat-option value="true" >OUI</mat-option>
+          <mat-option value="false">NO</mat-option>
+
+        </mat-select>
+      </mat-form-field>
 
 </mat-card>
 
@@ -131,60 +140,57 @@
 <mat-card  >
 
   <div class="example-container">
-      <h1>Encadreur informations </h1>
+      <h1>Encadreur </h1>
 
-      <div class="row">
-        <div class="col">
+
+
             <mat-form-field >
                 <input matInput placeholder="IDENTIFIENT" name="encadreurID" #id  required ngModel >
 
+
               </mat-form-field >
 
-        </div>
-
-
-
-      </div>
-
-
-
-    <mat-form-field>
-      <input matInput placeholder="NOM"  name="encadreur"  required  ngModel >
-    </mat-form-field>
+<button mat-stroked-button color="white"  type="button" (click)="getEncadreur(id.value)" >valider</button>
 
 
 
 
-    <mat-form-field>
-        <input matInput placeholder="EMAIL " name="encadreurmMail"  required ngModel >
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="DEPARTEMENT" name="encadreurDEP" required  ngModel >
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="SECTEUR" name="encadreurSec" required  ngModel >
-      </mat-form-field>
 
 
-        <mat-form-field>
-        <mat-select placeholder="FONCTION" name="encadreurmOrg" required  ngModel >
+
+
+
+
+
+      <input matInput placeholder="NOM"  name="encadreur"   [hidden]="true" required  ngModel >
+
+
+
+
+
+
+        <input matInput placeholder="EMAIL " name="encadreurmMail"  [hidden]="true" required ngModel >
+
+
+        <input matInput placeholder="DEPARTEMENT" name="encadreurDEP"  [hidden]="true"required  ngModel >
+
+
+        <input matInput placeholder="SECTEUR" name="encadreurSec" [hidden]="true" required  ngModel >
+
+
+
+
+        <mat-select placeholder="FONCTION" name="encadreurmOrg" [hidden]="true" required  ngModel >
             <mat-option value="manager">Manager</mat-option>
             <mat-option value="Team Leader">Team Leader</mat-option>
             <mat-option value="Superviseur">Superviseur</mat-option>
             <mat-option value="Enginner">Enginner</mat-option>
           </mat-select>
-        </mat-form-field>
-        <mat-form-field>
 
-          <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" required  ngModel>
-              <mat-option value="true" >OUI</mat-option>
-              <mat-option value="false">NO</mat-option>
-
-            </mat-select>
-          </mat-form-field>
 
 
               <input matInput placeholder=""   [hidden]="true" name="matricule" ngModel >
+              <input matInput placeholder=""   [hidden]="true" name="user" ngModel >
 
 
   </div>

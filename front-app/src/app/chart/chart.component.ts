@@ -10,11 +10,11 @@ export class ChartComponent implements OnInit {
   baseUrlLocal = "http://localhost";
   baseUrlProd = "http://172.16.60.34"
    labels :[]=[]
-   value :[]=[]
+    values: Array<number> = []
 
 
   public pieChartLabels = this.labels
-  public pieChartData = this.value
+  public pieChartData = this.values
   public pieChartType = 'pie';
 
 
@@ -83,16 +83,20 @@ return medios
 
 
     var data = await this.getEncData()
-   console.log(data)
+   
 
-    for (let  item in data){
-      //  console.log()
-        this.labels.push(data[item].name)
-        this.value.push(data[item].number)
+
+    for (let  item of data){
+        console.log()
+         this.labels.push(item.name)
+         this.values.push(item.number)
+
+
 
     }
     console.log(this.labels)
-    console.log(this.value)
+    console.log( this.values )
+
 
   }
 

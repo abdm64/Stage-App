@@ -78,6 +78,7 @@ export class DialogOverviewExampleDialog implements OnInit {
 console.log(this.angForm.value)
 this.studentService.updateStudent(this.student.matricule,this.angForm.value);
 this.dialogRef.close();
+location.reload();
 
 
 

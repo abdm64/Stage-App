@@ -3,6 +3,8 @@ import { NgForm, FormGroup } from '@angular/forms';
 import { StudentService } from '../students.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material';
+import { EncadreurComponent } from '../encadreur/encadreur.component';
 
 
 
@@ -14,11 +16,11 @@ import { HttpClient } from '@angular/common/http';
 export class InsertComponent implements OnInit {
   baseUrlLocal = "http://localhost";
   baseUrlProd = "http://172.16.60.34"
+  encadreur : any
 
-     EncaForm: FormGroup;
-     submitted = false;
-/* */
-  constructor( public studentsService: StudentService ,private _snackBar: MatSnackBar, http:HttpClient) {
+
+
+  constructor( public studentsService: StudentService ,private _snackBar: MatSnackBar, http:HttpClient,public dialog: MatDialog) {
 
    }
    getMatricule(){
@@ -51,16 +53,22 @@ export class InsertComponent implements OnInit {
   onAddPost(form:NgForm){
 
 
-console.log(form.value)
 
+          form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name
+          form.value.encadreurDEP = this.encadreur.Departement
+          form.value.encadreurmMail = this.encadreur.Email_Address
+          form.value.encadreurSec = this.encadreur.Sector
+          form.value.encadreurmOrg = this.encadreur.Position
+          form.value.user = localStorage.getItem("user")
           form.value.matricule = this.getMatricule() ;
+          console.log(form.value)
           this.studentsService.addStudent(form.value);
 
 
 
 
 
-       form.reset()
+      // form.reset()
 
 
 
@@ -86,27 +94,27 @@ this.openSnackBar("operation succeeded", "Close");
     req.open('GET', this.baseUrlLocal+`:3000/api/encadreur/data/`+encadreurID, false);
     req.send(null);
     let data = JSON.parse(req.response)
+    this.encadreur = data
+  //  alert(  data.First_name+ " " +data.Last_Name + " is the Responsable"  );
 
 
-console.log(data)
-    return data
+  this.openValidateDialog(data)
+
   }
 
-  createForm() {
+  openValidateDialog(data :any): void { // hadi dialog ta3 click hadik
+    //console.log(data)
+    const dialogRef = this.dialog.open(EncadreurComponent, {
+      width: '40%',
+      data: data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
 
 
-    // this.registerForm = this.formBuilder.group({
-    //     title: ['', Validators.required],
-    //     firstName: ['', Validators.required],
-    //     lastName: ['', Validators.required],
-    //     email: ['', [Validators.required, Validators.email]],
-    //     password: ['', [Validators.required, Validators.minLength(6)]],
-    //     confirmPassword: ['', Validators.required],
-    //     acceptTerms: [false, Validators.requiredTrue]
-    // }, {
-    //     validator: MustMatch('password', 'confirmPassword')
-    // });
-}
 
 
 }

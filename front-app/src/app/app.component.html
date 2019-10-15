@@ -49,10 +49,14 @@
           <mat-icon>add</mat-icon>
           <span>ADD</span>
         </button>
-        <button mat-menu-item  (click)="export()">
-          <mat-icon>cloud_download</mat-icon>
-          <span>EXPORT FOR EXEL</span>
+        <button mat-menu-item  routerLink="/chart">
+          <mat-icon>dashboard</mat-icon>
+          <span>DASHBOARD</span>
         </button>
+        <button mat-menu-item  (click)="export()">
+            <mat-icon>cloud_download</mat-icon>
+            <span>EXPORT FOR EXEL</span>
+          </button>
         <button mat-menu-item (click)="logout()" >
           <mat-icon>exit_to_app</mat-icon>
           <span>Logout</span>

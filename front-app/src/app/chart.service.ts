@@ -21,7 +21,7 @@ export class ChartService  {
   async getEncadreur(){
 
  let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/enc').toPromise();
- console.log(data)
+
 
 return data
 }

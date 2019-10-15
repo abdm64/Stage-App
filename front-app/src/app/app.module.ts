@@ -40,6 +40,7 @@ import { ExcelService } from './execl.service';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import { ChartComponent } from './chart/chart.component';
 import { FilterPipe } from './filter.pipe';
+import { EncadreurComponent } from './encadreur/encadreur.component';
 
 
 
@@ -60,9 +61,10 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     SignupPageComponent,
     ExcelWindowComponent,
     ChartComponent,
-    FilterPipe
+    FilterPipe,
+    EncadreurComponent
   ],
-    entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent] ,
+    entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent,EncadreurComponent] ,
   imports: [
     BrowserModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
