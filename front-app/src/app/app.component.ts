@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-    
+
     this.user = localStorage.getItem("user") ;
   }
 
@@ -49,6 +49,7 @@ logout()
   localStorage.removeItem("auth");
   localStorage.removeItem("user");
   this.router.navigate(['/'])
+ // location.reload()
 
 
 

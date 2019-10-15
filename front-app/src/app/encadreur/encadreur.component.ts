@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject  } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter  } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -7,6 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./encadreur.component.scss']
 })
 export class EncadreurComponent implements OnInit {
+  onAdd = new EventEmitter();
 
 
   constructor(
@@ -14,7 +15,11 @@ export class EncadreurComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-    
+
+  }
+  onConfirmClick() {
+    this.onAdd.emit();
+    this.dialogRef.close();
   }
 
 

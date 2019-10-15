@@ -142,50 +142,63 @@
   <div class="example-container">
       <h1>Encadreur </h1>
 
+<div class="row">
+  <div class="col-6">
+      <mat-form-field >
+          <input matInput placeholder="IDENTIFIENT" name="encadreurID" #id  required ngModel >
 
 
-            <mat-form-field >
-                <input matInput placeholder="IDENTIFIENT" name="encadreurID" #id  required ngModel >
-
-
-              </mat-form-field >
-
-<button mat-stroked-button color="white"  type="button" (click)="getEncadreur(id.value)" >valider</button>
-
-
-
-
-
+        </mat-form-field >
+  </div>
+  <div class="col-6">
+      <button mat-stroked-button color="white"  type="button" id="confirm" (click)="getEncadreur(id.value)" >Confirm</button>
+  </div>
 
 
 
 
 
 
-      <input matInput placeholder="NOM"  name="encadreur"   [hidden]="true" required  ngModel >
+</div>
+
+
+
+<mat-form-field >
+    <input matInput placeholder="NOM"  name="encadreur"    [value]= "encadreur.First_name+' '+encadreur.Last_Name" required  >
+</mat-form-field>
+
+
+
+<mat-form-field >
+    <input matInput placeholder="EMAIL " name="encadreurmMail"  [value]= "encadreur.Email_Address" required  >
+
+</mat-form-field>
 
 
 
 
 
 
-        <input matInput placeholder="EMAIL " name="encadreurmMail"  [hidden]="true" required ngModel >
-
-
-        <input matInput placeholder="DEPARTEMENT" name="encadreurDEP"  [hidden]="true"required  ngModel >
-
-
-        <input matInput placeholder="SECTEUR" name="encadreurSec" [hidden]="true" required  ngModel >
+<mat-form-field>
+    <input matInput placeholder="DEPARTEMENT" name="encadreurDEP"  [value]= "encadreur.Departement" required   >
+</mat-form-field>
 
 
 
 
-        <mat-select placeholder="FONCTION" name="encadreurmOrg" [hidden]="true" required  ngModel >
-            <mat-option value="manager">Manager</mat-option>
-            <mat-option value="Team Leader">Team Leader</mat-option>
-            <mat-option value="Superviseur">Superviseur</mat-option>
-            <mat-option value="Enginner">Enginner</mat-option>
-          </mat-select>
+<mat-form-field>
+    <input matInput placeholder="SECTEUR" name="encadreurSec"   [value]= "encadreur.Sector" required   >
+
+</mat-form-field>
+
+
+
+<mat-form-field>
+    <input matInput placeholder="FONCTION" name="encadreurmOrg"  [value]= "encadreur.Organisation"  required   >
+
+</mat-form-field>
+
+
 
 
 
@@ -208,7 +221,7 @@
 <div class="col-4"> </div>
 
 
-<div class="col-4"> <button mat-flat-button color="primary"  type="submit" >SAVE</button> </div>
+<div class="col-4"> <button mat-flat-button color="primary" id="save" type="submit" >SAVE</button> </div>
 <div class="col-4">   </div>
 </div>
 

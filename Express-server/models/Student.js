@@ -90,7 +90,7 @@ nbJoursPresence:{
 },
 recommandation:{
     type:String,
-    required:true
+    required:false
 
 },
 attestation:{
@@ -129,7 +129,13 @@ encadreurSec:{
   type:String,
   required:true
 
-}
+},
+
+user:{
+    type:String,
+    required:true
+  
+  }
 
 
 

@@ -16,7 +16,19 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
 export class InsertComponent implements OnInit {
   baseUrlLocal = "http://localhost";
   baseUrlProd = "http://172.16.60.34"
-  encadreur : any
+  encadreur : any = {
+
+
+    Last_Name: "",
+    First_name: "",
+    Sector: null,
+    Departement: null,
+    Organisation: null,
+    Position: null,
+    Job: null,
+    Email_Address: null,
+
+  }
 
 
 
@@ -94,24 +106,36 @@ this.openSnackBar("operation succeeded", "Close");
     req.open('GET', this.baseUrlLocal+`:3000/api/encadreur/data/`+encadreurID, false);
     req.send(null);
     let data = JSON.parse(req.response)
-    this.encadreur = data
+   // this.encadreur = data
   //  alert(  data.First_name+ " " +data.Last_Name + " is the Responsable"  );
 
 
   this.openValidateDialog(data)
+  return data
 
   }
 
-  openValidateDialog(data :any): void { // hadi dialog ta3 click hadik
+  confirmEncadreur(data:any, form:NgForm){
+    this.encadreur = data
+    this.encadreur = this.getEncadreur(form.value.encadreurID)
+  }
+
+  openValidateDialog(data :any): void {
     //console.log(data)
     const dialogRef = this.dialog.open(EncadreurComponent, {
       width: '40%',
-      data: data
+      data: data,
+
+    });
+    const sub = dialogRef.componentInstance.onAdd.subscribe(() => {
+      this.encadreur = data
     });
 
     dialogRef.afterClosed().subscribe(result => {
 
+
     });
+
   }
 
 

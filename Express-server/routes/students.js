@@ -204,6 +204,50 @@ app.get('/api/students/enc',(req,res)=>{
 
 })
 
+app.get('/api/students/encSec',(req,res)=>{
+  var arraySec = []
+ 
+  Students.find().then(documents =>{
+    for (docment in documents) {
+      arraySec.push(documents[docment].encadreurSec)
+    }
+ res.status(200).send(arraySec)
+ //console.log(arraySec)
+    });
+    }
+
+  )
+
+  //************************** chart date debut */
+  app.get('/api/students/datedebut',(req,res)=>{
+    var arraySec = []
+   
+    Students.find().then(documents =>{
+      for (docment in documents) {
+        arraySec.push(documents[docment].dateDebut)
+      }
+   res.status(200).send(arraySec)
+   //console.log(arraySec)
+      });
+      }
+  
+    )
+
+    //************************** chart date fin */
+  app.get('/api/students/datefin',(req,res)=>{
+    var arraySec = []
+   
+    Students.find().then(documents =>{
+      for (docment in documents) {
+        arraySec.push(documents[docment].dateFin)
+      }
+   res.status(200).send(arraySec)
+   //console.log(arraySec)
+      });
+      }
+  
+    )
+
 
 
 

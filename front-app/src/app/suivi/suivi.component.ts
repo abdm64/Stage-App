@@ -101,28 +101,28 @@ searchTerm = '';
       filter: this.filterObj
     });
     /* add icons */
-    this.matIconRegistry.addSvgIcon(
-      'labo',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/labo.svg')
+   this.matIconRegistry.addSvgIcon(
+     'labo',
+     this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/labo.svg')
     );
-    this.matIconRegistry.addSvgIcon(
-      'price',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/price.svg')
-    );
+     this.matIconRegistry.addSvgIcon(
+     'price',
+     this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/price.svg')
+   );
     this.matIconRegistry.addSvgIcon(
       'therapy',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/therapy.svg')
     );
-    this.matIconRegistry.addSvgIcon(
-      'input_way',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/inputWay.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'description',
+     this.matIconRegistry.addSvgIcon(
+     'input_way',
+     this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/inputWay.svg')
+   );
+   this.matIconRegistry.addSvgIcon(
+     'description',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/description.svg')
     );
     /* get data length */
-    //this.apollo.watchQuery<any>({ query: this.totalQuery }).valueChanges.subscribe(v => this.totalMedics = v.data.totalMedics);
+
   }
 
 

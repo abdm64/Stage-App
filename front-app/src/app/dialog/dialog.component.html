@@ -135,14 +135,15 @@
 
         <div class="example-container">
             <h1>Encadreur information </h1>
+
+          <mat-form-field>
+              <input matInput placeholder="IDENTIFIENT" name="encadreurID" [value]="student.encadreurID"  formControlName="encadreurID">
+            </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="NOM"  name="encadreur" [value]="student.encadreur" formControlName="encadreur" >
           </mat-form-field>
 
 
-          <mat-form-field>
-            <input matInput placeholder="IDENTIFIENT" name="encadreurID" [value]="student.encadreurID"  formControlName="encadreurID">
-          </mat-form-field>
 
 
           <mat-form-field>
@@ -157,12 +158,9 @@
 
 
               <mat-form-field>
-              <mat-select placeholder="FONCTION" name="encadreurmOrg"  [value]="student.encadreurmOrg" formControlName="encadreurmOrg"  >
-                  <mat-option value="manager">Manager</mat-option>
-                  <mat-option value="Team Leader">Team Leader</mat-option>
-                  <mat-option value="Superviseur">Superviseur</mat-option>
-                  <mat-option value="Enginner">Enginner</mat-option>
-                </mat-select>
+              <input matInput placeholder="FONCTION" name="encadreurmOrg"  [value]="student.encadreurmOrg" formControlName="encadreurmOrg"  >
+
+
               </mat-form-field>
               <mat-form-field>
                 <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" [value]="student.attestation" formControlName="attestation" >
