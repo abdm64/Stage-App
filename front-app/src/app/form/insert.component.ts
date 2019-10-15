@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup } from '@angular/forms';
 import { StudentService } from '../students.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
@@ -14,6 +14,9 @@ import { HttpClient } from '@angular/common/http';
 export class InsertComponent implements OnInit {
   baseUrlLocal = "http://localhost";
   baseUrlProd = "http://172.16.60.34"
+
+     EncaForm: FormGroup;
+     submitted = false;
 /* */
   constructor( public studentsService: StudentService ,private _snackBar: MatSnackBar, http:HttpClient) {
 
@@ -59,7 +62,7 @@ console.log(form.value)
 
        form.reset()
 
-       // console.log(this.studentsService.result)
+
 
 
 
@@ -77,6 +80,33 @@ this.openSnackBar("operation succeeded", "Close");
 
   ngOnInit() {
   }
+
+  getEncadreur(encadreurID : Number){
+    let  req = new XMLHttpRequest();
+    req.open('GET', this.baseUrlLocal+`:3000/api/encadreur/data/`+encadreurID, false);
+    req.send(null);
+    let data = JSON.parse(req.response)
+
+
+console.log(data)
+    return data
+  }
+
+  createForm() {
+
+
+    // this.registerForm = this.formBuilder.group({
+    //     title: ['', Validators.required],
+    //     firstName: ['', Validators.required],
+    //     lastName: ['', Validators.required],
+    //     email: ['', [Validators.required, Validators.email]],
+    //     password: ['', [Validators.required, Validators.minLength(6)]],
+    //     confirmPassword: ['', Validators.required],
+    //     acceptTerms: [false, Validators.requiredTrue]
+    // }, {
+    //     validator: MustMatch('password', 'confirmPassword')
+    // });
+}
 
 
 }

@@ -148,33 +148,5 @@ module.exports =  mongoose.model('Students',StudentSchema);
 
 
 
-/*
-{
-	 "matricule" : "12547",
-	 "nom": "safaa",
-	 "prenom":"bghjb",
-	 "dateNaissance": "2019-09-23T13:18:16.445Z",
-	  "sexe" : "sf",
-  "Ntelephone" : "+214",
-	 "dateDebut":"2019-09-23T13:18:16.445Z",
-	  "dateFin":"2019-09-23T13:18:16.445Z",
-		"email":"fvgdfvgdf@hf",
-	  "diplome":"bgvfdgfd",
-	 	 "etablissement":"tnht",
-	  "theme":"gergr",
 
-	  "typeStage":"frfrf",
- "typeRapport":"htrhtrh",
-	 "encadreur":"bhgfbgf",
-	   "affectation":"bhfgb",
-	  "wilaya":"ggrg",
-	  "NbJoursPresence":"25425",
-	 "recommandation":"hthtrhr",
-	 "attestation":"true"
-
- }
-
-
-
-*/
 

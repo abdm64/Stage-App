@@ -11,7 +11,7 @@ import { ExcelWindowComponent } from './excel-window/excel-window.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  user : String = " "
+  user : String
 
   constructor(public dialog: MatDialog ,public router: Router) {
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-    console.log(localStorage.getItem("user"))
+    
     this.user = localStorage.getItem("user") ;
   }
 

@@ -25,6 +25,7 @@
 
   require('../models/Student');
  const Students = mongoose.model( 'Students');
+ 
 
  app.use(cors())
 
@@ -65,28 +66,7 @@ app.use(bodyParser.json())
 
 
 
-//index route  which is home url =172.16.60.34:5000  because / means home
-//prepare the API
-/*
-app.get('/',(req,res)=>{
-    //dsfk
 
- res.send('api is ready start doing ur job  ')
-
-
-})
-*/
-//get all data
-/* app.get('/api/student/data',(req,res)=>{
-
-
-
-//     Students.find({}, function(err, data){
-
-//         res.send((data))
-//     });
-
-})*/
 
 app.get('/api/students/data',(req,res, next)=>{
 
@@ -99,6 +79,7 @@ app.get('/api/students/data',(req,res, next)=>{
     
   });
 })
+
 
 
 

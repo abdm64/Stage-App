@@ -3,6 +3,7 @@ const students =require('./routes/students');
 const mail =require('./routes/mail');
 const exelData = require('./routes/dataExel');
 const userRoutes = require("./routes/user");
+const encaRoutes = require("./routes/encadreur");
 const express = require('express');
 const path = require('path');
 //app.use(index);
@@ -13,6 +14,7 @@ app.use(students);
 app.use(mail)
 app.use(userRoutes);
 app.use(exelData);
+app.use(encaRoutes);
 app.use(express.static(__dirname + '/static'))
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'static/index.html'), function(err) {
