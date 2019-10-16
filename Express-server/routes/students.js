@@ -3,6 +3,7 @@
  const mongoose =require('mongoose');
  const bodyParser = require('body-parser');
  const cors = require('cors');
+ const auth = require('./auth-check')
 
 
 
@@ -68,7 +69,7 @@ app.use(bodyParser.json())
 
 
 
-app.get('/api/students/data',(req,res, next)=>{
+app.get('/api/students/data',auth, (req,res, next)=>{
 
   Students.find({}, {}, { sort: { _id :  -1} }, function(err, docs) {
     
@@ -88,7 +89,7 @@ app.get('/api/students/data',(req,res, next)=>{
 
 
 
-app.post('/api/students/insertData',(req,res)=>{
+app.post('/api/students/insertData',auth,(req,res)=>{
 
 
 
@@ -128,7 +129,7 @@ app.post('/api/students/insertData',(req,res)=>{
 
 
  //delete data by name in the by matrecule
- app.delete('/api/students/deleteData/:id',(req,res)=>{
+ app.delete('/api/students/deleteData/:id',auth,(req,res)=>{
 
     Students.deleteOne({ matricule: req.params.id }, function (err) {
         if (err) return handleError(err);
@@ -142,7 +143,7 @@ app.post('/api/students/insertData',(req,res)=>{
 
  // update data
 
- app.put("/api/students/update/:matricule",function (req,res) {
+ app.put("/api/students/update/:matricule",auth,function (req,res) {
 
    Students.findOneAndUpdate( {matricule : req.params.matricule} , req.body , {new: true} ,
 
@@ -157,7 +158,7 @@ app.post('/api/students/insertData',(req,res)=>{
   });
 
 //delete All data
-app.delete("/api/students/delete",function (req,res) {
+app.delete("/api/students/delete",auth,function (req,res) {
 
    Students.deleteMany( function (err) {
     if (err) return handleError(err), res.send(err);
@@ -189,7 +190,7 @@ app.delete("/api/students/delete",function (req,res) {
     
   });
 })
-app.get('/api/students/enc',(req,res)=>{
+app.get('/api/students/enc',auth,(req,res)=>{
   var arrayEnc = []
  
   Students.find().then(documents =>{
@@ -204,7 +205,7 @@ app.get('/api/students/enc',(req,res)=>{
 
 })
 
-app.get('/api/students/encSec',(req,res)=>{
+app.get('/api/students/encSec',auth,(req,res)=>{
   var arraySec = []
  
   Students.find().then(documents =>{
@@ -219,7 +220,7 @@ app.get('/api/students/encSec',(req,res)=>{
   )
 
   //************************** chart date debut */
-  app.get('/api/students/datedebut',(req,res)=>{
+  app.get('/api/students/datedebut',auth,(req,res)=>{
     var arraySec = []
    
     Students.find().then(documents =>{
@@ -234,7 +235,7 @@ app.get('/api/students/encSec',(req,res)=>{
     )
 
     //************************** chart date fin */
-  app.get('/api/students/datefin',(req,res)=>{
+  app.get('/api/students/datefin',auth,(req,res)=>{
     var arraySec = []
    
     Students.find().then(documents =>{

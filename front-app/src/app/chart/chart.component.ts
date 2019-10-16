@@ -68,8 +68,8 @@ export class ChartComponent implements OnInit {
                                      }
                              }
 
-              console.log(this.labelsDateDebut)
-              console.log(this.valueDateDebut)
+            //  console.log(this.labelsDateDebut)
+              //console.log(this.valueDateDebut)
 
  //bar with2 date fin
     const r = await this.getDateFinData()
@@ -90,8 +90,8 @@ export class ChartComponent implements OnInit {
 
                                      }
                              }
-              console.log(this.labelsDateFin)
-              console.log(this.valueDateFin)
+           //   console.log(this.labelsDateFin)
+            //  console.log(this.valueDateFin)
  //bar chart 1
 
     const d = await this.getSecData()
@@ -371,8 +371,7 @@ return medios
             this.valueDateFin.push(data[item].number)
 
         }
-        //console.log(this.labelsDateFin)
-        //console.log(this.valueDateFin)
+
       return true
 
       }

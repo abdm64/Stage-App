@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'insert', component: InsertComponent,canActivate : [AuthGuard] },
   { path: '', component: LoginPageComponent },
   { path: 'sign', component: SignupPageComponent },
-  { path: 'chart', component: ChartComponent }
+  { path: 'chart', component: ChartComponent, canActivate : [AuthGuard]  }
 
 
 

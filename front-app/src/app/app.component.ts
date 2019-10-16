@@ -34,20 +34,21 @@ export class AppComponent implements OnInit {
 {
   const dialogRef = this.dialog.open(ExcelWindowComponent, {
     width: '550px',
-    //data:
+  
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+
 
   });
 }
 
 logout()
 {
-  console.log("logout")
+
   localStorage.removeItem("auth");
   localStorage.removeItem("user");
+  localStorage.removeItem("token")
   this.router.navigate(['/'])
  // location.reload()
 

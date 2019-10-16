@@ -13,19 +13,15 @@ import {Router} from "@angular/router"
 
 export class AuthService {
   baseUrlLocal = "http://localhost";
- baseUrlProd = "http://172.16.60.34"
+  token = ""
     constructor(private http: HttpClient ,private router: Router){}
-    private token : string;
+
     public isLooged : false ;
 
     getToken(){
         return this.token
     }
-    setLogging(value : Boolean){
 
-
-
-    }
     get isLoged (){
 
 
@@ -55,6 +51,8 @@ login(email : string, password: string){
             this.router.navigate(['suivi'])
             localStorage.setItem("auth",'true')
             localStorage.setItem("user",authData.email)
+            localStorage.setItem("token",response.token)
+            this.token = response.token
 
 
     }, error => {

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DatePipe} from '@angular/common';
 
@@ -16,12 +16,19 @@ export class ChartService  {
 
   constructor(private http:HttpClient , private datepipe :DatePipe) { }
 
+  setHeader(){
+
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    headers = headers.set('authorization', 'Bearer ' + localStorage.getItem("token"));
+    return headers
+  }
+
 
 
 
   async getEncadreur(){
 
- let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/enc').toPromise();
+ let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/enc',   { headers: this.setHeader() }).toPromise();
  //console.log(data)
 
 return data
@@ -30,7 +37,7 @@ return data
 
 async getEncadreurSec(){
 
-  let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/encSec').toPromise();
+  let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/encSec',  { headers: this.setHeader() }).toPromise();
   //console.log(data)
 
  return data
@@ -39,7 +46,7 @@ async getEncadreurSec(){
 
  async getDateDebut(){
   var array :number[]=[]
-  var  data  =await  this.http.get(this.baseUrlLocal+':3000/api/students/datedebut').toPromise();
+  var  data  =await  this.http.get(this.baseUrlLocal+':3000/api/students/datedebut', { headers: this.setHeader() }).toPromise();
   for (let item in data){
     //console.log(this.datepipe.transform(data[item],'MM'));
 
@@ -60,7 +67,7 @@ async getEncadreurSec(){
 
  async getDateFin(){
   var array :number[]=[]
-  var  data  =await  this.http.get(this.baseUrlLocal+':3000/api/students/datefin').toPromise();
+  var  data  =await  this.http.get(this.baseUrlLocal+':3000/api/students/datefin',  { headers: this.setHeader() }).toPromise();
   for (let item in data){
     //console.log(this.datepipe.transform(data[item],'MM'));
 

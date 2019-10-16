@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
@@ -13,10 +13,16 @@ export class ExcelService {
   baseUrlLocal = "http://localhost";
   baseUrlProd = "http://172.16.60.34"
   constructor(private http:HttpClient) { }
+  setHeader(){
+
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    headers = headers.set('authorization', 'Bearer ' + localStorage.getItem("token"));
+    return headers
+  }
 
   exportEx(gte:String , lte:String){
 
-     this.http.get(this.baseUrlLocal+':3000/api/students/data/date/'+gte+'/'+lte)
+     this.http.get(this.baseUrlLocal+':3000/api/students/data/date/'+gte+'/'+lte,  { headers: this.setHeader() })
      .subscribe(
        (data: any)  => {
 
