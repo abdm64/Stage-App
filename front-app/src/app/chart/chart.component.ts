@@ -8,8 +8,7 @@ import * as Chart from 'chart.js';
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
-  baseUrlLocal = "http://localhost";
-  baseUrlProd = "http://172.16.60.34";
+
   labelsEnc :[]=[];
   valueEnc :[]=[];
   labelsSec :[]=[];

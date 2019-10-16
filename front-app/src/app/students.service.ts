@@ -8,8 +8,8 @@ import { Subject } from 'rxjs';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocal = "http://localhost";
-   baseUrlProd = "http://172.16.60.34"
+   baseUrlLocall = "http://localhost:3000/api";
+   baseUrlLocal = "http://172.16.60.34:3000/api"
 
   result : string = '#' ;
 
@@ -35,7 +35,7 @@ export class  StudentService{
 
 
 
-      this.http.get<{students:Students[]}>(this.baseUrlLocal+':3000/api/students/data',  { headers: this.setHeader() }).
+      this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data',  { headers: this.setHeader() }).
       subscribe((postData)=>{
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
@@ -55,7 +55,7 @@ export class  StudentService{
     addStudent(data: any){
 
 
-   this.http.post(this.baseUrlLocal+':3000/api/students/insertData', data,{ headers: this.setHeader() }).
+   this.http.post(this.baseUrlLocal+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
           this.result = "is ready to go" ;
           console.log(respanse)
@@ -70,7 +70,7 @@ export class  StudentService{
     }
 
     deleteStudent(matricule : Number){
-      this.http.delete(this.baseUrlLocal+':3000/api/students/deleteData/'+matricule,{ headers: this.setHeader() }).subscribe((val) => {
+      this.http.delete(this.baseUrlLocal+'/students/deleteData/'+matricule,{ headers: this.setHeader() }).subscribe((val) => {
         console.log("DELETE call successful value returned in body",
                     val);
     },
@@ -84,7 +84,7 @@ export class  StudentService{
     }
 
     updateStudent(matricule : Number,data : any){
-      this.http.put(this.baseUrlLocal+':3000/api/students/update/'+matricule, data,{ headers: this.setHeader() }).subscribe(
+      this.http.put(this.baseUrlLocal+'/students/update/'+matricule, data,{ headers: this.setHeader() }).subscribe(
         data  => {
 
           console.log("PUT Request is successful ", data);

@@ -10,8 +10,8 @@ import { DatePipe} from '@angular/common';
 
 export class ChartService  {
 
-  baseUrlLocal = "http://localhost";
-  baseUrlProd = "http://172.16.60.34"
+  baseUrlLocall = "http://localhost:3000/api/";
+  baseUrlLocal = "http://172.16.60.34:3000/api/"
   private encadreur  : any;
 
   constructor(private http:HttpClient , private datepipe :DatePipe) { }
@@ -28,7 +28,7 @@ export class ChartService  {
 
   async getEncadreur(){
 
- let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/enc',   { headers: this.setHeader() }).toPromise();
+ let  data =await  this.http.get(this.baseUrlLocal+'students/enc',   { headers: this.setHeader() }).toPromise();
  //console.log(data)
 
 return data
@@ -37,7 +37,7 @@ return data
 
 async getEncadreurSec(){
 
-  let  data =await  this.http.get(this.baseUrlLocal+':3000/api/students/encSec',  { headers: this.setHeader() }).toPromise();
+  let  data =await  this.http.get(this.baseUrlLocal+'students/encSec',  { headers: this.setHeader() }).toPromise();
   //console.log(data)
 
  return data
@@ -46,7 +46,7 @@ async getEncadreurSec(){
 
  async getDateDebut(){
   var array :number[]=[]
-  var  data  =await  this.http.get(this.baseUrlLocal+':3000/api/students/datedebut', { headers: this.setHeader() }).toPromise();
+  var  data  =await  this.http.get(this.baseUrlLocal+'students/datedebut', { headers: this.setHeader() }).toPromise();
   for (let item in data){
     //console.log(this.datepipe.transform(data[item],'MM'));
 
@@ -67,7 +67,7 @@ async getEncadreurSec(){
 
  async getDateFin(){
   var array :number[]=[]
-  var  data  =await  this.http.get(this.baseUrlLocal+':3000/api/students/datefin',  { headers: this.setHeader() }).toPromise();
+  var  data  =await  this.http.get(this.baseUrlLocal+'students/datefin',  { headers: this.setHeader() }).toPromise();
   for (let item in data){
     //console.log(this.datepipe.transform(data[item],'MM'));
 

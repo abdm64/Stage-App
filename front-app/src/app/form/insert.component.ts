@@ -14,8 +14,8 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocal = "http://localhost";
-  baseUrlProd = "http://172.16.60.34"
+  baseUrlLocall = "http://localhost:3000/api/";
+  baseUrlLocal = "http://172.16.60.34:3000/api/"
   encadreur : any = {
 
 
@@ -41,7 +41,7 @@ export class InsertComponent implements OnInit {
     var num = 0 ;
 
     let  req = new XMLHttpRequest();
-    req.open('GET', this.baseUrlLocal+`:3000/api/students/numberEnd`, false);
+    req.open('GET', this.baseUrlLocal+`students/numberEnd`, false);
 
     //
     req.send(null)
@@ -103,7 +103,7 @@ this.openSnackBar("operation succeeded", "Close");
 
   getEncadreur(encadreurID : Number){
     let  req = new XMLHttpRequest();
-    req.open('GET', this.baseUrlLocal+`:3000/api/encadreur/data/`+encadreurID, false);
+    req.open('GET', this.baseUrlLocal+`encadreur/data/`+encadreurID, false);
     req.send(null);
     let data = JSON.parse(req.response)
    // this.encadreur = data

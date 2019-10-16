@@ -12,7 +12,8 @@ import {Router} from "@angular/router"
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocal = "http://localhost";
+  baseUrlLocall = "http://localhost:3000/api/";
+  baseUrlLocal = "http://172.16.60.34:3000/api"
   token = ""
     constructor(private http: HttpClient ,private router: Router){}
 
@@ -33,7 +34,7 @@ createUser(email : string, password: string){
         email: email, password : password
     }
 
-    this.http.post(this.baseUrlLocal+':3000/api/user/sign', authData).subscribe(response => {
+    this.http.post(this.baseUrlLocal+'/user/sign', authData).subscribe(response => {
 
     console.log(response);
     })
@@ -47,7 +48,7 @@ login(email : string, password: string){
         email: email, password : password
     }
 
-    this.http.post<{token : string}>(this.baseUrlLocal+':3000/api/user/login', authData).subscribe(response => {
+    this.http.post<{token : string}>(this.baseUrlLocal+'/user/login', authData).subscribe(response => {
             this.router.navigate(['suivi'])
             localStorage.setItem("auth",'true')
             localStorage.setItem("user",authData.email)
