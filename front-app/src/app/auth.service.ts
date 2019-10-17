@@ -12,8 +12,8 @@ import {Router} from "@angular/router"
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocal = "http://localhost:3000/api";
-  baseUrlLocalp = "http://172.16.60.34:3000/api"
+  baseUrlLocalp = "http://localhost:3000/api";
+  baseUrlLocal = "http://172.16.60.34:3000/api"
   token = ""
     constructor(private http: HttpClient ,private router: Router){}
 

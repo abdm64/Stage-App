@@ -1025,8 +1025,8 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrlLocal = "http://localhost:3000/api";
-        this.baseUrlLocalp = "http://172.16.60.34:3000/api";
+        this.baseUrlLocalp = "http://localhost:3000/api";
+        this.baseUrlLocal = "http://172.16.60.34:3000/api";
         this.token = "";
     }
     AuthService.prototype.getToken = function () {
