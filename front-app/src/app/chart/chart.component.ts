@@ -9,14 +9,14 @@ import * as Chart from 'chart.js';
 })
 export class ChartComponent implements OnInit {
 
-  labelsEnc :[]=[];
-  valueEnc :[]=[];
-  labelsSec :[]=[];
-  valueSec :[]=[];
-  labelsDateDebut :[]=[];
-  valueDateDebut :[]=[];
-  labelsDateFin :[]=[];
-  valueDateFin :[]=[];
+  labelsEnc :string[]=[];
+  valueEnc :number[]=[];
+  labelsSec :string[]=[];
+  valueSec :number[]=[];
+  labelsDateDebut :string[]=[];
+  valueDateDebut :number[]=[];
+  labelsDateFin :string[]=[];
+  valueDateFin :number[]=[];
   BarChart : any;
   PieChart : any;
 
@@ -52,8 +52,8 @@ export class ChartComponent implements OnInit {
     const x = await this.getDateDebutData()
     const y = await this.getNamesDateDebut()
     const z = await console.log(this.labelsDateDebut)
-    var arrl : number[] = this.labelsDateDebut
-    var arrv : number[] = this.valueDateDebut
+    var arrl : any[] = this.labelsDateDebut
+    var arrv : any[] = this.valueDateDebut
 
 
     for(let i =1 ; i<=12;i++){
@@ -74,8 +74,8 @@ export class ChartComponent implements OnInit {
     const r = await this.getDateFinData()
     const s = await this.getNamesDateFin()
     const t = await console.log(this.labelsDateFin)
-    var arrlf : number[] = this.labelsDateFin
-    var arrvf : number[] = this.valueDateFin
+    var arrlf : any[] = this.labelsDateFin
+    var arrvf : any[] = this.valueDateFin
 
 
     for(let i =1; i<=12;i++){
@@ -181,7 +181,7 @@ export class ChartComponent implements OnInit {
       display:true
     },
     responsive: false,
-    display: true
+    //display: true
   }
     });
 
@@ -224,8 +224,10 @@ return medios
 
 
  async getNamesEnc(){
-   var data = await this.getEncData()
+   // tslint:disable-next-line: prefer-const
+   const data = await this.getEncData()
   // console.log(data)
+
   for (let  item in data){
 
         this.labelsEnc.push(data[item].name)

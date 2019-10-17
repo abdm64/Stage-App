@@ -23,6 +23,292 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-SG": "./node_modules/moment/locale/en-SG.js",
+	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -32,7 +318,20 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"content-container\">\n    <a #redirect href=\"https://github.com/mahmoudBens/Nomenclature-des-medicaments-en-algerie\" style=\"display: none \"></a>\n    <mat-toolbar [color]=\"'primary'\" class=\"toolbar\" style=\"max-width:50000px;\">\n        <div class=\"toolbar-container\">\n            <span>RH Project</span>\n            <div class=\"navs\">\n\n                <button routerLinkActive=\"active\" mat-button routerLink=\"/insert\">Insert</button>\n\n                <button mat-button routerLink=\"/suivi\">Manage</button>\n                <button mat-button (click)=\"export()\">Export</button>\n\n\n\n            </div>\n        </div>\n    </mat-toolbar>\n\n\n\n\n    <router-outlet></router-outlet>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n\n<div class=\"content-container\">\n<!--\n\n    <mat-toolbar [color]=\"'primary'\" class=\"toolbar\" style=\"max-width:50000px;\">\n        <div class=\"toolbar-container\">\n            <span>RH Project</span>\n            <div class=\"navs\">\n\n                <button routerLinkActive=\"active\" mat-button routerLink=\"/insert\"><mat-icon>add</mat-icon></button>\n\n                <button mat-button routerLink=\"/suivi\">\n                  <mat-icon>home</mat-icon>\n                 </button>\n                <button mat-button (click)=\"export()\">Export</button>\n\n                <button mat-button  (click)=\"logout()\"  >\n                    <mat-icon>exit_to_app</mat-icon>\n\n                  </button>\n\n\n\n            </div>\n        </div>\n    </mat-toolbar>\n\n -->\n\n <mat-toolbar color=\"primary\">\n    <span class=\"fill-remaining-space\">\n      <button mat-icon-button [matMenuTriggerFor]=\"menu\" #menuTrigger=\"matMenuTrigger\" (mouseover)=\"menuTrigger.openMenu()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n      <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n      <span (mouseleave)=\"menuTrigger.closeMenu()\">\n          <button mat-menu-item >\n              <mat-icon>person_pin</mat-icon>\n            <span>{{ user }}</span>\n          </button>\n        <button mat-menu-item routerLink=\"/suivi\">\n          <mat-icon>home</mat-icon>\n          <span>Home</span>\n        </button>\n        <button mat-menu-item routerLink=\"/insert\" >\n          <mat-icon>add</mat-icon>\n          <span>ADD</span>\n        </button>\n        <button mat-menu-item  routerLink=\"/chart\">\n          <mat-icon>dashboard</mat-icon>\n          <span>DASHBOARD</span>\n        </button>\n        <button mat-menu-item  (click)=\"export()\">\n            <mat-icon>cloud_download</mat-icon>\n            <span>EXPORT FOR EXEL</span>\n          </button>\n        <button mat-menu-item (click)=\"logout()\" >\n          <mat-icon>exit_to_app</mat-icon>\n          <span>Logout</span>\n        </button>\n      </span>\n      </mat-menu>\n    </span>\n    <span class=\"fill-remaining-space\">Gestion de Stagiere</span>\n    <img class=\"logo-image\" src=\"../assets/logo.png\">\n    \n  </mat-toolbar>\n\n\n\n\n\n    <router-outlet></router-outlet>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chart/chart.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chart/chart.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"widows: 750px;\">\n \n    <div class=\"card mb-5 wow fadeInUp\" data-wow-delay=\".4s\">\n        <div class=\"card-body p-5\">\n          \n            \n \n  <h2 style=\"font-size:2rem\">\n      The distribution of trainees by sector</h2>\n  <canvas id=\"barChart\" width=\"600\" height=\"223\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n            \n          \n        </div>\n        </div>\n\n        <div class=\"card mb-5 wow fadeInUp\" data-wow-delay=\".4s\">\n            <div class=\"card-body p-5\">\n  <h2 style=\"font-size:2rem\">\n      The distribution of trainees according to the supervisors </h2>\n  <canvas id=\"pieChart\" width=\"950\" height=\"573\" class=\"chartjs-render-monitor\" style=\"display:block; \"></canvas>\n            </div>\n        </div>\n</div>\n\n\n\n\n\n\n\n\n<div class=\"card mb-5 wow fadeInUp\" data-wow-delay=\".4s\">\n    <div class=\"card-body p-5\">\n  <div style=\"display: block\">\n    <h2 style=\"font-size:2rem\">The number of trainees according to the dates of each month</h2>\n    <canvas baseChart\n            [datasets]=\"barChartData\"\n            [labels]=\"barChartLabels\"\n            [options]=\"barChartOptions\"\n            [legend]=\"barChartLegend\"\n            [chartType]=\"barChartType\">\n    </canvas>\n  </div>\n    </div>\n</div>\n\n");
 
 /***/ }),
 
@@ -45,7 +344,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--h1 mat-dialog-title>Hi </h1>\r\n<div mat-dialog-content>\r\n\r\n\r\n<div mat-dialog-actions>\r\n  <button mat-button (click)=\"onNoClick()\">No Thanks</button>\r\n  <button mat-button  cdkFocusInitial>Ok</button>\r\n</div>\r\n-->\r\n<div class=\"md-dialog-container\">\r\n\r\n\r\n\r\n\r\n<form  [formGroup]=\"angForm\" >\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n\r\n    <div class=\"col\">\r\n\r\n\r\n    <mat-card class = \"information\">\r\n    <div >\r\n\r\n\r\n\r\n      <h1 color = \"primary\">Persenal information</h1>\r\n    <mat-form-field >\r\n      <input matInput placeholder=\"NOM\" name=\"nom\"  [value]=\"student.nom\"  formControlName=\"nom\"   >\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"PRENOM\" name=\"prenom\" [value]=\"student.prenom\" formControlName=\"prenom\">\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n        <mat-select placeholder=\"SEXE\" name = \"sexe\" [value]=\"student.sexe\" formControlName=\"sexe\" >\r\n          <mat-option value=\"HOMME\">HOMME</mat-option>\r\n          <mat-option value=\"FEMME\">FEMME</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [matDatepicker]=\"picker\" placeholder=\"DATE DE NAISSANCE\" name=\"dateNaissance\" [value]=\"student.dateNaissance\"  formControlName=\"dateNaissance\" >\r\n        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n        <mat-datepicker #picker></mat-datepicker>\r\n      </mat-form-field>\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"WILAYA\" name=\"wilaya\"  [value]=\"student.wilaya\" formControlName=\"wilaya\">\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"N° DE TÉLÉPHONE\" name=\"nTelephone\"  [value]=\"student.nTelephone\" formControlName=\"nTelephone\">\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"ADRESSE MAIL\" name=\"email\"  [value]=\"student.email\"  formControlName=\"email\">\r\n    </mat-form-field>\r\n\r\n  </div>\r\n\r\n\r\n  </mat-card>\r\n\r\n  </div>\r\n  <div class=\"col\">\r\n\r\n  <mat-card >\r\n\r\n    <div class=\"example-container\">\r\n        <h1>Stage information</h1>\r\n\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"ETABLISSEMENT\"  name=\"etablissement\"  [value]=\"student.etablissement\" formControlName=\"etablissement\" >\r\n        </mat-form-field>\r\n\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"DIPLÔME PREPARÉ\"  name=\"diplome\" [value]=\"student.diplome\" formControlName=\"diplome\">\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n          <input matInput placeholder=\"THEME DU STAGE\" name=\"theme\" [value]=\"student.theme\" formControlName=\"theme\" >\r\n        </mat-form-field>\r\n\r\n\r\n      <div class=\"row\">\r\n          <mat-form-field class=\"col-6\">\r\n              <mat-select placeholder=\"TYPE DE STAGE\" name=\"typeStage\" [value]=\"student.typeStage\" formControlName=\"typeStage\" >\r\n                <mat-option value=\"Projet de fin d'etude\">Projet de fin d'études</mat-option>\r\n                <mat-option value=\"Stage de découverte\">Stage de découverte</mat-option>\r\n                <mat-option value=\"Stage rémunéré\">Stage rémunéré</mat-option>\r\n              </mat-select>\r\n            </mat-form-field>\r\n      <mat-form-field class=\"col-6\">\r\n          <mat-select placeholder=\"TYPE DE RAPPORT\" name=\"typeRapport\" [value]=\"student.typeRapport\"  formControlName=\"typeRapport\"  >\r\n            <mat-option value=\"Rapport\">Rapport</mat-option>\r\n            <mat-option value=\"Memoire\">Mémoire</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n\r\n        </div>\r\n  <div class=\"row\">\r\n        <mat-form-field class=\"col-6\">\r\n            <input matInput [matDatepicker]=\"debut\" placeholder=\"DATE DEBUT\" name=\"dateDebut\" [value]=\"student.dateDebut\" formControlName=\"dateDebut\" >\r\n            <mat-datepicker-toggle matSuffix [for]=\"debut\"></mat-datepicker-toggle>\r\n            <mat-datepicker #debut></mat-datepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field class=\"col-6\">\r\n              <input matInput [matDatepicker]=\"fin\" placeholder=\"DATE FIN\"  name=\"dateFin\" [value]=\"student.dateFin\" formControlName=\"dateFin\" >\r\n              <mat-datepicker-toggle matSuffix [for]=\"fin\"></mat-datepicker-toggle>\r\n              <mat-datepicker #fin></mat-datepicker>\r\n            </mat-form-field>\r\n  </div>\r\n\r\n      <mat-form-field>\r\n\r\n        <mat-select placeholder=\"Nombre de passage par semaine\" name=\"nbJoursPresence\"  [value]=\"student.nbJoursPresence\" formControlName=\"nbJoursPresence\">\r\n            <mat-option value=\"1\">1</mat-option>\r\n            <mat-option value=\"2\">2</mat-option>\r\n            <mat-option value=\"3\">3</mat-option>\r\n            <mat-option value=\"4\">4</mat-option>\r\n          </mat-select>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"RECOMENDATION\" name=\"recommandation\" [value]=\"student.recommandation\" formControlName=\"recommandation\" >\r\n      </mat-form-field>\r\n\r\n\r\n    </div>\r\n\r\n  </mat-card>\r\n\r\n  </div>\r\n  <div class=\"col\">\r\n\r\n  <mat-card  >\r\n\r\n    <div class=\"example-container\">\r\n        <h1>Encadreur information </h1>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"NOM\"  name=\"encadreur\" [value]=\"student.encadreur\" formControlName=\"encadreur\" >\r\n      </mat-form-field>\r\n\r\n\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"IDENTIFIENT\" name=\"encadreurID\" [value]=\"student.encadreurID\"  formControlName=\"encadreurID\">\r\n      </mat-form-field>\r\n\r\n\r\n      <mat-form-field>\r\n          <input matInput placeholder=\"EMAIL \" name=\"encadreurmMail\" [value]=\"student.encadreurmMail\" formControlName=\"encadreurmMail\" >\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"DEPARTEMENT\" name=\"encadreurDEP\" [value]=\"student.encadreurDEP\" formControlName=\"encadreurDEP\" >\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"SECTEUR\" name=\"encadreurSec\" [value]=\"student.encadreurSec\" formControlName=\"encadreurSec\" >\r\n        </mat-form-field>\r\n\r\n\r\n          <mat-form-field>\r\n          <mat-select placeholder=\"FONCTION\" name=\"encadreurmOrg\"  [value]=\"student.encadreurmOrg\" formControlName=\"encadreurmOrg\"  >\r\n              <mat-option value=\"manager\">Manager</mat-option>\r\n              <mat-option value=\"Team Leader\">Team Leader</mat-option>\r\n              <mat-option value=\"Superviseur\">Superviseur</mat-option>\r\n              <mat-option value=\"Enginner\">Enginner</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n          <mat-form-field>\r\n            <mat-select placeholder=\"ATTESTATION DE STAGE\" name= \"attestation\" [value]=\"student.attestation\" formControlName=\"attestation\" >\r\n                <mat-option value=\"true\" >OUI</mat-option>\r\n                <mat-option value=\"false\">NO</mat-option>\r\n\r\n              </mat-select>\r\n            </mat-form-field>\r\n\r\n\r\n                <input matInput placeholder=\"\"   [hidden]=\"true\" name=\"matricule\" formControlName=\"matricule\" >\r\n\r\n    </div>\r\n\r\n  </mat-card>\r\n\r\n  </div>\r\n  </div>\r\n  <div class=\"row\" style=\"margin-top:10px\">\r\n    <div class=\"col-4\"> </div>\r\n    <div class=\"col-4\">  </div>\r\n    <div class=\"col-4\">\r\n      <div class=\"row\">\r\n          <div class=col-4 > </div>\r\n          <div class=col-4 > </div>\r\n\r\n          <div class=col-4 >  <button mat-flat-button color=\"primary\" type= \"submit\" (click) = \"onClickSubmit()\" >CONFIRM</button> </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n\r\n  </div>\r\n\r\n  </form>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--h1 mat-dialog-title>Hi </h1>\r\n<div mat-dialog-content>\r\n\r\n\r\n<div mat-dialog-actions>\r\n  <button mat-button (click)=\"onNoClick()\">No Thanks</button>\r\n  <button mat-button  cdkFocusInitial>Ok</button>\r\n</div>\r\n-->\r\n<div class=\"md-dialog-container\">\r\n\r\n\r\n\r\n\r\n    <form  [formGroup]=\"angForm\" >\r\n      <div class=\"container\">\r\n        <div class=\"row\">\r\n\r\n        <div class=\"col\">\r\n\r\n\r\n        <mat-card class = \"information\">\r\n        <div >\r\n\r\n\r\n\r\n          <h1 color = \"primary\">Persenal information</h1>\r\n        <mat-form-field >\r\n          <input matInput placeholder=\"NOM\" name=\"nom\"  [value]=\"student.nom\"  formControlName=\"nom\"   >\r\n        </mat-form-field>\r\n\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"PRENOM\" name=\"prenom\" [value]=\"student.prenom\" formControlName=\"prenom\">\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n            <mat-select placeholder=\"SEXE\" name = \"sexe\" [value]=\"student.sexe\" formControlName=\"sexe\" >\r\n              <mat-option value=\"HOMME\">HOMME</mat-option>\r\n              <mat-option value=\"FEMME\">FEMME</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n        <mat-form-field>\r\n            <input matInput [matDatepicker]=\"picker\" placeholder=\"DATE DE NAISSANCE\" name=\"dateNaissance\" [value]=\"student.dateNaissance\"  formControlName=\"dateNaissance\" >\r\n            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #picker></mat-datepicker>\r\n          </mat-form-field>\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"WILAYA\" name=\"wilaya\"  [value]=\"student.wilaya\" formControlName=\"wilaya\">\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"N° DE TÉLÉPHONE\" name=\"nTelephone\"  [value]=\"student.nTelephone\" formControlName=\"nTelephone\">\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"ADRESSE MAIL\" name=\"email\"  [value]=\"student.email\"  formControlName=\"email\">\r\n        </mat-form-field>\r\n\r\n      </div>\r\n\r\n\r\n      </mat-card>\r\n\r\n      </div>\r\n      <div class=\"col\">\r\n\r\n      <mat-card >\r\n\r\n        <div class=\"example-container\">\r\n            <h1>Stage information</h1>\r\n\r\n            <mat-form-field>\r\n              <input matInput placeholder=\"ETABLISSEMENT\"  name=\"etablissement\"  [value]=\"student.etablissement\" formControlName=\"etablissement\" >\r\n            </mat-form-field>\r\n\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"DIPLÔME PREPARÉ\"  name=\"diplome\" [value]=\"student.diplome\" formControlName=\"diplome\">\r\n          </mat-form-field>\r\n          <mat-form-field>\r\n              <input matInput placeholder=\"THEME DU STAGE\" name=\"theme\" [value]=\"student.theme\" formControlName=\"theme\" >\r\n            </mat-form-field>\r\n\r\n\r\n          <div class=\"row\">\r\n              <mat-form-field class=\"col-6\">\r\n                  <mat-select placeholder=\"TYPE DE STAGE\" name=\"typeStage\" [value]=\"student.typeStage\" formControlName=\"typeStage\" >\r\n                    <mat-option value=\"Projet de fin d'etude\">Projet de fin d'études</mat-option>\r\n                    <mat-option value=\"Stage de découverte\">Stage de découverte</mat-option>\r\n                    <mat-option value=\"Stage rémunéré\">Stage rémunéré</mat-option>\r\n                  </mat-select>\r\n                </mat-form-field>\r\n          <mat-form-field class=\"col-6\">\r\n              <mat-select placeholder=\"TYPE DE RAPPORT\" name=\"typeRapport\" [value]=\"student.typeRapport\"  formControlName=\"typeRapport\"  >\r\n                <mat-option value=\"Rapport\">Rapport</mat-option>\r\n                <mat-option value=\"Memoire\">Mémoire</mat-option>\r\n              </mat-select>\r\n            </mat-form-field>\r\n\r\n\r\n            </div>\r\n      <div class=\"row\">\r\n            <mat-form-field class=\"col-6\">\r\n                <input matInput [matDatepicker]=\"debut\" placeholder=\"DATE DEBUT\" name=\"dateDebut\" [value]=\"student.dateDebut\" formControlName=\"dateDebut\" >\r\n                <mat-datepicker-toggle matSuffix [for]=\"debut\"></mat-datepicker-toggle>\r\n                <mat-datepicker #debut></mat-datepicker>\r\n              </mat-form-field>\r\n\r\n              <mat-form-field class=\"col-6\">\r\n                  <input matInput [matDatepicker]=\"fin\" placeholder=\"DATE FIN\"  name=\"dateFin\" [value]=\"student.dateFin\" formControlName=\"dateFin\" >\r\n                  <mat-datepicker-toggle matSuffix [for]=\"fin\"></mat-datepicker-toggle>\r\n                  <mat-datepicker #fin></mat-datepicker>\r\n                </mat-form-field>\r\n      </div>\r\n\r\n          <mat-form-field>\r\n\r\n            <mat-select placeholder=\"Nombre de passage par semaine\" name=\"nbJoursPresence\"  [value]=\"student.nbJoursPresence\" formControlName=\"nbJoursPresence\">\r\n                <mat-option value=\"1\">1</mat-option>\r\n                <mat-option value=\"2\">2</mat-option>\r\n                <mat-option value=\"3\">3</mat-option>\r\n                <mat-option value=\"4\">4</mat-option>\r\n              </mat-select>\r\n          </mat-form-field>\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"RECOMENDATION\" name=\"recommandation\" [value]=\"student.recommandation\" formControlName=\"recommandation\" >\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n\r\n      </mat-card>\r\n\r\n      </div>\r\n      <div class=\"col\">\r\n\r\n      <mat-card  >\r\n\r\n        <div class=\"example-container\">\r\n            <h1>Encadreur information </h1>\r\n\r\n          <mat-form-field>\r\n              <input matInput placeholder=\"IDENTIFIENT\" name=\"encadreurID\" [value]=\"student.encadreurID\"  formControlName=\"encadreurID\">\r\n            </mat-form-field>\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"NOM\"  name=\"encadreur\" [value]=\"student.encadreur\" formControlName=\"encadreur\" >\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n          <mat-form-field>\r\n              <input matInput placeholder=\"EMAIL \" name=\"encadreurmMail\" [value]=\"student.encadreurmMail\" formControlName=\"encadreurmMail\" >\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n              <input matInput placeholder=\"DEPARTEMENT\" name=\"encadreurDEP\" [value]=\"student.encadreurDEP\" formControlName=\"encadreurDEP\" >\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n              <input matInput placeholder=\"SECTEUR\" name=\"encadreurSec\" [value]=\"student.encadreurSec\" formControlName=\"encadreurSec\" >\r\n            </mat-form-field>\r\n\r\n\r\n              <mat-form-field>\r\n              <input matInput placeholder=\"FONCTION\" name=\"encadreurmOrg\"  [value]=\"student.encadreurmOrg\" formControlName=\"encadreurmOrg\"  >\r\n\r\n\r\n              </mat-form-field>\r\n              <mat-form-field>\r\n                <mat-select placeholder=\"ATTESTATION DE STAGE\" name= \"attestation\" [value]=\"student.attestation\" formControlName=\"attestation\" >\r\n                    <mat-option value=\"true\" >OUI</mat-option>\r\n                    <mat-option value=\"false\">NO</mat-option>\r\n\r\n                  </mat-select>\r\n                </mat-form-field>\r\n\r\n\r\n                    <input matInput placeholder=\"\"   [hidden]=\"true\" name=\"matricule\" formControlName=\"matricule\" >\r\n\r\n        </div>\r\n\r\n      </mat-card>\r\n\r\n      </div>\r\n      </div>\r\n      <div class=\"row\" style=\"margin-top:10px\">\r\n        <div class=\"col-4\"> </div>\r\n        <div class=\"col-4\">  </div>\r\n        <div class=\"col-4\">\r\n          <div class=\"row\">\r\n              <div class=col-4 > </div>\r\n              <div class=col-4 > </div>\r\n\r\n              <div class=col-4 >  <button mat-flat-button color=\"primary\" type= \"submit\" (click) = \"onClickSubmit()\" >CONFIRM</button> </div>\r\n\r\n\r\n          </div>\r\n          <div class=col-3 >  <button mat-flat-button color=\"warn\" type= \"submit\" (click) = \"cancelOperation()\" >cancel</button> </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n      </div>\r\n\r\n      </form>\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/encadreur/encadreur.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/encadreur/encadreur.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 mat-dialog-title>Encadreur information </h1>\n<div mat-dialog-content>\n  <p href=\"#!red\">encadreur :  {{ data.Last_Name + \" \" + data.First_name}} </p>\n  <p>Sector :  {{ data.Sector }} </p>\n  <p>Departement :  {{ data.Departement }} </p>\n  <p>Position :  {{ data.Position }} </p>\n  <p>Email :  {{ data.Email_Address }} </p>\n\n\n\n</div>\n<div mat-dialog-actions>\n  <div class=\"row\">\n    <div class=\"col-4\"> </div>\n\n\n    <div class=col-4>  </div>\n    <div class=\"col-4\">\n      <div> </div>\n\n      <button mat-button (click)=\"noDelete()\">Close</button>\n      <button mat-button (click)=\" onConfirmClick()\">Confirm</button>\n\n    </div>\n\n\n</div>\n\n</div>\n\n");
 
 /***/ }),
 
@@ -58,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<h1 mat-dialog-title>Hi </h1>\n<div mat-dialog-content>\n  <p></p>\n  <form #exportForm=\"ngForm\" >\n  <div class=\"row\">\n    <mat-form-field class=\"col-6\">\n        <input matInput [matDatepicker]=\"debut\" placeholder=\"DATE DEBUT\"  name=\"dateDebut\" ngModel>\n        <mat-datepicker-toggle matSuffix [for]=\"debut\"></mat-datepicker-toggle>\n        <mat-datepicker #debut></mat-datepicker>\n      </mat-form-field>\n\n      <mat-form-field class=\"col-6\">\n          <input matInput [matDatepicker]=\"fin\" placeholder=\"DATE FIN\"  name=\"dateFin\" ngModel>\n          <mat-datepicker-toggle matSuffix [for]=\"fin\"></mat-datepicker-toggle>\n          <mat-datepicker #fin></mat-datepicker>\n        </mat-form-field>\n\n</div></form>\n</div>\n<div mat-dialog-actions>\n  <button mat-button (click)=\"export(exportForm)\">Export</button>\n  <button mat-button  cdkFocusInitial>Ok</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<h1 mat-dialog-title></h1>\n<div mat-dialog-content>\n  <p>Please Choose a range time</p>\n  <form #exportForm=\"ngForm\" >\n  <div class=\"row\">\n    <mat-form-field class=\"col-6\">\n        <input matInput [matDatepicker]=\"debut\" placeholder=\"DATE DEBUT\"  name=\"dateDebut\" ngModel>\n        <mat-datepicker-toggle matSuffix [for]=\"debut\"></mat-datepicker-toggle>\n        <mat-datepicker #debut></mat-datepicker>\n      </mat-form-field>\n\n      <mat-form-field class=\"col-6\">\n          <input matInput [matDatepicker]=\"fin\" placeholder=\"DATE FIN\"  name=\"dateFin\" ngModel>\n          <mat-datepicker-toggle matSuffix [for]=\"fin\"></mat-datepicker-toggle>\n          <mat-datepicker #fin></mat-datepicker>\n        </mat-form-field>\n\n</div></form>\n</div>\n<div mat-dialog-actions>\n  <button mat-button (click)=\"export(exportForm)\">Export</button>\n  <button mat-button  cdkFocusInitial>Ok</button>\n</div>\n");
 
 /***/ }),
 
@@ -84,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n\n<form  #postForm=\"ngForm\" (ngSubmit)=\"onAddPost(postForm)\">\n<div class=\"container\">\n  <div class=\"row\">\n\n  <div class=\"col\">\n\n\n  <mat-card class = \"information\">\n  <div >\n\n\n\n    <h1 color = \"primary\">Personal informations</h1>\n  <mat-form-field >\n    <input matInput placeholder = \"NOM\" name=\"nom\" required ngModel>\n  </mat-form-field>\n\n  <mat-form-field>\n    <input matInput placeholder=\"PRENOM\" name=\"prenom\" required  ngModel>\n  </mat-form-field>\n  <mat-form-field>\n      <mat-select placeholder=\"SEXE\" name = \"sexe\" required  ngModel>\n        <mat-option value=\"HOMME\">HOMME</mat-option>\n        <mat-option value=\"FEMME\">FEMME</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  <mat-form-field>\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"DATE DE NAISSANCE\" name=\"dateNaissance\"   required  ngModel >\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker #picker></mat-datepicker>\n    </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"WILAYA\" name=\"wilaya\"  required ngModel>\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"N° DE TÉLÉPHONE\" name=\"nTelephone\" required  ngModel>\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"ADRESSE MAIL\" name=\"email\" required  ngModel >\n  </mat-form-field>\n\n</div>\n\n\n</mat-card>\n\n</div>\n<div class=\"col\">\n\n<mat-card >\n\n  <div class=\"example-container\">\n      <h1>Stage informations</h1>\n\n      <mat-form-field>\n        <input matInput placeholder=\"ETABLISSEMENT\"  name=\"etablissement\" required  ngModel>\n      </mat-form-field>\n\n    <mat-form-field>\n      <input matInput placeholder=\"DIPLÔME PREPARÉ\"  name=\"diplome\" required  ngModel>\n    </mat-form-field>\n    <mat-form-field>\n        <input matInput placeholder=\"THEME DU STAGE\" name=\"theme\" required  ngModel >\n      </mat-form-field>\n\n\n    <div class=\"row\">\n        <mat-form-field class=\"col-6\">\n            <mat-select placeholder=\"TYPE DE STAGE\" name=\"typeStage\" required  ngModel>\n              <mat-option value=\"Projet de fin d'etude\">Projet de fin d'études</mat-option>\n              <mat-option value=\"Stage de découverte\">Stage de découverte</mat-option>\n              <mat-option value=\"Stage rémunéré\">Stage rémunéré</mat-option>\n            </mat-select>\n          </mat-form-field>\n    <mat-form-field class=\"col-6\">\n        <mat-select placeholder=\"TYPE DE RAPPORT\" name=\"typeRapport\" required  ngModel >\n          <mat-option value=\"Rapport\">Rapport</mat-option>\n          <mat-option value=\"Memoire\">Mémoire</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n      </div>\n<div class=\"row\">\n      <mat-form-field class=\"col-6\">\n          <input matInput [matDatepicker]=\"debut\" placeholder=\"DATE DEBUT\" name=\"dateDebut\"  required  ngModel>\n          <mat-datepicker-toggle matSuffix [for]=\"debut\"></mat-datepicker-toggle>\n          <mat-datepicker #debut></mat-datepicker>\n        </mat-form-field>\n\n        <mat-form-field class=\"col-6\">\n            <input matInput [matDatepicker]=\"fin\" placeholder=\"DATE FIN\"  name=\"dateFin\" required  ngModel>\n            <mat-datepicker-toggle matSuffix [for]=\"fin\"></mat-datepicker-toggle>\n            <mat-datepicker #fin></mat-datepicker>\n          </mat-form-field>\n</div>\n\n    <mat-form-field>\n\n      <mat-select placeholder=\"Nombre de passage par semaine\" name=\"nbJoursPresence\" required  ngModel >\n          <mat-option value=\"1\">1</mat-option>\n          <mat-option value=\"2\">2</mat-option>\n          <mat-option value=\"3\">3</mat-option>\n          <mat-option value=\"4\">4</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <mat-form-field>\n      <input matInput placeholder=\"RECOMENDATION\" name=\"recommandation\" required  ngModel >\n    </mat-form-field>\n\n\n  </div>\n\n</mat-card>\n\n</div>\n<div class=\"col\">\n\n<mat-card  >\n\n  <div class=\"example-container\">\n      <h1>Encadreur informations </h1>\n    <mat-form-field>\n      <input matInput placeholder=\"NOM\"  name=\"encadreur\" required  ngModel >\n    </mat-form-field>\n\n\n    <mat-form-field>\n      <input matInput placeholder=\"IDENTIFIENT\" name=\"encadreurID\"  required ngModel >\n    </mat-form-field>\n\n\n    <mat-form-field>\n        <input matInput placeholder=\"EMAIL \" name=\"encadreurmMail\"  required ngModel >\n      </mat-form-field>\n      <mat-form-field>\n        <input matInput placeholder=\"DEPARTEMENT\" name=\"encadreurDEP\" required  ngModel >\n      </mat-form-field>\n      <mat-form-field>\n        <input matInput placeholder=\"SECTEUR\" name=\"encadreurSec\" required  ngModel >\n      </mat-form-field>\n\n\n        <mat-form-field>\n        <mat-select placeholder=\"FONCTION\" name=\"encadreurmOrg\" required  ngModel >\n            <mat-option value=\"manager\">Manager</mat-option>\n            <mat-option value=\"Team Leader\">Team Leader</mat-option>\n            <mat-option value=\"Superviseur\">Superviseur</mat-option>\n            <mat-option value=\"Enginner\">Enginner</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <mat-form-field>\n          <mat-select placeholder=\"ATTESTATION DE STAGE\" name= \"attestation\" required  ngModel>\n              <mat-option value=\"true\" >OUI</mat-option>\n              <mat-option value=\"false\">NO</mat-option>\n\n            </mat-select>\n          </mat-form-field>\n\n\n              <input matInput placeholder=\"\"   [hidden]=\"true\" name=\"matricule\" ngModel >\n\n  </div>\n\n</mat-card>\n\n</div>\n</div>\n<div class=\"row\" >\n  <div class=\"col-4\" >\n</div>\n<div class=\"col-4\"> </div>\n<div class=\"col-4\">  <button mat-flat-button color=\"primary\"  type=\"submit\" >SAVE</button> </div>\n</div>\n\n\n</div>\n\n</form>\n\n\n\n\n\n\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n\n<form  #postForm=\"ngForm\" (ngSubmit)=\"onAddPost(postForm)\">\n<div class=\"container\">\n  <div class=\"row\">\n\n  <div class=\"col\">\n\n\n  <mat-card class = \"information\">\n  <div >\n\n\n\n    <h1 color = \"primary\">Personal informations</h1>\n  <mat-form-field >\n    <input matInput placeholder = \"NOM\" name=\"nom\" required ngModel>\n  </mat-form-field>\n\n  <mat-form-field>\n    <input matInput placeholder=\"PRENOM\" name=\"prenom\" required  ngModel>\n  </mat-form-field>\n  <mat-form-field>\n      <mat-select placeholder=\"SEXE\" name = \"sexe\" required  ngModel>\n        <mat-option value=\"HOMME\">HOMME</mat-option>\n        <mat-option value=\"FEMME\">FEMME</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  <mat-form-field>\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"DATE DE NAISSANCE\" name=\"dateNaissance\"   required  ngModel >\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker #picker></mat-datepicker>\n    </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"WILAYA\" name=\"wilaya\"  required ngModel>\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"N° DE TÉLÉPHONE\" name=\"nTelephone\" required  ngModel>\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"ADRESSE MAIL\" name=\"email\" required  ngModel >\n  </mat-form-field>\n\n</div>\n\n\n</mat-card>\n<mat-card>\n\n    <button mat-stroked-button color=\"white\"  type=\"button\" (click)=\"filePicker.click()\">upload image ...</button>\n    <input type =\"file\"#filePicker>\n\n\n</mat-card>\n\n</div>\n<div class=\"col\">\n\n<mat-card >\n\n  <div class=\"example-container\">\n      <h1>Stage informations</h1>\n\n      <mat-form-field>\n        <input matInput placeholder=\"ETABLISSEMENT\"  name=\"etablissement\" required  ngModel>\n      </mat-form-field>\n\n    <mat-form-field>\n      <input matInput placeholder=\"DIPLÔME PREPARÉ\"  name=\"diplome\" required  ngModel>\n    </mat-form-field>\n    <mat-form-field>\n        <input matInput placeholder=\"THEME DU STAGE\" name=\"theme\" required  ngModel >\n      </mat-form-field>\n\n\n    <div class=\"row\">\n        <mat-form-field class=\"col-6\">\n            <mat-select placeholder=\"TYPE DE STAGE\" name=\"typeStage\" required  ngModel>\n              <mat-option value=\"Projet de fin d'etude\">Projet de fin d'études</mat-option>\n              <mat-option value=\"Stage de découverte\">Stage de découverte</mat-option>\n              <mat-option value=\"Stage rémunéré\">Stage rémunéré</mat-option>\n            </mat-select>\n          </mat-form-field>\n    <mat-form-field class=\"col-6\">\n        <mat-select placeholder=\"TYPE DE RAPPORT\" name=\"typeRapport\" required  ngModel >\n          <mat-option value=\"Rapport\">Rapport</mat-option>\n          <mat-option value=\"Memoire\">Mémoire</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n      </div>\n<div class=\"row\">\n      <mat-form-field class=\"col-6\">\n          <input matInput [matDatepicker]=\"debut\" placeholder=\"DATE DEBUT\" name=\"dateDebut\"  required  ngModel>\n          <mat-datepicker-toggle matSuffix [for]=\"debut\"></mat-datepicker-toggle>\n          <mat-datepicker #debut></mat-datepicker>\n        </mat-form-field>\n\n        <mat-form-field class=\"col-6\">\n            <input matInput [matDatepicker]=\"fin\" placeholder=\"DATE FIN\"  name=\"dateFin\" required  ngModel>\n            <mat-datepicker-toggle matSuffix [for]=\"fin\"></mat-datepicker-toggle>\n            <mat-datepicker #fin></mat-datepicker>\n          </mat-form-field>\n</div>\n\n    <mat-form-field>\n\n      <mat-select placeholder=\"Nombre de passage par semaine\" name=\"nbJoursPresence\" required  ngModel >\n          <mat-option value=\"1\">1</mat-option>\n          <mat-option value=\"2\">2</mat-option>\n          <mat-option value=\"3\">3</mat-option>\n          <mat-option value=\"4\">4</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <mat-form-field>\n      <input matInput placeholder=\"RECOMENDATION\" name=\"recommandation\"  ngModel >\n    </mat-form-field>\n\n\n  </div>\n\n  <mat-form-field>\n\n      <mat-select placeholder=\"ATTESTATION DE STAGE\" name= \"attestation\" required  ngModel>\n          <mat-option value=\"true\" >OUI</mat-option>\n          <mat-option value=\"false\">NO</mat-option>\n\n        </mat-select>\n      </mat-form-field>\n\n</mat-card>\n\n</div>\n<div class=\"col\">\n\n<mat-card  >\n\n  <div class=\"example-container\">\n      <h1>Encadreur </h1>\n\n<div class=\"row\">\n  <div class=\"col-6\">\n      <mat-form-field >\n          <input matInput placeholder=\"IDENTIFIENT\" name=\"encadreurID\" #id  required ngModel >\n\n\n        </mat-form-field >\n  </div>\n  <div class=\"col-6\">\n      <button mat-stroked-button color=\"white\"  type=\"button\" id=\"confirm\" (click)=\"getEncadreur(id.value)\" >Verify</button>\n  </div>\n\n\n\n\n\n\n</div>\n\n\n\n<mat-form-field >\n    <input matInput placeholder=\"NOM\"  name=\"encadreur\"    [value]= \"encadreur.First_name+' '+encadreur.Last_Name\" required  >\n</mat-form-field>\n\n\n\n<mat-form-field >\n    <input matInput placeholder=\"EMAIL \" name=\"encadreurmMail\"  [value]= \"encadreur.Email_Address\" required  >\n\n</mat-form-field>\n\n\n\n\n\n\n<mat-form-field>\n    <input matInput placeholder=\"DEPARTEMENT\" name=\"encadreurDEP\"  [value]= \"encadreur.Departement\" required   >\n</mat-form-field>\n\n\n\n\n<mat-form-field>\n    <input matInput placeholder=\"SECTEUR\" name=\"encadreurSec\"   [value]= \"encadreur.Sector\" required   >\n\n</mat-form-field>\n\n\n\n<mat-form-field>\n    <input matInput placeholder=\"FONCTION\" name=\"encadreurmOrg\"  [value]= \"encadreur.Position\"  required   >\n\n</mat-form-field>\n\n\n\n\n\n              <input matInput placeholder=\"\"   [hidden]=\"true\" name=\"matricule\" ngModel >\n              <input matInput placeholder=\"\"   [hidden]=\"true\" name=\"user\" ngModel >\n\n\n  </div>\n\n</mat-card>\n\n\n\n\n</div>\n</div>\n<div class=\"row\" >\n  <div class=\"col-4\" >\n</div>\n<div class=\"col-4\"> </div>\n\n\n<div class=\"col-4\"> <button mat-flat-button color=\"primary\" id=\"save\" type=\"submit\" >SAVE</button> </div>\n<div class=\"col-4\">   </div>\n</div>\n\n\n</div>\n\n</form>\n\n\n\n\n\n\n\n\n\n");
 
 /***/ }),
 
@@ -162,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n\r\n\r\n\r\n<mat-sidenav-container class=\"sidenav-container\" >\r\n        <mat-sidenav #sidenav class=\"mat-elevation-z4 sidenav\" mode=\"over\">\r\n            <div class=\" mat-display-3 logo\">\r\n                Stages\r\n            </div>\r\n            <mat-nav-list>\r\n                <mat-list-item>\r\n                    <mat-icon matListIcon>home</mat-icon>\r\n                    <h3 matLine>home</h3>\r\n                </mat-list-item>\r\n                <mat-list-item>\r\n                    <mat-icon matListIcon>live_help</mat-icon>\r\n                    <h3 matLine>about</h3>\r\n                </mat-list-item>\r\n                <mat-list-item>\r\n                    <mat-icon matListIcon>cloud_download</mat-icon>\r\n                    <h3 matLine>donwload Data</h3>\r\n                </mat-list-item>\r\n            </mat-nav-list>\r\n        </mat-sidenav>\r\n        <div class=\"container\">\r\n            <div class=\"filter\" [formGroup]=\"form\">\r\n                <button mat-icon-button class=\"search-icon search\" (click)=\"searchInput.focus()\">\r\n                    <mat-icon aria-label=\"label\">search</mat-icon>\r\n                </button>\r\n                <button mat-icon-button class=\"search-icon menu\" (click)=\"sidenav.open()\">\r\n                    <mat-icon aria-label=\"label\">menu</mat-icon>\r\n                </button>\r\n                <input #searchInput placeholder=\"Search...\" type=\"text\" class=\"mat-body-strong\" formControlName=\"search\">\r\n                <mat-select placeholder=\"Filter By\" formControlName=\"filter\">\r\n                    <mat-option *ngFor=\"let item of filterList;let i = index;\" [value]=\"i\">\r\n\r\n                    </mat-option>\r\n                </mat-select>\r\n                <button mat-icon-button class=\"settings\">\r\n                    <mat-icon>settings</mat-icon>\r\n                </button>\r\n            </div>\r\n            <div class=\"content\">\r\n                <div class=\"info\">\r\n                    <div class=\"text\">\r\n                        <span class=\"title\">Stagiaires <button mat-icon-button color=\"warn\">\r\n                                <mat-icon>info_outline</mat-icon>\r\n                            </button></span>\r\n                        <p class=\"description\">A total of {{ students.length }} <span class=\"number\"></span> Stagiaires</p>\r\n                    </div>\r\n\r\n                </div>\r\n                <ng-container *ngIf=\"!loading; else elseTemplate\">\r\n                    <div class=\"separation\"></div>\r\n                </ng-container>\r\n                <ng-template #elseTemplate>\r\n                    <mat-progress-bar [mode]=\"type\" [value]=\"progress\" style=\"width: 100%\"></mat-progress-bar>\r\n                </ng-template>\r\n\r\n                <div class=\"medicaments\">\r\n                    <!--  let item of filterData -->\r\n                    <mat-card *ngFor=\"let student of students | load : end ; trackBy:tracbyfn;let i = index; \"\r\n                        [@fade]=\"{value: '*', params: { delay: (i*300)%2700}}\" class=\"medic-card\">\r\n                       <div class=\"remboursement\" [ngClass]=\"{'isremb': student.attestation}\"></div>\r\n                        <mat-card-header>\r\n                            <mat-card-title>{{student.nom + \" \" +student.prenom}}</mat-card-title>\r\n                            <mat-card-subtitle class=\"DCI\">{{student.email| lowercase }}\r\n                            </mat-card-subtitle>\r\n                        </mat-card-header>\r\n                        <mat-card-content class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"therapy\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date debut</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateDebut | date:'yyyy-MM-dd'\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"input_way\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date fin</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateFin | date:'yyyy-MM-dd' \" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"labo\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Encadreur</mat-label>\r\n                                    <input matInput class=\"input\"\r\n                                        [value]=\"student.encadreur\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Type de stage</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.typeStage\"\r\n                                        disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                        </mat-card-content>\r\n                        <mat-card-actions align=\"center\">\r\n\r\n                            <button mat-button color=\"primary\" (click)=\"onCreatePdf(student)\">  <mat-icon >picture_as_pdf</mat-icon>   </button>\r\n                            <button mat-button color=\"primary\" (click)=\"openDialog(student.matricule)\"><mat-icon>edit</mat-icon></button>\r\n                            <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n\r\n                        </mat-card-actions>\r\n                    </mat-card>\r\n\r\n                </div>\r\n                <!---->\r\n                <div class=\"pagination\">\r\n                    <button mat-raised-button color=\"primary\" class=\"load\" (click)=\"setLoad(end+9)\" [disabled]=\"rest === 0\">\r\n                        <mat-icon>keyboard_arrow_down</mat-icon>Load more\r\n                        ({{rest}})\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n\r\n    </mat-sidenav-container>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n\r\n\r\n\r\n<mat-sidenav-container class=\"sidenav-container\" >\r\n\r\n\r\n        <div class=\"container\">\r\n\r\n\r\n\r\n\r\n\r\n            <div class=\"filter\" [formGroup]=\"form\">\r\n                <button mat-icon-button class=\"search-icon search\" >\r\n                    <mat-icon aria-label=\"label\">search</mat-icon>\r\n                </button>\r\n                <button mat-icon-button class=\"search-icon menu\" >\r\n                    <mat-icon aria-label=\"label\">menu</mat-icon>\r\n                </button>\r\n                <input  [(ngModel)] = \"searchTerm\" (ngModelChange) = \"search()\"  placeholder=\"Search...\" type=\"text\" class=\"mat-body-strong\" formControlName=\"search\" />\r\n                <mat-select placeholder=\" \" >\r\n                    <mat-option *ngFor=\"let item of filterList;let i = index;\" [value]=\"i\">\r\n\r\n                    </mat-option>\r\n                </mat-select>\r\n\r\n            </div>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"info\">\r\n                    <div class=\"text\">\r\n                        <span class=\"title\">Stagiaires <button mat-icon-button color=\"warn\">\r\n                                <mat-icon>info_outline</mat-icon>\r\n                            </button></span>\r\n                        <p class=\"description\">A total of {{ students.length }} <span class=\"number\"></span> Stagiaires</p>\r\n                    </div>\r\n\r\n                </div>\r\n                <ng-container *ngIf=\"!loading; else elseTemplate\">\r\n                    <div class=\"separation\"></div>\r\n                </ng-container>\r\n                <ng-template #elseTemplate>\r\n                    <mat-progress-bar [mode]=\"type\" [value]=\"progress\" style=\"width: 100%\"></mat-progress-bar>\r\n                </ng-template>\r\n\r\n                <div class=\"medicaments\">\r\n\r\n                    <mat-card *ngFor=\"let student of students | load : end ;let i = index ;\"\r\n                        [@fade]=\"{value: '*', params: { delay: (i*300)%2700}}\" class=\"medic-card\">\r\n                       <div class=\"remboursement\" [ngClass]=\"{'isremb': student.attestation}\"></div>\r\n                        <mat-card-header>\r\n                            <mat-card-title>{{student.nom  + \" \" +student.prenom  }}</mat-card-title>\r\n                            <mat-card-subtitle class=\"DCI\">{{student.email  }}\r\n                            </mat-card-subtitle>\r\n                        </mat-card-header>\r\n                        <mat-card-content class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"therapy\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date debut</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateDebut | date:'yyyy-MM-dd'\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"input_way\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date fin</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateFin | date:'yyyy-MM-dd' \" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"labo\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Encadreur</mat-label>\r\n                                    <input matInput class=\"input\"\r\n                                        [value]=\"student.encadreur\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Type de stage</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.typeStage\"\r\n                                        disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                        </mat-card-content>\r\n                        <mat-card-actions align=\"center\">\r\n\r\n                            <button mat-button color=\"primary\" (click)=\"onCreatePdf(student)\">  <mat-icon >picture_as_pdf</mat-icon>   </button>\r\n                            <button mat-button color=\"primary\" (click)=\"openDialog(student)\"><mat-icon>edit</mat-icon></button>\r\n                            <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n\r\n                        </mat-card-actions>\r\n                    </mat-card>\r\n\r\n                </div>\r\n                <!---->\r\n                <div class=\"pagination\">\r\n                    <button mat-raised-button color=\"primary\" class=\"load\" (click)=\"setLoad(end+9)\" [disabled] = \" end >  students.length\"  >\r\n                        <mat-icon>keyboard_arrow_down</mat-icon>Load more\r\n                          {{ rests }}\r\n\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n\r\n    </mat-sidenav-container>\r\n");
 
 /***/ }),
 
@@ -413,6 +725,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login-page/login-page.component */ "./src/app/login-page/login-page.component.ts");
 /* harmony import */ var _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signup-page/signup-page.component */ "./src/app/signup-page/signup-page.component.ts");
 /* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
+/* harmony import */ var _chart_chart_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./chart/chart.component */ "./src/app/chart/chart.component.ts");
+
 
 
 
@@ -426,6 +740,7 @@ var routes = [
     { path: 'insert', component: _form_insert_component__WEBPACK_IMPORTED_MODULE_3__["InsertComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
     { path: '', component: _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_5__["LoginPageComponent"] },
     { path: 'sign', component: _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_6__["SignupPageComponent"] },
+    { path: 'chart', component: _chart_chart_component__WEBPACK_IMPORTED_MODULE_8__["ChartComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -483,18 +798,25 @@ var AppComponent = /** @class */ (function () {
         // subscribe to router events and send page views to Google Analytics
         this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
-                ga('set', 'page', event.urlAfterRedirects);
-                ga('send', 'pageview');
             }
         });
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.user = localStorage.getItem("user");
+    };
     AppComponent.prototype.export = function () {
         var dialogRef = this.dialog.open(_excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_4__["ExcelWindowComponent"], {
             width: '550px',
         });
         dialogRef.afterClosed().subscribe(function (result) {
-            console.log('The dialog was closed');
         });
+    };
+    AppComponent.prototype.logout = function () {
+        localStorage.removeItem("auth");
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        this.router.navigate(['/']);
+        // location.reload()
     };
     AppComponent.ctorParameters = function () { return [
         { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"] },
@@ -531,26 +853,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/fesm5/angular-bootstrap-md.js");
 /* harmony import */ var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/expansion */ "./node_modules/@angular/material/esm5/expansion.es5.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _landing_page_landing_page_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./landing-page/landing-page.component */ "./src/app/landing-page/landing-page.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _home_load_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/load.pipe */ "./src/app/home/load.pipe.ts");
-/* harmony import */ var _graphql_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./graphql.module */ "./src/app/graphql.module.ts");
-/* harmony import */ var _form_insert_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./form/insert.component */ "./src/app/form/insert.component.ts");
-/* harmony import */ var _students_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./students.service */ "./src/app/students.service.ts");
-/* harmony import */ var _fetch_fetch_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./fetch/fetch.component */ "./src/app/fetch/fetch.component.ts");
-/* harmony import */ var _suivi_suivi_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./suivi/suivi.component */ "./src/app/suivi/suivi.component.ts");
-/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
-/* harmony import */ var _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./msg-confirm/msg-confirm.component */ "./src/app/msg-confirm/msg-confirm.component.ts");
-/* harmony import */ var _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./login-page/login-page.component */ "./src/app/login-page/login-page.component.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./signup-page/signup-page.component */ "./src/app/signup-page/signup-page.component.ts");
-/* harmony import */ var _execl_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./execl.service */ "./src/app/execl.service.ts");
-/* harmony import */ var _excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./excel-window/excel-window.component */ "./src/app/excel-window/excel-window.component.ts");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/fesm5/ng2-charts.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _landing_page_landing_page_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./landing-page/landing-page.component */ "./src/app/landing-page/landing-page.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _home_load_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./home/load.pipe */ "./src/app/home/load.pipe.ts");
+/* harmony import */ var _graphql_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./graphql.module */ "./src/app/graphql.module.ts");
+/* harmony import */ var _form_insert_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./form/insert.component */ "./src/app/form/insert.component.ts");
+/* harmony import */ var _students_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./students.service */ "./src/app/students.service.ts");
+/* harmony import */ var _fetch_fetch_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./fetch/fetch.component */ "./src/app/fetch/fetch.component.ts");
+/* harmony import */ var _suivi_suivi_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./suivi/suivi.component */ "./src/app/suivi/suivi.component.ts");
+/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
+/* harmony import */ var _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./msg-confirm/msg-confirm.component */ "./src/app/msg-confirm/msg-confirm.component.ts");
+/* harmony import */ var _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./login-page/login-page.component */ "./src/app/login-page/login-page.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./signup-page/signup-page.component */ "./src/app/signup-page/signup-page.component.ts");
+/* harmony import */ var _execl_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./execl.service */ "./src/app/execl.service.ts");
+/* harmony import */ var _excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./excel-window/excel-window.component */ "./src/app/excel-window/excel-window.component.ts");
+/* harmony import */ var _chart_chart_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./chart/chart.component */ "./src/app/chart/chart.component.ts");
+/* harmony import */ var _filter_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./filter.pipe */ "./src/app/filter.pipe.ts");
+/* harmony import */ var _encadreur_encadreur_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./encadreur/encadreur.component */ "./src/app/encadreur/encadreur.component.ts");
 
 
 
@@ -578,49 +904,57 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var material = [_angular_material__WEBPACK_IMPORTED_MODULE_11__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatMenuModule"],
-    _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatProgressBarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatListModule"]];
+
+
+
+
+var material = [_angular_material__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatMenuModule"],
+    _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatProgressBarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatListModule"]];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-                _landing_page_landing_page_component__WEBPACK_IMPORTED_MODULE_9__["LandingPageComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_12__["HomeComponent"],
-                _form_insert_component__WEBPACK_IMPORTED_MODULE_15__["InsertComponent"],
-                _fetch_fetch_component__WEBPACK_IMPORTED_MODULE_17__["FetchComponent"],
-                _home_load_pipe__WEBPACK_IMPORTED_MODULE_13__["LoadPipe"],
-                _suivi_suivi_component__WEBPACK_IMPORTED_MODULE_18__["SuiviComponent"],
-                _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_19__["DialogOverviewExampleDialog"],
-                _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_20__["MsgConfirmComponent"],
-                _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_21__["LoginPageComponent"],
-                _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_24__["SignupPageComponent"],
-                _excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_26__["ExcelWindowComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
+                _landing_page_landing_page_component__WEBPACK_IMPORTED_MODULE_10__["LandingPageComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
+                _form_insert_component__WEBPACK_IMPORTED_MODULE_16__["InsertComponent"],
+                _fetch_fetch_component__WEBPACK_IMPORTED_MODULE_18__["FetchComponent"],
+                _home_load_pipe__WEBPACK_IMPORTED_MODULE_14__["LoadPipe"],
+                _suivi_suivi_component__WEBPACK_IMPORTED_MODULE_19__["SuiviComponent"],
+                _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_20__["DialogOverviewExampleDialog"],
+                _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_21__["MsgConfirmComponent"],
+                _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_22__["LoginPageComponent"],
+                _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_25__["SignupPageComponent"],
+                _excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_27__["ExcelWindowComponent"],
+                _chart_chart_component__WEBPACK_IMPORTED_MODULE_28__["ChartComponent"],
+                _filter_pipe__WEBPACK_IMPORTED_MODULE_29__["FilterPipe"],
+                _encadreur_encadreur_component__WEBPACK_IMPORTED_MODULE_30__["EncadreurComponent"]
             ],
-            entryComponents: [_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_19__["DialogOverviewExampleDialog"], _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_20__["MsgConfirmComponent"], _excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_26__["ExcelWindowComponent"]],
+            entryComponents: [_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_20__["DialogOverviewExampleDialog"], _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_21__["MsgConfirmComponent"], _excel_window_excel_window_component__WEBPACK_IMPORTED_MODULE_27__["ExcelWindowComponent"], _encadreur_encadreur_component__WEBPACK_IMPORTED_MODULE_30__["EncadreurComponent"]],
             imports: tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"]([
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"].withConfig({ warnOnNgModelWithFormControl: 'never' }),
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]
             ], material, [
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
-                _graphql_module__WEBPACK_IMPORTED_MODULE_14__["GraphQLModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"],
+                _graphql_module__WEBPACK_IMPORTED_MODULE_15__["GraphQLModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_5__["MDBBootstrapModule"].forRoot(),
                 angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_5__["MDBBootstrapModule"],
                 _angular_material_expansion__WEBPACK_IMPORTED_MODULE_6__["MatExpansionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatNativeDateModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatGridListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatSnackBarModule"],
-                _angular_common__WEBPACK_IMPORTED_MODULE_22__["CommonModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_23__["FlexLayoutModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatNativeDateModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatGridListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSnackBarModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_23__["CommonModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_24__["FlexLayoutModule"],
+                ng2_charts__WEBPACK_IMPORTED_MODULE_7__["ChartsModule"]
             ]),
-            providers: [_students_service__WEBPACK_IMPORTED_MODULE_16__["StudentService"], _angular_common__WEBPACK_IMPORTED_MODULE_22__["DatePipe"], _execl_service__WEBPACK_IMPORTED_MODULE_25__["ExcelService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+            providers: [_students_service__WEBPACK_IMPORTED_MODULE_17__["StudentService"], _angular_common__WEBPACK_IMPORTED_MODULE_23__["DatePipe"], _execl_service__WEBPACK_IMPORTED_MODULE_26__["ExcelService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -691,11 +1025,12 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, router) {
         this.http = http;
         this.router = router;
+        this.baseUrlLocal = "http://localhost:3000/api";
+        this.baseUrlLocalp = "http://172.16.60.34:3000/api";
+        this.token = "";
     }
     AuthService.prototype.getToken = function () {
         return this.token;
-    };
-    AuthService.prototype.setLogging = function (value) {
     };
     Object.defineProperty(AuthService.prototype, "isLoged", {
         get: function () {
@@ -708,7 +1043,7 @@ var AuthService = /** @class */ (function () {
         var authData = {
             email: email, password: password
         };
-        this.http.post('http://172.16.60.34:3000/api/user/sign', authData).subscribe(function (response) {
+        this.http.post(this.baseUrlLocal + '/user/sign', authData).subscribe(function (response) {
             console.log(response);
         });
     };
@@ -717,9 +1052,12 @@ var AuthService = /** @class */ (function () {
         var authData = {
             email: email, password: password
         };
-        this.http.post('http://172.16.60.34:3000/api/user/login', authData).subscribe(function (response) {
+        this.http.post(this.baseUrlLocal + '/user/login', authData).subscribe(function (response) {
             _this.router.navigate(['suivi']);
             localStorage.setItem("auth", 'true');
+            localStorage.setItem("user", authData.email);
+            localStorage.setItem("token", response.token);
+            _this.token = response.token;
         }, function (error) {
             console.log(error.message);
         });
@@ -732,6 +1070,670 @@ var AuthService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
     ], AuthService);
     return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/chart.service.ts":
+/*!**********************************!*\
+  !*** ./src/app/chart.service.ts ***!
+  \**********************************/
+/*! exports provided: ChartService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartService", function() { return ChartService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
+
+var ChartService = /** @class */ (function () {
+    function ChartService(http, datepipe) {
+        this.http = http;
+        this.datepipe = datepipe;
+        this.baseUrlLocall = "http://localhost:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.34:3000/api/";
+    }
+    ChartService.prototype.setHeader = function () {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
+        headers = headers.set('authorization', 'Bearer ' + localStorage.getItem("token"));
+        return headers;
+    };
+    ChartService.prototype.getEncadreur = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/enc', { headers: this.setHeader() }).toPromise()];
+                    case 1:
+                        data = _a.sent();
+                        //console.log(data)
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    ChartService.prototype.getEncadreurSec = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/encSec', { headers: this.setHeader() }).toPromise()];
+                    case 1:
+                        data = _a.sent();
+                        //console.log(data)
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    ChartService.prototype.getDateDebut = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var array, data, item;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        array = [];
+                        return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/datedebut', { headers: this.setHeader() }).toPromise()];
+                    case 1:
+                        data = _a.sent();
+                        for (item in data) {
+                            //console.log(this.datepipe.transform(data[item],'MM'));
+                            array.push(Number(this.datepipe.transform(data[item], 'MM')));
+                        }
+                        // var test :number[]=[2,3,9]
+                        // console.log(test.some(e => e === 7));    //if 7 exist
+                        // test.splice(2, 0,5);      //insert at 2
+                        // console.log(test)
+                        //console.log(array)
+                        array.sort(function (a, b) { return a - b; });
+                        //console.log(array)
+                        return [2 /*return*/, array];
+                }
+            });
+        });
+    };
+    ChartService.prototype.getDateFin = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var array, data, item;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        array = [];
+                        return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/datefin', { headers: this.setHeader() }).toPromise()];
+                    case 1:
+                        data = _a.sent();
+                        for (item in data) {
+                            //console.log(this.datepipe.transform(data[item],'MM'));
+                            array.push(Number(this.datepipe.transform(data[item], 'MM')));
+                        }
+                        //console.log(array)
+                        array.sort(function (a, b) { return a - b; });
+                        //console.log(array)
+                        return [2 /*return*/, array];
+                }
+            });
+        });
+    };
+    ChartService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+        { type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"] }
+    ]; };
+    ChartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({ providedIn: 'root' })
+    ], ChartService);
+    return ChartService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/chart/chart.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/chart/chart.component.scss ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("h2 {\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcnQvQzpcXFVzZXJzXFxhYmRlbGxhaC5NRVNTRUxMRUtBXFxEZXNrdG9wXFxNRUFOLUFQUFxcZnJvbnQtYXBwL3NyY1xcYXBwXFxjaGFydFxcY2hhcnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NoYXJ0L2NoYXJ0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2NoYXJ0L2NoYXJ0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDJ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn0iLCJoMiB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/chart/chart.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/chart/chart.component.ts ***!
+  \******************************************/
+/*! exports provided: ChartComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartComponent", function() { return ChartComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../chart.service */ "./src/app/chart.service.ts");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var ChartComponent = /** @class */ (function () {
+    //****************************************************** */
+    function ChartComponent(chartservice) {
+        this.chartservice = chartservice;
+        this.labelsEnc = [];
+        this.valueEnc = [];
+        this.labelsSec = [];
+        this.valueSec = [];
+        this.labelsDateDebut = [];
+        this.valueDateDebut = [];
+        this.labelsDateFin = [];
+        this.valueDateFin = [];
+        //**************************bar2 */
+        this.barChartOptions = {
+            scaleShowVerticalLines: false,
+            responsive: true
+        };
+        //public barChartLabels =  this.labelsDateDebut;
+        this.barChartLabels = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+        this.barChartType = 'bar';
+        this.barChartLegend = true;
+        this.barChartData = [
+            { data: this.valueDateDebut, label: 'Date Début' },
+            //{data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+            { data: this.valueDateFin, label: 'Date Fin' }
+        ];
+    }
+    ChartComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var x, y, z, arrl, arrv, _loop_1, i, r, s, t, arrlf, arrvf, _loop_2, i, d, e, c, _a, a, b, _b;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, this.getDateDebutData()];
+                    case 1:
+                        x = _c.sent();
+                        return [4 /*yield*/, this.getNamesDateDebut()];
+                    case 2:
+                        y = _c.sent();
+                        return [4 /*yield*/, console.log(this.labelsDateDebut)];
+                    case 3:
+                        z = _c.sent();
+                        arrl = this.labelsDateDebut;
+                        arrv = this.valueDateDebut;
+                        _loop_1 = function (i) {
+                            if (!arrl.some(function (e) { return e === i; })) {
+                                arrv.splice(i - 1, 0, 0);
+                                arrl.splice(i - 1, 0, i);
+                            }
+                        };
+                        for (i = 1; i <= 12; i++) {
+                            _loop_1(i);
+                        }
+                        return [4 /*yield*/, this.getDateFinData()];
+                    case 4:
+                        r = _c.sent();
+                        return [4 /*yield*/, this.getNamesDateFin()];
+                    case 5:
+                        s = _c.sent();
+                        return [4 /*yield*/, console.log(this.labelsDateFin)];
+                    case 6:
+                        t = _c.sent();
+                        arrlf = this.labelsDateFin;
+                        arrvf = this.valueDateFin;
+                        _loop_2 = function (i) {
+                            if (!arrlf.some(function (e) { return e === i; })) {
+                                arrvf.splice(i - 1, 0, 0);
+                                arrlf.splice(i - 1, 0, i);
+                            }
+                        };
+                        for (i = 1; i <= 12; i++) {
+                            _loop_2(i);
+                        }
+                        return [4 /*yield*/, this.getSecData()];
+                    case 7:
+                        d = _c.sent();
+                        return [4 /*yield*/, this.getNamesSec()];
+                    case 8:
+                        e = _c.sent();
+                        return [4 /*yield*/, console.log(this.labelsSec)];
+                    case 9:
+                        c = _c.sent();
+                        _a = this;
+                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__('barChart', {
+                                type: 'bar',
+                                data: {
+                                    // labels:["Red","Blue","Yellow","Green","purple","Orange"],
+                                    labels: this.labelsSec,
+                                    datasets: [{
+                                            //label: '# of votes',
+                                            //data:[9,7,3,5,2,10],
+                                            data: this.valueSec,
+                                            backgroundColor: [
+                                                'rgba(255,99,132,0.2)',
+                                                'rgba(54,162,235,0.2)',
+                                                'rgba(255,206,86,0.2)',
+                                                'rgba(75,192,192,0.2)',
+                                                'rgba(135,102,255,0.2)',
+                                                'rgba(255,159,64,0.2)',
+                                            ],
+                                            borderColor: [
+                                                'rgba(255,99,132,0.2)',
+                                                'rgba(54,162,235,0.2)',
+                                                'rgba(255,206,86,0.2)',
+                                                'rgba(75,192,192,0.2)',
+                                                'rgba(135,102,255,0.2)',
+                                                'rgba(255,159,64,0.2)',
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                }, options: {
+                                    title: {
+                                        text: "",
+                                        display: true
+                                    },
+                                    scales: {
+                                        yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                    }
+                                }
+                            })];
+                    case 10:
+                        _a.BarChart = _c.sent();
+                        return [4 /*yield*/, this.getEncData()];
+                    case 11:
+                        a = _c.sent();
+                        return [4 /*yield*/, this.getNamesEnc()
+                            //const f = await console.log(this.labelsSec)
+                        ];
+                    case 12:
+                        b = _c.sent();
+                        //const f = await console.log(this.labelsSec)
+                        _b = this;
+                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__('pieChart', {
+                                type: 'pie',
+                                data: {
+                                    // labels:["Red","Blue","Yellow","Green","purple","Orange"],
+                                    labels: this.labelsEnc,
+                                    datasets: [{
+                                            //label: '# of votes',
+                                            //data:[9,7,3,5,2,10],
+                                            data: this.valueEnc,
+                                            // backgroundColor:"rgba(255,99,132,0.4)",
+                                            backgroundColor: [
+                                                'rgba(255,99,132,0.2)',
+                                                'rgba(54,162,235,0.2)',
+                                                'rgba(255,206,86,0.2)',
+                                                'rgba(75,192,192,0.2)',
+                                                'rgba(135,102,255,0.2)',
+                                                'rgba(255,159,64,0.2)',
+                                            ],
+                                            borderColor: [
+                                                'rgba(255,99,132,0.2)',
+                                                'rgba(54,162,235,0.2)',
+                                                'rgba(255,206,86,0.2)',
+                                                'rgba(75,192,192,0.2)',
+                                                'rgba(135,102,255,0.2)',
+                                                'rgba(255,159,64,0.2)',
+                                            ],
+                                            hoverBackgroundColor: "rgba(255,99,132,0.2)",
+                                            hoverBorderColor: "rgba(255,99,132,1)",
+                                            borderWidth: 1
+                                        }]
+                                },
+                                options: {
+                                    title: {
+                                        text: "",
+                                        display: true
+                                    },
+                                    responsive: false,
+                                }
+                            })];
+                    case 13:
+                        //const f = await console.log(this.labelsSec)
+                        _b.PieChart = _c.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ChartComponent.prototype.getEncData = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var count, obj, array, a, data, data_1, data_1_1, name_1, data_2, data_2_1, item, medios;
+            var e_1, _a, e_2, _b;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        count = 0;
+                        array = [];
+                        return [4 /*yield*/, (this.chartservice.getEncadreur())];
+                    case 1:
+                        data = _c.sent();
+                        try {
+                            for (data_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_1_1 = data_1.next(); !data_1_1.done; data_1_1 = data_1.next()) {
+                                name_1 = data_1_1.value;
+                                count = 0;
+                                a = name_1;
+                                try {
+                                    for (data_2 = (e_2 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_2_1 = data_2.next(); !data_2_1.done; data_2_1 = data_2.next()) {
+                                        item = data_2_1.value;
+                                        if (item == a) {
+                                            count++;
+                                        }
+                                    }
+                                }
+                                catch (e_2_1) { e_2 = { error: e_2_1 }; }
+                                finally {
+                                    try {
+                                        if (data_2_1 && !data_2_1.done && (_b = data_2.return)) _b.call(data_2);
+                                    }
+                                    finally { if (e_2) throw e_2.error; }
+                                }
+                                obj = {
+                                    name: a,
+                                    number: count
+                                };
+                                array.push(obj);
+                            }
+                        }
+                        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+                        finally {
+                            try {
+                                if (data_1_1 && !data_1_1.done && (_a = data_1.return)) _a.call(data_1);
+                            }
+                            finally { if (e_1) throw e_1.error; }
+                        }
+                        medios = array.reduce(function (c, n) {
+                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
+                        }, []);
+                        //console.log(medios)
+                        return [2 /*return*/, medios];
+                }
+            });
+        });
+    };
+    ChartComponent.prototype.getNamesEnc = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data, item;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEncData()
+                        // console.log(data)
+                    ];
+                    case 1:
+                        data = _a.sent();
+                        // console.log(data)
+                        for (item in data) {
+                            this.labelsEnc.push(data[item].name);
+                            this.valueEnc.push(data[item].number);
+                        }
+                        //console.log(this.labelsEnc)
+                        //console.log(this.valueEnc)
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    ////////////////////////////////////////////////////////////////////
+    ChartComponent.prototype.getSecData = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var count, obj, array, a, data, data_3, data_3_1, name_2, data_4, data_4_1, item, medios;
+            var e_3, _a, e_4, _b;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        count = 0;
+                        array = [];
+                        return [4 /*yield*/, (this.chartservice.getEncadreurSec())];
+                    case 1:
+                        data = _c.sent();
+                        try {
+                            for (data_3 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_3_1 = data_3.next(); !data_3_1.done; data_3_1 = data_3.next()) {
+                                name_2 = data_3_1.value;
+                                count = 0;
+                                a = name_2;
+                                try {
+                                    for (data_4 = (e_4 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_4_1 = data_4.next(); !data_4_1.done; data_4_1 = data_4.next()) {
+                                        item = data_4_1.value;
+                                        if (item == a) {
+                                            count++;
+                                        }
+                                    }
+                                }
+                                catch (e_4_1) { e_4 = { error: e_4_1 }; }
+                                finally {
+                                    try {
+                                        if (data_4_1 && !data_4_1.done && (_b = data_4.return)) _b.call(data_4);
+                                    }
+                                    finally { if (e_4) throw e_4.error; }
+                                }
+                                obj = {
+                                    name: a,
+                                    number: count
+                                };
+                                array.push(obj);
+                            }
+                        }
+                        catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                        finally {
+                            try {
+                                if (data_3_1 && !data_3_1.done && (_a = data_3.return)) _a.call(data_3);
+                            }
+                            finally { if (e_3) throw e_3.error; }
+                        }
+                        medios = array.reduce(function (c, n) {
+                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
+                        }, []);
+                        //console.log(medios)
+                        return [2 /*return*/, medios];
+                }
+            });
+        });
+    };
+    ChartComponent.prototype.getNamesSec = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data, item;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSecData()
+                        // console.log(data)
+                    ];
+                    case 1:
+                        data = _a.sent();
+                        // console.log(data)
+                        for (item in data) {
+                            //  console.log()
+                            this.labelsSec.push(data[item].name);
+                            this.valueSec.push(data[item].number);
+                        }
+                        //console.log(this.labelsSec)
+                        //console.log(this.valueSec)
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    /////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ChartComponent.prototype.getDateDebutData = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var count, obj, array, a, data, data_5, data_5_1, name_3, data_6, data_6_1, item, medios;
+            var e_5, _a, e_6, _b;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        count = 0;
+                        array = [];
+                        return [4 /*yield*/, (this.chartservice.getDateDebut())];
+                    case 1:
+                        data = _c.sent();
+                        try {
+                            for (data_5 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_5_1 = data_5.next(); !data_5_1.done; data_5_1 = data_5.next()) {
+                                name_3 = data_5_1.value;
+                                count = 0;
+                                a = name_3;
+                                try {
+                                    for (data_6 = (e_6 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_6_1 = data_6.next(); !data_6_1.done; data_6_1 = data_6.next()) {
+                                        item = data_6_1.value;
+                                        if (item == a) {
+                                            count++;
+                                        }
+                                    }
+                                }
+                                catch (e_6_1) { e_6 = { error: e_6_1 }; }
+                                finally {
+                                    try {
+                                        if (data_6_1 && !data_6_1.done && (_b = data_6.return)) _b.call(data_6);
+                                    }
+                                    finally { if (e_6) throw e_6.error; }
+                                }
+                                obj = {
+                                    name: a,
+                                    number: count
+                                };
+                                array.push(obj);
+                            }
+                        }
+                        catch (e_5_1) { e_5 = { error: e_5_1 }; }
+                        finally {
+                            try {
+                                if (data_5_1 && !data_5_1.done && (_a = data_5.return)) _a.call(data_5);
+                            }
+                            finally { if (e_5) throw e_5.error; }
+                        }
+                        medios = array.reduce(function (c, n) {
+                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
+                        }, []);
+                        //console.log(medios)
+                        return [2 /*return*/, medios];
+                }
+            });
+        });
+    };
+    ChartComponent.prototype.getNamesDateDebut = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data, item;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDateDebutData()
+                        // console.log(data)
+                    ];
+                    case 1:
+                        data = _a.sent();
+                        // console.log(data)
+                        for (item in data) {
+                            //  console.log()
+                            this.labelsDateDebut.push(data[item].name);
+                            this.valueDateDebut.push(data[item].number);
+                        }
+                        // console.log(this.labelsDateDebut)
+                        //console.log(this.valueDateDebut)
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    ////////////////////////////////////////////////////////////////////
+    ChartComponent.prototype.getDateFinData = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var count, obj, array, a, data, data_7, data_7_1, name_4, data_8, data_8_1, item, medios;
+            var e_7, _a, e_8, _b;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        count = 0;
+                        array = [];
+                        return [4 /*yield*/, (this.chartservice.getDateFin())];
+                    case 1:
+                        data = _c.sent();
+                        try {
+                            for (data_7 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_7_1 = data_7.next(); !data_7_1.done; data_7_1 = data_7.next()) {
+                                name_4 = data_7_1.value;
+                                count = 0;
+                                a = name_4;
+                                try {
+                                    for (data_8 = (e_8 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_8_1 = data_8.next(); !data_8_1.done; data_8_1 = data_8.next()) {
+                                        item = data_8_1.value;
+                                        if (item == a) {
+                                            count++;
+                                        }
+                                    }
+                                }
+                                catch (e_8_1) { e_8 = { error: e_8_1 }; }
+                                finally {
+                                    try {
+                                        if (data_8_1 && !data_8_1.done && (_b = data_8.return)) _b.call(data_8);
+                                    }
+                                    finally { if (e_8) throw e_8.error; }
+                                }
+                                obj = {
+                                    name: a,
+                                    number: count
+                                };
+                                array.push(obj);
+                            }
+                        }
+                        catch (e_7_1) { e_7 = { error: e_7_1 }; }
+                        finally {
+                            try {
+                                if (data_7_1 && !data_7_1.done && (_a = data_7.return)) _a.call(data_7);
+                            }
+                            finally { if (e_7) throw e_7.error; }
+                        }
+                        medios = array.reduce(function (c, n) {
+                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
+                        }, []);
+                        //console.log(medios)
+                        return [2 /*return*/, medios];
+                }
+            });
+        });
+    };
+    ChartComponent.prototype.getNamesDateFin = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data, item;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDateFinData()
+                        // console.log(data)
+                    ];
+                    case 1:
+                        data = _a.sent();
+                        // console.log(data)
+                        for (item in data) {
+                            //  console.log()
+                            this.labelsDateFin.push(data[item].name);
+                            this.valueDateFin.push(data[item].number);
+                        }
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    ChartComponent.ctorParameters = function () { return [
+        { type: _chart_service__WEBPACK_IMPORTED_MODULE_2__["ChartService"] }
+    ]; };
+    ChartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-chart',
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./chart.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chart/chart.component.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./chart.component.scss */ "./src/app/chart/chart.component.scss")).default]
+        })
+    ], ChartComponent);
+    return ChartComponent;
 }());
 
 
@@ -759,41 +1761,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var DialogOverviewExampleDialog = /** @class */ (function () {
-    // angForm = new FormGroup({
-    //   name : new FormControl(),
-    //   prenom : new FormControl(),
-    //   sexe : new FormControl(),
-    //   dateNaissance : new FormControl(),
-    //   wilaya : new FormControl(),
-    //   nTelephone : new FormControl(),
-    //   email : new FormControl(),
-    //   etablissement : new FormControl(),
-    //   diplome : new FormControl(),
-    //   theme : new FormControl(),
-    //   typeStage : new FormControl(),
-    //   typeRapport : new FormControl(),
-    //   dateDebut : new FormControl(),
-    //   dateFin : new FormControl(),
-    //   nbJoursPresence : new FormControl(),
-    //   recommandation : new FormControl(),
-    //   encadreur : new FormControl(),
-    //   encadreurID : new FormControl(),
-    //   encadreurmMail : new FormControl(),
-    //   encadreurDEP : new FormControl(),
-    //   encadreurSec : new FormControl(),
-    //   encadreurmOrg : new FormControl(),
-    //   attestation : new FormControl(),
-    //   matricule : new FormControl()
-    // })
-    function DialogOverviewExampleDialog(fb, studentService, dialogRef, matricule) {
+    function DialogOverviewExampleDialog(fb, studentService, dialogRef, student) {
         this.fb = fb;
         this.studentService = studentService;
         this.dialogRef = dialogRef;
-        this.matricule = matricule;
-        //this.createForm();
+        this.student = student;
     }
     DialogOverviewExampleDialog.prototype.createForm = function (student) {
-        // console.log(this.student)
         this.angForm = this.fb.group({
             nom: [student.nom],
             prenom: [student.prenom],
@@ -824,33 +1798,23 @@ var DialogOverviewExampleDialog = /** @class */ (function () {
     DialogOverviewExampleDialog.prototype.onNoClick = function () {
         this.dialogRef.close();
     };
+    DialogOverviewExampleDialog.prototype.cancelOperation = function () {
+        this.dialogRef.close();
+    };
     DialogOverviewExampleDialog.prototype.ngOnInit = function () {
-        this.student = this.getStudent();
-        // console.log("///")
-        //  console.log(this.student)
         this.createForm(this.student);
-        // const student =
-    };
-    DialogOverviewExampleDialog.prototype.getStudent = function () {
-        var matricule = this.matricule;
-        var data = this.studentService.getStudents();
-        var res = data.filter(function (c) { return c.matricule === matricule; })[0];
-        return res;
-    };
-    DialogOverviewExampleDialog.prototype.update = function (form) {
-        //this.studentService.updateStudent(this.matricule,form.value);
-        console.log(this.matricule);
-        console.log(form.value);
     };
     DialogOverviewExampleDialog.prototype.onClickSubmit = function () {
         console.log(this.angForm.value);
-        this.studentService.updateStudent(this.matricule, this.angForm.value);
+        this.studentService.updateStudent(this.student.matricule, this.angForm.value);
+        this.dialogRef.close();
+        location.reload();
     };
     DialogOverviewExampleDialog.ctorParameters = function () { return [
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
         { type: _students_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"] },
         { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
-        { type: Number, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
     ]; };
     DialogOverviewExampleDialog = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -861,6 +1825,69 @@ var DialogOverviewExampleDialog = /** @class */ (function () {
     ], DialogOverviewExampleDialog);
     return DialogOverviewExampleDialog;
 }()); //Class
+
+
+
+/***/ }),
+
+/***/ "./src/app/encadreur/encadreur.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/encadreur/encadreur.component.scss ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VuY2FkcmV1ci9lbmNhZHJldXIuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/encadreur/encadreur.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/encadreur/encadreur.component.ts ***!
+  \**************************************************/
+/*! exports provided: EncadreurComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EncadreurComponent", function() { return EncadreurComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
+
+
+var EncadreurComponent = /** @class */ (function () {
+    function EncadreurComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.onAdd = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    EncadreurComponent.prototype.ngOnInit = function () {
+    };
+    EncadreurComponent.prototype.onConfirmClick = function () {
+        this.onAdd.emit();
+        this.dialogRef.close();
+    };
+    EncadreurComponent.prototype.noDelete = function () {
+        this.dialogRef.close();
+    };
+    EncadreurComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+    ]; };
+    EncadreurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-encadreur',
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./encadreur.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/encadreur/encadreur.component.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./encadreur.component.scss */ "./src/app/encadreur/encadreur.component.scss")).default]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+    ], EncadreurComponent);
+    return EncadreurComponent;
+}());
 
 
 
@@ -952,10 +1979,17 @@ var EXCEL_EXTENSION = '.xlsx';
 var ExcelService = /** @class */ (function () {
     function ExcelService(http) {
         this.http = http;
+        this.baseUrlLocall = "http://localhost:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.34:3000/api/";
     }
+    ExcelService.prototype.setHeader = function () {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]().set('Content-Type', 'application/json');
+        headers = headers.set('authorization', 'Bearer ' + localStorage.getItem("token"));
+        return headers;
+    };
     ExcelService.prototype.exportEx = function (gte, lte) {
         var _this = this;
-        this.http.get('http://172.16.60.34:3000/api/students/data/date/' + gte + '/' + lte)
+        this.http.get(this.baseUrlLocal + 'students/data/date/' + gte + '/' + lte, { headers: this.setHeader() })
             .subscribe(function (data) {
             console.log(data.students);
             _this.exportAsExcelFile(data.students, 'stagetest');
@@ -1053,6 +2087,44 @@ var FetchComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/filter.pipe.ts":
+/*!********************************!*\
+  !*** ./src/app/filter.pipe.ts ***!
+  \********************************/
+/*! exports provided: FilterPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterPipe", function() { return FilterPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FilterPipe = /** @class */ (function () {
+    function FilterPipe() {
+    }
+    FilterPipe.prototype.transform = function (items, filter) {
+        // if (!items || !filter) {
+        //     return items;
+        // }
+        // // filter items array, items which match and return true will be
+        // // kept, false will be filtered out
+        // return items.filter(item => item.name.indexOf(filter.name) !== -1);
+    };
+    FilterPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'myfilter',
+            pure: false
+        })
+    ], FilterPipe);
+    return FilterPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/form/insert.component.scss":
 /*!********************************************!*\
   !*** ./src/app/form/insert.component.scss ***!
@@ -1062,7 +2134,7 @@ var FetchComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("mat-card {\n  width: 100%;\n}\n\nmat-form-field, textarea {\n  width: 100%;\n}\n\nbutton {\n  margin-top: 160px;\n  width: 350px;\n  height: 150;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybS9DOlxcVXNlcnNcXGFiZGVsbGFoLk1FU1NFTExFS0FcXERlc2t0b3BcXE1FQU4tQVBQXFxmcm9udC1hcHAvc3JjXFxhcHBcXGZvcm1cXGluc2VydC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZm9ybS9pbnNlcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0FDQ0Y7O0FERUM7RUFDRSxXQUFBO0FDQ0g7O0FEQ0M7RUFFRCxpQkFBQTtFQUVBLFlBQUE7RUFDQSxXQUFBO0FDQUEiLCJmaWxlIjoic3JjL2FwcC9mb3JtL2luc2VydC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1jYXJkIHtcclxuICB3aWR0aDogMTAwJTtcclxuXHJcbiB9XHJcbiBtYXQtZm9ybS1maWVsZCwgdGV4dGFyZWEge1xyXG4gICB3aWR0aDogMTAwJSA7XHJcbiB9XHJcbiBidXR0b24gIHtcclxuXHJcbm1hcmdpbi10b3AgOiAxNjBweDtcclxuXHJcbndpZHRoOiAzNTBweDtcclxuaGVpZ2h0OiAxNTA7XHJcblxyXG5cclxuIH1cclxuIiwibWF0LWNhcmQge1xuICB3aWR0aDogMTAwJTtcbn1cblxubWF0LWZvcm0tZmllbGQsIHRleHRhcmVhIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbmJ1dHRvbiB7XG4gIG1hcmdpbi10b3A6IDE2MHB4O1xuICB3aWR0aDogMzUwcHg7XG4gIGhlaWdodDogMTUwO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("mat-card {\n  width: 100%;\n}\n\nmat-form-field, textarea {\n  width: 100%;\n}\n\n#save {\n  margin-top: 160px;\n  width: 350px;\n  height: 150;\n}\n\ninput[type=file] {\n  visibility: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybS9DOlxcVXNlcnNcXGFiZGVsbGFoLk1FU1NFTExFS0FcXERlc2t0b3BcXE1FQU4tQVBQXFxmcm9udC1hcHAvc3JjXFxhcHBcXGZvcm1cXGluc2VydC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZm9ybS9pbnNlcnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0FDQ0Y7O0FERUM7RUFDRSxXQUFBO0FDQ0g7O0FETUM7RUFDQyxpQkFBQTtFQUVBLFlBQUE7RUFDQSxXQUFBO0FDSkY7O0FEUUM7RUFDRCxrQkFBQTtBQ0xBIiwiZmlsZSI6InNyYy9hcHAvZm9ybS9pbnNlcnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtY2FyZCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcblxyXG4gfVxyXG4gbWF0LWZvcm0tZmllbGQsIHRleHRhcmVhIHtcclxuICAgd2lkdGg6IDEwMCUgO1xyXG4gfVxyXG5cclxuICNjb25maXJte1xyXG5cclxuIH1cclxuXHJcbiAjc2F2ZXtcclxuICBtYXJnaW4tdG9wIDogMTYwcHg7XHJcblxyXG4gIHdpZHRoOiAzNTBweDtcclxuICBoZWlnaHQ6IDE1MDtcclxuXHJcbiB9XHJcblxyXG4gaW5wdXRbdHlwZT1cImZpbGVcIl17XHJcbnZpc2liaWxpdHk6IGhpZGRlbjtcclxuXHJcbiB9XHJcbiIsIm1hdC1jYXJkIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbm1hdC1mb3JtLWZpZWxkLCB0ZXh0YXJlYSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jc2F2ZSB7XG4gIG1hcmdpbi10b3A6IDE2MHB4O1xuICB3aWR0aDogMzUwcHg7XG4gIGhlaWdodDogMTUwO1xufVxuXG5pbnB1dFt0eXBlPWZpbGVdIHtcbiAgdmlzaWJpbGl0eTogaGlkZGVuO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1081,21 +2153,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _students_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../students.service */ "./src/app/students.service.ts");
 /* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/esm5/snack-bar.es5.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _encadreur_encadreur_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../encadreur/encadreur.component */ "./src/app/encadreur/encadreur.component.ts");
+
+
 
 
 
 
 
 var InsertComponent = /** @class */ (function () {
-    /* */
-    function InsertComponent(studentsService, _snackBar, http) {
+    function InsertComponent(studentsService, _snackBar, http, dialog) {
         this.studentsService = studentsService;
         this._snackBar = _snackBar;
+        this.dialog = dialog;
+        this.baseUrlLocall = "http://localhost:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.34:3000/api/";
+        this.encadreur = {
+            Last_Name: "",
+            First_name: "",
+            Sector: null,
+            Departement: null,
+            Organisation: null,
+            Position: null,
+            Job: null,
+            Email_Address: null,
+        };
     }
     InsertComponent.prototype.getMatricule = function () {
         var num = 0;
         var req = new XMLHttpRequest();
-        req.open('GET', "http://172.16.60.34:3000/api/students/numberEnd", false);
+        req.open('GET', this.baseUrlLocal + "students/numberEnd", false);
         //
         req.send(null);
         var data = parseInt(req.response);
@@ -1109,24 +2197,57 @@ var InsertComponent = /** @class */ (function () {
         return num;
     };
     InsertComponent.prototype.onAddPost = function (form) {
-        console.log(form.value);
+        form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name;
+        form.value.encadreurDEP = this.encadreur.Departement;
+        form.value.encadreurmMail = this.encadreur.Email_Address;
+        form.value.encadreurSec = this.encadreur.Sector;
+        form.value.encadreurmOrg = this.encadreur.Position;
+        form.value.user = localStorage.getItem("user");
         form.value.matricule = this.getMatricule();
+        console.log(form.value);
         this.studentsService.addStudent(form.value);
-        //  form.reset()
-        // console.log(this.studentsService.result)
-        this.openSnackBar(this.studentsService.result, "Close");
+        // form.reset()
+        this.openSnackBar("operation succeeded", "Close");
     };
     InsertComponent.prototype.openSnackBar = function (message, action) {
         this._snackBar.open(message, action, {
-            duration: 3000,
+            duration: 5000,
         });
     };
     InsertComponent.prototype.ngOnInit = function () {
     };
+    InsertComponent.prototype.getEncadreur = function (encadreurID) {
+        var req = new XMLHttpRequest();
+        req.open('GET', this.baseUrlLocal + "encadreur/data/" + encadreurID, false);
+        req.send(null);
+        var data = JSON.parse(req.response);
+        // this.encadreur = data
+        //  alert(  data.First_name+ " " +data.Last_Name + " is the Responsable"  );
+        this.openValidateDialog(data);
+        return data;
+    };
+    InsertComponent.prototype.confirmEncadreur = function (data, form) {
+        this.encadreur = data;
+        this.encadreur = this.getEncadreur(form.value.encadreurID);
+    };
+    InsertComponent.prototype.openValidateDialog = function (data) {
+        var _this = this;
+        //console.log(data)
+        var dialogRef = this.dialog.open(_encadreur_encadreur_component__WEBPACK_IMPORTED_MODULE_6__["EncadreurComponent"], {
+            width: '40%',
+            data: data,
+        });
+        var sub = dialogRef.componentInstance.onAdd.subscribe(function () {
+            _this.encadreur = data;
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+        });
+    };
     InsertComponent.ctorParameters = function () { return [
         { type: _students_service__WEBPACK_IMPORTED_MODULE_2__["StudentService"] },
         { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"] },
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] }
     ]; };
     InsertComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1163,7 +2284,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var uri = 'https://medicadz.herokuapp.com/graphql'; // <-- add the URL of the GraphQL server here
+var uri = ''; // <-- add the URL of the GraphQL server here
 function createApollo(httpLink) {
     return {
         link: httpLink.create({ uri: uri }),
@@ -1587,6 +2708,7 @@ var MsgConfirmComponent = /** @class */ (function () {
         console.log(this.data);
         this.studentService.deleteStudent(this.data.matricule);
         this.dialogRef.close();
+        location.reload();
     };
     MsgConfirmComponent.prototype.noDelete = function () {
         this.dialogRef.close();
@@ -1688,33 +2810,38 @@ __webpack_require__.r(__webpack_exports__);
 var StudentService = /** @class */ (function () {
     function StudentService(http) {
         this.http = http;
+        this.baseUrlLocall = "http://localhost:3000/api";
+        this.baseUrlLocal = "http://172.16.60.34:3000/api";
         this.result = '#';
         this.studentUpdated = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
+    StudentService.prototype.setHeader = function () {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'application/json');
+        headers = headers.set('authorization', 'Bearer ' + localStorage.getItem("token"));
+        return headers;
+    };
     StudentService.prototype.getStudents = function () {
-        var _this = this;
-        // return [...this.students];          copy of array not original
-        // return this.students;     //mais observables mieux
-        //                   msg!!!!!!!!!!!!!!!
-        if (this.students) {
-            return this.students;
-        }
-        else {
-            this.http.get('http://172.16.60.34:3000/api/students/data').
-                subscribe(function (postData) {
-                _this.students = postData.students;
-                _this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](_this.students));
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.http.get(this.baseUrlLocal + '/students/data', { headers: this.setHeader() }).
+                    subscribe(function (postData) {
+                    _this.students = postData.students;
+                    _this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](_this.students));
+                });
+                return [2 /*return*/];
             });
-        }
+        });
     };
     StudentService.prototype.getStudentUpdateListener = function () {
         return this.studentUpdated.asObservable();
     };
     StudentService.prototype.addStudent = function (data) {
         var _this = this;
-        this.http.post('http://172.16.60.34:3000/api/students/insertData', data).
+        this.http.post(this.baseUrlLocal + '/students/insertData', data, { headers: this.setHeader() }).
             subscribe(function (respanse) {
             _this.result = "is ready to go";
+            console.log(respanse);
         }, function (error) {
             _this.result = error.message;
         });
@@ -1722,7 +2849,7 @@ var StudentService = /** @class */ (function () {
         this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](this.students));
     };
     StudentService.prototype.deleteStudent = function (matricule) {
-        this.http.delete('http://172.16.60.34:3000/api/students/deleteData/' + matricule).subscribe(function (val) {
+        this.http.delete(this.baseUrlLocal + '/students/deleteData/' + matricule, { headers: this.setHeader() }).subscribe(function (val) {
             console.log("DELETE call successful value returned in body", val);
         }, function (response) {
             console.log("DELETE call in error", response);
@@ -1731,7 +2858,7 @@ var StudentService = /** @class */ (function () {
         });
     };
     StudentService.prototype.updateStudent = function (matricule, data) {
-        this.http.put('http://172.16.60.34:3000/api/students/update/' + matricule, data).subscribe(function (data) {
+        this.http.put(this.baseUrlLocal + '/students/update/' + matricule, data, { headers: this.setHeader() }).subscribe(function (data) {
             console.log("PUT Request is successful ", data);
         }, function (error) {
             console.log("error", error, data);
@@ -1776,20 +2903,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuiviComponent", function() { return SuiviComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
-/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ngApollo.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _students_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../students.service */ "./src/app/students.service.ts");
-/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
-/* harmony import */ var pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! pdfmake-wrapper */ "./node_modules/pdfmake-wrapper/index.js");
-/* harmony import */ var _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../msg-confirm/msg-confirm.component */ "./src/app/msg-confirm/msg-confirm.component.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _students_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../students.service */ "./src/app/students.service.ts");
+/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
+/* harmony import */ var pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! pdfmake-wrapper */ "./node_modules/pdfmake-wrapper/index.js");
+/* harmony import */ var _msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../msg-confirm/msg-confirm.component */ "./src/app/msg-confirm/msg-confirm.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 
 
 
@@ -1802,29 +2926,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-var fade = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('fade', [
-    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => *', [
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('400ms {{delay}}ms linear', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }))
+var fade = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])('fade', [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])('void => *', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 0 }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('400ms {{delay}}ms linear', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 1 }))
     ], { params: { delay: '30' } })
 ]);
 var SuiviComponent = /** @class */ (function () {
-    function SuiviComponent(datepipe, studentsService, fb, http, dialog, matIconRegistry, domSanitizer, apollo) {
-        var _this = this;
+    function SuiviComponent(datepipe, fb, studentsService, dialog, matIconRegistry, domSanitizer) {
         this.datepipe = datepipe;
-        this.studentsService = studentsService;
         this.fb = fb;
-        this.http = http;
+        this.studentsService = studentsService;
         this.dialog = dialog;
         this.matIconRegistry = matIconRegistry;
         this.domSanitizer = domSanitizer;
-        this.apollo = apollo;
         this.students = [];
+        this.studentsCopy = [];
+        this.searchTerm = '';
         this.end = 9;
         this.rest = 0;
+        this.rests = 0;
         this.ascending = false;
         this.loading = false;
         this.type = 'determinate';
@@ -1833,12 +2954,12 @@ var SuiviComponent = /** @class */ (function () {
         this.data = [];
         this.filterData = [];
         this.shownData = [];
-        this.filterObj = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]();
-        this.searchObj = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('');
-        this.totalQuery = graphql_tag__WEBPACK_IMPORTED_MODULE_9___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["query{totalMedics}"], ["query{totalMedics}"])));
-        this.dataQuery = graphql_tag__WEBPACK_IMPORTED_MODULE_9___default()(templateObject_2 || (templateObject_2 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n    query($start:Int!,$end:Int!){\n      medicaments(start:$start,end:$end){\n        ID\n        DRUG_CLASS\n        PHARMACOLOGY_CLASS\n        NUM_ENREGISTREMENT\n        CODE\n        DENOMINATION_COMMUNE_INTERNATIONALE\n        NOM_DE_MARQUE\n        FORME\n        DOSAGE\n        COND\n        LISTE\n        P1\n        P2\n        OBS\n        LABORATOIRES_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        PAYS_DU_LABORATOIRE_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        DATE_DENREGISTREMENT_INITIAL\n        DATE_DENREGISTREMENT_FINAL\n        TYPE\n        STATUT\n        DUREE_DE_STABILITE\n        PRIX_PORTE_SUR_LA_DECISION_DENREGISTREMENT\n        REMBOURSEMENT\n      }\n    }\n  "], ["\n    query($start:Int!,$end:Int!){\n      medicaments(start:$start,end:$end){\n        ID\n        DRUG_CLASS\n        PHARMACOLOGY_CLASS\n        NUM_ENREGISTREMENT\n        CODE\n        DENOMINATION_COMMUNE_INTERNATIONALE\n        NOM_DE_MARQUE\n        FORME\n        DOSAGE\n        COND\n        LISTE\n        P1\n        P2\n        OBS\n        LABORATOIRES_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        PAYS_DU_LABORATOIRE_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        DATE_DENREGISTREMENT_INITIAL\n        DATE_DENREGISTREMENT_FINAL\n        TYPE\n        STATUT\n        DUREE_DE_STABILITE\n        PRIX_PORTE_SUR_LA_DECISION_DENREGISTREMENT\n        REMBOURSEMENT\n      }\n    }\n  "])));
+        this.filterObj = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
+        this.searchObj = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
+        this.totalQuery = graphql_tag__WEBPACK_IMPORTED_MODULE_6___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["query{totalMedics}"], ["query{totalMedics}"])));
+        this.dataQuery = graphql_tag__WEBPACK_IMPORTED_MODULE_6___default()(templateObject_2 || (templateObject_2 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n    query($start:Int!,$end:Int!){\n      medicaments(start:$start,end:$end){\n        ID\n        DRUG_CLASS\n        PHARMACOLOGY_CLASS\n        NUM_ENREGISTREMENT\n        CODE\n        DENOMINATION_COMMUNE_INTERNATIONALE\n        NOM_DE_MARQUE\n        FORME\n        DOSAGE\n        COND\n        LISTE\n        P1\n        P2\n        OBS\n        LABORATOIRES_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        PAYS_DU_LABORATOIRE_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        DATE_DENREGISTREMENT_INITIAL\n        DATE_DENREGISTREMENT_FINAL\n        TYPE\n        STATUT\n        DUREE_DE_STABILITE\n        PRIX_PORTE_SUR_LA_DECISION_DENREGISTREMENT\n        REMBOURSEMENT\n      }\n    }\n  "], ["\n    query($start:Int!,$end:Int!){\n      medicaments(start:$start,end:$end){\n        ID\n        DRUG_CLASS\n        PHARMACOLOGY_CLASS\n        NUM_ENREGISTREMENT\n        CODE\n        DENOMINATION_COMMUNE_INTERNATIONALE\n        NOM_DE_MARQUE\n        FORME\n        DOSAGE\n        COND\n        LISTE\n        P1\n        P2\n        OBS\n        LABORATOIRES_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        PAYS_DU_LABORATOIRE_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT\n        DATE_DENREGISTREMENT_INITIAL\n        DATE_DENREGISTREMENT_FINAL\n        TYPE\n        STATUT\n        DUREE_DE_STABILITE\n        PRIX_PORTE_SUR_LA_DECISION_DENREGISTREMENT\n        REMBOURSEMENT\n      }\n    }\n  "])));
         /* form init */
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             search: this.searchObj,
             filter: this.filterObj
         });
@@ -1849,54 +2970,24 @@ var SuiviComponent = /** @class */ (function () {
         this.matIconRegistry.addSvgIcon('input_way', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/inputWay.svg'));
         this.matIconRegistry.addSvgIcon('description', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/description.svg'));
         /* get data length */
-        this.apollo.watchQuery({ query: this.totalQuery }).valueChanges.subscribe(function (v) { return _this.totalMedics = v.data.totalMedics; });
     }
     /////////////////////////////////////////////////////////////*
-    SuiviComponent.prototype.openDialog = function (matricule) {
-        var dialogRef = this.dialog.open(_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_11__["DialogOverviewExampleDialog"], {
+    SuiviComponent.prototype.openDialog = function (student) {
+        var dialogRef = this.dialog.open(_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_8__["DialogOverviewExampleDialog"], {
             width: '60%',
-            data: matricule
+            data: student
         });
         dialogRef.afterClosed().subscribe(function (result) {
         });
     };
     SuiviComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //window.location.reload()
+        console.log(localStorage.getItem("user"));
         this.studentsService.getStudents();
         this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(function (students) {
             _this.students = students;
-            //this.fetchArray = this.students
-            (_this.getDateFin(_this.students));
-        });
-        this.Datafetch(0);
-        this.searchObj.valueChanges
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (v) { _this.loading = true; _this.type = 'query'; return v; }))
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(1700)).subscribe(function (v) { return _this.filter(); });
-    };
-    SuiviComponent.prototype.Datafetch = function (cpt) {
-        var _this = this;
-        var step = 500;
-        this.loading = true;
-        this.type = 'determinate';
-        this.apollo.watchQuery({ query: this.dataQuery, variables: { start: cpt * step, end: (cpt + 1) * step } }).valueChanges
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(150)).subscribe(function (v) {
-            var _a;
-            if (v.data.medicaments.length > 0) {
-                (_a = _this.data).push.apply(_a, tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](v.data.medicaments));
-                _this.filterData = _this.data;
-                _this.Datafetch(cpt + 1);
-            }
-            else {
-                _this.type = 'query';
-                setTimeout(function () {
-                    _this.loading = false;
-                }, 2000);
-            }
-            _this.setLoading();
-            if (cpt === 0)
-                _this.filterList = Object.keys(_this.data[0]).map(function (val) { return val.toLocaleLowerCase().replace(new RegExp('_', 'g'), ' '); });
-            _this.setLoad(9);
+            _this.studentsCopy = students;
+            _this.rests = Math.max(_this.students.length - _this.end, 0);
         });
     };
     SuiviComponent.prototype.setLoading = function () {
@@ -1954,19 +3045,24 @@ var SuiviComponent = /** @class */ (function () {
     };
     SuiviComponent.prototype.setLoad = function (val) {
         this.end = val;
+        this.rests = this.students.length - this.end;
         if (this.students.length === 0)
             this.rest = 0;
         else
             this.rest = Math.max(this.students.length - this.end, 0);
+        this.rests = Math.max(this.students.length - this.end, 0);
     };
-    SuiviComponent.prototype.tracbyfn = function (index, item) {
+    /*
+      tracbyfn(index, item) {
         return index + item.ID;
-    };
+      }
+    
+    */
     SuiviComponent.prototype.ngOnDestroy = function () {
         this.studentSub.unsubscribe();
     };
     SuiviComponent.prototype.openDialogDelete = function (student) {
-        var dialogRef = this.dialog.open(_msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_13__["MsgConfirmComponent"], {
+        var dialogRef = this.dialog.open(_msg_confirm_msg_confirm_component__WEBPACK_IMPORTED_MODULE_10__["MsgConfirmComponent"], {
             width: '40%',
             data: student
         });
@@ -1979,94 +3075,66 @@ var SuiviComponent = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
                 switch (_c.label) {
                     case 0:
-                        console.log(student.nom);
-                        pdf = new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["PdfMakeWrapper"]();
+                        pdf = new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["PdfMakeWrapper"]();
                         //pdf.add( await new Img('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARIAAAC4CAMAAAAYGZMtAAAAkFBMVEX////mExjlAADmAArrYGHmDRP86eroJSr61tb0qqzzpaX0p6nmDBLnKi785ubsXWH+8/TqSEvxj5H74OH++fn1r7HpPUDvgIL3w8ToNjn97/D5zc7nHiPwhYfnGB7rWFvtbnDud3n2uLnzn6H4y8z2vb773N3qTE/tZ2nxk5X61NXrVFbqS07pQETpOTztam4i/YWmAAAIA0lEQVR4nO2d6XqqMBBAyaRRa9FudNG628Xa2/b93+5mwhYExFAxJuT86C2ifuFckgkzgXqew+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwlNLpjHU34awI7roAMOrrbsf50ANghBAfJm+6m3Im3INPQnz4uNfdmrPgm5IECk+B7vbo5xWIDNBL3S3SzjSrhDD4edHdJs1cULKDD5t2R+S8Et574FN3s3RSpIRLaXNALlbCh5SPd91N00WJEhGQb3Q3Tg+lSnBIaeccf48S3nsGbQzI+5SIgNzR3cKTs18J9p67ts3xq5RwKWSlu5GnpVoJH1JuWxWQD1CCAXnZooB8kBIcUta6W3oyDlTCpYyedbf1RByshAfkeTsC8uFKcEiZtiEgqyjBpNuD7gY3j5oSHpC/e7qb3DSKSrD3LCxPuikrsT8g11DCpcxsDsi1lPAh5cveKlg9JVYH5LpKeO/xLQ3I9ZVgFWyru/lN8AcltlbB/qTEzirYH5XYWAX7sxL7lqX8XYl1y1KOoQSHlCvdB3I8jqMEk27WVMGOpcSiKtjRlIgqmO6jOQpHVGJLFeyoSjDpZn4V7LhKrKiCHVuJBctSjq8El6UYnXRrQInpVbBGlOCQYu6ylIaUmByQG1OCy1LMrII1p0RUwUwMyE0qMbQK1qwSTLoZF5CbVoIB2bCkW+NKzKuCnUCJaVWwkyjhAXlkThUsUQIJfvYFcUQp2BEym5DZjD4Rf0EixYdfU6pgsRJYjzvI8HX9Le4bjl/YAmGDTsz4AejvONnsDAGu0s3xCp7H43UoAqZj/u70TDGmCpYoke78fKb8RIGo+3dQibQPYCl9PACQ5+3PcM1/zpj4Rj5N+/GJhCFVMFlJZ7vtiYDZwf7w+d7b8q1hpGTbQ97XQC/exa9bHB2uAN8nNvGT1xS2+CJ+IT8nHnZuL/Xhw4ArZFnJWgwHWJFZRWPEV6okP5bg2cJYMpbwM+AdCH3kr04YYTQQe3egcP7XPbKSq3AoxTl4eO7TC0nJ7tFhx1gnr/o//D1f/MuAz1Yv+TDLv+Uz9xk8Uc7+sienhDvh/79LqFKCFYobmpwG8BLdme7jmyd0Fng3BUb4G590H3IVeSUEXj2vn1eShGQBI1zcU7JJ5/wtIzGY4rj8gN1vWaiEgO5DrqJIySocTLJKri6RpKfgm+7TY4ZO8nE24e+eZPZmlZx7WeNgJSFxZ6B84PVuk5kvjhxjYOlGgNGnRMm5F48VlYwjJTCUQ6w/4rt+403m41XeS8lJQuDcp/YHK+mOBCw9ESAdW3uZp36I2vBt2cUTnPtlccnwus4Prz4SWqAYcTeJA5jyTZLOQTAgF4cb/Oy15iOupEjJTVUQxm7zlnYb3P0k7fcf9yiBs08o5ZWIWemExb++55VghJWnJPc7D8vZo4TB+WdOZCV9MfPYeHj5xqeZnK0YRMV4uUmzATgHmaebaxQgT1vKlQA14MJPVrJd9/sPOGsIZsy/vexf4TmOwySqCR76nKs7YDPesYbrvuCSimvf13CT792nxJBlfkXJgfEjJXQR/i6uU8QsJGQIkEm5A8iZofs9Soy5OyNRkvTx3hT4a6GS+2iykWbZuZLMgcFM3oqUfGOI3u0zxtzDEythk66AxAPCbNDtAsSTCwoQ7u8y1pUYMCJvdqMxd5D8FgsxJaXmSblXFpGe6DvZjmQ/k8ltFn3WrPsBT5ChZ/B97nP4DM0rMe7e4qaVmFbq85pW4sN8qPsIlSlXwjDc+LmEsgpmruMrVcIGywWdxdkAwmgakQ8VYuLiEq9QCRUzE34VHMBtPOUCWNw9fahIMXQJklegBOB3jbN4+tXZJkqi6X5nXnbJv4vJK8fTqRoN8+vLIJqXY0+JlOBlX2+FOdOSrPsu5i5n9KQJ/c/82w+rLPeXmA/yv/uf8VlCN8NHPtGf8Kub7gHjrcmLXj3psq+PSRJGoqwJapDGEkqp+BlI9b0yfLgwL/DKpIspUAk/SYLF0/SO9w+uZCyUiNMiykJfYpJtLwy6r7qP6Y9ISl6AxCsjepGSASZVJRblOdXoa0y/zcJLlVBxtLDevry8BphdFEowMx0EwU2C5+2LwxbcjONJwysJ8GnjeCp8eN4/SvgZ0QE6z42TfqkQBv+MDbwy6Vq1NYZYznWA+XZcL4KDC5lfb36vkflc/FMacWBmcOCVSadqmFPtPD/jwiPK6JTPQjYUpyshMPj3AzSMPMV9xpy0WQXS7DWeTTyAL6qUmRUz4fBbBg+8BqXNKpAn9ACb6d2CiIUz0+UkYwDusB8VY9lfOMhc47B02SvAzqBBS6/5bPs7GBkldOxtqmYeuxhSr1IgqyTwfgsW6u2B2fbwEm+344xGs9GofOaRA2YG1HhVyeZLmE/8w42YVK9SoH462oeFAUuda1BXiVG3k6hRUwkYsHSmLrWUGFivUqCGEvNuYFRDXYmZ9SoFVJWYWq9SQE2JufUqBVSUtOHx4p6SEmCWpM0qOFiJ4fUqBQ5UYuRCkZocpMSCepUChyhpQeCVqVZiR71KgSolbftDW16lEvDbEXhl9iqhljyuVI09Sny4sDNtVkH5ikaLHn2sRpkSGxaK1KRYCRWr+FpKkRLrHravRoESQx5G0xi5hayW1qsUWGWV2PM0+foE8i1nFterVEhvlLe6XqVEP1pLY99Ckfpsb8Uy34s2B94cw7fVmz3L7xwOh8PhcDgcDofD4XA4HA6Hw+FwOByOc+E/gPhwF+NwkUsAAAAASUVORK5CYII=').fontSize(2).build() );
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Columns"](['', 'Optimum Telecom Algerie S.P.A.']).columnGap(200).bold().fontSize(8).end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Columns"](['', 'Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.']).columnGap(100).fontSize(8).end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Columns"](['', ' Département des Ressources Humaines  ']).columnGap(200).fontSize(8).bold().end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Columns"](['', ' Tél. : 0770 85 2110 / 05  -  Fax : 0770 85 2117 / 27 / 07  ']).columnGap(100).fontSize(8).bold().end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Columns"](['', ' E-Mail: jobs@otalgerie.com']).columnGap(200).bold().fontSize(8).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Columns"](['', 'Optimum Telecom Algerie S.P.A.']).columnGap(200).bold().fontSize(8).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Columns"](['', 'Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.']).columnGap(100).fontSize(8).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Columns"](['', ' Département des Ressources Humaines  ']).columnGap(200).fontSize(8).bold().end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Columns"](['', ' Tél. : 0770 85 2110 / 05  -  Fax : 0770 85 2117 / 27 / 07  ']).columnGap(100).fontSize(8).bold().end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Columns"](['', ' E-Mail: jobs@otalgerie.com']).columnGap(200).bold().fontSize(8).end);
+                        //pdf.header('this is header')
                         _b = (_a = pdf).add;
-                        return [4 /*yield*/, new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Img"]('../assets/logo.png').build()];
+                        return [4 /*yield*/, new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Img"]('../assets/logo.png').alignment('left').build()];
                     case 1:
+                        //pdf.header('this is header')
                         _b.apply(_a, [_c.sent()]);
                         pdf.add(pdf.ln(2));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('CERTIFICAT DE STAGE').alignment('center').bold().fontSize(20).end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('_________________________________________________________________________________').alignment('center').italics().bold().end);
-                        pdf.add(pdf.ln(4));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"](['Je soussignée,Mme. Fatma TILIOUINE agissant en qualité de Digital Learning &                                       ']).alignment('center').end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('Development Professional de la société Optimum Telecom Algérie S.P.A, sise à      ').end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('                            ' + '                           Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.' + '                                                      ').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('CERTIFICAT DE STAGE').alignment('center').bold().fontSize(20).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('_________________________________________________________________________________').alignment('center').italics().bold().end);
+                        pdf.add(pdf.ln(3));
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"](['Je soussignée,Mme. Fatma TILIOUINE agissant en qualité de Digital Learning &                                       ']).alignment('center').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('Development Professional de la société Optimum Telecom Algérie S.P.A, sise à      ').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('                            ' + '                           Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.' + '                                                      ').end);
                         pdf.add(pdf.ln(2));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('Certifie par le présent que :').alignment('center').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('Certifie par le présent que :').alignment('center').end);
                         pdf.add(pdf.ln(2));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('Mme/M                       ' + student.nom + '     ' + student.prenom + '          étudiant(e) à         ' + student.etablissement + '                   ').alignment('center').end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('a suivi avec succès un stage pratique au sein de la société Optimum Telecom Algérie               ').end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('«DJEZZY» au Département «' + '                ' + student.encadreurDEP + '                » service «                ' + student.encadreurSec + '                 »').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('Mme/M                       ' + student.nom + '     ' + student.prenom + '          étudiant(e) à         ' + student.etablissement + '                   ').alignment('center').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('a suivi avec succès un stage pratique au sein de la société Optimum Telecom Algérie               ').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('«DJEZZY» au Département «' + '                ' + student.encadreurDEP + '                » service «                ' + student.encadreurSec + '                 »').end);
                         dd = student.dateDebut;
                         df = student.dateFin;
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('pour la période allant du ' + this.datepipe.transform(dd, 'dd/MM/yyyy') + ' au ' + this.datepipe.transform(df, 'dd/MM/yyyy') + '.').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('pour la période allant du ' + this.datepipe.transform(dd, 'dd/MM/yyyy') + ' au ' + this.datepipe.transform(df, 'dd/MM/yyyy') + '.').end);
                         pdf.add(pdf.ln(3));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('Au cours de cette période elle a intégré l’équipe du service                                    ' + '                                           ').alignment('center').end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('«       ' + student.encadreurSec + '       » avec aisance, rigueur et professionnalisme. ').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('Au cours de cette période elle a intégré l’équipe du service                                    ' + '                                           ').alignment('center').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('«       ' + student.encadreurSec + '       » avec aisance, rigueur et professionnalisme. ').end);
                         pdf.add(pdf.ln(4));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('Ce certificat est délivré à l’intéressé(e) pour servir et valoir ce que de droit').alignment('center').end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('Ce certificat est délivré à l’intéressé(e) pour servir et valoir ce que de droit').alignment('center').end);
                         pdf.add(pdf.ln(4));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Columns"](['', 'Fait à Alger, le ']).columnGap(100).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Columns"](['', 'Fait à Alger, le ']).columnGap(100).end);
                         pdf.add(pdf.ln(8));
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('_____________________________________________________________________Membre du groupe ORASCOM TELECOM_______________').alignment('center').fontSize(8).end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"](' Optimum Telecom Algérie S.p.a – Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.').alignment('center').fontSize(8).end);
-                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_12__["Txt"]('Capital social : 164.002.000.000,00 DA - Identifiant fiscal : 001316099189030 - RC : 16/00- 0991890 B 13 – Tel/Fax : 07 70 85 00 00').alignment('center').fontSize(8).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('_____________________________________________________________________Membre du groupe ORASCOM TELECOM_______________').alignment('center').fontSize(8).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"](' Optimum Telecom Algérie S.p.a – Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.').alignment('center').fontSize(8).end);
+                        pdf.add(new pdfmake_wrapper__WEBPACK_IMPORTED_MODULE_9__["Txt"]('Capital social : 164.002.000.000,00 DA - Identifiant fiscal : 001316099189030 - RC : 16/00- 0991890 B 13 – Tel/Fax : 07 70 85 00 00').alignment('center').fontSize(8).end);
                         pdf.create().open();
                         return [2 /*return*/];
                 }
             });
         });
     };
-    SuiviComponent.prototype.getNbDay = function (datefin) {
-        var d1 = new Date(Date.now());
-        var d2 = new Date(datefin);
-        var same = d1.getTime() - d2.getTime();
-        var days = (same / (60 * 60 * 24 * 1000));
-        return days;
-    };
-    SuiviComponent.prototype.getDateFin = function (students) {
-        // send email  but there is a lot of problem to fix here we should make exute one at  the day
-        var e_1, _a;
-        document.cookie = 'preventSpam;max-age=604800';
-        if (document.cookie) {
-            console.log("cookie is here");
-            try {
-                for (var students_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](students), students_1_1 = students_1.next(); !students_1_1.done; students_1_1 = students_1.next()) {
-                    var item = students_1_1.value;
-                    if (this.getNbDay(item.dateFin) < 7) {
-                        console.log("send email");
-                    }
-                    else {
-                        // not send email
-                        console.log("email not sen");
-                    }
-                }
-            }
-            catch (e_1_1) { e_1 = { error: e_1_1 }; }
-            finally {
-                try {
-                    if (students_1_1 && !students_1_1.done && (_a = students_1.return)) _a.call(students_1);
-                }
-                finally { if (e_1) throw e_1.error; }
-            }
-        }
+    SuiviComponent.prototype.search = function () {
+        var term = this.searchTerm;
+        this.students = this.studentsCopy.filter(function (student) {
+            return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.encadreur.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.diplome.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
+        });
+        this.rests = Math.max(this.students.length - this.end, 0);
     };
     SuiviComponent.ctorParameters = function () { return [
-        { type: _angular_common__WEBPACK_IMPORTED_MODULE_14__["DatePipe"] },
-        { type: _students_service__WEBPACK_IMPORTED_MODULE_10__["StudentService"] },
-        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-        { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] },
-        { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatIconRegistry"] },
-        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["DomSanitizer"] },
-        { type: apollo_angular__WEBPACK_IMPORTED_MODULE_8__["Apollo"] }
+        { type: _angular_common__WEBPACK_IMPORTED_MODULE_11__["DatePipe"] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+        { type: _students_service__WEBPACK_IMPORTED_MODULE_7__["StudentService"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatIconRegistry"] },
+        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"] }
     ]; };
     SuiviComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
