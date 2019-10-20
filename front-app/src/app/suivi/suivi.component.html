@@ -3,7 +3,7 @@
 
 
 
-<mat-sidenav-container class="sidenav-container" >
+<mat-sidenav-container >
 
 
         <div class="container">
@@ -47,7 +47,7 @@
 
                 <div class="medicaments">
 
-                    <mat-card *ngFor="let student of students | load : end ;let i = index ;"
+                    <mat-card style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);" *ngFor="let student of students | load : end ;let i = index ;"
                         [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
                        <div class="remboursement" [ngClass]="{'isremb': student.attestation}"></div>
                         <mat-card-header>
@@ -90,8 +90,8 @@
                         </mat-card-content>
                         <mat-card-actions align="center">
 
-                            <button mat-button color="primary" (click)="onCreatePdf(student)">  <mat-icon >picture_as_pdf</mat-icon>   </button>
-                            <button mat-button color="primary" (click)="openDialog(student)"><mat-icon>edit</mat-icon></button>
+                            <button mat-button color="black" (click)="onCreatePdf(student)">  <mat-icon >picture_as_pdf</mat-icon>   </button>
+                            <button mat-button color="black" (click)="openDialog(student)"><mat-icon>edit</mat-icon></button>
                             <button mat-button color="warn" (click)= " openDialogDelete(student)"><mat-icon >delete</mat-icon></button>
 
                         </mat-card-actions>

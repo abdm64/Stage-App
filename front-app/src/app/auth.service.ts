@@ -1,7 +1,11 @@
-import {Injectable } from  '@angular/core';
+import {Injectable, Input } from  '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from './AuthData';
 import {Router} from "@angular/router"
+import { MsgErrorComponent} from "./msg-error/msg-error.component"
+import { MatDialog } from '@angular/material';
+
+
 
 
 
@@ -12,22 +16,14 @@ import {Router} from "@angular/router"
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocalp = "http://localhost:3000/api";
-  baseUrlLocal = "http://172.16.60.34:3000/api"
+  baseUrlLocal = "http://localhost:3000/api";
+  baseUrlLocalp = "http://172.16.60.34:3000/api"
   token = ""
-    constructor(private http: HttpClient ,private router: Router){}
+    constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){}
 
-    public isLooged : false ;
-
-    getToken(){
-        return this.token
-    }
-
-    get isLoged (){
+    isLooged : Boolean = false ;
 
 
-        return this.isLooged
-    }
 
 createUser(email : string, password: string){
     const authData : AuthData = {
@@ -36,7 +32,6 @@ createUser(email : string, password: string){
 
     this.http.post(this.baseUrlLocal+'/user/sign', authData).subscribe(response => {
 
-    console.log(response);
     })
 
 
@@ -53,12 +48,16 @@ login(email : string, password: string){
             localStorage.setItem("auth",'true')
             localStorage.setItem("user",authData.email)
             localStorage.setItem("token",response.token)
+              this.isLooged = true,
+
             this.token = response.token
 
 
     }, error => {
 
       console.log(error.message) ;
+    //  alert("Please confirm the email or password ")
+      this.openErrorMessage("Error","Please confirm the email or the password")
 
     });
 
@@ -66,9 +65,34 @@ login(email : string, password: string){
 
 
 
+
+}
+getIsLooged(){
+console.log(this.isLooged)
+  return this.isLooged
+}
+
+
+openErrorMessage(title : String, message : String): void {
+  //console.log(data)
+  const dialogRef = this.dialog.open(MsgErrorComponent, {
+    width: '20%',
+    data : { title : title,
+      message : message
+
+    }
+
+  });
+
+
+  dialogRef.afterClosed().subscribe(result => {
+
+
+  });
+
 }
 
 
 
 
-}
+}//class

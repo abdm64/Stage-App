@@ -14,8 +14,8 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocall = "http://localhost:3000/api/";
-  baseUrlLocal = "http://172.16.60.34:3000/api/"
+  baseUrlLocal = "http://localhost:3000/api/";
+  baseUrlLocalp = "http://172.16.60.34:3000/api/"
   encadreur : any = {
 
 
@@ -46,25 +46,25 @@ export class InsertComponent implements OnInit {
     //
     req.send(null)
 
-      let data =  parseInt(req.response);
-      console.log()
+      let data =  JSON.parse(req.response)
 
-  if (data == null) {
- data = 0
+
+  if (data === null ) {
+ num = 1
  } else {
 
-  num = data + 1;
+  num = data.matricule + 1
  }
 
 
 
-
+console.log(num)
     return num
   }
 
   onAddPost(form:NgForm){
 
-
+console.log(this.getMatricule())
 
           form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name
           form.value.encadreurDEP = this.encadreur.Departement
@@ -73,7 +73,7 @@ export class InsertComponent implements OnInit {
           form.value.encadreurmOrg = this.encadreur.Position
           form.value.user = localStorage.getItem("user")
           form.value.matricule = this.getMatricule() ;
-          console.log(form.value)
+
           this.studentsService.addStudent(form.value);
 
 
@@ -87,16 +87,11 @@ export class InsertComponent implements OnInit {
 
 
 
-this.openSnackBar("operation succeeded", "Close");
+
 
 
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
-      duration: 5000,
-    });
-  }
 
   ngOnInit() {
   }

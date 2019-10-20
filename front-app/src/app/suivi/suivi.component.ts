@@ -15,6 +15,8 @@ import { DatePipe} from '@angular/common';
 
 
 
+
+
 export const fade = trigger('fade', [
   transition('void => *', [
     style({ opacity: 0 }),
@@ -32,6 +34,7 @@ export const fade = trigger('fade', [
 export class SuiviComponent implements OnInit {
   students: Students[] =[];
   studentsCopy: Students[] =[];
+  mySubscription: any;
 private studentSub:Subscription;
 
 
@@ -93,8 +96,10 @@ searchTerm = '';
     }
   `;
 
-  constructor(public datepipe : DatePipe,  private fb: FormBuilder ,public studentsService :StudentService ,public dialog: MatDialog, private matIconRegistry: MatIconRegistry,
+  // tslint:disable-next-line: max-line-length
+  constructor(public datepipe : DatePipe ,public studentsService :StudentService ,public dialog: MatDialog, private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {
+
     /* form init */
     this.form = new FormGroup({
       search: this.searchObj,
@@ -176,49 +181,49 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
   }
-  filter() {
-    if (this.filterObj.value == null) { this.filterObj.setValue(3); }
-    if (this.searchObj.value === '') {
-      this.filterData = this.data;
-      this.loading = false;
-      this.setLoad(9);
-      return;
-    }
+  // filter() {
+  //   if (this.filterObj.value == null) { this.filterObj.setValue(3); }
+  //   if (this.searchObj.value === '') {
+  //     this.filterData = this.data;
+  //     this.loading = false;
+  //     this.setLoad(9);
+  //     return;
+  //   }
 
-    this.filterData = this.data.filter(item => {
-      const val = Object.values<any>(item)[this.filterObj.value];
-      if (this.filterObj.value === 0) {
-        return val === this.searchObj.value;
-      }
-      return !!val && val.toLowerCase().search(new RegExp(this.searchObj.value.toLowerCase())) !== -1;
-    });
+  //   this.filterData = this.data.filter(item => {
+  //     const val = Object.values<any>(item)[this.filterObj.value];
+  //     if (this.filterObj.value === 0) {
+  //       return val === this.searchObj.value;
+  //     }
+  //     return !!val && val.toLowerCase().search(new RegExp(this.searchObj.value.toLowerCase())) !== -1;
+  //   });
 
-    this.setLoad(9);
-    this.loading = false;
-  }
-  sortBy(index: number) {
-    this.filterData = this.filterData.slice().sort((a, b) => {
+  //   this.setLoad(9);
+  //   this.loading = false;
+  // }
+  // sortBy(index: number) {
+  //   this.filterData = this.filterData.slice().sort((a, b) => {
 
-      a = Object.values(a)[index];
-      b = Object.values(b)[index];
+  //     a = Object.values(a)[index];
+  //     b = Object.values(b)[index];
 
-      if (a === b) {
-        return 0;
-      } else {
-        if (this.ascending)
-          return a > b ? 1 : -1;
-        else
-          return a < b ? 1 : -1;
-      }
-    });
-    this.setLoad(9);
-  }
-  reverseSort(bool) {
-    if (bool !== this.ascending) {
-      this.ascending = !this.ascending;
-      this.filterData = this.filterData.slice().reverse();
-    }
-  }
+  //     if (a === b) {
+  //       return 0;
+  //     } else {
+  //       if (this.ascending)
+  //         return a > b ? 1 : -1;
+  //       else
+  //         return a < b ? 1 : -1;
+  //     }
+  //   });
+  //   this.setLoad(9);
+  // }
+  // reverseSort(bool) {
+  //   if (bool !== this.ascending) {
+  //     this.ascending = !this.ascending;
+  //     this.filterData = this.filterData.slice().reverse();
+  //   }
+  // }
   setLoad(val) {
 
     this.end = val;
@@ -237,6 +242,8 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
   }
 
 */
+
+
 
   ngOnDestroy(){
     this.studentSub.unsubscribe();

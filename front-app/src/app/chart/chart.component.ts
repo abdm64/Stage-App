@@ -113,6 +113,7 @@ export class ChartComponent implements OnInit {
         'rgba(75,192,192,0.2)',
         'rgba(135,102,255,0.2)',
         'rgba(255,159,64,0.2)',
+        
       ],
       borderColor:[
         'rgba(255,99,132,0.2)',
@@ -126,8 +127,8 @@ export class ChartComponent implements OnInit {
     }]
   },options:{
     title:{
-      text:"",
-      display:true
+     // text:"",
+     // display:true
     },
     scales:{
       yAxes:[{

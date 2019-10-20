@@ -19,7 +19,7 @@
 
 
 
-  mongoose.connect("mongodb://mongo/test",{
+  mongoose.connect("mongodb://localhost/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
@@ -158,7 +158,7 @@ app.post('/api/students/insertData',auth,(req,res)=>{
   });
 
 //delete All data
-app.delete("/api/students/delete",auth,function (req,res) {
+app.delete("/api/students/delete",function (req,res) {
 
    Students.deleteMany( function (err) {
     if (err) return handleError(err), res.send(err);
@@ -185,7 +185,7 @@ app.delete("/api/students/delete",auth,function (req,res) {
 
   Students.findOne({}, {}, { sort: { _id :  -1} }, function(err, post) {
     
-      res.json(post.matricule)
+      res.json(post)
     
     
   });

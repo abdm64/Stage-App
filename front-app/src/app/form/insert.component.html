@@ -4,44 +4,44 @@
 
 <form  #postForm="ngForm" (ngSubmit)="onAddPost(postForm)">
 <div class="container">
-  <div class="row">
+  <div class="row" style="position: relative;">
 
   <div class="col">
 
 
-  <mat-card class = "information">
+  <mat-card class = "information " style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
   <div >
 
 
 
     <h1 color = "primary">Personal informations</h1>
   <mat-form-field >
-    <input matInput placeholder = "NOM" name="nom" required ngModel>
+    <input matInput placeholder = "Nom" name="nom" required ngModel>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="PRENOM" name="prenom" required  ngModel>
+    <input matInput placeholder="Prénom" name="prenom" required  ngModel>
   </mat-form-field>
   <mat-form-field>
-      <mat-select placeholder="SEXE" name = "sexe" required  ngModel>
-        <mat-option value="HOMME">HOMME</mat-option>
-        <mat-option value="FEMME">FEMME</mat-option>
+      <mat-select placeholder="Sexe" name = "sexe" required  ngModel>
+        <mat-option value="HOMME">Homme</mat-option>
+        <mat-option value="FEMME">Femme</mat-option>
       </mat-select>
     </mat-form-field>
 
   <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="DATE DE NAISSANCE" name="dateNaissance"   required  ngModel >
+      <input matInput [matDatepicker]="picker" placeholder="Date de naissance" name="dateNaissance"   required  ngModel >
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="WILAYA" name="wilaya"  required ngModel>
+    <input matInput placeholder="Wilaya" name="wilaya"  required ngModel>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="N° DE TÉLÉPHONE" name="nTelephone" required  ngModel>
+    <input matInput placeholder="N° de téléphone" name="nTelephone" required  ngModel>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="ADRESSE MAIL" name="email" required  ngModel >
+    <input matInput placeholder="Adresse mail" name="email" required  ngModel >
   </mat-form-field>
 
 </div>
@@ -59,33 +59,43 @@
 </div>
 <div class="col">
 
-<mat-card >
+<mat-card   style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
 
   <div class="example-container">
-      <h1>Stage informations</h1>
+      <h1>Internship informations</h1>
 
       <mat-form-field>
-        <input matInput placeholder="ETABLISSEMENT"  name="etablissement" required  ngModel>
+        <input matInput placeholder="Etablissement"  name="etablissement" required  ngModel>
       </mat-form-field>
 
+      <mat-form-field >
+          <mat-select placeholder="diplome préparé" name="diplome" required  ngModel>
+            <mat-option value="1ere année">1ere année</mat-option>
+            <mat-option value="2eme année">2eme année</mat-option>
+            <mat-option value="3eme année">3eme année</mat-option>
+            <mat-option value="4eme année">4eme année</mat-option>
+            <mat-option value="5eme année">5eme année</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+
+
+
     <mat-form-field>
-      <input matInput placeholder="DIPLÔME PREPARÉ"  name="diplome" required  ngModel>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="THEME DU STAGE" name="theme" required  ngModel >
+        <input matInput placeholder="Theme de stage" name="theme" required  ngModel >
       </mat-form-field>
 
 
     <div class="row">
         <mat-form-field class="col-6">
-            <mat-select placeholder="TYPE DE STAGE" name="typeStage" required  ngModel>
+            <mat-select placeholder="Type de stage" name="typeStage" required  ngModel>
               <mat-option value="Projet de fin d'etude">Projet de fin d'études</mat-option>
               <mat-option value="Stage de découverte">Stage de découverte</mat-option>
               <mat-option value="Stage rémunéré">Stage rémunéré</mat-option>
             </mat-select>
           </mat-form-field>
     <mat-form-field class="col-6">
-        <mat-select placeholder="TYPE DE RAPPORT" name="typeRapport" required  ngModel >
+        <mat-select placeholder="Type de rapport" name="typeRapport" required  ngModel >
           <mat-option value="Rapport">Rapport</mat-option>
           <mat-option value="Memoire">Mémoire</mat-option>
         </mat-select>
@@ -95,13 +105,13 @@
       </div>
 <div class="row">
       <mat-form-field class="col-6">
-          <input matInput [matDatepicker]="debut" placeholder="DATE DEBUT" name="dateDebut"  required  ngModel>
+          <input matInput [matDatepicker]="debut" placeholder="Date début" name="dateDebut"  required  ngModel>
           <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
           <mat-datepicker #debut></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="col-6">
-            <input matInput [matDatepicker]="fin" placeholder="DATE FIN"  name="dateFin" required  ngModel>
+            <input matInput [matDatepicker]="fin" placeholder="Date fin"  name="dateFin" required  ngModel>
             <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
             <mat-datepicker #fin></mat-datepicker>
           </mat-form-field>
@@ -117,7 +127,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="RECOMENDATION" name="recommandation"  ngModel >
+      <input matInput placeholder="Recommandation" name="recommandation"  ngModel >
     </mat-form-field>
 
 
@@ -125,9 +135,9 @@
 
   <mat-form-field>
 
-      <mat-select placeholder="ATTESTATION DE STAGE" name= "attestation" required  ngModel>
-          <mat-option value="true" >OUI</mat-option>
-          <mat-option value="false">NO</mat-option>
+      <mat-select placeholder="Attestation de stage" name= "attestation" required  ngModel>
+          <mat-option value="true" >Oui</mat-option>
+          <mat-option value="false">No</mat-option>
 
         </mat-select>
       </mat-form-field>
@@ -137,7 +147,7 @@
 </div>
 <div class="col">
 
-<mat-card  >
+<mat-card  style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);" >
 
   <div class="example-container">
       <h1>Encadreur </h1>
@@ -145,13 +155,13 @@
 <div class="row">
   <div class="col-6">
       <mat-form-field >
-          <input matInput placeholder="IDENTIFIENT" name="encadreurID" #id  required ngModel >
+          <input matInput placeholder="Identifiant" name="encadreurID" #id  required ngModel >
 
 
         </mat-form-field >
   </div>
-  <div class="col-6">
-      <button mat-stroked-button color="white"  type="button" id="confirm" (click)="getEncadreur(id.value)" >Verify</button>
+  <div class="col-6" >
+      <button mat-stroked-button style="background-color: white; border-color:#E2001A ; color: #E2001A;" type="button" id="confirm" (click)="getEncadreur(id.value)" >Verify</button>
   </div>
 
 
@@ -164,13 +174,13 @@
 
 
 <mat-form-field >
-    <input matInput placeholder="NOM"  name="encadreur"    [value]= "encadreur.First_name+' '+encadreur.Last_Name" required  >
+    <input matInput placeholder="Nom"  name="encadreur"    [value]= "encadreur.First_name+' '+encadreur.Last_Name" required  >
 </mat-form-field>
 
 
 
 <mat-form-field >
-    <input matInput placeholder="EMAIL " name="encadreurmMail"  [value]= "encadreur.Email_Address" required  >
+    <input matInput placeholder="Email " name="encadreurmMail"  [value]= "encadreur.Email_Address" required  >
 
 </mat-form-field>
 
@@ -180,21 +190,21 @@
 
 
 <mat-form-field>
-    <input matInput placeholder="DEPARTEMENT" name="encadreurDEP"  [value]= "encadreur.Departement" required   >
+    <input matInput placeholder="Département" name="encadreurDEP"  [value]= "encadreur.Departement" required   >
 </mat-form-field>
 
 
 
 
 <mat-form-field>
-    <input matInput placeholder="SECTEUR" name="encadreurSec"   [value]= "encadreur.Sector" required   >
+    <input matInput placeholder="Secteur" name="encadreurSec"   [value]= "encadreur.Sector" required   >
 
 </mat-form-field>
 
 
 
 <mat-form-field>
-    <input matInput placeholder="FONCTION" name="encadreurmOrg"  [value]= "encadreur.Position"  required   >
+    <input matInput placeholder="Fonction" name="encadreurmOrg"  [value]= "encadreur.Position"  required   >
 
 </mat-form-field>
 
@@ -208,21 +218,28 @@
 
   </div>
 
+  
+
 </mat-card>
 
 
 
 
 </div>
+<div style="position: absolute; right: 0; bottom: 0;"><button mat-flat-button  id="save" type="submit" >Save</button></div>
+
 </div>
+
+
+
 <div class="row" >
   <div class="col-4" >
 </div>
 <div class="col-4"> </div>
 
 
-<div class="col-4"> <button mat-flat-button color="primary" id="save" type="submit" >SAVE</button> </div>
-<div class="col-4">   </div>
+<div class="col-4">  </div>
+
 </div>
 
 

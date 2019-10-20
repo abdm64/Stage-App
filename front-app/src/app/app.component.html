@@ -2,9 +2,9 @@
 
 
 
-<div class="content-container">
-<!--
 
+<!--
+<div class="content-container">
     <mat-toolbar [color]="'primary'" class="toolbar" style="max-width:50000px;">
         <div class="toolbar-container">
             <span>RH Project</span>
@@ -30,48 +30,185 @@
 
  -->
 
- <mat-toolbar color="primary">
-    <span class="fill-remaining-space">
-      <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <span (mouseleave)="menuTrigger.closeMenu()">
-          <button mat-menu-item >
-              <mat-icon>person_pin</mat-icon>
-            <span>{{ user }}</span>
-          </button>
-        <button mat-menu-item routerLink="/suivi">
-          <mat-icon>home</mat-icon>
-          <span>Home</span>
-        </button>
-        <button mat-menu-item routerLink="/insert" >
-          <mat-icon>add</mat-icon>
-          <span>ADD</span>
-        </button>
-        <button mat-menu-item  routerLink="/chart">
-          <mat-icon>dashboard</mat-icon>
-          <span>DASHBOARD</span>
-        </button>
-        <button mat-menu-item  (click)="export()">
-            <mat-icon>cloud_download</mat-icon>
-            <span>EXPORT FOR EXEL</span>
-          </button>
-        <button mat-menu-item (click)="logout()" >
-          <mat-icon>exit_to_app</mat-icon>
-          <span>Logout</span>
-        </button>
-      </span>
-      </mat-menu>
-    </span>
-    <span class="fill-remaining-space">Gestion de Stagiere</span>
-    <img class="logo-image" src="../assets/logo.png">
-    
-  </mat-toolbar>
+
+
+
+ <!--
 
 
 
 
 
     <router-outlet></router-outlet>
-</div>
+</div> -->
+
+
+<!--<mat-toolbar class="toolbardiv" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+    <mat-toolbar-row>
+
+      <button mat-icon-button (click)="toogleNav(sidenav)">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span> {{ 'APP_TOOLBAR_TITLE' | translate  </span>
+
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+
+        <ul fxLayout fxLayoutGap="20px">
+
+          <li fxHide.xs>
+            <button mat-icon-button>
+              <mat-icon>settings</mat-icon>
+            </button>
+          </li>
+
+          <li fxHide.xs>
+            <button mat-icon-button>
+              <mat-icon>help_outline</mat-icon>
+            </button>
+          </li>
+
+          <li>
+            <button mat-icon-button [matMenuTriggerFor]="auth">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #auth="matMenu">
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sign out</span>
+              </button>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+  </mat-toolbar-row>
+</mat-toolbar>  -->
+
+
+
+<mat-toolbar style="    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;background-color:#EFEFEF;">
+  <img class="logo-image" src="../assets/logo.png">
+  <span class="fill-remaining-space" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 25px; margin-left: 8px;">Interns Managment Pro</span>
+
+  <span class="fill-remaining-space"  style=" position: absolute; margin-left: 1110px;">
+
+    <ul fxLayout fxLayoutGap="20px" style="list-style-type: none; margin-top: 10px;">
+        <li>
+            <button mat-menu-item   >
+                <mat-icon>person_pin</mat-icon>
+              <span>{{ user }}</span>
+            </button>
+        </li>
+
+         <li>
+
+          <mat-menu #auth="matMenu" style="background-color: black;margin-right: 50;"></mat-menu>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Sign out</span>
+            </button>
+
+        </li>
+
+      </ul>
+    </span>
+
+
+    <!-- <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuTrigger.closeMenu()">
+        <button mat-menu-item >
+            <mat-icon>person_pin</mat-icon>
+          <span>{{ user }}</span>
+        </button>
+      <button mat-menu-item routerLink="/suivi">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item routerLink="/insert" >
+        <mat-icon>add</mat-icon>
+        <span>New intern</span>
+      </button>
+      <button mat-menu-item  routerLink="/chart">
+        <mat-icon>dashboard</mat-icon>
+        <span>DASHBOARD</span>
+      </button>
+      <button mat-menu-item  (click)="export()">
+          <mat-icon>cloud_download</mat-icon>
+          <span>EXPORT FOR EXEL</span>
+        </button>
+      <button mat-menu-item (click)="logout()" >
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </span>
+    </mat-menu> -->
+
+
+
+</mat-toolbar>
+
+
+
+  <mat-sidenav-container  class="sidenav">
+
+      <mat-sidenav [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()" class="sidenav-content">
+
+
+        <mat-nav-list >
+
+          <!-- <h2 matSubheader>  </h2>
+           <mat-divider></mat-divider> -->
+         <div style="margin-top: 10px;"  >
+
+
+            <button mat-menu-item routerLink="/suivi" class="btn">
+              <mat-icon style=" color: #F0F0F0;">home</mat-icon>
+              <span>Home</span>
+            </button>
+            <button mat-menu-item routerLink="/insert" class="btn">
+              <mat-icon style=" color: #F0F0F0;">add</mat-icon>
+              <span>NEW INTERN</span>
+            </button>
+            <button mat-menu-item  routerLink="/chart" class="btn">
+              <mat-icon style=" color: #F0F0F0;">dashboard</mat-icon>
+              <span>DASHBOARD</span>
+            </button>
+            <button mat-menu-item  (click)="export()" class="btn">
+                <mat-icon style=" color: #F0F0F0;">cloud_download</mat-icon>
+                <span>EXPORT TO EXEL</span>
+              </button>
+            <button mat-menu-item (click)="logout()" class="btn">
+              <mat-icon style=" color: #F0F0F0;">exit_to_app</mat-icon>
+              <span>Sign out</span>
+            </button>
+           <!-- <button class="btn" mat-menu-item  (click)="export()">
+            <mat-icon >cloud_download</mat-icon>
+            Export to excel
+          </button> -->
+
+        </div>
+
+
+        </mat-nav-list>
+        <mat-card class="box" style="margin: 30px 30px 0 30px ; background-color: #F0F0F0;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) " >
+          N'oubliez pas de consulter les emails envoyés automatiquementpar la plateforme sur votre email.
+        </mat-card>
+
+      </mat-sidenav>
+
+
+      <mat-sidenav-content >
+<br>
+
+          <router-outlet></router-outlet>
+
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+
+
+
+
+

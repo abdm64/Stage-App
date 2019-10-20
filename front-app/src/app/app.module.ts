@@ -41,6 +41,7 @@ import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import { ChartComponent } from './chart/chart.component';
 import { FilterPipe } from './filter.pipe';
 import { EncadreurComponent } from './encadreur/encadreur.component';
+import { MsgErrorComponent } from './msg-error/msg-error.component';
 
 
 
@@ -62,9 +63,10 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     ExcelWindowComponent,
     ChartComponent,
     FilterPipe,
-    EncadreurComponent
+    EncadreurComponent,
+    MsgErrorComponent
   ],
-    entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent,EncadreurComponent] ,
+    entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent,EncadreurComponent,MsgErrorComponent] ,
   imports: [
     BrowserModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),

@@ -2,14 +2,16 @@ import {Students} from '../../models/Student';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { MsgErrorComponent} from "./msg-error/msg-error.component"
+import { MatDialog } from '@angular/material';
 
 
 
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocall = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.34:3000/api"
+   baseUrlLocal = "http://localhost:3000/api";
+   baseUrlLocalp = "http://172.16.60.34:3000/api"
 
   result : string = '#' ;
 
@@ -18,7 +20,7 @@ export class  StudentService{
 
     private  studentUpdated = new  Subject<Students[]>();
 
-    constructor(private http:HttpClient){
+    constructor(private http:HttpClient, public dialog: MatDialog){
 
     }
     setHeader(){
@@ -58,9 +60,11 @@ export class  StudentService{
    this.http.post(this.baseUrlLocal+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
           this.result = "is ready to go" ;
-          console.log(respanse)
+          //console.log(respanse)
+          this.openMessage("succeeded","operation succeeded")
         }, error => {
           this.result  = error.message ;
+         this.openMessage("Error","Operation Failed")
 
         });
 
@@ -100,6 +104,25 @@ export class  StudentService{
 
 
     }
+
+    openMessage(title : String,message : String): void {
+      //console.log(data)
+      const dialogRef = this.dialog.open(MsgErrorComponent, {
+        width: '20%',
+        data : {
+          message : message,
+          title : title
+        }
+
+      });
+
+
+      dialogRef.afterClosed().subscribe(result => {
+
+
+      });
+    }
+
 
 
 }//class

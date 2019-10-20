@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
+import {AuthGuard} from './auth.guard';
 
 
 
@@ -28,13 +29,24 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     this.user = localStorage.getItem("user") ;
+  
+
+  }
+
+  isLargeScreen() {
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width > 20) {
+        return true;
+    } else {
+        return false;
+    }
   }
 
   export()
 {
   const dialogRef = this.dialog.open(ExcelWindowComponent, {
     width: '550px',
-  
+
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -55,6 +67,15 @@ logout()
 
 
 
+}
+
+toogleNav(nav: any) {
+  console.log("toggelde")
+  if (nav.opened) {
+    nav.close()
+  } else {
+    nav.open();
+  }
 }
 
 

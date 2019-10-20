@@ -5,13 +5,13 @@
   <form #exportForm="ngForm" >
   <div class="row">
     <mat-form-field class="col-6">
-        <input matInput [matDatepicker]="debut" placeholder="DATE DEBUT"  name="dateDebut" ngModel>
+        <input matInput [matDatepicker]="debut" placeholder="Date début"  name="dateDebut" ngModel>
         <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
         <mat-datepicker #debut></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field class="col-6">
-          <input matInput [matDatepicker]="fin" placeholder="DATE FIN"  name="dateFin" ngModel>
+          <input matInput [matDatepicker]="fin" placeholder="Date fin"  name="dateFin" ngModel>
           <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
           <mat-datepicker #fin></mat-datepicker>
         </mat-form-field>
@@ -19,6 +19,6 @@
 </div></form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="export(exportForm)">Export</button>
-  <button mat-button  cdkFocusInitial>Ok</button>
+  <button mat-button (click)="export(exportForm)" style="background-color:#E2001A ; color: white;">Export</button>
+  <!-- <button mat-button  cdkFocusInitial >Cancel</button> -->
 </div>
