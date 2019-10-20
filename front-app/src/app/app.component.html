@@ -150,9 +150,9 @@
 
 
 
-  <mat-sidenav-container  class="sidenav">
+  <mat-sidenav-container  class="sidenav"  >
 
-      <mat-sidenav [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()" class="sidenav-content">
+      <mat-sidenav [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()" class="sidenav-content" #sidenavID>
 
 
         <mat-nav-list >
@@ -182,11 +182,7 @@
               <mat-icon style=" color: #F0F0F0;">exit_to_app</mat-icon>
               <span>Sign out</span>
             </button>
-           <!-- <button class="btn" mat-menu-item  (click)="export()">
-            <mat-icon >cloud_download</mat-icon>
-            Export to excel
-          </button> -->
-
+          
         </div>
 
 

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { MatDialog } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog, MatSidenav } from '@angular/material';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import {AuthGuard} from './auth.guard';
 
@@ -13,32 +13,41 @@ import {AuthGuard} from './auth.guard';
 })
 export class AppComponent implements OnInit {
   user : String
+  auth = [AuthGuard]
+
+  @ViewChild('sidenavID', {static: true}) sidenav: MatSidenav;
 
   constructor(public dialog: MatDialog ,public router: Router) {
 
     // subscribe to router events and send page views to Google Analytics
-    this.router.events.subscribe(event => {
 
-      if (event instanceof NavigationEnd) {
-
-
-      }
-
-    });
   }
   ngOnInit() {
 
     this.user = localStorage.getItem("user") ;
-  
+
+
+
+
+
+
+
+
 
   }
 
   isLargeScreen() {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if (width > 20) {
-        return true;
+    if (localStorage.getItem("token") === null ) {
+
+      return false
+
     } else {
-        return false;
+
+
+     return true
+
+
     }
   }
 
@@ -63,20 +72,13 @@ logout()
   localStorage.removeItem("token")
   this.router.navigate(['/'])
  // location.reload()
+ this.sidenav.close();
 
 
 
 
 }
 
-toogleNav(nav: any) {
-  console.log("toggelde")
-  if (nav.opened) {
-    nav.close()
-  } else {
-    nav.open();
-  }
-}
 
 
 

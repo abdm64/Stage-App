@@ -1,7 +1,7 @@
 import {Students} from '../../models/Student';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
 
@@ -20,6 +20,10 @@ export class  StudentService{
 
     private  studentUpdated = new  Subject<Students[]>();
 
+   // private _refreshNeeded$ = new Subject<void>();
+
+
+
     constructor(private http:HttpClient, public dialog: MatDialog){
 
     }
@@ -31,11 +35,6 @@ export class  StudentService{
     }
 
     async getStudents(){
-
-
-
-
-
 
       this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data',  { headers: this.setHeader() }).
       subscribe((postData)=>{
@@ -61,6 +60,8 @@ export class  StudentService{
         subscribe(respanse => {
           this.result = "is ready to go" ;
           //console.log(respanse)
+          this.students.push(data);
+          this.studentUpdated.next([this.students]);
           this.openMessage("succeeded","operation succeeded")
         }, error => {
           this.result  = error.message ;
@@ -68,39 +69,51 @@ export class  StudentService{
 
         });
 
-   this.students.push(data);
-   this.studentUpdated.next([...this.students]);
+
 
     }
 
-    deleteStudent(matricule : Number){
-      this.http.delete(this.baseUrlLocal+'/students/deleteData/'+matricule,{ headers: this.setHeader() }).subscribe((val) => {
-        console.log("DELETE call successful value returned in body",
-                    val);
+    deleteStudent(matricules : Number){
+      this.http.delete(this.baseUrlLocal+'/students/deleteData/'+matricules,{ headers: this.setHeader() }).subscribe((val) => {
+        this.students.forEach((t, i) => {
+          if (t.matricule === matricules) {   this.students.splice(i,  1); }
+      
+
+        });
+
+        this.studentUpdated.next([...this.students]);
+
+
     },
-    response => {
-        console.log("DELETE call in error", response);
-    },
-    () => {
-        console.log("The DELETE observable is now completed.");
-    });
+    error => {
+        console.log("DELETE call in error", error);
+
+
+
+    })
 
     }
 
-    updateStudent(matricule : Number,data : any){
-      this.http.put(this.baseUrlLocal+'/students/update/'+matricule, data,{ headers: this.setHeader() }).subscribe(
+    updateStudent(matricule : Number,dataOne : any){
+      this.http.put(this.baseUrlLocal+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 
           console.log("PUT Request is successful ", data);
+          this.students.forEach((t, i) => {
+            if (t.matricule === matricule) { this.students[i] = data; }
+          });
+
+          this.studentUpdated.next([...this.students]);
 
           },
 
           error  => {
 
-          console.log("error", error, data);
+          console.log("error", error, dataOne);
 
           }
       )
+
 
 
     }

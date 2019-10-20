@@ -149,7 +149,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
-    console.log(localStorage.getItem("user"))
+    
 
     this.studentsService.getStudents();
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
