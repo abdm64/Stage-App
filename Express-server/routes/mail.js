@@ -15,13 +15,13 @@ cron.schedule('40 10 * * *', () => {
 });
 */
 
-cron.schedule('02 12 * * *', () => {
-   info()
+cron.schedule('04 10 * * *', () => {
+  info()
 
 });
 
 
-mongoose.connect("mongodb://localhost/test",{
+mongoose.connect("mongodb://mongo/test",{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -123,7 +123,11 @@ async function info(){
            user: 'notifcationstage@gmail.com',
            pass: 'FatmaTILIOUINE'
        },
-
+       logger: true, // log to console
+       debug: true, // include SMTP traffic in the logs
+   
+       // define proxy configuration
+     
       // proxy: "http://djezzyproxy",
 
 

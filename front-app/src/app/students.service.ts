@@ -10,8 +10,8 @@ import { MatDialog } from '@angular/material';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocal = "http://localhost:3000/api";
-   baseUrlLocalp = "http://172.16.60.34:3000/api"
+   baseUrlLocalp = "http://localhost:3000/api";
+   baseUrlLocal = "http://172.16.60.34:3000/api"
 
   result : string = '#' ;
 
@@ -77,7 +77,7 @@ export class  StudentService{
       this.http.delete(this.baseUrlLocal+'/students/deleteData/'+matricules,{ headers: this.setHeader() }).subscribe((val) => {
         this.students.forEach((t, i) => {
           if (t.matricule === matricules) {   this.students.splice(i,  1); }
-      
+
 
         });
 
