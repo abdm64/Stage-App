@@ -42,6 +42,7 @@ import { ChartComponent } from './chart/chart.component';
 import { FilterPipe } from './filter.pipe';
 import { EncadreurComponent } from './encadreur/encadreur.component';
 import { MsgErrorComponent } from './msg-error/msg-error.component';
+import { AuthMsgComponent } from './auth-msg/auth-msg.component';
 
 
 
@@ -64,7 +65,8 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     ChartComponent,
     FilterPipe,
     EncadreurComponent,
-    MsgErrorComponent
+    MsgErrorComponent,
+    AuthMsgComponent
   ],
     entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent,EncadreurComponent,MsgErrorComponent] ,
   imports: [

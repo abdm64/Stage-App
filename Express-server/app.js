@@ -4,6 +4,7 @@ const mail =require('./routes/mail');
 const exelData = require('./routes/dataExel');
 const userRoutes = require("./routes/user");
 const encaRoutes = require("./routes/encadreur");
+const chartRoutes = require("./routes/chart");
 const express = require('express');
 const path = require('path');
 //app.use(index);
@@ -15,6 +16,7 @@ app.use(mail)
 app.use(userRoutes);
 app.use(exelData);
 app.use(encaRoutes);
+app.use(chartRoutes);
 app.use(express.static(__dirname + '/static'))
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'static/index.html'), function(err) {

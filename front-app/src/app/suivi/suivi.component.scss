@@ -1,7 +1,8 @@
+
 @import '~@angular/material/theming';
 
 :host {
-    display: flex;
+   // display: flex;
     justify-content: center;
     width: 100%;
 }
@@ -270,5 +271,4 @@
 }
 
 ::ng-deep .mat-menu-panel{
-    max-height: 200px!important;
-}
+    max-height: 200px!important;}

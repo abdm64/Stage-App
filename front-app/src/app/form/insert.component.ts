@@ -14,8 +14,8 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal = "http://172.16.60.34:3000/api/"
+  baseUrlLocal = "http://localhost:3000/api/";
+  baseUrlLocalp = "http://172.16.60.34:3000/api/"
   encadreur : any = {
 
 

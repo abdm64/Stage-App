@@ -19,7 +19,7 @@
 
 
 
-  mongoose.connect("mongodb://mongo/test",{
+  mongoose.connect("mongodb://localhost/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
@@ -190,64 +190,9 @@ app.delete("/api/students/delete",function (req,res) {
     
   });
 })
-app.get('/api/students/enc',auth,(req,res)=>{
-  var arrayEnc = []
- 
-  Students.find().then(documents =>{
-    for (docment in documents) {
-        arrayEnc.push(documents[docment].encadreur)
-    }
 
-    
-    res.status(200).send(arrayEnc)
-    
-});
 
-})
 
-app.get('/api/students/encSec',auth,(req,res)=>{
-  var arraySec = []
- 
-  Students.find().then(documents =>{
-    for (docment in documents) {
-      arraySec.push(documents[docment].encadreurSec)
-    }
- res.status(200).send(arraySec)
- //console.log(arraySec)
-    });
-    }
-
-  )
-
-  //************************** chart date debut */
-  app.get('/api/students/datedebut',auth,(req,res)=>{
-    var arraySec = []
-   
-    Students.find().then(documents =>{
-      for (docment in documents) {
-        arraySec.push(documents[docment].dateDebut)
-      }
-   res.status(200).send(arraySec)
-   //console.log(arraySec)
-      });
-      }
-  
-    )
-
-    //************************** chart date fin */
-  app.get('/api/students/datefin',auth,(req,res)=>{
-    var arraySec = []
-   
-    Students.find().then(documents =>{
-      for (docment in documents) {
-        arraySec.push(documents[docment].dateFin)
-      }
-   res.status(200).send(arraySec)
-   //console.log(arraySec)
-      });
-      }
-  
-    )
 
 
 

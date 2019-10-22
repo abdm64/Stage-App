@@ -12,6 +12,9 @@ import { DialogOverviewExampleDialog } from '../dialog/dialog.component';
 import { PdfMakeWrapper, Txt, Columns, Img } from 'pdfmake-wrapper';
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { DatePipe} from '@angular/common';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
 
@@ -149,7 +152,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
-    
+
 
     this.studentsService.getStudents();
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
@@ -277,10 +280,20 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     pdf.add( new Columns([ '', ' Département des Ressources Humaines  ' ]).columnGap(200).fontSize(8).bold().end);
     pdf.add( new Columns([ '', ' Tél. : 0770 85 2110 / 05  -  Fax : 0770 85 2117 / 27 / 07  ' ]).columnGap(100).fontSize(8).bold().end);
     pdf.add( new Columns([ '', ' E-Mail: jobs@otalgerie.com' ]).columnGap(200).bold().fontSize(8).end);
-    //pdf.header('this is header')
 
 
-    pdf.add(await new Img('../assets/logo.png').alignment('left').build());
+    //       //  let image = await new Img('../assets/logo.png')
+    // pdf.header(`
+    //       Optimum Telecom Algerie S.P.A.
+    //       Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.
+    //       Département des Ressources Humaines
+    //       Tél. : 0770 85 2110 / 05  -  Fax : 0770 85 2117 / 27 / 07
+    //       E-Mail: jobs@otalgerie.com
+    //         `)
+
+
+
+   // pdf.add(await new Img('../assets/logo.png').alignment('left').build());
 
     pdf.add(pdf.ln(2));
     pdf.add(new Txt('CERTIFICAT DE STAGE').alignment('center').bold().fontSize(20).end );
@@ -349,6 +362,67 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
 
+ }
+
+ createPdf(student : any){
+
+//console.log("pdf created")
+
+
+ let dd = {
+	content: [
+		{
+			text: `
+                  Optimum Telecom Algerie S.P.A.
+          Route de Wilaya, Lot n° 37/4, Dar El Beida, Alger - Algérie.
+                   Département des Ressources Humaines
+          Tél. : 0770 85 2110 / 05  -  Fax : 0770 85 2117 / 27 / 07
+                     E-Mail: jobs@otalgerie.com
+            `,
+			style: 'header'
+    },
+
+		{
+			image: 'logo.png',
+		},
+
+		{
+			text: 'Subheader 1 - using subheader style',
+			style: 'subheader'
+		},
+
+		{
+			text: 'Subheader 2 - using subheader style',
+			style: 'subheader'
+		},
+
+		{
+			text: 'It is possible to apply multiple styles, by passing an array. This paragraph uses two styles: quote and small. When multiple styles are provided, they are evaluated in the specified order which is important in case they define the same properties',
+			style: ['quote', 'small']
+		}
+	],
+	styles: {
+		header: {
+			fontSize: 10,
+      bold: false,
+      alignment: 'right'
+
+		},
+		subheader: {
+			fontSize: 15,
+      bold: true
+
+		},
+		quote: {
+			italics: true
+		},
+		small: {
+			fontSize: 8
+		}
+	}
+
+            }
+  pdfMake.createPdf(dd).open();
  }
 
 
