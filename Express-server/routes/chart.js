@@ -17,8 +17,8 @@ app.get('/api/students/enc',auth,(req,res)=>{
     var arrayEnc = []
    
     Students.find().then(documents =>{
-      for (docment in documents) {
-          arrayEnc.push(documents[docment].encadreur)
+      for (docment of documents) {
+          arrayEnc.push(docment.encadreur)
       }
   
       
@@ -32,8 +32,8 @@ app.get('/api/students/enc',auth,(req,res)=>{
     var arraySec = []
    
     Students.find().then(documents =>{
-      for (docment in documents) {
-        arraySec.push(documents[docment].encadreurSec)
+      for (docment of documents) {
+        arraySec.push(docment.encadreurSec)
       }
    res.status(200).send(arraySec)
    //console.log(arraySec)
@@ -47,8 +47,8 @@ app.get('/api/students/enc',auth,(req,res)=>{
       var arraySec = []
      
       Students.find().then(documents =>{
-        for (docment in documents) {
-          arraySec.push(documents[docment].dateDebut)
+        for (docment of documents) {
+          arraySec.push(docment.dateDebut)
         }
      res.status(200).send(arraySec)
      //console.log(arraySec)
@@ -62,8 +62,8 @@ app.get('/api/students/enc',auth,(req,res)=>{
       var arraySec = []
      
       Students.find().then(documents =>{
-        for (docment in documents) {
-          arraySec.push(documents[docment].dateFin)
+        for (docment of documents) {
+          arraySec.push(docment.dateFin)
         }
      res.status(200).send(arraySec)
      //console.log(arraySec)
