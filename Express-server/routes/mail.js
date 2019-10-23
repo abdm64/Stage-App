@@ -123,6 +123,10 @@ async function info(){
            user: 'notifcationstage@gmail.com',
            pass: 'FatmaTILIOUINE'
        },
+       
+       tls:{
+        rejectUnauthorized:false
+       },
        logger: true, // log to console
        debug: true, // include SMTP traffic in the logs
    

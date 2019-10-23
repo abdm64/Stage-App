@@ -19,6 +19,9 @@ export class ChartComponent implements OnInit {
   valueDateFin :number[]=[];
   BarChart : any;
   PieChart : any;
+   ict_unit = [];
+  efficiency = [];
+   coloR = [];
 
 
 
@@ -113,7 +116,7 @@ export class ChartComponent implements OnInit {
         'rgba(75,192,192,0.2)',
         'rgba(135,102,255,0.2)',
         'rgba(255,159,64,0.2)',
-        
+
       ],
       borderColor:[
         'rgba(255,99,132,0.2)',
@@ -143,7 +146,7 @@ export class ChartComponent implements OnInit {
     //********************pie chart */*
     const a = await this.getEncData()
     const b =await this.getNamesEnc()
-
+this.getRandomColor(this.valueEnc)
     //const f = await console.log(this.labelsSec)
     this.PieChart = await new Chart('pieChart',{
       type:'pie',
@@ -155,14 +158,7 @@ export class ChartComponent implements OnInit {
       //data:[9,7,3,5,2,10],
       data:this.valueEnc,
      // backgroundColor:"rgba(255,99,132,0.4)",
-     backgroundColor:
-      [
-       'rgba(255,99,132,0.2)',
-        'rgba(54,162,235,0.2)',
-        'rgba(255,206,86,0.2)',
-        'rgba(75,192,192,0.2)',
-        'rgba(135,102,255,0.2)',
-        'rgba(255,159,64,0.2)',],
+     backgroundColor: this.coloR,
       borderColor:
       [
         'rgba(255,99,132,0.2)',
@@ -189,6 +185,24 @@ export class ChartComponent implements OnInit {
 
 
   }
+
+ getRandomColor(data : any){
+ var  dynamicColors = function() {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+    return "rgb(" + r + "," + g + "," + b + ",0.3)";
+ };
+  for (var i in data) {
+    this.ict_unit.push("ICT Unit " + data[i].ict_unit);
+    this.efficiency.push(data[i].efficiency);
+    this.coloR.push(dynamicColors());
+  }
+
+
+ }
+
+
 
 
 
