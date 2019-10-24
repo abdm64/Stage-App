@@ -10,8 +10,8 @@ const EXCEL_EXTENSION = '.xlsx';
 @Injectable()
 export class ExcelService {
 
-  baseUrlLocal = "http://localhost:3000/api/";
-  baseUrlLocalp = "http://172.16.60.34:3000/api/"
+  baseUrlLocalp = "http://localhost:3000/api/";
+  baseUrlLocal = "http://172.16.60.34:3000/api/"
   constructor(private http:HttpClient) { }
   setHeader(){
 
