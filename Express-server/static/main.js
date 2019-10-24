@@ -2173,8 +2173,8 @@ var InsertComponent = /** @class */ (function () {
         this.studentsService = studentsService;
         this._snackBar = _snackBar;
         this.dialog = dialog;
-        this.baseUrlLocal = "http://localhost:3000/api/";
-        this.baseUrlLocalp = "http://172.16.60.34:3000/api/";
+        this.baseUrlLocalp = "http://localhost:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.34:3000/api/";
         this.encadreur = {
             Last_Name: "",
             First_name: "",
