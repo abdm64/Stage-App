@@ -21,7 +21,7 @@ cron.schedule('04 10 * * *', () => {
 });
 
 
-mongoose.connect("mongodb://mongo/test",{
+mongoose.connect("mongodb://localhost/test",{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -59,7 +59,7 @@ return data
 
 function getNbDay(datefin){
   const d1 = new Date(Date.now())
-  const d2 = new Date(datefin)
+  const d2 = new Date(datefin) 
   
  const same = d1.getTime() - d2.getTime() ;
 

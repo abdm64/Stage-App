@@ -16,8 +16,8 @@ import { MatDialog } from '@angular/material';
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocalp = "http://localhost:3000/api";
-  baseUrlLocal = "http://172.16.60.34:3000/api"
+  baseUrlLocal = "http://localhost:3000/api";
+  baseUrlLocalp = "http://172.16.60.34:3000/api"
   token = ""
     constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){}
 

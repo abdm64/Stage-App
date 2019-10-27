@@ -38,6 +38,7 @@ export class SuiviComponent implements OnInit {
   students: Students[] =[];
   studentsCopy: Students[] =[];
   mySubscription: any;
+  placeHolder = "ALL"
 private studentSub:Subscription;
 
 
@@ -289,6 +290,75 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
  }
+
+
+ getStudentDate(student : any){
+
+  const d1 = new Date(Date.now())
+  const d2 = new Date(student.dateFin)
+
+ const same = d1.getTime() - d2.getTime() ;
+
+  var days = (same / (60*60*24*1000));
+
+ return days < 0
+
+ }
+
+
+ selectEncours( ){
+   var studentEnd : any[] = []
+   this.students = this.studentsCopy
+
+  for (let student of this.students){
+
+  if (this.getStudentDate(student)) {
+    //do the staff
+    studentEnd.push(student)
+
+
+
+  }
+
+
+  }
+this.students = studentEnd
+this.placeHolder = "en cours"
+
+ }
+ selectStudenEnd(){
+  var studentEnd : any[] = []
+  this.students = this.studentsCopy
+
+ for (let student of this.students ){
+
+ if (!this.getStudentDate(student)) {
+   //do the staff
+   studentEnd.push(student)
+
+
+
+ }
+
+
+ }
+this.students = studentEnd
+this.placeHolder = "Treminé"
+
+}
+selectAllStudent(){
+
+  this.students = this.studentsCopy
+  this.placeHolder = "ALL"
+}
+
+
+
+
+
+
+
+
 
  createPdf(student : any){
 

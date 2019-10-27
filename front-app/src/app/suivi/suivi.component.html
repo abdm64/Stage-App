@@ -20,10 +20,17 @@
                     <mat-icon aria-label="label">menu</mat-icon>
                 </button>
                 <input  [(ngModel)] = "searchTerm" (ngModelChange) = "search()"  placeholder="Search..." type="text" class="mat-body-strong" formControlName="search" />
-                <mat-select placeholder=" " >
-                    <mat-option *ngFor="let item of filterList;let i = index;" [value]="i">
+                <mat-select placeholder="{{placeHolder}}">
+                    <mat-option (click) =" selectAllStudent()">
+                        ALL
+                       </mat-option>
+                  <mat-option (click)="selectEncours()">
+                    en cours
+                  </mat-option>
+                  <mat-option (click) =" selectStudenEnd()">
+                   Terminé
+                  </mat-option>
 
-                    </mat-option>
                 </mat-select>
 
             </div>
@@ -49,7 +56,7 @@
 
                     <mat-card style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);" *ngFor="let student of students | load : end ;let i = index ;"
                         [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
-                       <div class="remboursement" [ngClass]="{'isremb': student.attestation}"></div>
+                       <div class="remboursement" [ngClass]="{'isremb': getStudentDate(student)}"></div>
                         <mat-card-header style="position:relative;">
                           <div class="app-download" style="position:absolute; margin-left: 190px; margin-top: -10px;">{{student.matricule}}</div>
                             <mat-card-title>{{student.nom  + " " +student.prenom  }}</mat-card-title>
@@ -91,7 +98,7 @@
                         </mat-card-content>
                         <mat-card-actions align="center">
 
-                            <button mat-button color="black" (click)="createPdf(student)">  <mat-icon >picture_as_pdf</mat-icon>   </button>
+                            <button mat-button color="black" (click)="createPdf(student)" [disabled] = "!student.attestation">  <mat-icon >picture_as_pdf</mat-icon>   </button>
                             <button mat-button color="black" (click)="openDialog(student)"><mat-icon>edit</mat-icon></button>
                             <button mat-button color="warn" (click)= " openDialogDelete(student)"><mat-icon >delete</mat-icon></button>
 
