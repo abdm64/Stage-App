@@ -1,6 +1,5 @@
 const mongoose = require ('mongoose');
-//var dateFormat = require('dateformat');
-//var autoIncrement = require('mongoose-auto-increment');
+
 const Schema = mongoose.Schema;
 
 const StudentSchema = new Schema({

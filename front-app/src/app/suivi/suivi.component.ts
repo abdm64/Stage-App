@@ -323,6 +323,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
   }
 this.students = studentEnd
+this.rests = Math.max(this.students.length - this.end, 0)
 this.placeHolder = "en cours"
 
  }
@@ -343,6 +344,7 @@ this.placeHolder = "en cours"
 
  }
 this.students = studentEnd
+this.rests = Math.max(this.students.length - this.end, 0)
 this.placeHolder = "Treminé"
 
 }

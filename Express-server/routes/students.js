@@ -29,6 +29,7 @@
  
 
  app.use(cors())
+ 
 
 
 
@@ -66,6 +67,13 @@ app.use(bodyParser.json())
 
 
 
+app.get('/api', (req,res, next)=>{
+
+ 
+    
+    
+  res.send("API is working ")
+})
 
 
 
