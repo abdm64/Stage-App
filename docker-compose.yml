@@ -8,8 +8,16 @@ services:
       - "3000:3000"
     depends_on:
       - mongo
-
+      - mail
   mongo: 
     image: mongo 
     ports:
       - "27017:27017"
+  mail:
+    image: bytemark/smtp
+    restart: always
+    environment:
+      RELAY_HOST: mailint.otalgerie.com
+      RELAY_PORT: 25
+      RELAY_USERNAME: alice@example.com
+      RELAY_PASSWORD: secretpassword

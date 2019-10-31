@@ -100,48 +100,34 @@ export class ChartComponent implements OnInit {
     const e =await this.getNamesSec()
 
     const c = await console.log(this.labelsSec)
+    this.getRandomColor(this.valueSec)
     this.BarChart = await new Chart('barChart',{
-      type:'bar',
-  data :{
-   // labels:["Red","Blue","Yellow","Green","purple","Orange"],
-    labels:this.labelsSec,
-    datasets:[{
-      //label: '# of votes',
-      //data:[9,7,3,5,2,10],
-      data:this.valueSec,
-      backgroundColor:[
-        'rgba(255,99,132,0.2)',
-        'rgba(54,162,235,0.2)',
-        'rgba(255,206,86,0.2)',
-        'rgba(75,192,192,0.2)',
-        'rgba(135,102,255,0.2)',
-        'rgba(255,159,64,0.2)',
 
-      ],
-      borderColor:[
-        'rgba(255,99,132,0.2)',
-        'rgba(54,162,235,0.2)',
-        'rgba(255,206,86,0.2)',
-        'rgba(75,192,192,0.2)',
-        'rgba(135,102,255,0.2)',
-        'rgba(255,159,64,0.2)',
-      ],
+      type:'pie',
+  data :{
+   
+   labels:this.labelsSec,
+    datasets:[{
+
+      data:this.valueSec,
+
+     backgroundColor: this.coloR,
+      borderColor: this.coloR,
+
+        hoverBackgroundColor: this.coloR,
+
       borderWidth :1
     }]
-  },options:{
+  },
+  options:{
     title:{
-     // text:"",
-     // display:true
+
+      display:true
     },
-    scales:{
-      yAxes:[{
-        ticks:{
-          beginAtZero : true
-        }
-      }]
-    }
+    responsive: false,
+    //display: true
   }
-    });
+    })
 
     //********************pie chart */*
     const a = await this.getEncData()

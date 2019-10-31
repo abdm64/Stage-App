@@ -19,7 +19,7 @@
 
 
 
-  mongoose.connect("mongodb://localhost/test",{
+  mongoose.connect("mongodb://mongo/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
@@ -192,6 +192,10 @@ app.delete("/api/students/delete",function (req,res) {
   app.get('/api/students/numberEnd',(req,res)=>{
 
   Students.findOne({}, {}, { sort: { _id :  -1} }, function(err, post) {
+    
+
+    if (err) return res.send(err);
+
     
       res.json(post)
     

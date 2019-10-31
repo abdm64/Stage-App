@@ -13,6 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
     localStorage.removeItem("auth");
+    localStorage.removeItem("token");
   }
 
   login(form : NgForm){
@@ -20,7 +21,7 @@ export class LoginPageComponent implements OnInit {
     if (form.invalid){
       return
     }
-    
+
     this.authService.login(form.value.email, form.value.password)
 
 

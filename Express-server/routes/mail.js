@@ -21,7 +21,7 @@ cron.schedule('04 10 * * *', () => {
 });
 
 
-mongoose.connect("mongodb://localhost/test",{
+mongoose.connect("mongodb://mongo/test",{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
