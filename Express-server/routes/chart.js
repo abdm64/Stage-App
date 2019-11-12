@@ -18,7 +18,7 @@ app.get('/api/students/enc',auth,(req,res)=>{
    
     Students.find().then(documents =>{
       for (docment of documents) {
-          arrayEnc.push(docment.encadreur)
+          arrayEnc.push(docment.encadreurDEP)
       }
   
       

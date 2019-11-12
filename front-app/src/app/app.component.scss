@@ -41,8 +41,48 @@
   background: none;
   border: 2px solid #E2001A;
   font-family: "montserrat",sans-serif;
-  //font-weight: bold;
+  font-weight: bold;
   text-transform: uppercase;
+  padding: 5px 20px 20px 25px;
+  min-width: 200px;
+  margin: 10px;
+  transition: color 0.4s linear;
+  position: relative;
+  color: #F0F0F0;
+  background-color:#E2001A;
+  //opacity: 0.6;    bg=roge
+  //box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+
+
+
+
+
+  width: 230px;
+  height: 60px;
+
+
+
+/* Just for presentation */
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  &:hover{
+    background-color: rgb(141, 103, 103,0.3);
+  }
+  &:focus{
+    background-color:rgba(0, 0, 0, 0.3);;
+    color: white;
+
+  }
+
+}
+.btn1{
+  background: none;
+  border: 2px solid #E2001A;
+  font-family: "montserrat",sans-serif;
+  font-weight: bold;
+  //text-transform: uppercase;
   padding: 5px 20px 20px 25px;
   min-width: 200px;
   margin: 10px;

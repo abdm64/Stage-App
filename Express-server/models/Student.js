@@ -6,7 +6,7 @@ const StudentSchema = new Schema({
   matricule:{
     type:Number,
 
-    unique: true,
+    unique: false,
     required:true
 },
 

@@ -46,6 +46,7 @@ import { AuthMsgComponent } from './auth-msg/auth-msg.component';
 
 
 
+
 const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
   , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule];
 @NgModule({
@@ -68,7 +69,7 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     MsgErrorComponent,
     AuthMsgComponent
   ],
-    entryComponents: [DialogOverviewExampleDialog,MsgConfirmComponent,ExcelWindowComponent,EncadreurComponent,MsgErrorComponent] ,
+    entryComponents: [DialogOverviewExampleDialog, MsgConfirmComponent, ExcelWindowComponent,EncadreurComponent,MsgErrorComponent] ,
   imports: [
     BrowserModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),

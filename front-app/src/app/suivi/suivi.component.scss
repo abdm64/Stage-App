@@ -24,7 +24,7 @@
       left: 2rem;
       border-bottom-right-radius: 50%;
       border-bottom-left-radius: 50%;
-      
+
       padding: 1rem;
       color:white;
       &:focus {
@@ -195,6 +195,7 @@
         justify-content: space-between;
         align-items: center;
         width: 98%;
+
         margin-top: 12px;
         margin: 0 1%;
 
@@ -203,12 +204,14 @@
 
             width: 96%;
 
+
             .DCI {
                 font-size: 14px;
             }
 
             @media (min-width:700px) {
                 width: 44%;
+
 
                 .DCI {
                     font-size: 13px;
@@ -217,6 +220,7 @@
 
             @media (min-width:755px) {
                 width: 45%;
+
 
                 .DCI {
                     font-size: 13px;

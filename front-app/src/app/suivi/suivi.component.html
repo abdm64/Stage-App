@@ -58,9 +58,10 @@
                         [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
                        <div class="remboursement" [ngClass]="{'isremb': getStudentDate(student)}"></div>
                         <mat-card-header style="position:relative;">
-                          <div class="app-download" style="position:absolute; margin-left: 190px; margin-top: -10px;">{{student.matricule}}</div>
-                            <mat-card-title>{{student.nom  + " " +student.prenom  }}</mat-card-title>
-                            <mat-card-subtitle class="DCI">{{student.email  }}
+                          <div class="app-download" style="position:absolute; margin-left: 190px; margin-top: -10px;width: 50px;">{{student.matricule}}</div>
+                            <mat-card-title>{{student.nom   }}</mat-card-title>
+                            <mat-card-title>{{" " + student.prenom  }}</mat-card-title>
+                            <mat-card-subtitle class="DCI">{{student.email}}
                             </mat-card-subtitle>
                         </mat-card-header>
                         <mat-card-content class="card-content">

@@ -94,20 +94,15 @@
   <span class="fill-remaining-space"  style=" position: absolute; margin-left: 1110px;">
 
     <ul fxLayout fxLayoutGap="20px" style="list-style-type: none; margin-top: 10px;">
+
         <li>
-            <button mat-menu-item   >
-                <mat-icon>person_pin</mat-icon>
-              <span>{{ user }}</span>
-            </button>
+
         </li>
 
          <li>
 
           <mat-menu #auth="matMenu" style="background-color: black;margin-right: 50;"></mat-menu>
-            <button mat-menu-item (click)="logout()">
-              <mat-icon>exit_to_app</mat-icon>
-              <span>Sign out</span>
-            </button>
+
 
         </li>
 
@@ -159,7 +154,12 @@
 
           <!-- <h2 matSubheader>  </h2>
            <mat-divider></mat-divider> -->
+
          <div style="margin-top: 10px;"  >
+          <button mat-menu-item   class="btn1">
+            <mat-icon style=" color: #F0F0F0;">person_pin</mat-icon>
+          <span>{{ user }}</span>
+        </button>
 
 
             <button mat-menu-item routerLink="/suivi" class="btn">

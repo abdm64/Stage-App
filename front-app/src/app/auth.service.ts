@@ -1,9 +1,11 @@
 import {Injectable, Input } from  '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from './AuthData';
+import { ConstService} from './ConstData'
 import {Router} from "@angular/router"
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
+
 
 
 
@@ -30,6 +32,7 @@ createUser(email : string, password: string){
         email: email, password : password
     }
 
+
     this.http.post(this.baseUrlLocal+'/user/sign', authData).subscribe(response => {
 
     })
@@ -44,7 +47,14 @@ login(email : string, password: string){
     }
 
     this.http.post<{token : string}>(this.baseUrlLocal+'/user/login', authData).subscribe(response => {
+
+
+      const constData : ConstService = {
+            user : authData.email
+
+      }
             this.router.navigate(['suivi'])
+
             localStorage.setItem("auth",'true')
             localStorage.setItem("user",authData.email)
             localStorage.setItem("token",response.token)

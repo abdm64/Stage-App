@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { MatDialog, MatSidenav } from '@angular/material';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import {AuthGuard} from './auth.guard';
+import { ConstService} from './ConstData'
+
 
 
 
@@ -25,6 +27,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     this.user = localStorage.getItem("user") ;
+
+
 
 
 

@@ -270,15 +270,19 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
   search(): void {
-    let term = this.searchTerm;
+    let term = "" + this.searchTerm;
+
     if (term === undefined){
 
-      console.log("unde")
+
     } else {
+
+
+
 
        this.students = this.studentsCopy.filter(function(student) {
 
-        return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.encadreur.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0|| student.diplome.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.matricule.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
+        return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.matricule.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.encadreur.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
     });
     this.rests = Math.max(this.students.length - this.end, 0)
 
