@@ -45,7 +45,8 @@ export class DialogOverviewExampleDialog implements OnInit {
     encadreurSec : [student.encadreurSec],
      encadreurmOrg :[student. encadreurmOrg ] ,
     attestation :[student.attestation] ,
-    matricule :[student.matricule]
+    matricule :[student.matricule],
+    description:[student.description]
       });
     }
 

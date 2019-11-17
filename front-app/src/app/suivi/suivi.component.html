@@ -56,7 +56,11 @@
 
                     <mat-card style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);" *ngFor="let student of students | load : end ;let i = index ;"
                         [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
+
+
                        <div class="remboursement" [ngClass]="{'isremb': getStudentDate(student)}"></div>
+
+
                         <mat-card-header style="position:relative;">
                           <div class="app-download" style="position:absolute; margin-left: 190px; margin-top: -10px;width: 50px;">{{student.matricule}}</div>
                             <mat-card-title>{{student.nom   }}</mat-card-title>
@@ -87,6 +91,7 @@
                                         [value]="student.encadreur" disabled>
                                 </mat-form-field>
                             </div>
+
                             <div class="row">
                                 <mat-icon class="prefix" svgIcon="price"></mat-icon>
                                 <mat-form-field class="field" appearance="legacy" floatLabel="always">
@@ -94,7 +99,19 @@
                                     <input matInput class="input" [value]="student.typeStage"
                                         disabled>
                                 </mat-form-field>
+
                             </div>
+
+<!--
+                            <div class="row">
+                              <mat-icon class="prefix" svgIcon="price"></mat-icon>
+                              <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                  <mat-label style="font-weight: bold;color: black;font-size: 14px;" >Projet</mat-label>
+                                  <input matInput class="input" [value]="student.theme"
+                                      disabled style="font-weight: bold;color: black;font-size: 14px;">
+                              </mat-form-field>
+
+                          </div> -->
 
                         </mat-card-content>
                         <mat-card-actions align="center">
@@ -121,3 +138,5 @@
 
 
     </mat-sidenav-container>
+
+

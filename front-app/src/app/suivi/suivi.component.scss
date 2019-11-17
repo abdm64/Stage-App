@@ -242,13 +242,19 @@
             overflow: hidden;
 
             .remboursement {
-                position: absolute;
-                height: 30px;
-                width: 100px;
-                bottom: 9px;
-                right: -26px;
-                transform: rotate(-45deg);
+
+                position:absolute;
+                top:380px;left:300px;
+                width:470px;height:200px;
+                border:1px white;
+                overflow:hidden;
+                font-family: Arial, sans-serif;
+                font-size:40px;
+                line-height: 300px;
+                text-indent: 350px;
+                z-index: 3;
                 background-color: red;
+
 
                 &.isremb {
                     background-color: green;

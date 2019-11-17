@@ -15,7 +15,7 @@ export class  StudentService{
 
   result : string = '#' ;
 
-    private students  : Students[] ;
+    private students  : any[] ;
 
 
     private  studentUpdated = new  Subject<Students[]>();
@@ -59,10 +59,11 @@ export class  StudentService{
    this.http.post(this.baseUrlLocal+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
           this.result = "is ready to go" ;
+          this.openMessage("succeeded","operation succeeded")
           //console.log(respanse)
           this.students.push(data);
           this.studentUpdated.next([this.students]);
-          this.openMessage("succeeded","operation succeeded")
+
         }, error => {
           this.result  = error.message ;
          this.openMessage("Error","Operation Failed")

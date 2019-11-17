@@ -1,8 +1,8 @@
 # Create image based on the official Node 6 image from the dockerhub
-FROM node:10.16.3
+FROM node:alpine
 
 # Create a directory where our app will be placed
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src
 
 # Change directory so that our commands run inside this new directory
 WORKDIR /usr/src/app

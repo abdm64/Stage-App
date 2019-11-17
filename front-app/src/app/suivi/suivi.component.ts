@@ -164,6 +164,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
         this.rests = Math.max(this.students.length - this.end, 0)
 
 
+
       }
 
     );
@@ -186,49 +187,9 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
   }
-  // filter() {
-  //   if (this.filterObj.value == null) { this.filterObj.setValue(3); }
-  //   if (this.searchObj.value === '') {
-  //     this.filterData = this.data;
-  //     this.loading = false;
-  //     this.setLoad(9);
-  //     return;
-  //   }
 
-  //   this.filterData = this.data.filter(item => {
-  //     const val = Object.values<any>(item)[this.filterObj.value];
-  //     if (this.filterObj.value === 0) {
-  //       return val === this.searchObj.value;
-  //     }
-  //     return !!val && val.toLowerCase().search(new RegExp(this.searchObj.value.toLowerCase())) !== -1;
-  //   });
 
-  //   this.setLoad(9);
-  //   this.loading = false;
-  // }
-  // sortBy(index: number) {
-  //   this.filterData = this.filterData.slice().sort((a, b) => {
 
-  //     a = Object.values(a)[index];
-  //     b = Object.values(b)[index];
-
-  //     if (a === b) {
-  //       return 0;
-  //     } else {
-  //       if (this.ascending)
-  //         return a > b ? 1 : -1;
-  //       else
-  //         return a < b ? 1 : -1;
-  //     }
-  //   });
-  //   this.setLoad(9);
-  // }
-  // reverseSort(bool) {
-  //   if (bool !== this.ascending) {
-  //     this.ascending = !this.ascending;
-  //     this.filterData = this.filterData.slice().reverse();
-  //   }
-  // }
   setLoad(val) {
 
     this.end = val;
@@ -241,6 +202,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
       this.rests = Math.max(this.students.length - this.end, 0);
 
 }
+
 /*
   tracbyfn(index, item) {
     return index + item.ID;
@@ -262,6 +224,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      
 
     });
   }
@@ -273,6 +236,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     let term = "" + this.searchTerm;
 
     if (term === undefined){
+      console.log(term)
 
 
     } else {

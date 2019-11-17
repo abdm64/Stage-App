@@ -15,7 +15,7 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
 })
 export class InsertComponent implements OnInit {
   baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal = "http://172.16.60.34:3000/api/"
+  baseUrlLocal  = "http://172.16.60.34:3000/api/"
   encadreur : any = {
 
 
@@ -73,7 +73,7 @@ console.log(this.getMatricule())
           form.value.encadreurmOrg = this.encadreur.Position
           form.value.user = localStorage.getItem("user")
           form.value.matricule = this.getMatricule() ;
-
+          console.log(form.value)
           this.studentsService.addStudent(form.value);
 
 
