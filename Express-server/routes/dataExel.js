@@ -13,7 +13,7 @@ const express =require('express');
 
 
 
-  mongoose.connect("mongodb://safa/test",{
+  mongoose.connect("mongodb://localhost/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
