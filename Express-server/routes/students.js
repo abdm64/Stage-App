@@ -19,7 +19,7 @@
 
 
 
-  mongoose.connect("mongodb://localhost/test",{
+  mongoose.connect("mongodb://mongo/test",{
     useNewUrlParser: true,
     useUnifiedTopology: true
  })
