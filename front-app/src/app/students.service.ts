@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material';
 
 export class  StudentService{
    baseUrlLocalp = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.34:3000/api"
+   baseUrlLocal = "http://172.16.60.36:3000/api"
 
   result : string = '#' ;
 

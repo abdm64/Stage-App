@@ -2686,7 +2686,7 @@ var StudentService = /** @class */ (function () {
         this.http = http;
         this.dialog = dialog;
         this.baseUrlLocalp = "http://localhost:3000/api";
-        this.baseUrlLocal = "http://172.16.60.34:3000/api";
+        this.baseUrlLocal = "http://172.16.60.36:3000/api";
         this.result = '#';
         this.studentUpdated = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
