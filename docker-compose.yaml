@@ -7,9 +7,9 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - mongo
+      - stagedb
     
-  mongo: 
+  stagedb: 
     image: mongo 
     ports:
       - "27017:27017"
