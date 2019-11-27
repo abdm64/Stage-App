@@ -21,10 +21,15 @@ cron.schedule('04 10 * * *', () => {
 });
 
 
-mongoose.connect("mongodb://mongo/test",{
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+mongoose
+.connect("mongodb://mongo/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.then(() => {
+  console.log('Connected to database!');
 })
+.catch(error => {
+  console.log('Connection failed!');
+  console.log(error);
+});
 
 
 
