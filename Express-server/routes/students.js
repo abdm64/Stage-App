@@ -80,28 +80,54 @@ app.get('/api/students/data' , (req,res, next)=>{
   
 
     
-    studentQuary.skip(pageSize * (pageIndex - 1)).limit(pageSize)
+    studentQuary.skip(pageSize * (pageIndex - 1)).limit(pageSize).then((docs,err) => {
 
-  }
-  if (search){
+      if (err) return handleError(err)
+    
+          res.status(201).json({
+            students : docs
+          })
+    
+    
+    })
+
+  } else 
+  if (search) {
+    console.log("search define")
 
 
-    let regex = new RegExp(escapeRegex(search));
+    const regex = new RegExp(escapeRegex(search),'ig');
+
+
+  
+
+
+   
       
-        Students.find({nom: regex}, (err, docs)=>{
+        Students.find({$or: [
+          {nom: regex}, 
+          {prenom: regex}, 
+          {matricule:checkIfNumber(search)}
+        ]}, (err, docs)=>{
           if (err) {
 
             res.status(500).json(err);
+            handleError(err)
 
 
           } ;
 
           res.status(201).json({
             students : docs
+
+
           })
            
         });
-  }
+  } else{
+
+
+
 
 
 
@@ -115,6 +141,8 @@ studentQuary.then((docs,err) => {
 
 
 })
+
+}
  
 })
 
@@ -243,8 +271,39 @@ app.delete("/api/students/delete",function (req,res) {
 
 
 function escapeRegex(text) {
-  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+  //console.log(text)
+
+
+  if (isNaN(text)){
+    //is not nember
+
+     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&").toLowerCase();
+
+  } else {
+
+    //is number
+
+    return +text
+  }
+    
 };
+
+function checkIfNumber(input){
+  if (isNaN(input)){
+    //is not nember
+
+     return 0
+
+  } else {
+
+    //is number
+
+    return +input
+  }
+
+
+
+}
 
 
 module.exports = app;

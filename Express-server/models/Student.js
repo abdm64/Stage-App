@@ -13,7 +13,8 @@ const StudentSchema = new Schema({
 
 nom:{
     type:String,
-    required:true
+    required:true,
+
 
 },
 prenom:{
