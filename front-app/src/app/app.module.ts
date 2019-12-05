@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
   , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule ,MatDatepickerModule,
-  MatNativeDateModule,MatGridListModule, MatSnackBarModule
+  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule
 } from '@angular/material';
 
 
@@ -89,7 +89,8 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     MatSnackBarModule,
     CommonModule,
     FlexLayoutModule,
-    ChartsModule
+    ChartsModule,
+    MatPaginatorModule
 
 
 

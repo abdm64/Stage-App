@@ -3,13 +3,13 @@ import { Students } from '../../../models/Student';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { MatIconRegistry, MatDialog } from '@angular/material';
+import { MatIconRegistry, MatDialog, PageEvent } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, transition, style, animate } from '@angular/animations';
 import gql from 'graphql-tag';
 import { StudentService } from '../students.service';
 import { DialogOverviewExampleDialog } from '../dialog/dialog.component';
-import { PdfMakeWrapper, Txt, Columns, Img } from 'pdfmake-wrapper';
+
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { DatePipe} from '@angular/common';
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -55,6 +55,8 @@ searchTerm = '';
   end = 9;
   rest = 0;
   rests = 0 ;
+  last = 0
+  pageOption = [9]
 
   ascending = false;
   totalMedics: any;
@@ -154,9 +156,12 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
+  this.last =   this.studentsService.getStudentNumber()
 
 
-    this.studentsService.getStudents();
+   // this.studentsService.getStudents();
+
+ this.studentsService.getStudent(9,1)
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students =students;
@@ -224,7 +229,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      
+
 
     });
   }
@@ -326,7 +331,14 @@ selectAllStudent(){
 
 
 
+onChangePage(pageData : PageEvent){
 
+
+  this.studentsService.getStudent(9,pageData.pageIndex + 1)
+
+
+
+}
 
 
 

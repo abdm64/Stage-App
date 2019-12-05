@@ -21,15 +21,7 @@ cron.schedule('04 10 * * *', () => {
 });
 
 
-mongoose
-.connect("mongodb://stagedb:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-.then(() => {
-  console.log('Connected to database!');
-})
-.catch(error => {
-  console.log('Connection failed!');
-  console.log(error);
-});
+
 
 
 

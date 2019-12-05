@@ -41,7 +41,7 @@
                         <span class="title">Stagiaires <button mat-icon-button color="warn">
                                 <mat-icon>info_outline</mat-icon>
                             </button></span>
-                        <p class="description">A total of {{ students.length }} <span class="number"></span> Stagiaires</p>
+                        <p class="description">A total of {{ last }} <span class="number"></span> Stagiaires</p>
                     </div>
 
                 </div>
@@ -127,14 +127,17 @@
 
                 </div>
                 <!---->
-                <div class="pagination">
+                <!-- <div class="pagination">
                     <button mat-raised-button color="white" class="load" (click)="setLoad(end+9)" [disabled] = " end >  students.length"  >
                         <mat-icon>keyboard_arrow_down</mat-icon>Load more
                           {{ rests }}
 
                     </button>
-                </div>
+                </div> -->
+
+
             </div>
+            <mat-paginator [length] = "last"  [pageSize] = "9" [pageSizeOptions] = "pageOption" (page)="onChangePage($event)" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);margin-top: 1rem; margin-bottom:1rem;"></mat-paginator>
         </div>
 
 

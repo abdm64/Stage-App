@@ -10,8 +10,8 @@ import { MatDialog } from '@angular/material';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocalp = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.36:3000/api"
+   baseUrlLocal = "http://localhost:3000/api";
+   baseUrlLocalp = "http://172.16.60.36:3000/api"
 
   result : string = '#' ;
 
@@ -36,7 +36,20 @@ export class  StudentService{
 
     async getStudents(){
 
+    //  const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
       this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data',  { headers: this.setHeader() }).
+      subscribe((postData)=>{
+          this.students = postData.students;
+          this.studentUpdated.next([...this.students]);
+
+
+      });
+
+    }
+    async getStudent(pageSize : number, pageIndex : number){
+
+      const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
+      this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
@@ -135,6 +148,44 @@ export class  StudentService{
 
 
       });
+    }
+
+    getStudentNumber(){
+
+
+
+    var num = 0 ;
+
+    let  req = new XMLHttpRequest();
+    req.open('GET', this.baseUrlLocal+`/students/number`, false);
+
+    //
+    req.send(null)
+
+      let data =  req.response
+
+
+
+
+
+
+
+   return parseInt(data)
+
+  // var num = 0
+
+
+  //   this.http.get(this.baseUrlLocal+`/students/number`,  { headers: this.setHeader() }).
+  //     subscribe((postData : number)=>{
+
+
+
+
+  //     });
+
+  //   //  console.log(data)
+
+  //     return 13
     }
 
 

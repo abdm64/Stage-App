@@ -13,15 +13,7 @@ const express =require('express');
 
 
 
- mongoose
- .connect("mongodb://stagedb:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
- .then(() => {
-   console.log('Connected to database!');
- })
- .catch(error => {
-   console.log('Connection failed!');
-   console.log(error);
- });
+
 
   require('../models/Student');
  const Students = mongoose.model( 'Students');

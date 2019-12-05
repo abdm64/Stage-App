@@ -14,26 +14,8 @@
  mongoose.Promise = global.Promise;
 
 
- //connect to  mongoose
 
 
-
-
-//   mongoose.connect(,{
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//  }). catch(error => handleError(error));
-
-
- mongoose
-  .connect("mongodb://stagedb:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-  .then(() => {
-    console.log('Connected to database!');
-  })
-  .catch(error => {
-    console.log('Connection failed!');
-    console.log(error);
-  });
 
 
   require('../models/Student');
@@ -78,25 +60,66 @@ app.use(bodyParser.json())
 
 app.get('/api', (req,res, next)=>{
 
+
  
     
     
   res.send("API is working ")
 })
 
+//fetch All student + adding pagination  
 
+app.get('/api/students/data' , (req,res, next)=>{
+  
+  const pageSize = +req.query.pageSize
+  const pageIndex = +req.query.pageIndex
+  const search = req.query.search
+  
+  const studentQuary =  Students.find({}, {}, { sort: { _id :  -1} }) ;
+  if( pageSize && pageIndex){
+  
 
-app.get('/api/students/data',auth, (req,res, next)=>{
-
-  Students.find({}, {}, { sort: { _id :  -1} }, function(err, docs) {
     
+    studentQuary.skip(pageSize * (pageIndex - 1)).limit(pageSize)
+
+  }
+  if (search){
+
+
+    let regex = new RegExp(escapeRegex(search));
+      
+        Students.find({nom: regex}, (err, docs)=>{
+          if (err) {
+
+            res.status(500).json(err);
+
+
+          } ;
+
+          res.status(201).json({
+            students : docs
+          })
+           
+        });
+  }
+
+
+
+studentQuary.then((docs,err) => {
+
+  if (err) return handleError(err)
+
       res.status(201).json({
         students : docs
       })
-    
-    
-  });
+
+
 })
+ 
+})
+
+
+
 
 
 
@@ -216,6 +239,12 @@ app.delete("/api/students/delete",function (req,res) {
 
 
 
+
+
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 
 module.exports = app;

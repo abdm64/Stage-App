@@ -7,9 +7,24 @@ const encaRoutes = require("./routes/encadreur");
 const chartRoutes = require("./routes/chart");
 const express = require('express');
 const path = require('path');
+const mongoose =require('mongoose');
 //app.use(index);
 
 const app = express();
+//stagedb
+
+mongoose
+.connect("mongodb://localhost/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.then(() => {
+  console.log('Connected to database!');
+})
+.catch(error => {
+  console.log('Connection failed!');
+  console.log(error);
+});
+
+
+
 
 app.use(students);
 app.use(mail)

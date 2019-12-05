@@ -41,6 +41,8 @@ app.get('/api/students/enc',auth,(req,res)=>{
       }
   
     )
+
+    
   
     //************************** chart date debut */
     app.get('/api/students/datedebut',auth,(req,res)=>{
