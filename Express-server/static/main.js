@@ -1085,8 +1085,8 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         this.router = router;
         this.dialog = dialog;
-        this.baseUrlLocal = "http://localhost:3000/api";
-        this.baseUrlLocalp = "http://172.16.60.36:3000/api";
+        this.baseUrlLocalp = "http://localhost:3000/api";
+        this.baseUrlLocal = "http://172.16.60.36:3000/api";
         this.token = "";
         this.isLooged = false;
     }
