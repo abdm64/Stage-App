@@ -114,6 +114,7 @@ async function info(){
   // create reusable transporter object using the default SMTP transport
 
   let transporter = nodemailer.createTransport({
+    
     //service : 'gmail',
     host: 'smtp.gmail.com',
     port: 465,

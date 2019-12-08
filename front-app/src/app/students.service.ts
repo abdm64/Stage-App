@@ -58,6 +58,19 @@ export class  StudentService{
       });
 
     }
+    async getStudentSearch(term : string){
+
+      const queryParms = `?search=${term}`
+
+      this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
+      subscribe((postData)=>{
+          this.students = postData.students;
+          this.studentUpdated.next([...this.students]);
+
+
+      });
+
+    }
 
 
 

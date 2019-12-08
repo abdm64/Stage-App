@@ -69,7 +69,7 @@ app.get('/api', (req,res, next)=>{
 
 //fetch All student + adding pagination  
 
-app.get('/api/students/data' , (req,res, next)=>{
+app.get('/api/students/data',auth , (req,res, next)=>{
   
   const pageSize = +req.query.pageSize
   const pageIndex = +req.query.pageIndex
@@ -92,9 +92,9 @@ app.get('/api/students/data' , (req,res, next)=>{
     })
 
   } else 
-  if (search) {
-    console.log("search define")
-
+  if (escapeRegex(search)) {
+    
+    
 
     const regex = new RegExp(escapeRegex(search),'ig');
 

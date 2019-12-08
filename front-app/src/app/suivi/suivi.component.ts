@@ -50,7 +50,7 @@ private studentSub:Subscription;
 
 
 fetchArray : any[]
-searchTerm = '';
+searchTerm ='';
 
   end = 9;
   rest = 0;
@@ -237,32 +237,23 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
 
-  search(): void {
-    let term = "" + this.searchTerm;
+  search(): void{
+   const term = this.searchTerm;
 
-    if (term === undefined){
-      console.log(term)
+    if (!term.replace(/\s/g, '').length) {
 
+    }
 
-    } else {
+     else{
+      this.studentsService.getStudentSearch(term)
 
-
-
-
-       this.students = this.studentsCopy.filter(function(student) {
-
-        return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.matricule.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.encadreur.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
-    });
-    this.rests = Math.max(this.students.length - this.end, 0)
 
     }
 
 
 
-
-
-
  }
+
 
 
  getStudentDate(student : any){

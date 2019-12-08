@@ -29,142 +29,89 @@ export class ChartComponent implements OnInit {
 
 
 
-//**************************bar2 */
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
- //public barChartLabels =  this.labelsDateDebut;
- public barChartLabels =  ['Janvier','Février','Mars','Avril', 'Mai','Juin','Juillet','Aout','Septembre','Octobre','Novembre','Décembre'];
 
-
-  public barChartType = 'bar';
-  public barChartLegend = true;
-  public barChartData = [
-    {data: this.valueDateDebut, label: 'Date Début'},
-    //{data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-    {data: this.valueDateFin, label: 'Date Fin'}
-  ];
-  //****************************************************** */
 
   constructor(private chartservice : ChartService) { }
 
-  async ngOnInit() {
+ async ngOnInit() {
 
-    //bar with2 date debut
-    const x = await this.getDateDebutData()
-    const y = await this.getNamesDateDebut()
-    const z = await console.log(this.labelsDateDebut)
-    var arrl : any[] = this.labelsDateDebut
-    var arrv : any[] = this.valueDateDebut
-
-
-    for(let i =1 ; i<=12;i++){
-
-          if(! arrl.some(e => e === i)){
-              arrv.splice(i-1,0, 0)
-
-              arrl.splice(i-1,0, i);
-
-
-                                     }
-                             }
-
-            //  console.log(this.labelsDateDebut)
-              //console.log(this.valueDateDebut)
-
- //bar with2 date fin
-    const r = await this.getDateFinData()
-    const s = await this.getNamesDateFin()
-    const t = await console.log(this.labelsDateFin)
-    var arrlf : any[] = this.labelsDateFin
-    var arrvf : any[] = this.valueDateFin
-
-
-    for(let i =1; i<=12;i++){
-
-          if(! arrlf.some(e => e === i)){
-              arrvf.splice(i-1,0, 0)
-
-              arrlf.splice(i-1,0, i);
+  let enc = await this.chartservice.getEncadreur()
+  let sec = await this.chartservice.getEncadreurSec()
+ let dateFin = await this.chartservice.getDateFin()
+ let dateDebut = await this.chartservice.getDateDebut()
 
 
 
-                                     }
-                             }
-           //   console.log(this.labelsDateFin)
-            //  console.log(this.valueDateFin)
- //bar chart 1
+  this.createPie(enc,"enc")
+  this.createPie(sec,"sector")
+  this.createBar(dateFin,dateDebut,'date')
 
-    const d = await this.getSecData()
-    const e =await this.getNamesSec()
 
-    const c = await console.log(this.labelsSec)
-    this.getRandomColor(this.valueSec)
-    this.BarChart = await new Chart('barChart',{
 
-      type:'pie',
-  data :{
-   
-   labels:this.labelsSec,
-    datasets:[{
 
-      data:this.valueSec,
 
-     backgroundColor: this.coloR,
-      borderColor: this.coloR,
 
-        hoverBackgroundColor: this.coloR,
 
-      borderWidth :1
-    }]
-  },
-  options:{
-    title:{
 
-      display:true
-    },
-    responsive: false,
-    //display: true
-  }
-    })
 
-    //********************pie chart */*
-    const a = await this.getEncData()
-    const b =await this.getNamesEnc()
-this.getRandomColor(this.valueEnc)
-    //const f = await console.log(this.labelsSec)
-    this.PieChart = await new Chart('pieChart',{
-      type:'pie',
-  data :{
-   // labels:["Red","Blue","Yellow","Green","purple","Orange"],
-   labels:this.labelsEnc,
-    datasets:[{
-      //label: '# of votes',
-      //data:[9,7,3,5,2,10],
-      data:this.valueEnc,
-     // backgroundColor:"rgba(255,99,132,0.4)",
-     backgroundColor: this.coloR,
-      borderColor: this.coloR,
 
-        hoverBackgroundColor: this.coloR,
-      //  hoverBorderColor: "rgba(255,99,132,1)",
-      borderWidth :1
-    }]
-  },
-  options:{
-    title:{
-      text:"",
-      display:true
-    },
-    responsive: false,
-    //display: true
-  }
+
+
+  }//ngOnInit
+
+
+
+async  createBar(dateFin,dateDebut, name){
+
+  let dataMonth = Object.keys(dateFin)
+  let dateVlaueFin = Object.values(dateFin)
+
+  let dateVlaueDebut = Object.values(dateDebut)
+
+    this.PieChart = await new Chart(name,{
+      type: 'bar',
+      data: {
+          datasets: [{
+              label: 'dateFin',
+              data: dateVlaueFin,
+              backgroundColor: '#86C7F3',
+              borderColor: '#5EB4EF'
+
+
+          }, {
+              label: 'dateDebut',
+              data: dateVlaueDebut,
+              backgroundColor: '#FFA1B5',
+              borderColor: '#FF829C',
+
+              type: 'bar'
+          }],
+          labels: dataMonth
+      },
+
+
+
+
+
+
+
+
+
     });
 
 
 
+
+
+
+
+
+
+
   }
+
+
+
 
  getRandomColor(data : any){
  var  dynamicColors = function() {
@@ -184,192 +131,53 @@ this.getRandomColor(this.valueEnc)
 
 
 
+async createPie(data1,nameChart){
+  let dataNum = Object.values(data1)
+  let dataLabl = Object.keys(data1)
 
+  this.getRandomColor(dataNum)
+  //const f = await console.log(this.labelsSec)
+  this.PieChart = await new Chart(nameChart,{
+    type:'pie',
+data :{
 
- async getEncData(){
-var count = 0
-var obj : {}
- var array : any[] = []
-var a : String
+ labels:dataLabl,
+  datasets:[{
 
-const data :any = await (this.chartservice.getEncadreur())
-for (let  name of data) {
-  count = 0
-    a= name;
-     for (let item of data ){
-       if(item == a){
-           count++  }
+    data: dataNum ,
 
-     }
-     obj = {
-      name : a,
-      number : count
-    }
-array.push(obj)
+   backgroundColor: this.coloR,
+    borderColor: this.coloR,
+
+      hoverBackgroundColor: this.coloR,
+
+    borderWidth :1
+  }]
+},
+options:{
+  title:{
+    text:"",
+    display:true
+  },
+  responsive: true,
+
 }
-//console.log(array)
-let medios = array.reduce((c, n) =>
-  c.find(el => el.name == n.name) ? c : [...c, n], []);
-  //console.log(medios)
-return medios
-
-  }
+  });
 
 
 
 
- async getNamesEnc(){
-   // tslint:disable-next-line: prefer-const
-   const data = await this.getEncData()
-  // console.log(data)
-
-  for (let  item in data){
-
-        this.labelsEnc.push(data[item].name)
-        this.valueEnc.push(data[item].number)
-
-    }
-    //console.log(this.labelsEnc)
-    //console.log(this.valueEnc)
-  return true
-
-  }
-
-  ////////////////////////////////////////////////////////////////////
-  async getSecData(){
-    var count = 0
-    var obj : {}
-     var array : any[] = []
-    var a : String
-
-    const data :any = await (this.chartservice.getEncadreurSec())
-    for (let  name of data) {
-      count = 0
-        a= name;
-         for (let item of data ){
-           if(item == a){
-               count++  }
-
-         }
-         obj = {
-          name : a,
-          number : count
-        }
-    array.push(obj)
-    }
-    //console.log(array)
-    let medios = array.reduce((c, n) =>
-      c.find(el => el.name == n.name) ? c : [...c, n], []);
-      //console.log(medios)
-    return medios
-
-      }
 
 
 
 
-     async getNamesSec(){
-       var data = await this.getSecData()
-      // console.log(data)
-      for (let  item in data){
-          //  console.log()
-            this.labelsSec.push(data[item].name)
-            this.valueSec.push(data[item].number)
-
-        }
-        //console.log(this.labelsSec)
-        //console.log(this.valueSec)
-      return true
-
-      }
 
 
 
-  async getDateDebutData(){
-    var count = 0
-    var obj : {}
-     var array : any[] = []
-    var a : String
 
-    const data :any = await (this.chartservice.getDateDebut())
-    for (let  name of data) {
-      count = 0
-        a= name;
-         for (let item of data ){
-           if(item == a){
-               count++  }
+}
 
-         }
-         obj = {
-          name : a,
-          number : count
-        }
-    array.push(obj)
-    }
-    //console.log(array)
-    let medios = array.reduce((c, n) =>
-      c.find(el => el.name == n.name) ? c : [...c, n], []);
-      //console.log(medios)
-    return medios
 
-      }
-    async getNamesDateDebut(){
-       var data = await this.getDateDebutData()
-      // console.log(data)
-      for (let  item in data){
-          //  console.log()
-            this.labelsDateDebut.push(data[item].name)
-            this.valueDateDebut.push(data[item].number)
-
-        }
-       // console.log(this.labelsDateDebut)
-        //console.log(this.valueDateDebut)
-      return true
-
-      }
-
-       ////////////////////////////////////////////////////////////////////
-  async getDateFinData(){
-    var count = 0
-    var obj : {}
-     var array : any[] = []
-    var a : String
-
-    const data :any = await (this.chartservice.getDateFin())
-    for (let  name of data) {
-      count = 0
-        a= name;
-         for (let item of data ){
-           if(item == a){
-               count++  }
-
-         }
-         obj = {
-          name : a,
-          number : count
-        }
-    array.push(obj)
-    }
-    //console.log(array)
-    let medios = array.reduce((c, n) =>
-      c.find(el => el.name == n.name) ? c : [...c, n], []);
-      //console.log(medios)
-    return medios
-
-      }
-    async getNamesDateFin(){
-       var data = await this.getDateFinData()
-      // console.log(data)
-      for (let  item in data){
-          //  console.log()
-            this.labelsDateFin.push(data[item].name)
-            this.valueDateFin.push(data[item].number)
-
-        }
-
-      return true
-
-      }
 
 
 
