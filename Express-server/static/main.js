@@ -1170,8 +1170,8 @@ var ChartService = /** @class */ (function () {
     function ChartService(http, datepipe) {
         this.http = http;
         this.datepipe = datepipe;
-        this.baseUrlLocal = "http://localhost:3000/api/";
-        this.baseUrlLocalp = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocalp = "http://localhost:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
     }
     ChartService.prototype.setHeader = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
