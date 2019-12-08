@@ -344,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" style=\"width: 900px; height: 400px;\">\n<div >\n    <!-- style=\"widows: 450px;\"> -->\n\n\n\n        <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\">\n            <div class=\"card-body p-5\">\n  <h2 style=\"font-size:2rem\">   The distribution of trainees by Departement </h2>\n  <canvas id=\"pieChart\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block; \"></canvas>\n            </div>\n        </div>\n\n\n        <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n            <div class=\"card-body p-5\">\n    <h2 style=\"font-size:2rem\">\n          The distribution of trainees by sector</h2>\n      <canvas id=\"barChart\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n\n\n            </div>\n            </div>\n</div>\n\n\n\n\n\n\n<div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n    <div class=\"card-body p-5\">\n  <div style=\"display: block\">\n    <h2 style=\"font-size:2rem\">The number of trainees according to the dates of each month</h2>\n    <canvas baseChart\n            [datasets]=\"barChartData\"\n            [labels]=\"barChartLabels\"\n            [options]=\"barChartOptions\"\n            [legend]=\"barChartLegend\"\n            [chartType]=\"barChartType\">\n    </canvas>\n  </div>\n    </div>\n</div>\n\n\n\n\n\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" style=\"width: 900px; height: 400px;\">\n<div >\n    <!-- style=\"widows: 450px;\"> -->\n\n\n\n        <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\">\n            <div class=\"card-body p-5\">\n  <h2 style=\"font-size:2rem\">   The distribution of trainees by Departement </h2>\n  <canvas id=\"enc\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block; \"></canvas>\n            </div>\n        </div>\n\n\n        <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n            <div class=\"card-body p-5\">\n    <h2 style=\"font-size:2rem\">\n          The distribution of trainees by sector</h2>\n      <canvas id=\"sector\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n\n\n            </div>\n            </div>\n</div>\n\n\n\n\n\n\n<div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n    <div class=\"card-body p-5\">\n  <div style=\"display: block\">\n    <h2 style=\"font-size:2rem\">The number of trainees according to the dates of each month</h2>\n    <canvas id=\"date\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n\n  </div>\n    </div>\n</div>\n\n\n\n\n\n</div>\n\n");
 
 /***/ }),
 
@@ -461,7 +461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n\r\n\r\n\r\n<mat-sidenav-container >\r\n\r\n\r\n        <div class=\"container\">\r\n\r\n\r\n\r\n\r\n\r\n            <div class=\"filter\" [formGroup]=\"form\">\r\n                <button mat-icon-button class=\"search-icon search\" >\r\n                    <mat-icon aria-label=\"label\">search</mat-icon>\r\n                </button>\r\n                <button mat-icon-button class=\"search-icon menu\" >\r\n                    <mat-icon aria-label=\"label\">menu</mat-icon>\r\n                </button>\r\n                <input  [(ngModel)] = \"searchTerm\" (ngModelChange) = \"search()\"  placeholder=\"Search...\" type=\"text\" class=\"mat-body-strong\" formControlName=\"search\" />\r\n                <mat-select placeholder=\"{{placeHolder}}\">\r\n                    <mat-option (click) =\" selectAllStudent()\">\r\n                        ALL\r\n                       </mat-option>\r\n                  <mat-option (click)=\"selectEncours()\">\r\n                    en cours\r\n                  </mat-option>\r\n                  <mat-option (click) =\" selectStudenEnd()\">\r\n                   Terminé\r\n                  </mat-option>\r\n\r\n                </mat-select>\r\n\r\n            </div>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"info\">\r\n                    <div class=\"text\">\r\n                        <span class=\"title\">Stagiaires <button mat-icon-button color=\"warn\">\r\n                                <mat-icon>info_outline</mat-icon>\r\n                            </button></span>\r\n                        <p class=\"description\">A total of {{ students.length }} <span class=\"number\"></span> Stagiaires</p>\r\n                    </div>\r\n\r\n                </div>\r\n                <ng-container *ngIf=\"!loading; else elseTemplate\">\r\n                    <div class=\"separation\"></div>\r\n                </ng-container>\r\n                <ng-template #elseTemplate>\r\n                    <mat-progress-bar [mode]=\"type\" [value]=\"progress\" style=\"width: 100%\"></mat-progress-bar>\r\n                </ng-template>\r\n\r\n                <div class=\"medicaments\">\r\n\r\n                    <mat-card style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\" *ngFor=\"let student of students | load : end ;let i = index ;\"\r\n                        [@fade]=\"{value: '*', params: { delay: (i*300)%2700}}\" class=\"medic-card\">\r\n\r\n\r\n                       <div class=\"remboursement\" [ngClass]=\"{'isremb': getStudentDate(student)}\"></div>\r\n\r\n\r\n                        <mat-card-header style=\"position:relative;\">\r\n                          <div class=\"app-download\" style=\"position:absolute; margin-left: 190px; margin-top: -10px;width: 50px;\">{{student.matricule}}</div>\r\n                            <mat-card-title>{{student.nom   }}</mat-card-title>\r\n                            <mat-card-title>{{\" \" + student.prenom  }}</mat-card-title>\r\n                            <mat-card-subtitle class=\"DCI\">{{student.email}}\r\n                            </mat-card-subtitle>\r\n                        </mat-card-header>\r\n                        <mat-card-content class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"therapy\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date debut</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateDebut | date:'yyyy-MM-dd'\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"input_way\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date fin</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateFin | date:'yyyy-MM-dd' \" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"labo\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Encadreur</mat-label>\r\n                                    <input matInput class=\"input\"\r\n                                        [value]=\"student.encadreur\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Type de stage</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.typeStage\"\r\n                                        disabled>\r\n                                </mat-form-field>\r\n\r\n                            </div>\r\n\r\n<!--\r\n                            <div class=\"row\">\r\n                              <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                              <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                  <mat-label style=\"font-weight: bold;color: black;font-size: 14px;\" >Projet</mat-label>\r\n                                  <input matInput class=\"input\" [value]=\"student.theme\"\r\n                                      disabled style=\"font-weight: bold;color: black;font-size: 14px;\">\r\n                              </mat-form-field>\r\n\r\n                          </div> -->\r\n\r\n                        </mat-card-content>\r\n                        <mat-card-actions align=\"center\">\r\n\r\n                            <button mat-button color=\"black\" (click)=\"createPdf(student)\" [disabled] = \"!student.attestation\">  <mat-icon >picture_as_pdf</mat-icon>   </button>\r\n\r\n                            <button mat-button color=\"black\" (click)=\"openDialog(student)\"><mat-icon>edit</mat-icon></button>\r\n                            <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n\r\n\r\n                        </mat-card-actions>\r\n                    </mat-card>\r\n\r\n                </div>\r\n                <!---->\r\n                <div class=\"pagination\">\r\n                    <button mat-raised-button color=\"white\" class=\"load\" (click)=\"setLoad(end+9)\" [disabled] = \" end >  students.length\"  >\r\n                        <mat-icon>keyboard_arrow_down</mat-icon>Load more\r\n                          {{ rests }}\r\n\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n\r\n    </mat-sidenav-container>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n\r\n\r\n\r\n<mat-sidenav-container >\r\n\r\n\r\n        <div class=\"container\">\r\n\r\n\r\n\r\n\r\n\r\n            <div class=\"filter\" [formGroup]=\"form\">\r\n                <button mat-icon-button class=\"search-icon search\" >\r\n                    <mat-icon aria-label=\"label\">search</mat-icon>\r\n                </button>\r\n                <button mat-icon-button class=\"search-icon menu\" >\r\n                    <mat-icon aria-label=\"label\">menu</mat-icon>\r\n                </button>\r\n                <input  [(ngModel)] = \"searchTerm\" (ngModelChange) = \"search()\"  placeholder=\"Search...\" type=\"text\" class=\"mat-body-strong\" formControlName=\"search\" />\r\n                <mat-select placeholder=\"{{placeHolder}}\">\r\n                    <mat-option (click) =\" selectAllStudent()\">\r\n                        ALL\r\n                       </mat-option>\r\n                  <mat-option (click)=\"selectEncours()\">\r\n                    en cours\r\n                  </mat-option>\r\n                  <mat-option (click) =\" selectStudenEnd()\">\r\n                   Terminé\r\n                  </mat-option>\r\n\r\n                </mat-select>\r\n\r\n                <!-- <button (click)= \"searchApi()\">search</button> -->\r\n\r\n            </div>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"info\">\r\n                    <div class=\"text\">\r\n                        <span class=\"title\">Stagiaires <button mat-icon-button color=\"warn\">\r\n                                <mat-icon>info_outline</mat-icon>\r\n                            </button></span>\r\n                        <p class=\"description\">A total of {{ last }} <span class=\"number\"></span> Stagiaires</p>\r\n                    </div>\r\n\r\n                </div>\r\n                <ng-container *ngIf=\"!loading; else elseTemplate\">\r\n                    <div class=\"separation\"></div>\r\n                </ng-container>\r\n                <ng-template #elseTemplate>\r\n                    <mat-progress-bar [mode]=\"type\" [value]=\"progress\" style=\"width: 100%\"></mat-progress-bar>\r\n                </ng-template>\r\n\r\n                <div class=\"medicaments\">\r\n\r\n                    <mat-card style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\" *ngFor=\"let student of students | load : end ;let i = index ;\"\r\n                        [@fade]=\"{value: '*', params: { delay: (i*300)%2700}}\" class=\"medic-card\">\r\n\r\n\r\n                       <div class=\"remboursement\" [ngClass]=\"{'isremb': getStudentDate(student)}\"></div>\r\n\r\n\r\n                        <mat-card-header style=\"position:relative;\">\r\n                          <div class=\"app-download\" style=\"position:absolute; margin-left: 190px; margin-top: -10px;width: 50px;\">{{student.matricule}}</div>\r\n                            <mat-card-title>{{student.nom   }}</mat-card-title>\r\n                            <mat-card-title>{{\" \" + student.prenom  }}</mat-card-title>\r\n                            <mat-card-subtitle class=\"DCI\">{{student.email}}\r\n                            </mat-card-subtitle>\r\n                        </mat-card-header>\r\n                        <mat-card-content class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"therapy\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date debut</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateDebut | date:'yyyy-MM-dd'\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"input_way\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date fin</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateFin | date:'yyyy-MM-dd' \" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"labo\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Encadreur</mat-label>\r\n                                    <input matInput class=\"input\"\r\n                                        [value]=\"student.encadreur\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Type de stage</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.typeStage\"\r\n                                        disabled>\r\n                                </mat-form-field>\r\n\r\n                            </div>\r\n\r\n<!--\r\n                            <div class=\"row\">\r\n                              <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                              <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                  <mat-label style=\"font-weight: bold;color: black;font-size: 14px;\" >Projet</mat-label>\r\n                                  <input matInput class=\"input\" [value]=\"student.theme\"\r\n                                      disabled style=\"font-weight: bold;color: black;font-size: 14px;\">\r\n                              </mat-form-field>\r\n\r\n                          </div> -->\r\n\r\n                        </mat-card-content>\r\n                        <mat-card-actions align=\"center\">\r\n\r\n                            <button mat-button color=\"black\" (click)=\"createPdf(student)\" [disabled] = \"!student.attestation\">  <mat-icon >picture_as_pdf</mat-icon>   </button>\r\n\r\n                            <button mat-button color=\"black\" (click)=\"openDialog(student)\"><mat-icon>edit</mat-icon></button>\r\n                            <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n\r\n\r\n                        </mat-card-actions>\r\n                    </mat-card>\r\n\r\n                </div>\r\n                <!---->\r\n                <!-- <div class=\"pagination\">\r\n                    <button mat-raised-button color=\"white\" class=\"load\" (click)=\"setLoad(end+9)\" [disabled] = \" end >  students.length\"  >\r\n                        <mat-icon>keyboard_arrow_down</mat-icon>Load more\r\n                          {{ rests }}\r\n\r\n                    </button>\r\n                </div> -->\r\n\r\n\r\n            </div>\r\n            <mat-paginator [length] = \"last\"  [pageSize] = \"9\" [pageSizeOptions] = \"pageOption\" (page)=\"onChangePage($event)\" style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);margin-top: 1rem; margin-bottom:1rem;\"></mat-paginator>\r\n        </div>\r\n\r\n\r\n    </mat-sidenav-container>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -950,7 +950,8 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatSnackBarModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_20__["CommonModule"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_21__["FlexLayoutModule"],
-                ng2_charts__WEBPACK_IMPORTED_MODULE_7__["ChartsModule"]
+                ng2_charts__WEBPACK_IMPORTED_MODULE_7__["ChartsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatPaginatorModule"]
             ]),
             providers: [_students_service__WEBPACK_IMPORTED_MODULE_15__["StudentService"], _angular_common__WEBPACK_IMPORTED_MODULE_20__["DatePipe"], _execl_service__WEBPACK_IMPORTED_MODULE_23__["ExcelService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
@@ -1084,8 +1085,8 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         this.router = router;
         this.dialog = dialog;
-        this.baseUrlLocalp = "http://localhost:3000/api";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api";
+        this.baseUrlLocal = "http://localhost:3000/api";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api";
         this.token = "";
         this.isLooged = false;
     }
@@ -1169,8 +1170,8 @@ var ChartService = /** @class */ (function () {
     function ChartService(http, datepipe) {
         this.http = http;
         this.datepipe = datepipe;
-        this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://localhost:3000/api/";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api/";
     }
     ChartService.prototype.setHeader = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
@@ -1185,7 +1186,6 @@ var ChartService = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/enc', { headers: this.setHeader() }).toPromise()];
                     case 1:
                         data = _a.sent();
-                        //console.log(data)
                         return [2 /*return*/, data];
                 }
             });
@@ -1199,7 +1199,6 @@ var ChartService = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/encSec', { headers: this.setHeader() }).toPromise()];
                     case 1:
                         data = _a.sent();
-                        //console.log(data)
                         return [2 /*return*/, data];
                 }
             });
@@ -1207,48 +1206,26 @@ var ChartService = /** @class */ (function () {
     };
     ChartService.prototype.getDateDebut = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var array, data, item;
+            var data;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        array = [];
-                        return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/datedebut', { headers: this.setHeader() }).toPromise()];
+                    case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/datedebut', { headers: this.setHeader() }).toPromise()];
                     case 1:
                         data = _a.sent();
-                        for (item in data) {
-                            //console.log(this.datepipe.transform(data[item],'MM'));
-                            array.push(Number(this.datepipe.transform(data[item], 'MM')));
-                        }
-                        // var test :number[]=[2,3,9]
-                        // console.log(test.some(e => e === 7));    //if 7 exist
-                        // test.splice(2, 0,5);      //insert at 2
-                        // console.log(test)
-                        //console.log(array)
-                        array.sort(function (a, b) { return a - b; });
-                        //console.log(array)
-                        return [2 /*return*/, array];
+                        return [2 /*return*/, data];
                 }
             });
         });
     };
     ChartService.prototype.getDateFin = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var array, data, item;
+            var data;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        array = [];
-                        return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/datefin', { headers: this.setHeader() }).toPromise()];
+                    case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/datefin', { headers: this.setHeader() }).toPromise()];
                     case 1:
                         data = _a.sent();
-                        for (item in data) {
-                            //console.log(this.datepipe.transform(data[item],'MM'));
-                            array.push(Number(this.datepipe.transform(data[item], 'MM')));
-                        }
-                        //console.log(array)
-                        array.sort(function (a, b) { return a - b; });
-                        //console.log(array)
-                        return [2 /*return*/, array];
+                        return [2 /*return*/, data];
                 }
             });
         });
@@ -1300,7 +1277,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ChartComponent = /** @class */ (function () {
-    //****************************************************** */
     function ChartComponent(chartservice) {
         this.chartservice = chartservice;
         this.labelsEnc = [];
@@ -1314,137 +1290,62 @@ var ChartComponent = /** @class */ (function () {
         this.ict_unit = [];
         this.efficiency = [];
         this.coloR = [];
-        //**************************bar2 */
-        this.barChartOptions = {
-            scaleShowVerticalLines: false,
-            responsive: true
-        };
-        //public barChartLabels =  this.labelsDateDebut;
-        this.barChartLabels = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-        this.barChartType = 'bar';
-        this.barChartLegend = true;
-        this.barChartData = [
-            { data: this.valueDateDebut, label: 'Date Début' },
-            //{data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-            { data: this.valueDateFin, label: 'Date Fin' }
-        ];
     }
     ChartComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var x, y, z, arrl, arrv, _loop_1, i, r, s, t, arrlf, arrvf, _loop_2, i, d, e, c, _a, a, b, _b;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
-                switch (_c.label) {
-                    case 0: return [4 /*yield*/, this.getDateDebutData()];
+            var enc, sec, dateFin, dateDebut;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.chartservice.getEncadreur()];
                     case 1:
-                        x = _c.sent();
-                        return [4 /*yield*/, this.getNamesDateDebut()];
+                        enc = _a.sent();
+                        return [4 /*yield*/, this.chartservice.getEncadreurSec()];
                     case 2:
-                        y = _c.sent();
-                        return [4 /*yield*/, console.log(this.labelsDateDebut)];
+                        sec = _a.sent();
+                        return [4 /*yield*/, this.chartservice.getDateFin()];
                     case 3:
-                        z = _c.sent();
-                        arrl = this.labelsDateDebut;
-                        arrv = this.valueDateDebut;
-                        _loop_1 = function (i) {
-                            if (!arrl.some(function (e) { return e === i; })) {
-                                arrv.splice(i - 1, 0, 0);
-                                arrl.splice(i - 1, 0, i);
-                            }
-                        };
-                        for (i = 1; i <= 12; i++) {
-                            _loop_1(i);
-                        }
-                        return [4 /*yield*/, this.getDateFinData()];
+                        dateFin = _a.sent();
+                        return [4 /*yield*/, this.chartservice.getDateDebut()];
                     case 4:
-                        r = _c.sent();
-                        return [4 /*yield*/, this.getNamesDateFin()];
-                    case 5:
-                        s = _c.sent();
-                        return [4 /*yield*/, console.log(this.labelsDateFin)];
-                    case 6:
-                        t = _c.sent();
-                        arrlf = this.labelsDateFin;
-                        arrvf = this.valueDateFin;
-                        _loop_2 = function (i) {
-                            if (!arrlf.some(function (e) { return e === i; })) {
-                                arrvf.splice(i - 1, 0, 0);
-                                arrlf.splice(i - 1, 0, i);
-                            }
-                        };
-                        for (i = 1; i <= 12; i++) {
-                            _loop_2(i);
-                        }
-                        return [4 /*yield*/, this.getSecData()];
-                    case 7:
-                        d = _c.sent();
-                        return [4 /*yield*/, this.getNamesSec()];
-                    case 8:
-                        e = _c.sent();
-                        return [4 /*yield*/, console.log(this.labelsSec)];
-                    case 9:
-                        c = _c.sent();
-                        this.getRandomColor(this.valueSec);
+                        dateDebut = _a.sent();
+                        this.createPie(enc, "enc");
+                        this.createPie(sec, "sector");
+                        this.createBar(dateFin, dateDebut, 'date');
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }; //ngOnInit
+    ChartComponent.prototype.createBar = function (dateFin, dateDebut, name) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var dataMonth, dateVlaueFin, dateVlaueDebut, _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        dataMonth = Object.keys(dateFin);
+                        dateVlaueFin = Object.values(dateFin);
+                        dateVlaueDebut = Object.values(dateDebut);
                         _a = this;
-                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__('barChart', {
-                                type: 'pie',
+                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__(name, {
+                                type: 'bar',
                                 data: {
-                                    labels: this.labelsSec,
                                     datasets: [{
-                                            data: this.valueSec,
-                                            backgroundColor: this.coloR,
-                                            borderColor: this.coloR,
-                                            hoverBackgroundColor: this.coloR,
-                                            borderWidth: 1
-                                        }]
+                                            label: 'dateFin',
+                                            data: dateVlaueFin,
+                                            backgroundColor: '#86C7F3',
+                                            borderColor: '#5EB4EF'
+                                        }, {
+                                            label: 'dateDebut',
+                                            data: dateVlaueDebut,
+                                            backgroundColor: '#FFA1B5',
+                                            borderColor: '#FF829C',
+                                            type: 'bar'
+                                        }],
+                                    labels: dataMonth
                                 },
-                                options: {
-                                    title: {
-                                        display: true
-                                    },
-                                    responsive: false,
-                                }
-                            })
-                            //********************pie chart */*
-                        ];
-                    case 10:
-                        _a.BarChart = _c.sent();
-                        return [4 /*yield*/, this.getEncData()];
-                    case 11:
-                        a = _c.sent();
-                        return [4 /*yield*/, this.getNamesEnc()];
-                    case 12:
-                        b = _c.sent();
-                        this.getRandomColor(this.valueEnc);
-                        //const f = await console.log(this.labelsSec)
-                        _b = this;
-                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__('pieChart', {
-                                type: 'pie',
-                                data: {
-                                    // labels:["Red","Blue","Yellow","Green","purple","Orange"],
-                                    labels: this.labelsEnc,
-                                    datasets: [{
-                                            //label: '# of votes',
-                                            //data:[9,7,3,5,2,10],
-                                            data: this.valueEnc,
-                                            // backgroundColor:"rgba(255,99,132,0.4)",
-                                            backgroundColor: this.coloR,
-                                            borderColor: this.coloR,
-                                            hoverBackgroundColor: this.coloR,
-                                            //  hoverBorderColor: "rgba(255,99,132,1)",
-                                            borderWidth: 1
-                                        }]
-                                },
-                                options: {
-                                    title: {
-                                        text: "",
-                                        display: true
-                                    },
-                                    responsive: false,
-                                }
                             })];
-                    case 13:
-                        //const f = await console.log(this.labelsSec)
-                        _b.PieChart = _c.sent();
+                    case 1:
+                        _a.PieChart = _b.sent();
                         return [2 /*return*/];
                 }
             });
@@ -1463,313 +1364,41 @@ var ChartComponent = /** @class */ (function () {
             this.coloR.push(dynamicColors());
         }
     };
-    ChartComponent.prototype.getEncData = function () {
+    ChartComponent.prototype.createPie = function (data1, nameChart) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var count, obj, array, a, data, data_1, data_1_1, name_1, data_2, data_2_1, item, medios;
-            var e_1, _a, e_2, _b;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
-                switch (_c.label) {
+            var dataNum, dataLabl, _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
                     case 0:
-                        count = 0;
-                        array = [];
-                        return [4 /*yield*/, (this.chartservice.getEncadreur())];
-                    case 1:
-                        data = _c.sent();
-                        try {
-                            for (data_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_1_1 = data_1.next(); !data_1_1.done; data_1_1 = data_1.next()) {
-                                name_1 = data_1_1.value;
-                                count = 0;
-                                a = name_1;
-                                try {
-                                    for (data_2 = (e_2 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_2_1 = data_2.next(); !data_2_1.done; data_2_1 = data_2.next()) {
-                                        item = data_2_1.value;
-                                        if (item == a) {
-                                            count++;
-                                        }
-                                    }
+                        dataNum = Object.values(data1);
+                        dataLabl = Object.keys(data1);
+                        this.getRandomColor(dataNum);
+                        //const f = await console.log(this.labelsSec)
+                        _a = this;
+                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__(nameChart, {
+                                type: 'pie',
+                                data: {
+                                    labels: dataLabl,
+                                    datasets: [{
+                                            data: dataNum,
+                                            backgroundColor: this.coloR,
+                                            borderColor: this.coloR,
+                                            hoverBackgroundColor: this.coloR,
+                                            borderWidth: 1
+                                        }]
+                                },
+                                options: {
+                                    title: {
+                                        text: "",
+                                        display: true
+                                    },
+                                    responsive: true,
                                 }
-                                catch (e_2_1) { e_2 = { error: e_2_1 }; }
-                                finally {
-                                    try {
-                                        if (data_2_1 && !data_2_1.done && (_b = data_2.return)) _b.call(data_2);
-                                    }
-                                    finally { if (e_2) throw e_2.error; }
-                                }
-                                obj = {
-                                    name: a,
-                                    number: count
-                                };
-                                array.push(obj);
-                            }
-                        }
-                        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-                        finally {
-                            try {
-                                if (data_1_1 && !data_1_1.done && (_a = data_1.return)) _a.call(data_1);
-                            }
-                            finally { if (e_1) throw e_1.error; }
-                        }
-                        medios = array.reduce(function (c, n) {
-                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
-                        }, []);
-                        //console.log(medios)
-                        return [2 /*return*/, medios];
-                }
-            });
-        });
-    };
-    ChartComponent.prototype.getNamesEnc = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var data, item;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getEncData()
-                        // console.log(data)
-                    ];
+                            })];
                     case 1:
-                        data = _a.sent();
-                        // console.log(data)
-                        for (item in data) {
-                            this.labelsEnc.push(data[item].name);
-                            this.valueEnc.push(data[item].number);
-                        }
-                        //console.log(this.labelsEnc)
-                        //console.log(this.valueEnc)
-                        return [2 /*return*/, true];
-                }
-            });
-        });
-    };
-    ////////////////////////////////////////////////////////////////////
-    ChartComponent.prototype.getSecData = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var count, obj, array, a, data, data_3, data_3_1, name_2, data_4, data_4_1, item, medios;
-            var e_3, _a, e_4, _b;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        count = 0;
-                        array = [];
-                        return [4 /*yield*/, (this.chartservice.getEncadreurSec())];
-                    case 1:
-                        data = _c.sent();
-                        try {
-                            for (data_3 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_3_1 = data_3.next(); !data_3_1.done; data_3_1 = data_3.next()) {
-                                name_2 = data_3_1.value;
-                                count = 0;
-                                a = name_2;
-                                try {
-                                    for (data_4 = (e_4 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_4_1 = data_4.next(); !data_4_1.done; data_4_1 = data_4.next()) {
-                                        item = data_4_1.value;
-                                        if (item == a) {
-                                            count++;
-                                        }
-                                    }
-                                }
-                                catch (e_4_1) { e_4 = { error: e_4_1 }; }
-                                finally {
-                                    try {
-                                        if (data_4_1 && !data_4_1.done && (_b = data_4.return)) _b.call(data_4);
-                                    }
-                                    finally { if (e_4) throw e_4.error; }
-                                }
-                                obj = {
-                                    name: a,
-                                    number: count
-                                };
-                                array.push(obj);
-                            }
-                        }
-                        catch (e_3_1) { e_3 = { error: e_3_1 }; }
-                        finally {
-                            try {
-                                if (data_3_1 && !data_3_1.done && (_a = data_3.return)) _a.call(data_3);
-                            }
-                            finally { if (e_3) throw e_3.error; }
-                        }
-                        medios = array.reduce(function (c, n) {
-                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
-                        }, []);
-                        //console.log(medios)
-                        return [2 /*return*/, medios];
-                }
-            });
-        });
-    };
-    ChartComponent.prototype.getNamesSec = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var data, item;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getSecData()
-                        // console.log(data)
-                    ];
-                    case 1:
-                        data = _a.sent();
-                        // console.log(data)
-                        for (item in data) {
-                            //  console.log()
-                            this.labelsSec.push(data[item].name);
-                            this.valueSec.push(data[item].number);
-                        }
-                        //console.log(this.labelsSec)
-                        //console.log(this.valueSec)
-                        return [2 /*return*/, true];
-                }
-            });
-        });
-    };
-    ChartComponent.prototype.getDateDebutData = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var count, obj, array, a, data, data_5, data_5_1, name_3, data_6, data_6_1, item, medios;
-            var e_5, _a, e_6, _b;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        count = 0;
-                        array = [];
-                        return [4 /*yield*/, (this.chartservice.getDateDebut())];
-                    case 1:
-                        data = _c.sent();
-                        try {
-                            for (data_5 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_5_1 = data_5.next(); !data_5_1.done; data_5_1 = data_5.next()) {
-                                name_3 = data_5_1.value;
-                                count = 0;
-                                a = name_3;
-                                try {
-                                    for (data_6 = (e_6 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_6_1 = data_6.next(); !data_6_1.done; data_6_1 = data_6.next()) {
-                                        item = data_6_1.value;
-                                        if (item == a) {
-                                            count++;
-                                        }
-                                    }
-                                }
-                                catch (e_6_1) { e_6 = { error: e_6_1 }; }
-                                finally {
-                                    try {
-                                        if (data_6_1 && !data_6_1.done && (_b = data_6.return)) _b.call(data_6);
-                                    }
-                                    finally { if (e_6) throw e_6.error; }
-                                }
-                                obj = {
-                                    name: a,
-                                    number: count
-                                };
-                                array.push(obj);
-                            }
-                        }
-                        catch (e_5_1) { e_5 = { error: e_5_1 }; }
-                        finally {
-                            try {
-                                if (data_5_1 && !data_5_1.done && (_a = data_5.return)) _a.call(data_5);
-                            }
-                            finally { if (e_5) throw e_5.error; }
-                        }
-                        medios = array.reduce(function (c, n) {
-                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
-                        }, []);
-                        //console.log(medios)
-                        return [2 /*return*/, medios];
-                }
-            });
-        });
-    };
-    ChartComponent.prototype.getNamesDateDebut = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var data, item;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getDateDebutData()
-                        // console.log(data)
-                    ];
-                    case 1:
-                        data = _a.sent();
-                        // console.log(data)
-                        for (item in data) {
-                            //  console.log()
-                            this.labelsDateDebut.push(data[item].name);
-                            this.valueDateDebut.push(data[item].number);
-                        }
-                        // console.log(this.labelsDateDebut)
-                        //console.log(this.valueDateDebut)
-                        return [2 /*return*/, true];
-                }
-            });
-        });
-    };
-    ////////////////////////////////////////////////////////////////////
-    ChartComponent.prototype.getDateFinData = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var count, obj, array, a, data, data_7, data_7_1, name_4, data_8, data_8_1, item, medios;
-            var e_7, _a, e_8, _b;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        count = 0;
-                        array = [];
-                        return [4 /*yield*/, (this.chartservice.getDateFin())];
-                    case 1:
-                        data = _c.sent();
-                        try {
-                            for (data_7 = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data), data_7_1 = data_7.next(); !data_7_1.done; data_7_1 = data_7.next()) {
-                                name_4 = data_7_1.value;
-                                count = 0;
-                                a = name_4;
-                                try {
-                                    for (data_8 = (e_8 = void 0, tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](data)), data_8_1 = data_8.next(); !data_8_1.done; data_8_1 = data_8.next()) {
-                                        item = data_8_1.value;
-                                        if (item == a) {
-                                            count++;
-                                        }
-                                    }
-                                }
-                                catch (e_8_1) { e_8 = { error: e_8_1 }; }
-                                finally {
-                                    try {
-                                        if (data_8_1 && !data_8_1.done && (_b = data_8.return)) _b.call(data_8);
-                                    }
-                                    finally { if (e_8) throw e_8.error; }
-                                }
-                                obj = {
-                                    name: a,
-                                    number: count
-                                };
-                                array.push(obj);
-                            }
-                        }
-                        catch (e_7_1) { e_7 = { error: e_7_1 }; }
-                        finally {
-                            try {
-                                if (data_7_1 && !data_7_1.done && (_a = data_7.return)) _a.call(data_7);
-                            }
-                            finally { if (e_7) throw e_7.error; }
-                        }
-                        medios = array.reduce(function (c, n) {
-                            return c.find(function (el) { return el.name == n.name; }) ? c : tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](c, [n]);
-                        }, []);
-                        //console.log(medios)
-                        return [2 /*return*/, medios];
-                }
-            });
-        });
-    };
-    ChartComponent.prototype.getNamesDateFin = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var data, item;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getDateFinData()
-                        // console.log(data)
-                    ];
-                    case 1:
-                        data = _a.sent();
-                        // console.log(data)
-                        for (item in data) {
-                            //  console.log()
-                            this.labelsDateFin.push(data[item].name);
-                            this.valueDateFin.push(data[item].number);
-                        }
-                        return [2 /*return*/, true];
+                        //const f = await console.log(this.labelsSec)
+                        _a.PieChart = _b.sent();
+                        return [2 /*return*/];
                 }
             });
         });
@@ -2699,7 +2328,38 @@ var StudentService = /** @class */ (function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                //  const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
                 this.http.get(this.baseUrlLocal + '/students/data', { headers: this.setHeader() }).
+                    subscribe(function (postData) {
+                    _this.students = postData.students;
+                    _this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](_this.students));
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    StudentService.prototype.getStudent = function (pageSize, pageIndex) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var queryParms;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                queryParms = "?pageSize=" + pageSize + "&pageIndex=" + pageIndex;
+                this.http.get(this.baseUrlLocal + '/students/data' + queryParms, { headers: this.setHeader() }).
+                    subscribe(function (postData) {
+                    _this.students = postData.students;
+                    _this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](_this.students));
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    StudentService.prototype.getStudentSearch = function (term) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var queryParms;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                queryParms = "?search=" + term;
+                this.http.get(this.baseUrlLocal + '/students/data' + queryParms, { headers: this.setHeader() }).
                     subscribe(function (postData) {
                     _this.students = postData.students;
                     _this.studentUpdated.next(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"](_this.students));
@@ -2763,6 +2423,21 @@ var StudentService = /** @class */ (function () {
         });
         dialogRef.afterClosed().subscribe(function (result) {
         });
+    };
+    StudentService.prototype.getStudentNumber = function () {
+        var num = 0;
+        var req = new XMLHttpRequest();
+        req.open('GET', this.baseUrlLocal + "/students/number", false);
+        //
+        req.send(null);
+        var data = req.response;
+        return parseInt(data);
+        // var num = 0
+        //   this.http.get(this.baseUrlLocal+`/students/number`,  { headers: this.setHeader() }).
+        //     subscribe((postData : number)=>{
+        //     });
+        //   //  console.log(data)
+        //     return 13
     };
     StudentService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
@@ -2853,6 +2528,8 @@ var SuiviComponent = /** @class */ (function () {
         this.end = 9;
         this.rest = 0;
         this.rests = 0;
+        this.last = 0;
+        this.pageOption = [9];
         this.ascending = false;
         this.loading = false;
         this.type = 'determinate';
@@ -2890,7 +2567,9 @@ var SuiviComponent = /** @class */ (function () {
     };
     SuiviComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.studentsService.getStudents();
+        this.last = this.studentsService.getStudentNumber();
+        // this.studentsService.getStudents();
+        this.studentsService.getStudent(9, 1);
         this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(function (students) {
             _this.students = students;
             _this.studentsCopy = students;
@@ -2934,15 +2613,11 @@ var SuiviComponent = /** @class */ (function () {
         });
     };
     SuiviComponent.prototype.search = function () {
-        var term = "" + this.searchTerm;
-        if (term === undefined) {
-            console.log(term);
+        var term = this.searchTerm;
+        if (!term.replace(/\s/g, '').length) {
         }
         else {
-            this.students = this.studentsCopy.filter(function (student) {
-                return student.nom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.prenom.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.matricule.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0 || student.encadreur.toString().toLowerCase().indexOf(term.toString().toLowerCase()) >= 0;
-            });
-            this.rests = Math.max(this.students.length - this.end, 0);
+            this.studentsService.getStudentSearch(term);
         }
     };
     SuiviComponent.prototype.getStudentDate = function (student) {
@@ -3003,6 +2678,9 @@ var SuiviComponent = /** @class */ (function () {
     SuiviComponent.prototype.selectAllStudent = function () {
         this.students = this.studentsCopy;
         this.placeHolder = "ALL";
+    };
+    SuiviComponent.prototype.onChangePage = function (pageData) {
+        this.studentsService.getStudent(9, pageData.pageIndex + 1);
     };
     SuiviComponent.prototype.createPdf = function (student) {
         //console.log("pdf created")

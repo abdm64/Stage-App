@@ -14,7 +14,7 @@ const app = express();
 //stagedb
 
 mongoose
-.connect("mongodb://localhost/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.connect("mongodb://stagedb:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 .then(() => {
   console.log('Connected to database!');
 })
