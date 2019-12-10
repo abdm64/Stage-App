@@ -11,10 +11,10 @@ const mongoose =require('mongoose');
 //app.use(index);
 
 const app = express();
-//stagedb
+//stagedb:27017
 
 mongoose
-.connect("mongodb://stagedb:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.connect("mongodb://localhost/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 .then(() => {
   console.log('Connected to database!');
 })

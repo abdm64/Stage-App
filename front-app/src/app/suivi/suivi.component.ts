@@ -55,8 +55,9 @@ searchTerm ='';
   end = 9;
   rest = 0;
   rests = 0 ;
-  last = 0
-  pageOption = [9]
+  last = 0;
+  pageOption = [9];
+  pageIndex = 0;
 
   ascending = false;
   totalMedics: any;
@@ -242,10 +243,17 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
     if (!term.replace(/\s/g, '').length) {
 
+      this.studentsService.getStudent(9,this.pageIndex + 1)
+    //  this.last = this.students.length
+
     }
 
      else{
+
       this.studentsService.getStudentSearch(term)
+      //this.last = this.students.length
+
+
 
 
     }
@@ -323,9 +331,11 @@ selectAllStudent(){
 
 
 onChangePage(pageData : PageEvent){
+  const pageIndex = pageData.pageIndex;
+  this.pageIndex = pageIndex
 
 
-  this.studentsService.getStudent(9,pageData.pageIndex + 1)
+  this.studentsService.getStudent(9,pageIndex + 1)
 
 
 

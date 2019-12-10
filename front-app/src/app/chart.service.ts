@@ -10,9 +10,9 @@ import { DatePipe} from '@angular/common';
 
 export class ChartService  {
 
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal = "http://172.16.60.36:3000/api/"
-  private encadreur  : any;
+  baseUrlLocal = "http://localhost:3000/api/";
+  baseUrlLocalp = "http://172.16.60.36:3000/api/"
+
 
   constructor(private http:HttpClient , private datepipe :DatePipe) { }
 

@@ -67,9 +67,9 @@ app.get('/api', (req,res, next)=>{
   res.send("API is working ")
 })
 
-//fetch All student + adding pagination  
+//fetch All student + adding pagination  ,auth
 
-app.get('/api/students/data',auth , (req,res, next)=>{
+app.get('/api/students/data' , (req,res, next)=>{
   
   const pageSize = +req.query.pageSize
   const pageIndex = +req.query.pageIndex
@@ -83,16 +83,25 @@ app.get('/api/students/data',auth , (req,res, next)=>{
     studentQuary.skip(pageSize * (pageIndex - 1)).limit(pageSize).then((docs,err) => {
 
       if (err) return handleError(err)
+      students = docs
+
+  return Students.count()
+})   
+.then(count => {
+  res.status(200).json({
+    message: "Students fetched successfully!",
+    students: students,
+    maxNumber: count
+  });
+
     
-          res.status(201).json({
-            students : docs
-          })
+         
     
     
     })
 
   } else 
-  if (escapeRegex(search)) {
+  if ((search)) {
     
     
 
@@ -109,13 +118,8 @@ app.get('/api/students/data',auth , (req,res, next)=>{
           {prenom: regex}, 
           {matricule:checkIfNumber(search)}
         ]}, (err, docs)=>{
-          if (err) {
-
-            res.status(500).json(err);
-            handleError(err)
-
-
-          } ;
+          if (err) handleError(err);
+          
 
           res.status(201).json({
             students : docs
@@ -135,20 +139,32 @@ studentQuary.then((docs,err) => {
 
   if (err) return handleError(err)
 
-      res.status(201).json({
-        students : docs
-      })
+  students = docs
+
+  return Students.count()
+})   
+.then(count => {
+  res.status(200).json({
+    message: "Students fetched successfully!",
+    posts: students,
+    maxNumber: count
+  });
 
 
-})
+});
+
+
 
 }
+
+
+
  
 })
 
 
 
-
+///
 
 
 
@@ -163,7 +179,7 @@ app.post('/api/students/insertData',auth,(req,res)=>{
 
 
   var  student = new Students(req.body)
-  console.log(req.body)
+  //console.log(req.body)
   student.save().then(result => {
     res.status(201).json({
       message : "Operation succeeded",
@@ -271,7 +287,14 @@ app.delete("/api/students/delete",function (req,res) {
 
 
 function escapeRegex(text) {
-  //console.log(text)
+
+  if (text === undefined || text === null) {
+   
+} else {
+
+
+
+  
 
 
   if (isNaN(text)){
@@ -288,6 +311,13 @@ function escapeRegex(text) {
     
 };
 
+
+
+
+
+}
+
+
 function checkIfNumber(input){
   if (isNaN(input)){
     //is not nember
@@ -300,8 +330,6 @@ function checkIfNumber(input){
 
     return +input
   }
-
-
 
 }
 

@@ -10,12 +10,13 @@ import { MatDialog } from '@angular/material';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocalp = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.36:3000/api"
+   baseUrlLocal = "http://localhost:3000/api";
+   baseUrlLocalp = "http://172.16.60.36:3000/api"
 
   result : string = '#' ;
 
     private students  : any[] ;
+    private maxNumber : number
 
 
     private  studentUpdated = new  Subject<Students[]>();
@@ -49,8 +50,11 @@ export class  StudentService{
     async getStudent(pageSize : number, pageIndex : number){
 
       const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
-      this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
+      this.http.get<{students:Students[],maxNumber : number}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
+
+        this.maxNumber = postData.maxNumber
+
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
 
@@ -62,10 +66,13 @@ export class  StudentService{
 
       const queryParms = `?search=${term}`
 
-      this.http.get<{students:Students[]}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
+      this.http.get<{students:Students[],maxNumber : number}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
+          this.maxNumber = postData.students.length
+
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
+
 
 
       });
@@ -150,8 +157,10 @@ export class  StudentService{
       const dialogRef = this.dialog.open(MsgErrorComponent, {
         width: '20%',
         data : {
+
           message : message,
           title : title
+
         }
 
       });
@@ -163,11 +172,9 @@ export class  StudentService{
       });
     }
 
-    getStudentNumber(){
+   getStudentNumber(){
 
-
-
-    var num = 0 ;
+  var num = 0 ;
 
     let  req = new XMLHttpRequest();
     req.open('GET', this.baseUrlLocal+`/students/number`, false);
@@ -180,25 +187,13 @@ export class  StudentService{
 
 
 
-
+console.log(data)
 
 
    return parseInt(data)
 
-  // var num = 0
 
 
-  //   this.http.get(this.baseUrlLocal+`/students/number`,  { headers: this.setHeader() }).
-  //     subscribe((postData : number)=>{
-
-
-
-
-  //     });
-
-  //   //  console.log(data)
-
-  //     return 13
     }
 
 
