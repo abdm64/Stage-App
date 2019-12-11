@@ -1,12 +1,12 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-var mg = require('nodemailer-mailgun-transport');
+
 const mongoose =require('mongoose');
 var cron = require('node-cron');
 const app = express.Router();
 //var data = {}
 
-mongoose.Promise = global.Promise;
+
 
 /*
 cron.schedule('40 10 * * *', () => {
@@ -131,10 +131,7 @@ async function info(){
        logger: true, // log to console
        debug: true, // include SMTP traffic in the logs
    
-       // define proxy configuration
      
-      // proxy: "http://djezzyproxy",
-
 
   });
 

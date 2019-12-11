@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Students } from '../../../models/Student';
 import { StudentService } from '../students.service';
 import { NgForm, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -25,32 +24,34 @@ export class DialogOverviewExampleDialog implements OnInit {
 
     createForm(student : any) {
 
-      this.angForm = this.fb.group({
+  this.angForm = this.fb.group({
+    
         nom : [student.nom],
         prenom:[student.prenom],
         sexe :[student.sexe] ,
-       dateNaissance :[student.dateNaissance] ,
-       wilaya : [student.wilaya],
-         nTelephone :[student.nTelephone] ,
+        dateNaissance :[student.dateNaissance] ,
+        wilaya : [student.wilaya],
+        nTelephone :[student.nTelephone] ,
         email : [student.email],
         etablissement :[student.etablissement] ,
         diplome :[student.diplome] ,
-       theme :[student.theme],
-      typeStage : [student.typeStage],
-     typeRapport : [student.typeRapport],
-    dateDebut :[student.dateDebut] ,
-     dateFin :[student.dateFin] ,
-     nbJoursPresence : [student.nbJoursPresence],
-     recommandation :[student.recommandation] ,
-     encadreur : [student.encadreur],
-     encadreurID : [student.encadreurID],
-     encadreurmMail :[student.encadreurmMail],
-     encadreurDEP : [student.encadreurDEP],
-    encadreurSec : [student.encadreurSec],
-     encadreurmOrg :[student. encadreurmOrg ] ,
-    attestation :[student.attestation] ,
-    matricule :[student.matricule],
-    description:[student.description]
+        theme :[student.theme],
+        typeStage : [student.typeStage],
+        typeRapport : [student.typeRapport],
+        dateDebut :[student.dateDebut] ,
+        dateFin :[student.dateFin] ,
+        nbJoursPresence : [student.nbJoursPresence],
+        recommandation :[student.recommandation] ,
+        encadreur : [student.encadreur],
+        encadreurID : [student.encadreurID],
+        encadreurmMail :[student.encadreurmMail],
+        encadreurDEP : [student.encadreurDEP],
+        encadreurSec : [student.encadreurSec],
+        encadreurmOrg :[student. encadreurmOrg ] ,
+        attestation :[student.attestation] ,
+        matricule :[student.matricule],
+        description:[student.description]
+
       });
     }
 
@@ -77,7 +78,7 @@ export class DialogOverviewExampleDialog implements OnInit {
 
 
 
- let dd = {
+ let studentsPdf = {
 
 
 	content: [
@@ -187,7 +188,8 @@ export class DialogOverviewExampleDialog implements OnInit {
   }
 
             }
-  pdfMake.createPdf(dd).open();
+  pdfMake.createPdf(studentsPdf).open();
+
 
 
 
@@ -202,12 +204,13 @@ export class DialogOverviewExampleDialog implements OnInit {
 
 
   onClickSubmit(){
-console.log(this.angForm.value)
+
+
 this.studentService.updateStudent(this.student.matricule,this.angForm.value);
 this.dialogRef.close();
 
 
-//location.reload();
+
 
 
 

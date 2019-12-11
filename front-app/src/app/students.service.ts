@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
+import { Router} from '@angular/router';
 
 
 
@@ -25,7 +26,7 @@ export class  StudentService{
 
 
 
-    constructor(private http:HttpClient, public dialog: MatDialog){
+    constructor(private http:HttpClient, public dialog: MatDialog, public router : Router){
 
     }
     setHeader(){
@@ -68,7 +69,7 @@ export class  StudentService{
 
       this.http.get<{students:Students[],maxNumber : number}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
-          this.maxNumber = postData.students.length
+          this.maxNumber = postData.maxNumber
 
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
@@ -91,12 +92,8 @@ export class  StudentService{
 
    this.http.post(this.baseUrlLocal+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
-          this.result = "is ready to go" ;
-          this.openMessage("succeeded","operation succeeded")
-          //console.log(respanse)
-          this.students.push(data);
           this.studentUpdated.next([this.students]);
-
+          this.router.navigate(['suivi'])
         }, error => {
           this.result  = error.message ;
          this.openMessage("Error","Operation Failed")
@@ -167,6 +164,9 @@ export class  StudentService{
 
 
       dialogRef.afterClosed().subscribe(result => {
+        
+
+
 
 
       });

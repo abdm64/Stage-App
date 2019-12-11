@@ -33,7 +33,7 @@
 
                 </mat-select>
 
-                <!-- <button (click)= "searchApi()">search</button> -->
+
 
             </div>
 
@@ -64,7 +64,7 @@
 
 
                         <mat-card-header style="position:relative;">
-                          <div class="app-download" style="position:absolute; margin-left: 190px; margin-top: -10px;width: 50px;">{{student.matricule}}</div>
+                          <div class="app-download" style="position:absolute; margin-left:70%; margin-top:5px;width: 50px;">{{student.matricule}}</div>
                             <mat-card-title>{{student.nom   }}</mat-card-title>
                             <mat-card-title>{{" " + student.prenom  }}</mat-card-title>
                             <mat-card-subtitle class="DCI">{{student.email}}
@@ -104,16 +104,7 @@
 
                             </div>
 
-<!--
-                            <div class="row">
-                              <mat-icon class="prefix" svgIcon="price"></mat-icon>
-                              <mat-form-field class="field" appearance="legacy" floatLabel="always">
-                                  <mat-label style="font-weight: bold;color: black;font-size: 14px;" >Projet</mat-label>
-                                  <input matInput class="input" [value]="student.theme"
-                                      disabled style="font-weight: bold;color: black;font-size: 14px;">
-                              </mat-form-field>
 
-                          </div> -->
 
                         </mat-card-content>
                         <mat-card-actions align="center">
@@ -128,17 +119,12 @@
                     </mat-card>
 
                 </div>
-                <!---->
-                <!-- <div class="pagination">
-                    <button mat-raised-button color="white" class="load" (click)="setLoad(end+9)" [disabled] = " end >  students.length"  >
-                        <mat-icon>keyboard_arrow_down</mat-icon>Load more
-                          {{ rests }}
 
-                    </button>
-                </div> -->
 
 
             </div>
+
+
             <mat-paginator [length] = "last"  [pageSize] = "9" [pageSizeOptions] = "pageOption" (page)="onChangePage($event)" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);margin-top: 1rem; margin-bottom:1rem;"></mat-paginator>
         </div>
 

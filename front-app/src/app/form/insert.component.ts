@@ -64,7 +64,8 @@ console.log(num)
 
   onAddPost(form:NgForm){
 
-console.log(this.getMatricule())
+
+
 
           form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name
           form.value.encadreurDEP = this.encadreur.Departement
@@ -73,14 +74,15 @@ console.log(this.getMatricule())
           form.value.encadreurmOrg = this.encadreur.Position
           form.value.user = localStorage.getItem("user")
           form.value.matricule = this.getMatricule() ;
-          console.log(form.value)
+          form.value.nom = form.value.nom.toUpperCase()
           this.studentsService.addStudent(form.value);
 
 
 
 
 
-      // form.reset()
+
+    
 
 
 
@@ -94,6 +96,7 @@ console.log(this.getMatricule())
 
 
   ngOnInit() {
+
   }
 
   getEncadreur(encadreurID : Number){

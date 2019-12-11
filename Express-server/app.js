@@ -8,6 +8,8 @@ const chartRoutes = require("./routes/chart");
 const express = require('express');
 const path = require('path');
 const mongoose =require('mongoose');
+const bodyParser = require('body-parser');
+ const cors = require('cors');
 //app.use(index);
 
 const app = express();
@@ -22,6 +24,41 @@ mongoose
   console.log('Connection failed!');
   console.log(error);
 });
+mongoose.Promise = global.Promise;
+
+app.use(cors())
+ 
+
+
+
+
+
+
+
+//how middleware works
+/***********************************/
+app.use((req,res,next)=> {
+    //console.log(Date.now());
+    //req.name='safaa';
+    res.setHeader("Access-Control-Allow-Origin" ,"*");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type , Accept"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET ,POST, PATCH, DELETE, OPTIONS"
+    );
+    next();
+});
+/************************************/
+
+
+
+// body parse middleware
+app.use(bodyParser.urlencoded({ extended: false }))
+// parsejson
+app.use(bodyParser.json())
 
 
 
