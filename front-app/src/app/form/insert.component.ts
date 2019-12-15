@@ -58,7 +58,7 @@ export class InsertComponent implements OnInit {
 
 
 
-console.log(num)
+
     return num
   }
 
@@ -82,7 +82,7 @@ console.log(num)
 
 
 
-    
+
 
 
 

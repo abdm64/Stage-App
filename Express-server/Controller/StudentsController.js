@@ -91,30 +91,44 @@ exports.getStudents =  (req,res, next)=>{
 //Add Data
 
 
-  exports.addStudent = (req,res)=>{
+  exports.addStudent = (req,res,next)=>{
     var  student = new Students(req.body)
-    //console.log(req.body)
-    student.save().then(result => {
-      res.status(201).json({
-        message : "Operation succeeded",
-        result: result
+    const nom = req.body.nom
+    const prenom = req.body.prenom
+
+ // checkIfExist(nom,prenom,next)
+
+ 
+
+ Students.findOne({nom : nom, prenom : prenom}, (err, docs) => {
+  if (err) handleError(err);
+
+
+if (!docs){      
+ 
+        addStudent(res,student)
   
-      });
+} else{
+
+  res.status(500).json({
+    message : "Already Exist",
+    error : err
+
+
+  });
+}
+})
+
   
-    }
+   
+     
+    
+
+
+
+
+
   
-  
-    ).catch(err => {
-  
-      res.status(500).json({
-        message : "Operation failed",
-        error : err
-  
-  
-      });
-    }
-  
-    );
   
   
   
@@ -227,4 +241,31 @@ exports.getStudents =  (req,res, next)=>{
         }
       
       }
-      
+
+
+function addStudent(res,student){
+  student.save().then(result => {
+    res.status(201).json({
+      message : "Operation succeeded",
+      result: result
+
+    });
+
+  }
+
+
+  ).catch(err => {
+
+    res.status(500).json({
+      message : "Operation failed",
+      error : err
+
+
+    });
+  }
+
+  );
+
+
+}
+   

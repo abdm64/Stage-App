@@ -95,8 +95,9 @@ export class  StudentService{
           this.studentUpdated.next([this.students]);
           this.router.navigate(['suivi'])
         }, error => {
-          this.result  = error.message ;
-         this.openMessage("Error","Operation Failed")
+         // console.log(error.error.message)
+          const message = error.error.message ;
+         this.openMessage("ERR", message)
 
         });
 
@@ -164,7 +165,7 @@ export class  StudentService{
 
 
       dialogRef.afterClosed().subscribe(result => {
-        
+
 
 
 
