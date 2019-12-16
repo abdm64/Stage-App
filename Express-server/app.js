@@ -1,10 +1,10 @@
 const  http = require('http');
-const students =require('./routes/students');
+const studentsRoute =require('./routes/students');
 const mail =require('./routes/mail');
 const exelData = require('./routes/dataExel');
-const userRoutes = require("./routes/user");
-const encaRoutes = require("./routes/encadreur");
-const chartRoutes = require("./routes/chart");
+const userRoute = require("./routes/user");
+const encaRoute = require("./routes/encadreur");
+const chartRoute = require("./routes/chart");
 const express = require('express');
 const path = require('path');
 const mongoose =require('mongoose');
@@ -16,7 +16,7 @@ const app = express();
 //stagedb:27017
 
 mongoose
-.connect("mongodb://localhost/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.connect("mongodb://stagedb:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 .then(() => {
   console.log('Connected to database!');
 })
@@ -63,12 +63,12 @@ app.use(bodyParser.json())
 
 
 
-app.use(students);
+app.use(studentsRoute);
 app.use(mail)
-app.use(userRoutes);
+app.use(userRoute);
 app.use(exelData);
-app.use(encaRoutes);
-app.use(chartRoutes);
+app.use(encaRoute);
+app.use(chartRoute);
 app.use(express.static(__dirname + '/static'))
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'static/index.html'), function(err) {
@@ -84,3 +84,6 @@ app.set('port',port);
 const server  =http.createServer(app);
 
 server.listen(port);
+
+
+

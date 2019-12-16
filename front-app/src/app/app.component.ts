@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog, MatSidenav } from '@angular/material';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import {AuthGuard} from './auth.guard';
-import { ConstService} from './ConstData'
+
 
 
 
@@ -19,19 +19,15 @@ export class AppComponent implements OnInit {
 
   @ViewChild('sidenavID', {static: true}) sidenav: MatSidenav;
 
-  constructor(public dialog: MatDialog ,public router: Router) {
+  constructor(public dialog: MatDialog ,public router: Router, public activeRoute : ActivatedRoute) {
 
-    // subscribe to router events and send page views to Google Analytics
+
 
   }
   ngOnInit() {
-
-    this.user = localStorage.getItem("user") ;
-
-
-
-
-
+    //console.log(this.activeRoute.data)
+    this.user = localStorage.getItem("user")
+//this.activeRoute.data.subscribe(user => console.log(user))
 
 
 

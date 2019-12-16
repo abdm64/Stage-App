@@ -11,8 +11,8 @@ import { Router} from '@angular/router';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocal = "http://localhost:3000/api";
-   baseUrlLocalp = "http://172.16.60.36:3000/api"
+   baseUrlLocalp = "http://localhost:3000/api";
+   baseUrlLocal = "http://172.16.60.36:3000/api"
 
   result : string = '#' ;
 
@@ -130,7 +130,7 @@ export class  StudentService{
       this.http.put(this.baseUrlLocal+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 
-          console.log("PUT Request is successful ", data);
+          // console.log("PUT Request is successful ", data);
           this.students.forEach((t, i) => {
             if (t.matricule === matricule) { this.students[i] = data; }
           });
@@ -141,7 +141,7 @@ export class  StudentService{
 
           error  => {
 
-          console.log("error", error, dataOne);
+          // console.log("error", error, dataOne);
 
           }
       )
@@ -188,7 +188,7 @@ export class  StudentService{
 
 
 
-console.log(data)
+// console.log(data)
 
 
    return parseInt(data)

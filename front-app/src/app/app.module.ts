@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
   , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule ,MatDatepickerModule,
-  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule
+  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule,MatCheckboxModule,MatRadioModule
 } from '@angular/material';
 
 
@@ -48,7 +48,7 @@ import { AuthMsgComponent } from './auth-msg/auth-msg.component';
 
 
 const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
-  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule];
+  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule];
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +90,8 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     CommonModule,
     FlexLayoutModule,
     ChartsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+
 
 
 

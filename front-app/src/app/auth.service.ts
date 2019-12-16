@@ -5,6 +5,7 @@ import { ConstService} from './ConstData'
 import {Router} from "@angular/router"
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
+import { user} from './login-page/login-page.component'
 
 
 
@@ -18,8 +19,8 @@ import { MatDialog } from '@angular/material';
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocal = "http://localhost:3000/api";
-  baseUrlLocalp = "http://172.16.60.36:3000/api"
+  baseUrlLocalp = "http://localhost:3000/api";
+  baseUrlLocal = "http://172.16.60.36:3000/api"
   token = ""
     constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){}
 
@@ -49,14 +50,14 @@ login(email : string, password: string){
     this.http.post<{token : string}>(this.baseUrlLocal+'/user/login', authData).subscribe(response => {
 
 
-      const constData : ConstService = {
-            user : authData.email
 
-      }
-            this.router.navigate(['suivi'])
+
+         //   this.router.navigate(['suivi'])
+         localStorage.setItem("user",authData.email)
+            this.router.navigate(['suivi']);
 
             localStorage.setItem("auth",'true')
-            localStorage.setItem("user",authData.email)
+
             localStorage.setItem("token",response.token)
               this.isLooged = true,
 
@@ -66,8 +67,8 @@ login(email : string, password: string){
     }, error => {
 
       console.log(error.message) ;
-    //  alert("Please confirm the email or password ")
-      this.openErrorMessage("Error","Please confirm the email or the password")
+
+      this.openErrorMessage("Error","Please confirm the email and the password")
 
     });
 

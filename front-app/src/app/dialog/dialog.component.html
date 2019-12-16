@@ -1,12 +1,4 @@
-<!--h1 mat-dialog-title>Hi </h1>
-<div mat-dialog-content>
 
-
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button  cdkFocusInitial>Ok</button>
-</div>
--->
 <div class="md-dialog-container" >
 
 
@@ -202,6 +194,62 @@
 
 
       </div>
+      <div style="margin-top: 1rem;">
+
+        <mat-card    style="font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+
+                <div style="margin-top: 1rem;">
+                    <label>Comportement: </label>
+                    <div style="margin-left: 4rem ;">
+
+                        <mat-radio-group   #comportement="matRadioGroup" >
+                            <mat-radio-button value="Good" color="warn" >Good</mat-radio-button>
+                            <mat-radio-button value="Very Good" style="margin-left: 2rem ;" color="warn" >Very Good</mat-radio-button>
+                            <mat-radio-button value="Excelent" style="margin-left: 2rem ;" color="warn" >Excelent</mat-radio-button>
+                          </mat-radio-group>
+
+                    </div>
+                  </div>
+
+                  <div style="margin-top: 1rem;">
+                <label>Connaissances Informatiques :</label>
+                <div style="margin-left: 4rem ;">
+
+                    <mat-radio-group   #informatique="matRadioGroup" >
+                        <mat-radio-button value="Good" color="warn" >Good</mat-radio-button>
+                        <mat-radio-button value="Very Good" color="warn"  style="margin-left: 2rem ;">Very Good</mat-radio-button>
+                        <mat-radio-button value="Excelent"  color="warn" style="margin-left: 2rem ;">Excelent</mat-radio-button>
+                      </mat-radio-group>
+
+                </div>
+              </div>
+
+
+
+
+
+                <div style="margin-top: 1rem;">
+                    <label>Connaissances Linguistiques :  </label>
+                    <div style="margin-left: 4rem ;">
+
+                        <mat-radio-group   #languge="matRadioGroup">
+                            <mat-radio-button value="Good" color="warn"  >Good</mat-radio-button>
+                            <mat-radio-button value="Very Good" style="margin-left: 2rem ;" color="warn" >Very Good</mat-radio-button>
+                            <mat-radio-button value="Excelent" style="margin-left: 2rem ;" color="warn" >Excelent</mat-radio-button>
+                          </mat-radio-group>
+
+                    </div>
+
+                  </div>
+
+
+
+
+
+        </mat-card>
+
+
+      </div>
 
 
       <div class="row" style="margin-top:10px">
@@ -216,7 +264,7 @@
                 <button  mat-flat-button  type= "submit" (click) = "onClickSubmit()" style="background-color: red;color: white; float: left;">CONFIRM</button>
                 <button style="float: right;" mat-flat-button color="white" type= "submit" (click) = "cancelOperation()" >cancel</button>
 
-                <button style="float: right;" mat-flat-button color="white" type= "submit" (click) = "createPdf()" >pdf</button>
+                <button style="float: right;" mat-flat-button color="white" type= "submit" (click) = "createPdf(comportement,informatique,languge)" >pdf</button>
                </div>
 
 

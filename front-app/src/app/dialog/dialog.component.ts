@@ -14,6 +14,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class DialogOverviewExampleDialog implements OnInit {
 
   angForm: FormGroup;
+  linguistiques: string;
 
 
   constructor( private fb: FormBuilder ,private  studentService: StudentService,
@@ -25,7 +26,7 @@ export class DialogOverviewExampleDialog implements OnInit {
     createForm(student : any) {
 
   this.angForm = this.fb.group({
-    
+
         nom : [student.nom],
         prenom:[student.prenom],
         sexe :[student.sexe] ,
@@ -74,7 +75,12 @@ export class DialogOverviewExampleDialog implements OnInit {
 
 
   }
-  createPdf(){
+  createPdf(comp: any,info : any, langue){
+
+
+    const comportement = comp.value
+    const informatique = info.value
+    const language = langue.value
 
 
 
@@ -154,6 +160,18 @@ export class DialogOverviewExampleDialog implements OnInit {
 {text :"  " + this.student.description},
 " ",
 " ",
+
+
+{text :"Evaluation : "},
+" ",
+{text :" comportement :   " + comportement},
+" ",
+{text :" Connaissances Informatiques :   " + informatique},
+" ",
+{text :" Connaissances Linguistiques :     " + language},
+" ",
+
+
 
 
 	],

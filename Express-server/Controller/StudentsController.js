@@ -96,7 +96,7 @@ exports.getStudents =  (req,res, next)=>{
     const nom = req.body.nom
     const prenom = req.body.prenom
 
- // checkIfExist(nom,prenom,next)
+
 
  
 
@@ -111,7 +111,7 @@ if (!docs){
 } else{
 
   res.status(500).json({
-    message : "Already Exist",
+    message : "User Already Exist",
     error : err
 
 
