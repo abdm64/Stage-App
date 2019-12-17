@@ -38,7 +38,7 @@ exports.getStudents =  (req,res, next)=>{
   
     } else 
     if ((search)) {
-      console.log(search)
+      //console.log(search)
       const regex = new RegExp(escapeRegex(search),'ig');
           Students.find({$or: [
             {nom: regex}, 

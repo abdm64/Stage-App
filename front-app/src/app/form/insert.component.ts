@@ -1,8 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { NgForm, FormGroup } from '@angular/forms';
 import { StudentService } from '../students.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
 import { EncadreurComponent } from '../encadreur/encadreur.component';
 
@@ -14,8 +12,8 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal  = "http://172.16.60.36:3000/api/"
+  baseUrlLocal = "http://localhost:3000/api/";
+  baseUrlLocalp  = "http://172.16.60.36:3000/api/"
   encadreur : any = {
 
 
@@ -99,16 +97,14 @@ export class InsertComponent implements OnInit {
 
   }
 
-  getEncadreur(encadreurID : Number){
-    let  req = new XMLHttpRequest();
-    req.open('GET', this.baseUrlLocal+`encadreur/data/`+encadreurID, false);
-    req.send(null);
-    let data = JSON.parse(req.response)
-   // this.encadreur = data
-  //  alert(  data.First_name+ " " +data.Last_Name + " is the Responsable"  );
+ async getEncadreur(encadreurID : Number){
 
+  const res=  await fetch( this.baseUrlLocal+`encadreur/data/`+encadreurID)
+  const data = await res.json()
 
+  
   this.openValidateDialog(data)
+
   return data
 
   }

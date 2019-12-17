@@ -11,8 +11,8 @@ import { Router} from '@angular/router';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocalp = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.36:3000/api"
+   baseUrlLocal = "http://localhost:3000/api";
+   baseUrlLocalp = "http://172.16.60.36:3000/api"
 
   result : string = '#' ;
 
@@ -173,25 +173,15 @@ export class  StudentService{
       });
     }
 
-   getStudentNumber(){
-
-  var num = 0 ;
-
-    let  req = new XMLHttpRequest();
-    req.open('GET', this.baseUrlLocal+`/students/number`, false);
-
-    //
-    req.send(null)
-
-      let data =  req.response
+  async getStudentNumber(){
 
 
 
+const res=  await fetch( this.baseUrlLocal+`/students/number`)
+const data = await res.json()
 
-// console.log(data)
 
-
-   return parseInt(data)
+return parseInt(data)
 
 
 

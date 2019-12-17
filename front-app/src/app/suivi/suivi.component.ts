@@ -55,7 +55,7 @@ searchTerm ='';
   end = 9;
   rest = 0;
   rests = 0 ;
-  last = 0;
+  last : any ;
   pageOption = [9];
   pageIndex = 0;
 
@@ -157,10 +157,14 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
-  this.last =   this.studentsService.getStudentNumber()
 
 
-   // this.studentsService.getStudents();
+   this.studentsService.getStudentNumber().then(res =>
+    this.last = res
+   )
+
+
+
 
  this.studentsService.getStudent(9,1)
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(

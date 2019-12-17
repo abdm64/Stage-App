@@ -1,11 +1,12 @@
 import {Injectable, Input } from  '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from './AuthData';
-import { ConstService} from './ConstData'
+
 import {Router} from "@angular/router"
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
-import { user} from './login-page/login-page.component'
+
+import { Subject} from 'rxjs';
 
 
 
@@ -19,10 +20,14 @@ import { user} from './login-page/login-page.component'
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocalp = "http://localhost:3000/api";
-  baseUrlLocal = "http://172.16.60.36:3000/api"
+  baseUrlLocal = "http://localhost:3000/api";
+  baseUrlLocalp = "http://172.16.60.36:3000/api"
   token = ""
-    constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){}
+  name:Subject<string> = new Subject()
+    constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){
+
+
+    }
 
     isLooged : Boolean = false ;
 
@@ -34,9 +39,20 @@ createUser(email : string, password: string){
     }
 
 
-    this.http.post(this.baseUrlLocal+'/user/sign', authData).subscribe(response => {
+    this.http.post(this.baseUrlLocal+'/user/sign', authData).subscribe(res => {
 
-    })
+      console.log(res)
+      this.router.navigate(['suivi']);
+
+
+    } ,  err => {
+
+      console.log(err.message) ;
+
+      this.openErrorMessage("Error","Please try again")
+
+    });
+
 
 
 
@@ -52,8 +68,10 @@ login(email : string, password: string){
 
 
 
-         //   this.router.navigate(['suivi'])
+
+         this.name.next(authData.email)
          localStorage.setItem("user",authData.email)
+
             this.router.navigate(['suivi']);
 
             localStorage.setItem("auth",'true')

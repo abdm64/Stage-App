@@ -10,8 +10,8 @@ const EXCEL_EXTENSION = '.xlsx';
 @Injectable()
 export class ExcelService {
 
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal = "http://172.16.60.36:3000/api/"
+  baseUrlLocal = "http://localhost:3000/api/";
+  baseUrlLocalp = "http://172.16.60.36:3000/api/"
   constructor(private http:HttpClient) { }
   setHeader(){
 
@@ -26,11 +26,11 @@ export class ExcelService {
      .subscribe(
        (data: any)  => {
 
-        console.log(data.students);
+       
 
        this.exportAsExcelFile(data.students,'stagetest')
 
-         // this.students = data;
+
 
 
 
@@ -55,10 +55,10 @@ export class ExcelService {
 
 
   public exportAsExcelFile(json: any[], excelFileName: string): void {
-    console.log(json)
+   // console.log(json)
 
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
-    console.log('worksheet',worksheet);
+   // console.log('worksheet',worksheet);
     const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
     //const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });

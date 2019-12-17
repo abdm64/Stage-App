@@ -33,7 +33,7 @@ export class LoginPageComponent implements OnInit {
     this.authService.login(form.value.email, form.value.password)
 
 
-console.log(user)
+
 
   }
 
