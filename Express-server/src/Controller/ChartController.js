@@ -117,7 +117,7 @@ exports.getEcadreurDep = (req,res)=>{
         
                 
                 }
-                console.log(obj.January)
+                
         
                 return obj
               }
