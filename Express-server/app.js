@@ -1,10 +1,10 @@
 const  http = require('http');
-const studentsRoute =require('./routes/students');
-const mail =require('./routes/mail');
-const exelData = require('./routes/dataExel');
-const userRoute = require("./routes/user");
-const encaRoute = require("./routes/encadreur");
-const chartRoute = require("./routes/chart");
+const studentsRoute =require('./src/routes/students');
+const mail =require('./src/routes/mail');
+const exelData = require('./src/routes/dataExel');
+const userRoute = require("./src/routes/user");
+const encaRoute = require("./src/routes/encadreur");
+const chartRoute = require("./src/routes/chart");
 const express = require('express');
 const path = require('path');
 const mongoose =require('mongoose');

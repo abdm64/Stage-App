@@ -75,12 +75,24 @@ export class DialogOverviewExampleDialog implements OnInit {
 
 
   }
-  createPdf(comp: any,info : any, langue){
+  createPdf(evaForm : NgForm){
+
+    //console.log(evaForm.value)
+    const evaluation = evaForm.value
+
+    const projet = evaluation.projet
+    const etude  = evaluation.etude
+    const it = evaluation.it
+    const  france = evaluation.france
+    const anglais = evaluation.anglais
+    const motivation = evaluation.motivation
+    const commentaire = evaluation.commentaire
+
+   // console.log(commentaire)
 
 
-    const comportement = comp.value
-    const informatique = info.value
-    const language = langue.value
+
+
 
 
 
@@ -119,57 +131,157 @@ export class DialogOverviewExampleDialog implements OnInit {
 " ",
 " ",
 " ",
-{text :"NOM : "+ this.student.nom},
-" ",
-" ",
-{text :"PRENOM : "+ this.student.prenom},
+{text :"Personal Information "},
 " ",
 " ",
 
-{text :"TELEPHONE : "+ this.student.nTelephone},
+{
+  style: 'tableExample',
+  table: {
+    widths: [ 100, 400],
+    body: [
+
+      ['Nom', this.student.nom ],
+      ['Prenom', this.student.prenom],
+      ['Phone', this.student.nTelephone ],
+      ['E-mail', this.student.email],
+      ['Etablissement', this.student.etablissement],
+      ['Diplome', this.student.diplome],
+    ]
+  }
+},
+" ",
+" ",
+{text :"Stage Information"},
+" ",
+" ",
+{
+  style: 'tableExample',
+  table: {
+    widths: [ 100, 400],
+    body: [
+      ['Encadreur : ', this.student.encadreur ],
+      ['Departement: ', this.student.encadreurDEP],
+      ['Secteur: ', this.student.encadreurSec ],
+      ['Theme De Projet', this.student.theme],
+
+    ]
+  }
+},
+" ",
+" ",
+{text :"Description de Stage "},
+" ",
+" ",
+{ text : this.student.description},
+{
+  text : " ",
+  pageBreak: 'after',
+},
+
+{ text : "Evaluation : " },
 " ",
 " ",
 
-{text :"EMAIL : "+ this.student.email},
-" ",
-" ",
+{
+  //style: 'tableExample',
+  table: {
+    headerRows: 1,
+    widths: [ 400, 100],
+    body: [
+      ['Appréciation globale de la réalisation du projet  ', projet],
+      ['Connaissances théoriques appliquées au domaine d’études  ', etude],
+      ['Maîtrise des outils informatiques  ', it],
+      ['Maitrise langue française  ', france],
+      ['Maitrise langue anglaise  ', anglais ],
+      ['Motivation   ', motivation],
+    ],
 
-{text :"University : "+ this.student.etablissement},
-" ",
-" ",
+  }
+},
 
-{text :"DIPLOME OBTENUE: "+ this.student.diplome},
 " ",
 " ",
-
-{text :"Encadreur : "+ this.student.encadreur},
+{ text : "Commentaire :  " },
 " ",
 " ",
-
-{text :"Departement: "+ this.student.encadreurDEP},
-" ",
-" ",
-
-{text :"Secteur: "+ this.student.encadreurSec},
-" ",
-" ",
-
-
-{text :"DISCRIPTIF DE PROJET: "},
-" ",
-{text :"  " + this.student.description},
-" ",
-" ",
+{ text : commentaire},
 
 
-{text :"Evaluation : "},
-" ",
-{text :" comportement :   " + comportement},
-" ",
-{text :" Connaissances Informatiques :   " + informatique},
-" ",
-{text :" Connaissances Linguistiques :     " + language},
-" ",
+
+
+
+// {text :"NOM : "+ this.student.nom},
+// " ",
+// " ",
+// {text :"PRENOM : "+ this.student.prenom},
+// " ",
+// " ",
+
+// {text :"TELEPHONE : "+ this.student.nTelephone},
+// " ",
+// " ",
+
+// {text :"EMAIL : "+ this.student.email},
+// " ",
+// " ",
+
+// {text :"University : "+ this.student.etablissement},
+// " ",
+// " ",
+
+// {text :"DIPLOME OBTENUE: "+ this.student.diplome},
+// " ",
+// " ",
+
+// {text :"Encadreur : "+ this.student.encadreur},
+// " ",
+// " ",
+
+// {text :"Departement: "+ this.student.encadreurDEP},
+// " ",
+// " ",
+
+// {text :"Secteur: "+ this.student.encadreurSec},
+// " ",
+// " ",
+
+
+// {text :"DISCRIPTIF DE PROJET: "},
+// " ",
+// {text :"  " + this.student.description},
+
+// " ",
+// " ",
+
+// " ",
+// " ",
+// " ",
+// " ",
+// " ",
+// " ",
+// " ",
+// " ",
+// " ",
+// " ",
+
+
+// {text :"Evaluation : "},
+// " ",
+// {text :" Appréciation globale de la réalisation du projet :  " + projet},
+// " ",
+// {text :" Connaissances théoriques appliquées au domaine d’études : " + etude},
+// " ",
+// {text :" Maîtrise des outils informatiques :  " + it},
+// " ",
+// {text :" Maitrise langue française  :  " + france},
+// " ",
+// {text :" Maitrise langue anglaise :  :   " + anglais},
+// " ",
+// {text :" Motivation :   " + motivation},
+// " ",
+
+
 
 
 

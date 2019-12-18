@@ -25,7 +25,7 @@ exports.getStudents =  (req,res, next)=>{
         students = docs
   
   
-    return Students.count()
+    return Students.countDocuments()
   
   })   
   .then(count => {
@@ -68,7 +68,7 @@ exports.getStudents =  (req,res, next)=>{
   
     students = docs
   
-    return Students.count()
+    return Students.countDocuments()
   })   
   .then(count => {
     res.status(200).json({
@@ -95,12 +95,14 @@ exports.getStudents =  (req,res, next)=>{
     var  student = new Students(req.body)
     const nom = req.body.nom
     const prenom = req.body.prenom
+    const dateNaissance = req.body.dateNaissance
+    const nTelephone = req.body.nTelephone
 
 
-
+   // 
  
 
- Students.findOne({nom : nom, prenom : prenom}, (err, docs) => {
+ Students.findOne({nom : nom, prenom : prenom,dateNaissance: dateNaissance,nTelephone:nTelephone}, (err, docs) => {
   if (err) handleError(err);
 
 
@@ -134,7 +136,7 @@ if (!docs){
   
   }
 
-  exports.deleteStudent = (req,res)=>{
+  exports.deleteStudent = (req,res)=> {
 
     Students.deleteOne({ matricule: req.params.id }, (err)  => {
         if (err) return handleError(err);
@@ -145,6 +147,7 @@ if (!docs){
 
 
  }
+ 
 
  exports.updateStudent = (req,res) => {
 
@@ -174,7 +177,7 @@ if (!docs){
 
 
 
-        Students.find().count(function(err, count){
+        Students.find().countDocuments(function(err, count){
             if (err) return res.send(err);
             res.json(count);
         });
