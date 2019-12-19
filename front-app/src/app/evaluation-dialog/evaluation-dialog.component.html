@@ -1,0 +1,127 @@
+<div >
+    <form #EvaForm="ngForm">
+
+    <mat-card    style="font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+        <mat-card-title>Student Evaluation</mat-card-title>
+        <div style="margin-top: 1rem;">
+            <label>Evaluation globale de la qualité du stage effectué :</label>
+            <div style="margin-left: 4rem ;">
+
+                <mat-radio-group    name="global" ngModel >
+                    <mat-radio-button value="Très favorable" color="warn" >Très favorable</mat-radio-button>
+                    <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                    <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                    <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                  </mat-radio-group>
+
+            </div>
+          </div>
+
+            <div style="margin-top: 1rem;">
+                <label>Appréciation globale de la réalisation du projet : </label>
+                <div style="margin-left: 4rem ;">
+
+                    <mat-radio-group    name="projet" ngModel >
+                        <mat-radio-button value="Très favorable" color="warn"  >Très favorable</mat-radio-button>
+                        <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                        <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                        <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                      </mat-radio-group>
+
+                </div>
+              </div>
+
+            <div style="margin-top: 1rem;">
+                <label>Connaissances théoriques appliquées au domaine d’études : </label>
+                <div style="margin-left: 4rem ;">
+
+                    <mat-radio-group    name="etude" ngModel >
+                        <mat-radio-button value="Très favorable" color="warn" >Très favorable</mat-radio-button>
+                        <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                        <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                        <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                      </mat-radio-group>
+
+                </div>
+              </div>
+
+            <div style="margin-top: 1rem;">
+                <label>Maîtrise des outils informatiques : </label>
+                <div style="margin-left: 4rem ;">
+
+                    <mat-radio-group   name="it" ngModel>
+                        <mat-radio-button value="Très favorable" color="warn" >Très favorable</mat-radio-button>
+                        <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                        <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                        <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                      </mat-radio-group>
+
+                </div>
+              </div>
+
+            <div style="margin-top: 1rem;">
+                <label>Maitrise langue française  : </label>
+                <div style="margin-left: 4rem ;">
+
+                    <mat-radio-group    name="france" ngModel  >
+                        <mat-radio-button value="Très favorable" color="warn" >Très favorable</mat-radio-button>
+                        <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                        <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                        <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                      </mat-radio-group>
+
+                </div>
+              </div>
+
+            <div style="margin-top: 1rem;">
+                <label>Maitrise langue anglaise : </label>
+                <div style="margin-left: 4rem ;">
+
+                    <mat-radio-group    name="anglais" ngModel >
+                        <mat-radio-button value="Très favorable" color="warn" >Très favorable</mat-radio-button>
+                        <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                        <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                        <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                      </mat-radio-group>
+
+                </div>
+              </div>
+              <div style="margin-top: 1rem;">
+                  <label>Motivation : </label>
+                  <div style="margin-left: 4rem ;">
+
+                      <mat-radio-group    name="motivation" ngModel  >
+                          <mat-radio-button value="Très favorable" color="warn"   >Très favorable</mat-radio-button>
+                          <mat-radio-button value="Favorable" style="margin-left: 2rem ;" color="warn" >Favorable</mat-radio-button>
+                          <mat-radio-button value="Défavorable" style="margin-left: 2rem ;" color="warn" >Défavorable</mat-radio-button>
+                          <mat-radio-button value="Très défavorable" style="margin-left: 2rem ;" color="warn" >Très défavorable</mat-radio-button>
+                        </mat-radio-group>
+
+                  </div>
+                </div>
+
+              <div style="margin-top: 1rem;">
+                  <label>Commentaire : </label>
+
+                  <mat-form-field style="width: 100%;" >
+
+                      <textarea matInput placeholder="Ajouter Commentaire (facultatif)"style="height: 100px" name="commentaire" ngModel ></textarea>
+
+                  </mat-form-field>
+
+
+
+              </div>
+
+              <!-- <button style="float: right;" mat-button color="warn" type= "submit" (click) = "createPdf(EvaForm)" >Extract PDF</button> -->
+
+
+
+
+    </mat-card>
+
+
+  </form>
+  <button style="float: right; margin-top: 20px;" mat-button color="warn" type= "submit" (click) = "createPdf(EvaForm)" >Extract PDF</button>
+</div>
+

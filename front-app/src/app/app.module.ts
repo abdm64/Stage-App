@@ -27,7 +27,6 @@ import { LoadPipe } from './load.pipe';
 import { GraphQLModule } from './graphql.module';
 import { InsertComponent } from './form/insert.component';
 import { StudentService } from './students.service';
-
 import { SuiviComponent } from './suivi/suivi.component';
 import { DialogOverviewExampleDialog } from './dialog/dialog.component';
 import { MsgConfirmComponent } from './msg-confirm/msg-confirm.component';
@@ -43,6 +42,8 @@ import { FilterPipe } from './filter.pipe';
 import { EncadreurComponent } from './encadreur/encadreur.component';
 import { MsgErrorComponent } from './msg-error/msg-error.component';
 import { AuthMsgComponent } from './auth-msg/auth-msg.component';
+import { EvaluationDialogComponent } from './evaluation-dialog/evaluation-dialog.component';
+import { PDFService} from './pdf.Service';
 
 
 
@@ -67,9 +68,10 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     FilterPipe,
     EncadreurComponent,
     MsgErrorComponent,
-    AuthMsgComponent
+    AuthMsgComponent,
+    EvaluationDialogComponent
   ],
-    entryComponents: [DialogOverviewExampleDialog, MsgConfirmComponent, ExcelWindowComponent,EncadreurComponent,MsgErrorComponent] ,
+    entryComponents: [DialogOverviewExampleDialog, MsgConfirmComponent, ExcelWindowComponent,EncadreurComponent,MsgErrorComponent,EvaluationDialogComponent] ,
   imports: [
     BrowserModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
@@ -97,7 +99,7 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
 
 
   ],
-  providers: [ StudentService, DatePipe,ExcelService],
+  providers: [ StudentService, DatePipe,ExcelService,PDFService],
   bootstrap: [AppComponent]
 
 })

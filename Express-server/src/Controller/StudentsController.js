@@ -99,9 +99,6 @@ exports.getStudents =  (req,res, next)=>{
     const nTelephone = req.body.nTelephone
 
 
-   // 
- 
-
  Students.findOne({nom : nom, prenom : prenom,dateNaissance: dateNaissance,nTelephone:nTelephone}, (err, docs) => {
   if (err) handleError(err);
 
@@ -114,7 +111,7 @@ if (!docs){
 
   res.status(500).json({
     message : "User Already Exist",
-    error : err
+    err : err
 
 
   });
