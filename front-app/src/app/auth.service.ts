@@ -20,8 +20,8 @@ import { Subject} from 'rxjs';
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocal = "http://localhost:3000/api";
-  baseUrlLocalp = "http://172.16.60.36:3000/api"
+  baseUrlLocalp = "http://localhost:3000/api";
+  baseUrlLocal = "http://172.16.60.36:3000/api"
   token = ""
   name:Subject<string> = new Subject()
     constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){

@@ -12,8 +12,8 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocal = "http://localhost:3000/api/";
-  baseUrlLocalp  = "http://172.16.60.36:3000/api/"
+  baseUrlLocalp = "http://localhost:3000/api/";
+  baseUrlLocal  = "http://172.16.60.36:3000/api/"
   encadreur : any = {
 
 
@@ -102,7 +102,7 @@ export class InsertComponent implements OnInit {
   const res=  await fetch( this.baseUrlLocal+`encadreur/data/`+encadreurID)
   const data = await res.json()
 
-  
+
   this.openValidateDialog(data)
 
   return data
