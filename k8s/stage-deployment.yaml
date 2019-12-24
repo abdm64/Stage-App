@@ -14,8 +14,8 @@ spec: # specify the caractirstique of the deployment
     spec:
       containers: # all information about the container
       - name: stage-app # name of the container should be (stagedb in mongodb deployment file same as code source)
-        image: djezzy-api3:5000/stageapp:v1  # based image container could be from docekr hub or local image
-        imagePullPolicy: Never # image download from docker hub 
+        image: djezzy-api3:5000/stageapp  # based image container could be from docekr hub or local image
+        imagePullPolicy: IfNotPresent # image download from docker hub 
         ports: # all information about the ports
         - containerPort: 3000 # container port in (case expose in Dockerfile)
           name: stage-app-port # 
