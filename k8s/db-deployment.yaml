@@ -13,7 +13,7 @@ spec:
         app: stagedb
     spec:
       volumes:
-        - name: stagedbVolume
+        - name: stagedbvolume
           persistentVolumeClaim:
             claimName: stage-pvc
       containers:
@@ -24,7 +24,7 @@ spec:
           hostPort: 27017
           name: dbport
         volumeMounts:
-          - name: stagedbVolume
+          - name: stagedbvolume
             mountPath: /data/db
 
 
