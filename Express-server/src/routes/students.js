@@ -36,7 +36,7 @@ app.get('/api', (req,res, next)=>{
 
 //fetch All student + adding pagination  ,auth
 
-app.get('/api/students/data' , studentController.getStudents)
+app.get('/api/students/data' ,auth , studentController.getStudents)
 
 
 
@@ -50,8 +50,8 @@ app.post('/api/students/insertData',auth,studentController.addStudent);
 
  app.put("/api/students/update/:matricule",auth,studentController.updateStudent);
 
-//delete All data
-app.delete("/api/students/delete",auth, studentController.deleteAllStudents);
+//delete All data ,auth
+app.delete("/api/students/delete", studentController.deleteAllStudents);
 
     //get the number of document  to create matricule
 

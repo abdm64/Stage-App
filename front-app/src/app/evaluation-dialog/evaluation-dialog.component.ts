@@ -10,6 +10,15 @@ import { PDFService} from '../pdf.Service';
 })
 export class EvaluationDialogComponent implements OnInit {
 
+       projet = "Très favorable"
+       etude  = "Très favorable"
+       it = "Très favorable"
+       france = "Très favorable"
+       anglais = "Très favorable"
+       motivation = "Très favorable"
+       global = "Très favorable"
+
+
   constructor(public dialogRef: MatDialogRef<EvaluationDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public student: any, public pdf : PDFService)  { }
 
@@ -23,6 +32,8 @@ export class EvaluationDialogComponent implements OnInit {
 
 
 this.pdf.createEvaPdf(evaForm,this.student)
+
+
 
   }
 

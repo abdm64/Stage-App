@@ -156,6 +156,8 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
+    
+    this.studentsService.getMatricule()
 
 
    this.studentsService.getStudentNumber().then(res =>
@@ -185,32 +187,32 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
      }
 
-  setLoading() {
-    /*
-      total ====> 100%
-      data =====> X
-    */
-    let result = (this.data.length * 100) / this.totalMedics;
-    result = ~~(result);
-    this.progress = this.progress > result ? this.progress : result;
+  // setLoading() {
+  //   /*
+  //     total ====> 100%
+  //     data =====> X
+  //   */
+  //   let result = (this.data.length * 100) / this.totalMedics;
+  //   result = ~~(result);
+  //   this.progress = this.progress > result ? this.progress : result;
 
 
-  }
+  // }
 
 
 
-  setLoad(val) {
+//   setLoad(val) {
 
-    this.end = val;
-    this.rests = this.students.length  - this.end
-    if (this.students.length === 0)
-      this.rest = 0;
+//     this.end = val;
+//     this.rests = this.students.length  - this.end
+//     if (this.students.length === 0)
+//       this.rest = 0;
 
-    else
-      this.rest = Math.max(this.students.length - this.end, 0);
-      this.rests = Math.max(this.students.length - this.end, 0);
+//     else
+//       this.rest = Math.max(this.students.length - this.end, 0);
+//       this.rests = Math.max(this.students.length - this.end, 0);
 
-}
+// }
 
 
 
@@ -268,6 +270,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
      else{
 
       this.studentsService.getStudentSearch(term)
+      console.log(this.studentsService.maxNumber)
       //this.last = this.students.length
 
 

@@ -12,8 +12,10 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal  = "http://172.16.60.36:3000/api/"
+  baseUrlLocal = "http://localhost:3000/api/";
+  baseUrlLocalp  = "http://172.16.60.36:3000/api/"
+  baseUrlLocalk = "http://172.16.60.36:31515/api"
+
   encadreur : any = {
 
 
@@ -33,36 +35,12 @@ export class InsertComponent implements OnInit {
   constructor( public studentsService: StudentService, public dialog: MatDialog) {
 
    }
-   getMatricule(){
 
 
-    var num = 0 ;
-
-    let  req = new XMLHttpRequest();
-    req.open('GET', this.baseUrlLocal+`students/numberEnd`, false);
-
-    //
-    req.send(null)
-
-      let data =  JSON.parse(req.response)
+ async onAddPost(form:NgForm){
 
 
-  if (data === null ) {
- num = 1
- } else {
-
-  num = data.matricule + 1
- }
-
-
-
-
-    return num
-  }
-
-  onAddPost(form:NgForm){
-
-
+  let mat =   await this.studentsService.getMatricule()
 
 
           form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name
@@ -71,7 +49,7 @@ export class InsertComponent implements OnInit {
           form.value.encadreurSec = this.encadreur.Sector
           form.value.encadreurmOrg = this.encadreur.Position
           form.value.user = localStorage.getItem("user")
-          form.value.matricule = this.getMatricule() ;
+          form.value.matricule = mat;
           form.value.nom = form.value.nom.toUpperCase()
           this.studentsService.addStudent(form.value);
 

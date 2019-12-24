@@ -11,13 +11,14 @@ import { Router} from '@angular/router';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocalp = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.36:3000/api"
+   baseUrlLocalk = "http://localhost:3000/api";
+   baseUrlLocalp = "http://172.16.60.36:3000/api"
+   baseUrlLocal = "http://172.16.60.36:31515/api"
 
   result : string = '#' ;
 
     private students  : any[] ;
-    private maxNumber : number
+    maxNumber : number
 
 
     private  studentUpdated = new  Subject<Students[]>();
@@ -56,6 +57,7 @@ export class  StudentService{
 
         this.maxNumber = postData.maxNumber
 
+
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
 
@@ -69,8 +71,8 @@ export class  StudentService{
 
       this.http.get<{students:Students[],maxNumber : number}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
-          this.maxNumber = postData.maxNumber
 
+          this.maxNumber = postData.maxNumber
           this.students = postData.students;
           this.studentUpdated.next([...this.students]);
 
@@ -177,7 +179,7 @@ export class  StudentService{
 
 
 
-const res=  await fetch( this.baseUrlLocal+`/students/number`)
+const res  =  await fetch( this.baseUrlLocal+`/students/number`)
 const data = await res.json()
 
 
@@ -187,6 +189,25 @@ return parseInt(data)
 
     }
 
+  async getMatricule(){
+
+    const res  =  await fetch( this.baseUrlLocal+`/students/numberEnd`)
+    const data = await res.json()
+    var  num : number = 0
+
+    if (data === null ) {
+      num = 1
+      } else {
+
+       num = data.matricule + 1
+      }
+
+
+
+         return num
+
+
+  }
 
 
 }//class

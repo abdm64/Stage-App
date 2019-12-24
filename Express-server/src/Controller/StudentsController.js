@@ -38,12 +38,12 @@ exports.getStudents =  (req,res, next)=>{
   
     } else 
     if ((search)) {
-      //console.log(search)
       const regex = new RegExp(escapeRegex(search),'ig');
           Students.find({$or: [
             {nom: regex}, 
             {prenom: regex}, 
-            {matricule:checkIfNumber(search)}
+            {matricule:checkIfNumber(search)},
+            {encadreur: regex}
           ]}, (err, docs)=>{
             if (err) handleError(err);
             res.status(201).json({
@@ -88,7 +88,7 @@ exports.getStudents =  (req,res, next)=>{
   
    
   }
-//Add Data
+//Add student
 
 
   exports.addStudent = (req,res,next)=>{
@@ -174,7 +174,7 @@ if (!docs){
 
 
 
-        Students.find().countDocuments(function(err, count){
+        Students.find().countDocuments((err, count) => {
             if (err) return res.send(err);
             res.json(count);
         });
@@ -183,7 +183,7 @@ if (!docs){
 
     exports.getTheNumberStudents = (req,res)=>{
 
-        Students.findOne({}, {}, { sort: { _id :  -1} }, function(err, post) {
+        Students.findOne({}, {}, { sort: { _id :  -1} }, (err, post) => {
           
       
           if (err) return res.send(err);

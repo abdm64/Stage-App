@@ -33,42 +33,48 @@ export class ChartComponent implements OnInit {
 
   constructor(private chartservice : ChartService) { }
 
- async ngOnInit() {
+  ngOnInit() {
 
-  let enc = await this.chartservice.getEncadreur()
-  let sec = await this.chartservice.getEncadreurSec()
- let dateFin = await this.chartservice.getDateFin()
- let dateDebut = await this.chartservice.getDateDebut()
+this.getDatas()
 
+  }
 
-
-  this.createPie(enc,"enc")
-  this.createPie(sec,"sector")
-  this.createBar(dateFin,dateDebut,'date')
+async getDatas(){
 
 
-
-
+    try {
+      let enc = await this.chartservice.getEncadreur()
+      let sec = await this.chartservice.getEncadreurSec()
+     let dateFin = await this.chartservice.getDateFin()
+     let dateDebut = await this.chartservice.getDateDebut()
 
 
 
+      this.createPie(enc,"enc")
+      this.createPie(sec,"sector")
+      this.createBar(dateFin,dateDebut,'date')
+
+
+    } catch (err) {
 
 
 
+      console.log(err)
+    }
 
 
-  }//ngOnInit
+  }
 
 
 
-async  createBar(dateFin,dateDebut, name){
+  createBar(dateFin,dateDebut, name){
 
   let dataMonth = Object.keys(dateFin)
   let dateVlaueFin = Object.values(dateFin)
 
   let dateVlaueDebut = Object.values(dateDebut)
 
-    this.PieChart = await new Chart(name,{
+    this.PieChart = new Chart(name,{
       type: 'bar',
       data: {
           datasets: [{
@@ -131,13 +137,13 @@ async  createBar(dateFin,dateDebut, name){
 
 
 
-async createPie(data1,nameChart){
+ createPie(data1,nameChart){
   let dataNum = Object.values(data1)
   let dataLabl = Object.keys(data1)
 
   this.getRandomColor(dataNum)
   //const f = await console.log(this.labelsSec)
-  this.PieChart = await new Chart(nameChart,{
+  this.PieChart =  new Chart(nameChart,{
     type:'pie',
 data :{
 

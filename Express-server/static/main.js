@@ -383,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div >\n    <form #EvaForm=\"ngForm\">\n\n    <mat-card    style=\"font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\">\n        <mat-card-title>Student Evaluation</mat-card-title>\n        <div style=\"margin-top: 1rem;\">\n            <label>Evaluation globale de la qualité du stage effectué :</label>\n            <div style=\"margin-left: 4rem ;\">\n\n                <mat-radio-group    name=\"global\" ngModel >\n                    <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                    <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                    <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                    <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                  </mat-radio-group>\n\n            </div>\n          </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Appréciation globale de la réalisation du projet : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"projet\" ngModel >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\"  >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Connaissances théoriques appliquées au domaine d’études : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"etude\" ngModel >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Maîtrise des outils informatiques : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group   name=\"it\" ngModel>\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Maitrise langue française  : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"france\" ngModel  >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Maitrise langue anglaise : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"anglais\" ngModel >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n              <div style=\"margin-top: 1rem;\">\n                  <label>Motivation : </label>\n                  <div style=\"margin-left: 4rem ;\">\n\n                      <mat-radio-group    name=\"motivation\" ngModel  >\n                          <mat-radio-button value=\"Très favorable\" color=\"warn\"   >Très favorable</mat-radio-button>\n                          <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                          <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                          <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                        </mat-radio-group>\n\n                  </div>\n                </div>\n\n              <div style=\"margin-top: 1rem;\">\n                  <label>Commentaire : </label>\n\n                  <mat-form-field style=\"width: 100%;\" >\n\n                      <textarea matInput placeholder=\"Ajouter Commentaire (facultatif)\"style=\"height: 100px\" name=\"commentaire\" ngModel ></textarea>\n\n                  </mat-form-field>\n\n\n\n              </div>\n\n              <!-- <button style=\"float: right;\" mat-button color=\"warn\" type= \"submit\" (click) = \"createPdf(EvaForm)\" >Extract PDF</button> -->\n\n\n\n\n    </mat-card>\n\n\n  </form>\n  <button style=\"float: right; margin-top: 20px;\" mat-button color=\"warn\" type= \"submit\" (click) = \"createPdf(EvaForm)\" >Extract PDF</button>\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div >\n    <form #EvaForm=\"ngForm\">\n\n    <mat-card    style=\"font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\">\n        <mat-card-title>Student Evaluation</mat-card-title>\n        <div style=\"margin-top: 1rem;\">\n            <label>Evaluation globale de la qualité du stage effectué :</label>\n            <div style=\"margin-left: 4rem ;\">\n\n                <mat-radio-group    name=\"global\" ngModel [(ngModel)] = \"global\" >\n                    <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                    <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                    <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                    <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                  </mat-radio-group>\n\n            </div>\n          </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Appréciation globale de la réalisation du projet : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"projet\" ngModel [(ngModel)] = \"projet\">\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\"  >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Connaissances théoriques appliquées au domaine d’études : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"etude\" ngModel [(ngModel)] = \"etude\" >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Maîtrise des outils informatiques : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group   name=\"it\" ngModel [(ngModel)] = \"it\">\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Maitrise langue française  : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"france\" ngModel  [(ngModel)] = \"france\" >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n\n            <div style=\"margin-top: 1rem;\">\n                <label>Maitrise langue anglaise : </label>\n                <div style=\"margin-left: 4rem ;\">\n\n                    <mat-radio-group    name=\"anglais\" ngModel [(ngModel)] = \"anglais\" >\n                        <mat-radio-button value=\"Très favorable\" color=\"warn\" >Très favorable</mat-radio-button>\n                        <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                        <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                        <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                      </mat-radio-group>\n\n                </div>\n              </div>\n              <div style=\"margin-top: 1rem;\">\n                  <label>Motivation : </label>\n                  <div style=\"margin-left: 4rem ;\">\n\n                      <mat-radio-group    name=\"motivation\" ngModel  [(ngModel)] = \"motivation\" >\n                          <mat-radio-button value=\"Très favorable\" color=\"warn\"   >Très favorable</mat-radio-button>\n                          <mat-radio-button value=\"Favorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Favorable</mat-radio-button>\n                          <mat-radio-button value=\"Défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Défavorable</mat-radio-button>\n                          <mat-radio-button value=\"Très défavorable\" style=\"margin-left: 2rem ;\" color=\"warn\" >Très défavorable</mat-radio-button>\n                        </mat-radio-group>\n\n                  </div>\n                </div>\n\n              <div style=\"margin-top: 1rem;\">\n                  <label>Commentaire : </label>\n\n                  <mat-form-field style=\"width: 100%;\" >\n\n                      <textarea matInput placeholder=\"Ajouter Commentaire (facultatif)\"style=\"height: 100px\" name=\"commentaire\" ngModel ></textarea>\n\n                  </mat-form-field>\n\n\n\n              </div>\n\n              <!-- <button style=\"float: right;\" mat-button color=\"warn\" type= \"submit\" (click) = \"createPdf(EvaForm)\" >Extract PDF</button> -->\n\n\n\n\n    </mat-card>\n\n\n  </form>\n  <button style=\"float: right; margin-top: 20px;\" mat-button color=\"warn\" type= \"submit\" (click) = \"createPdf(EvaForm)\" >Extract PDF</button>\n</div>\n\n");
 
 /***/ }),
 
@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n\r\n\r\n\r\n<mat-sidenav-container >\r\n\r\n\r\n        <div class=\"container\">\r\n\r\n\r\n\r\n\r\n\r\n            <div class=\"filter\" [formGroup]=\"form\">\r\n                <button mat-icon-button class=\"search-icon search\" >\r\n                    <mat-icon aria-label=\"label\">search</mat-icon>\r\n                </button>\r\n                <button mat-icon-button class=\"search-icon menu\" >\r\n                    <mat-icon aria-label=\"label\">menu</mat-icon>\r\n                </button>\r\n                <input  [(ngModel)] = \"searchTerm\" (ngModelChange) = \"search()\"  placeholder=\"Search...\" type=\"text\" class=\"mat-body-strong\" formControlName=\"search\" />\r\n                <mat-select placeholder=\"{{placeHolder}}\">\r\n                    <mat-option (click) =\" selectAllStudent()\">\r\n                        ALL\r\n                       </mat-option>\r\n                  <mat-option (click)=\"selectEncours()\">\r\n                    en cours\r\n                  </mat-option>\r\n                  <mat-option (click) =\" selectStudenEnd()\">\r\n                   Terminé\r\n                  </mat-option>\r\n\r\n                </mat-select>\r\n\r\n\r\n\r\n            </div>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"info\">\r\n                    <div class=\"text\">\r\n                        <span class=\"title\">Stagiaires <button mat-icon-button color=\"warn\">\r\n                                <mat-icon>info_outline</mat-icon>\r\n                            </button></span>\r\n                        <p class=\"description\">A total of {{ last }} <span class=\"number\"></span> Stagiaires</p>\r\n                    </div>\r\n\r\n                </div>\r\n                <ng-container *ngIf=\"!loading; else elseTemplate\">\r\n                    <div class=\"separation\"></div>\r\n                </ng-container>\r\n                <ng-template #elseTemplate>\r\n                    <mat-progress-bar [mode]=\"type\" [value]=\"progress\" style=\"width: 100%\"></mat-progress-bar>\r\n                </ng-template>\r\n\r\n                <div class=\"medicaments\">\r\n\r\n                    <mat-card style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\" *ngFor=\"let student of students | load : end ;let i = index ;\"\r\n                        [@fade]=\"{value: '*', params: { delay: (i*300)%2700}}\" class=\"medic-card\">\r\n\r\n\r\n                       <div class=\"remboursement\" [ngClass]=\"{'isremb': getStudentDate(student)}\"></div>\r\n\r\n\r\n                        <mat-card-header style=\"position:relative;\">\r\n                          <div class=\"app-download\" style=\"position:absolute; margin-left:70%; margin-top:5px;width: 50px;\">{{student.matricule}}</div>\r\n                            <mat-card-title>{{student.nom   }}</mat-card-title>\r\n                            <mat-card-title>{{\" \" + student.prenom  }}</mat-card-title>\r\n                            <mat-card-subtitle class=\"DCI\">{{student.email}}\r\n                            </mat-card-subtitle>\r\n                        </mat-card-header>\r\n                        <mat-card-content class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"therapy\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date debut</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateDebut | date:'yyyy-MM-dd'\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"input_way\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date fin</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateFin | date:'yyyy-MM-dd' \" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"labo\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Encadreur</mat-label>\r\n                                    <input matInput class=\"input\"\r\n                                        [value]=\"student.encadreur\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Type de stage</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.typeStage\"\r\n                                        disabled>\r\n                                </mat-form-field>\r\n\r\n                            </div>\r\n\r\n\r\n\r\n                        </mat-card-content>\r\n                        <mat-card-actions  align=\"center\"  >\r\n\r\n                          <div  align=\"left\">\r\n                              <button mat-button color=\"black\" (click)=\"createPdf(student)\" [disabled] = \"!student.attestation\">  <mat-icon >picture_as_pdf</mat-icon></button>\r\n                              <button mat-button color=\"black\" (click)=\"openDialog(student)\"><mat-icon>edit</mat-icon></button>\r\n                          </div>\r\n\r\n                          <div  align=\"right\" style=\"margin-top: -12%;\" >\r\n                              <button mat-button color=\"black\" (click)= \" openStudentEvaluation(student)\"><mat-icon >info</mat-icon></button>\r\n                              <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n                          </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n                        </mat-card-actions>\r\n                    </mat-card>\r\n\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <mat-paginator [length] = \"last\"  [pageSize] = \"9\" [pageSizeOptions] = \"pageOption\" (page)=\"onChangePage($event)\" style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);margin-top: 1rem; margin-bottom:1rem;\"></mat-paginator>\r\n        </div>\r\n\r\n\r\n    </mat-sidenav-container>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n\r\n\r\n\r\n<mat-sidenav-container >\r\n\r\n\r\n        <div class=\"container\">\r\n\r\n\r\n\r\n\r\n\r\n            <div class=\"filter\" [formGroup]=\"form\">\r\n                <button mat-icon-button class=\"search-icon search\" >\r\n                    <mat-icon aria-label=\"label\">search</mat-icon>\r\n                </button>\r\n                <button mat-icon-button class=\"search-icon menu\" >\r\n                    <mat-icon aria-label=\"label\">menu</mat-icon>\r\n                </button>\r\n                <input  [(ngModel)] = \"searchTerm\" (ngModelChange) = \"search()\"  placeholder=\"Search...\" type=\"text\" class=\"mat-body-strong\" formControlName=\"search\" />\r\n                <mat-select placeholder=\"{{placeHolder}}\">\r\n                    <mat-option (click) =\" selectAllStudent()\">\r\n                        ALL\r\n                       </mat-option>\r\n                  <mat-option (click)=\"selectEncours()\">\r\n                    en cours\r\n                  </mat-option>\r\n                  <mat-option (click) =\" selectStudenEnd()\">\r\n                   Terminé\r\n                  </mat-option>\r\n\r\n                </mat-select>\r\n\r\n\r\n\r\n            </div>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"info\">\r\n                    <div class=\"text\">\r\n                        <span class=\"title\">Stagiaires <button mat-icon-button color=\"warn\">\r\n                                <mat-icon>info_outline</mat-icon>\r\n                            </button></span>\r\n                        <p class=\"description\">A total of {{ last }} <span class=\"number\"></span> Stagiaires</p>\r\n                    </div>\r\n\r\n                </div>\r\n                <ng-container *ngIf=\"!loading; else elseTemplate\">\r\n                    <div class=\"separation\"></div>\r\n                </ng-container>\r\n                <ng-template #elseTemplate>\r\n                    <mat-progress-bar [mode]=\"type\" [value]=\"progress\" style=\"width: 100%\"></mat-progress-bar>\r\n                </ng-template>\r\n\r\n                <div class=\"medicaments\">\r\n\r\n                    <mat-card style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\" *ngFor=\"let student of students | load : end ;let i = index ;\"\r\n                        [@fade]=\"{value: '*', params: { delay: (i*300)%2700}}\" class=\"medic-card\">\r\n\r\n\r\n                       <div class=\"remboursement\" [ngClass]=\"{'isremb': getStudentDate(student)}\"></div>\r\n\r\n\r\n                        <mat-card-header style=\"position:relative;\">\r\n                          <div class=\"app-download\" style=\"position:absolute; margin-left:70%; margin-top:5px;width: 50px;\">{{student.matricule}}</div>\r\n                            <mat-card-title>{{student.nom   }}</mat-card-title>\r\n                            <mat-card-title>{{\" \" + student.prenom  }}</mat-card-title>\r\n                            <mat-card-subtitle class=\"DCI\">{{student.email}}\r\n                            </mat-card-subtitle>\r\n                        </mat-card-header>\r\n                        <mat-card-content class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"therapy\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date debut</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateDebut | date:'yyyy-MM-dd'\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"input_way\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Date fin</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.dateFin | date:'yyyy-MM-dd' \" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"labo\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Encadreur</mat-label>\r\n                                    <input matInput class=\"input\"\r\n                                        [value]=\"student.encadreur\" disabled>\r\n                                </mat-form-field>\r\n                            </div>\r\n\r\n                            <div class=\"row\">\r\n                                <mat-icon class=\"prefix\" svgIcon=\"price\"></mat-icon>\r\n                                <mat-form-field class=\"field\" appearance=\"legacy\" floatLabel=\"always\">\r\n                                    <mat-label>Type de stage</mat-label>\r\n                                    <input matInput class=\"input\" [value]=\"student.typeStage\"\r\n                                        disabled>\r\n                                </mat-form-field>\r\n\r\n                            </div>\r\n\r\n\r\n\r\n                        </mat-card-content>\r\n                        <mat-card-actions  align=\"center\"  >\r\n\r\n                        <div  align=\"left\">\r\n                              <button mat-button color=\"black\" (click)=\"createPdf(student)\" [disabled] = \"!student.attestation\">  <mat-icon >picture_as_pdf</mat-icon></button>\r\n                              <button mat-button color=\"black\" (click)=\"openDialog(student)\"><mat-icon>edit</mat-icon></button>\r\n                          </div>\r\n\r\n                          <div  align=\"right\" style=\"margin-top: -12%;\" >\r\n                              <button mat-button color=\"black\" (click)= \" openStudentEvaluation(student)\"><mat-icon >info</mat-icon></button>\r\n                              <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n                          </div>\r\n\r\n\r\n                          <!-- <div>\r\n                            <button mat-button color=\"black\" (click)=\"createPdf(student)\" [disabled] = \"!student.attestation\">  <mat-icon >picture_as_pdf</mat-icon></button>\r\n                            <button mat-button color=\"black\" (click)=\"openDialog(student)\"><mat-icon>edit</mat-icon></button>\r\n                            <button mat-button color=\"black\" (click)= \" openStudentEvaluation(student)\"><mat-icon >info</mat-icon></button>\r\n                            <button mat-button color=\"warn\" (click)= \" openDialogDelete(student)\"><mat-icon >delete</mat-icon></button>\r\n                          </div> -->\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n                        </mat-card-actions>\r\n                    </mat-card>\r\n\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <mat-paginator [length] = \"last\"  [pageSize] = \"9\" [pageSizeOptions] = \"pageOption\" (page)=\"onChangePage($event)\" style=\"box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);margin-top: 1rem; margin-bottom:1rem;\"></mat-paginator>\r\n        </div>\r\n\r\n\r\n    </mat-sidenav-container>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -1111,8 +1111,9 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         this.router = router;
         this.dialog = dialog;
-        this.baseUrlLocalp = "http://localhost:3000/api";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api";
+        this.baseUrlLocalk = "http://localhost:3000/api";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
         this.token = "";
         this.name = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"]();
         this.isLooged = false;
@@ -1200,8 +1201,9 @@ var ChartService = /** @class */ (function () {
     function ChartService(http, datepipe) {
         this.http = http;
         this.datepipe = datepipe;
-        this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://localhost:3000/api/";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocalk = "http://172.16.60.36:31515/api";
     }
     ChartService.prototype.setHeader = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
@@ -1322,11 +1324,16 @@ var ChartComponent = /** @class */ (function () {
         this.coloR = [];
     }
     ChartComponent.prototype.ngOnInit = function () {
+        this.getDatas();
+    };
+    ChartComponent.prototype.getDatas = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var enc, sec, dateFin, dateDebut;
+            var enc, sec, dateFin, dateDebut, err_1;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.chartservice.getEncadreur()];
+                    case 0:
+                        _a.trys.push([0, 5, , 6]);
+                        return [4 /*yield*/, this.chartservice.getEncadreur()];
                     case 1:
                         enc = _a.sent();
                         return [4 /*yield*/, this.chartservice.getEncadreurSec()];
@@ -1341,44 +1348,37 @@ var ChartComponent = /** @class */ (function () {
                         this.createPie(enc, "enc");
                         this.createPie(sec, "sector");
                         this.createBar(dateFin, dateDebut, 'date');
-                        return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 5:
+                        err_1 = _a.sent();
+                        console.log(err_1);
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
-    }; //ngOnInit
+    };
     ChartComponent.prototype.createBar = function (dateFin, dateDebut, name) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var dataMonth, dateVlaueFin, dateVlaueDebut, _a;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        dataMonth = Object.keys(dateFin);
-                        dateVlaueFin = Object.values(dateFin);
-                        dateVlaueDebut = Object.values(dateDebut);
-                        _a = this;
-                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__(name, {
-                                type: 'bar',
-                                data: {
-                                    datasets: [{
-                                            label: 'dateFin',
-                                            data: dateVlaueFin,
-                                            backgroundColor: '#86C7F3',
-                                            borderColor: '#5EB4EF'
-                                        }, {
-                                            label: 'dateDebut',
-                                            data: dateVlaueDebut,
-                                            backgroundColor: '#FFA1B5',
-                                            borderColor: '#FF829C',
-                                            type: 'bar'
-                                        }],
-                                    labels: dataMonth
-                                },
-                            })];
-                    case 1:
-                        _a.PieChart = _b.sent();
-                        return [2 /*return*/];
-                }
-            });
+        var dataMonth = Object.keys(dateFin);
+        var dateVlaueFin = Object.values(dateFin);
+        var dateVlaueDebut = Object.values(dateDebut);
+        this.PieChart = new chart_js__WEBPACK_IMPORTED_MODULE_3__(name, {
+            type: 'bar',
+            data: {
+                datasets: [{
+                        label: 'dateFin',
+                        data: dateVlaueFin,
+                        backgroundColor: '#86C7F3',
+                        borderColor: '#5EB4EF'
+                    }, {
+                        label: 'dateDebut',
+                        data: dateVlaueDebut,
+                        backgroundColor: '#FFA1B5',
+                        borderColor: '#FF829C',
+                        type: 'bar'
+                    }],
+                labels: dataMonth
+            },
         });
     };
     ChartComponent.prototype.getRandomColor = function (data) {
@@ -1395,42 +1395,29 @@ var ChartComponent = /** @class */ (function () {
         }
     };
     ChartComponent.prototype.createPie = function (data1, nameChart) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var dataNum, dataLabl, _a;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        dataNum = Object.values(data1);
-                        dataLabl = Object.keys(data1);
-                        this.getRandomColor(dataNum);
-                        //const f = await console.log(this.labelsSec)
-                        _a = this;
-                        return [4 /*yield*/, new chart_js__WEBPACK_IMPORTED_MODULE_3__(nameChart, {
-                                type: 'pie',
-                                data: {
-                                    labels: dataLabl,
-                                    datasets: [{
-                                            data: dataNum,
-                                            backgroundColor: this.coloR,
-                                            borderColor: this.coloR,
-                                            hoverBackgroundColor: this.coloR,
-                                            borderWidth: 1
-                                        }]
-                                },
-                                options: {
-                                    title: {
-                                        text: "",
-                                        display: true
-                                    },
-                                    responsive: true,
-                                }
-                            })];
-                    case 1:
-                        //const f = await console.log(this.labelsSec)
-                        _a.PieChart = _b.sent();
-                        return [2 /*return*/];
-                }
-            });
+        var dataNum = Object.values(data1);
+        var dataLabl = Object.keys(data1);
+        this.getRandomColor(dataNum);
+        //const f = await console.log(this.labelsSec)
+        this.PieChart = new chart_js__WEBPACK_IMPORTED_MODULE_3__(nameChart, {
+            type: 'pie',
+            data: {
+                labels: dataLabl,
+                datasets: [{
+                        data: dataNum,
+                        backgroundColor: this.coloR,
+                        borderColor: this.coloR,
+                        hoverBackgroundColor: this.coloR,
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                title: {
+                    text: "",
+                    display: true
+                },
+                responsive: true,
+            }
         });
     };
     ChartComponent.ctorParameters = function () { return [
@@ -1645,6 +1632,13 @@ var EvaluationDialogComponent = /** @class */ (function () {
         this.dialogRef = dialogRef;
         this.student = student;
         this.pdf = pdf;
+        this.projet = "Très favorable";
+        this.etude = "Très favorable";
+        this.it = "Très favorable";
+        this.france = "Très favorable";
+        this.anglais = "Très favorable";
+        this.motivation = "Très favorable";
+        this.global = "Très favorable";
     }
     EvaluationDialogComponent.prototype.ngOnInit = function () {
     };
@@ -1758,7 +1752,8 @@ var ExcelService = /** @class */ (function () {
     function ExcelService(http) {
         this.http = http;
         this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocalk = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
     }
     ExcelService.prototype.setHeader = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]().set('Content-Type', 'application/json');
@@ -1877,8 +1872,9 @@ var InsertComponent = /** @class */ (function () {
     function InsertComponent(studentsService, dialog) {
         this.studentsService = studentsService;
         this.dialog = dialog;
-        this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://localhost:3000/api/";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocalk = "http://172.16.60.36:31515/api";
         this.encadreur = {
             Last_Name: "",
             First_name: "",
@@ -1890,31 +1886,27 @@ var InsertComponent = /** @class */ (function () {
             Email_Address: null,
         };
     }
-    InsertComponent.prototype.getMatricule = function () {
-        var num = 0;
-        var req = new XMLHttpRequest();
-        req.open('GET', this.baseUrlLocal + "students/numberEnd", false);
-        //
-        req.send(null);
-        var data = JSON.parse(req.response);
-        if (data === null) {
-            num = 1;
-        }
-        else {
-            num = data.matricule + 1;
-        }
-        return num;
-    };
     InsertComponent.prototype.onAddPost = function (form) {
-        form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name;
-        form.value.encadreurDEP = this.encadreur.Departement;
-        form.value.encadreurmMail = this.encadreur.Email_Address;
-        form.value.encadreurSec = this.encadreur.Sector;
-        form.value.encadreurmOrg = this.encadreur.Position;
-        form.value.user = localStorage.getItem("user");
-        form.value.matricule = this.getMatricule();
-        form.value.nom = form.value.nom.toUpperCase();
-        this.studentsService.addStudent(form.value);
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var mat;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.studentsService.getMatricule()];
+                    case 1:
+                        mat = _a.sent();
+                        form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name;
+                        form.value.encadreurDEP = this.encadreur.Departement;
+                        form.value.encadreurmMail = this.encadreur.Email_Address;
+                        form.value.encadreurSec = this.encadreur.Sector;
+                        form.value.encadreurmOrg = this.encadreur.Position;
+                        form.value.user = localStorage.getItem("user");
+                        form.value.matricule = mat;
+                        form.value.nom = form.value.nom.toUpperCase();
+                        this.studentsService.addStudent(form.value);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     InsertComponent.prototype.ngOnInit = function () {
     };
@@ -2624,8 +2616,9 @@ var StudentService = /** @class */ (function () {
         this.http = http;
         this.dialog = dialog;
         this.router = router;
-        this.baseUrlLocalp = "http://localhost:3000/api";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api";
+        this.baseUrlLocalk = "http://localhost:3000/api";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
         this.result = '#';
         this.studentUpdated = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
@@ -2746,6 +2739,29 @@ var StudentService = /** @class */ (function () {
                     case 2:
                         data = _a.sent();
                         return [2 /*return*/, parseInt(data)];
+                }
+            });
+        });
+    };
+    StudentService.prototype.getMatricule = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var res, data, num;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this.baseUrlLocal + "/students/numberEnd")];
+                    case 1:
+                        res = _a.sent();
+                        return [4 /*yield*/, res.json()];
+                    case 2:
+                        data = _a.sent();
+                        num = 0;
+                        if (data === null) {
+                            num = 1;
+                        }
+                        else {
+                            num = data.matricule + 1;
+                        }
+                        return [2 /*return*/, num];
                 }
             });
         });
@@ -2877,6 +2893,7 @@ var SuiviComponent = /** @class */ (function () {
     };
     SuiviComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.studentsService.getMatricule();
         this.studentsService.getStudentNumber().then(function (res) {
             return _this.last = res;
         });
@@ -2887,24 +2904,24 @@ var SuiviComponent = /** @class */ (function () {
             _this.rests = Math.max(_this.students.length - _this.end, 0);
         });
     };
-    SuiviComponent.prototype.setLoading = function () {
-        /*
-          total ====> 100%
-          data =====> X
-        */
-        var result = (this.data.length * 100) / this.totalMedics;
-        result = ~~(result);
-        this.progress = this.progress > result ? this.progress : result;
-    };
-    SuiviComponent.prototype.setLoad = function (val) {
-        this.end = val;
-        this.rests = this.students.length - this.end;
-        if (this.students.length === 0)
-            this.rest = 0;
-        else
-            this.rest = Math.max(this.students.length - this.end, 0);
-        this.rests = Math.max(this.students.length - this.end, 0);
-    };
+    // setLoading() {
+    //   /*
+    //     total ====> 100%
+    //     data =====> X
+    //   */
+    //   let result = (this.data.length * 100) / this.totalMedics;
+    //   result = ~~(result);
+    //   this.progress = this.progress > result ? this.progress : result;
+    // }
+    //   setLoad(val) {
+    //     this.end = val;
+    //     this.rests = this.students.length  - this.end
+    //     if (this.students.length === 0)
+    //       this.rest = 0;
+    //     else
+    //       this.rest = Math.max(this.students.length - this.end, 0);
+    //       this.rests = Math.max(this.students.length - this.end, 0);
+    // }
     SuiviComponent.prototype.ngOnDestroy = function () {
         this.studentSub.unsubscribe();
     };
@@ -2934,6 +2951,7 @@ var SuiviComponent = /** @class */ (function () {
         }
         else {
             this.studentsService.getStudentSearch(term);
+            console.log(this.studentsService.maxNumber);
             //this.last = this.students.length
         }
     };
