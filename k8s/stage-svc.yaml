@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Service
 matadata: 
+  labels:
+    name: stage-app
   name: stage-app
 spec: 
   type: NodePort
