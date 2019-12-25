@@ -17,7 +17,7 @@ spec:
           persistentVolumeClaim:
             claimName: stage-pvc
       containers:
-      - name: stagedb
+      - name: stagedbone
         image: mongo
         imagePullPolicy: IfNotPresent
         ports:
