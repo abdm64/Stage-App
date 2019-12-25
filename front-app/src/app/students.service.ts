@@ -12,8 +12,8 @@ import { Router} from '@angular/router';
 
 export class  StudentService{
    baseUrlLocalk = "http://localhost:3000/api";
-   baseUrlLocal = "http://172.16.60.36:3000/api"
-   baseUrlLocalp = "http://172.16.60.36:31515/api"
+   baseUrlLocalp = "http://172.16.60.36:3000/api"
+   baseUrlLocal = "http://172.16.60.36:31515/api"
 
   result : string = '#' ;
 

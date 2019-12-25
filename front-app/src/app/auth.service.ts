@@ -21,8 +21,8 @@ import { Subject} from 'rxjs';
 
 export class AuthService {
   baseUrlLocalk = "http://localhost:3000/api";
-  baseUrlLocal = "http://172.16.60.36:3000/api"
-  baseUrlLocalp = "http://172.16.60.36:31515/api"
+  baseUrlLocalp = "http://172.16.60.36:3000/api"
+  baseUrlLocal = "http://172.16.60.36:31515/api"
   token = ""
   name:Subject<string> = new Subject()
     constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){

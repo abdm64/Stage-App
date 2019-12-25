@@ -13,8 +13,8 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
 })
 export class InsertComponent implements OnInit {
   baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocal  = "http://172.16.60.36:3000/api/"
-  baseUrlLocalk = "http://172.16.60.36:31515/api"
+  baseUrlLocalk  = "http://172.16.60.36:3000/api/"
+  baseUrlLocal = "http://172.16.60.36:31515/api"
 
   encadreur : any = {
 

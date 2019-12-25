@@ -1112,8 +1112,8 @@ var AuthService = /** @class */ (function () {
         this.router = router;
         this.dialog = dialog;
         this.baseUrlLocalk = "http://localhost:3000/api";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api";
-        this.baseUrlLocalp = "http://172.16.60.36:31515/api";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
         this.token = "";
         this.name = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"]();
         this.isLooged = false;
@@ -1202,8 +1202,8 @@ var ChartService = /** @class */ (function () {
         this.http = http;
         this.datepipe = datepipe;
         this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
-        this.baseUrlLocalk = "http://172.16.60.36:31515/api";
+        this.baseUrlLocalk = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
     }
     ChartService.prototype.setHeader = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
@@ -1752,8 +1752,8 @@ var ExcelService = /** @class */ (function () {
     function ExcelService(http) {
         this.http = http;
         this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
-        this.baseUrlLocalk = "http://172.16.60.36:31515/api";
+        this.baseUrlLocalk = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
     }
     ExcelService.prototype.setHeader = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]().set('Content-Type', 'application/json');
@@ -1873,8 +1873,8 @@ var InsertComponent = /** @class */ (function () {
         this.studentsService = studentsService;
         this.dialog = dialog;
         this.baseUrlLocalp = "http://localhost:3000/api/";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api/";
-        this.baseUrlLocalk = "http://172.16.60.36:31515/api";
+        this.baseUrlLocalk = "http://172.16.60.36:3000/api/";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
         this.encadreur = {
             Last_Name: "",
             First_name: "",
@@ -2617,8 +2617,8 @@ var StudentService = /** @class */ (function () {
         this.dialog = dialog;
         this.router = router;
         this.baseUrlLocalk = "http://localhost:3000/api";
-        this.baseUrlLocal = "http://172.16.60.36:3000/api";
-        this.baseUrlLocalp = "http://172.16.60.36:31515/api";
+        this.baseUrlLocalp = "http://172.16.60.36:3000/api";
+        this.baseUrlLocal = "http://172.16.60.36:31515/api";
         this.result = '#';
         this.studentUpdated = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
