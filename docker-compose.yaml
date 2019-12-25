@@ -7,9 +7,9 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - stagedbOne
+      - stagedb
       
-  stagedbOne: 
+  stagedb: 
     image: mongo 
     volumes:
       - ./data:/data/db
