@@ -5,6 +5,7 @@ metadata:
   annotations:
     volume.beta.kubernetes.io/storage-class: gluster-heketi
 spec:
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
