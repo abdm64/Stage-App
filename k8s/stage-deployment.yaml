@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: stage-app # name of object created by the config file  
 spec: # specify the caractirstique of the deployment
-  replicas: 3 # number of pod gonna make using the tamplate 
+  replicas: 1 # number of pod gonna make using the tamplate 
   selector: # use selector to related with service yaml
     matchLabels:
       app: stage-app # the Id to connect with service yaml could be anything like company : djezzy
