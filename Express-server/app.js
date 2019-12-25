@@ -16,7 +16,7 @@ const app = express();
 //stagedb:27017
 
 mongoose
-.connect("mongodb://stagedb/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.connect("mongodb://stagedbone:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 .then(() => {
   console.log('Connected to database!');
 })
