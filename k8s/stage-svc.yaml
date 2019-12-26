@@ -9,7 +9,7 @@ spec:
   ports: 
     - port: 3050 #allow other pods access to this pod
       targetPort: 3000 #the target port of the containter
-      nodePort: 31515 #the expose port by the k8s to get  access on browser
+      nodePort: 31515 #the expose port by the k8s to get  access on browser cluster ip 
   selector: 
     app: stage-app
 
