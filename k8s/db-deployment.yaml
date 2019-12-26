@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: stagedbvolume
           persistentVolumeClaim:
-            claimName: mongo-pvc
+            claimName: db-data
       containers:
       - name: stagedbone
         image: mongo
