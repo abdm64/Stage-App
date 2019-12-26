@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: stagedbvolume
           persistentVolumeClaim:
-            claimName: stage-pvc
+            claimName: wordpress-claim0
       containers:
       - name: stagedbone
         image: mongo
