@@ -12,10 +12,10 @@ spec:
       labels:
         app: stagedb
     spec:
-      volumes:
-        - name: stagedbvolume
-          persistentVolumeClaim:
-            claimName: mongo-pvc
+      # volumes:
+      #   - name: stagedbvolume
+      #     persistentVolumeClaim:
+      #       claimName: mongo-pvc
       containers:
       - name: stagedbone
         image: mongo
@@ -24,9 +24,9 @@ spec:
         - containerPort: 27017
           hostPort: 27017
           name: dbport
-        volumeMounts:
-          - name: stagedbvolume
-            mountPath: /data/db
+        # volumeMounts:
+        #   - name: stagedbvolume
+        #     mountPath: /data/db
 
 
 
