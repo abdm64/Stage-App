@@ -28,6 +28,8 @@ spec:
         volumeMounts:
           - name: stagedbvolume
             mountPath: /data/db
+      nodeSelector:
+         mysql-gogs: "true"
 
 
 
