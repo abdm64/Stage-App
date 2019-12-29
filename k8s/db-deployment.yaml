@@ -25,7 +25,6 @@ spec:
         ports:
         - containerPort: 27017
           hostPort: 27017
-          name: dbport
         volumeMounts:
           - name: stagedbvolume
             mountPath: /data/db

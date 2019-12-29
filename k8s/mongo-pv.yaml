@@ -1,0 +1,15 @@
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: pois-mongo-pv-volume
+#   namespace: pois
+#   labels:
+#     type: local
+# spec:
+#   storageClassName: manual
+#   capacity:
+#     storage: 10Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   nodeSelector: 
+#     storagenode: glusterfs
