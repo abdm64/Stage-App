@@ -13,10 +13,6 @@ spec:
       labels:
         app: stagedb
     spec:
-      volumes:
-        - name: stagedbvolume
-          persistentVolumeClaim:
-            claimName: stage-pvc
       containers:
       - name: stagedbone
         image: mongo
@@ -27,8 +23,13 @@ spec:
         volumeMounts:
           - name: stagedbvolume
             mountPath: /data/db
-      # nodeSelector:
-      #    mysql-gogs: "true"
+      volumes:
+        - name: stagedbvolume
+          persistentVolumeClaim:
+            claimName: stage-pvc
+
+
+      ################
 
 
 
