@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: stagedb
 spec:
-  replicas: 2
   strategy:
        type: Recreate
   selector:
@@ -17,7 +16,7 @@ spec:
       volumes:
         - name: stagedbvolume
           persistentVolumeClaim:
-            claimName: mongo-pvc
+            claimName: stage-pvc
       containers:
       - name: stagedbone
         image: mongo
