@@ -1,10 +1,12 @@
-const  http = require('http');
+
 const studentsRoute =require('./src/routes/students');
 const mail =require('./src/routes/mail');
 const exelData = require('./src/routes/dataExel');
 const userRoute = require("./src/routes/user");
 const encaRoute = require("./src/routes/encadreur");
 const chartRoute = require("./src/routes/chart");
+const evaluation = require('./src/routes/evaluationRoute')
+const urlRandom = require('./src/routes/URLRoute')
 const express = require('express');
 const path = require('path');
 const mongoose =require('mongoose');
@@ -16,7 +18,7 @@ const app = express();
 //stagedb:27017
 
 mongoose
-.connect("mongodb://stagedbone:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.connect("mongodb://localhost:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 .then(() => {
   console.log('Connected to database!');
 })
@@ -69,6 +71,8 @@ app.use(userRoute);
 app.use(exelData);
 app.use(encaRoute);
 app.use(chartRoute);
+app.use(evaluation);
+app.use(urlRandom);
 app.use(express.static(__dirname + '/static'))
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'static/index.html'), function(err) {

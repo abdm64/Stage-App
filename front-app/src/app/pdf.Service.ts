@@ -3,12 +3,13 @@ import { DatePipe} from '@angular/common';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { NgForm } from '@angular/forms';
+import { StudentService } from './students.service'
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Injectable({providedIn :'root'})
 
 export class PDFService {
-  constructor(public datepipe : DatePipe){
+  constructor(public datepipe : DatePipe , private studentService : StudentService){
 
   }
 
@@ -147,11 +148,15 @@ export class PDFService {
       pdfMake.createPdf(dd).open();
      }
 
-     createEvaPdf(evaForm, student){
+     async createEvaPdf(student){
+       const evaluation = await this.studentService.getstudentEvaluation(student.matricule)
+
+     // console.log(evaluation)
+    // const evaluation = evaluatio.docs
 
 
-      const evaluation = evaForm.value
-      const projet = evaluation.projet
+
+      const projet = evaluation.project
       const etude  = evaluation.etude
       const it = evaluation.it
       const  france = evaluation.france
@@ -160,7 +165,7 @@ export class PDFService {
       const commentaire = evaluation.commentaire
       const global = evaluation.global
 
-     // console.log(commentaire)
+      console.log(global)
 
 
 
@@ -304,11 +309,11 @@ export class PDFService {
   " ",
   " ",
   " ",
-  // " ",
-  // " ",
-  // " ",
-  // " ",
-  // " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
   // " ",
   // " ",
   // " ",

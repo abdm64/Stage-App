@@ -37,6 +37,9 @@ app.get('/api', (req,res, next)=>{
 //fetch All student + adding pagination  ,auth
 
 app.get('/api/students/data' ,auth , studentController.getStudents)
+//get student by id
+
+app.get('/api/students/data/:id',studentController.getStudentById)
 
 
 
@@ -46,12 +49,13 @@ app.post('/api/students/insertData',auth,studentController.addStudent);
  //delete data by name in the by matrecule
  app.delete('/api/students/deleteData/:id',auth,studentController.deleteStudent)
 
+
  // update data
 
  app.put("/api/students/update/:matricule",auth,studentController.updateStudent);
 
 //delete All data ,auth
-app.delete("/api/students/delete", studentController.deleteAllStudents);
+app.delete("/api/students/delete" ,auth, studentController.deleteAllStudents);
 
     //get the number of document  to create matricule
 

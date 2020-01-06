@@ -20,7 +20,7 @@ exports.getStudents =  (req,res, next)=>{
       
       studentQuary.skip(pageSize * (pageIndex - 1)).limit(pageSize).then((docs,err) => {
   
-        if (err) return handleError(err)
+        if (err) return console.log(err);
   
         students = docs
   
@@ -64,7 +64,7 @@ exports.getStudents =  (req,res, next)=>{
   
   studentQuary.then((docs,err) => {
   
-    if (err) return handleError(err)
+    if (err) return console.log(err);
   
     students = docs
   
@@ -100,7 +100,7 @@ exports.getStudents =  (req,res, next)=>{
 
 
  Students.findOne({nom : nom, prenom : prenom,dateNaissance: dateNaissance,nTelephone:nTelephone}, (err, docs) => {
-  if (err) handleError(err);
+  if (err) console.log(err);
 
 
 if (!docs){      
@@ -116,7 +116,8 @@ if (!docs){
 
   });
 }
-})
+}
+)
 
   
    
@@ -136,7 +137,7 @@ if (!docs){
   exports.deleteStudent = (req,res)=> {
 
     Students.deleteOne({ matricule: req.params.id }, (err)  => {
-        if (err) return handleError(err);
+        if (err) return console.log(err);
         
         res.status(200).send() ;
       });
@@ -144,6 +145,19 @@ if (!docs){
 
 
  }
+ exports.getStudentById =  (req,res)=> {
+
+  Students.findOne({ matricule: req.params.id }, (err, doc)   => {
+      if (err) return console.log(err);
+      
+      res.status(200).json({
+        doc
+      }) ;
+    });
+
+
+
+}
  
 
  exports.updateStudent = (req,res) => {
@@ -163,7 +177,7 @@ if (!docs){
    exports.deleteAllStudents = (req,res) => {
 
     Students.deleteMany( function (err) {
-     if (err) return handleError(err), res.send(err);
+     if (err) return console.log(err), res.send(err);
      // deleted at most one tank document
      res.status(200).send("students deleted") ;
    });

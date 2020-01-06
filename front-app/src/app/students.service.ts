@@ -11,9 +11,9 @@ import { Router} from '@angular/router';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocalk = "http://localhost:3000/api";
+   baseUrlLocal = "http://localhost:3000/api";
    baseUrlLocalp = "http://172.16.60.36:3000/api"
-   baseUrlLocal = "http://172.16.60.36:31515/api"
+   baseUrlLocalk = "http://172.16.60.36:31515/api"
 
   result : string = '#' ;
 
@@ -82,6 +82,35 @@ export class  StudentService{
 
     }
 
+    sendEvaluation(data : any, studentName : string,id :number){
+
+      this.http.post(this.baseUrlLocal+'/evaluation/'+id, data,{ headers: this.setHeader() }).
+      subscribe(respanse => {
+
+        this.openMessage("Thank You ", `your Evaluation for ${ studentName} is submited Have a nice Day`, true )
+      }, error => {
+       console.log(error)
+        const message = error.error.message ;
+       this.openMessage("ERR", message, true)
+
+      });
+    }
+
+    saveRandomHash(data : any){
+
+      this.http.post(this.baseUrlLocal+'/random', data,{ headers: this.setHeader() }).
+      subscribe(respanse => {
+
+
+      }, error => {
+
+       console.log(error)
+
+
+      });
+    }
+
+
 
 
 
@@ -99,7 +128,7 @@ export class  StudentService{
         }, error => {
          // console.log(error.error.message)
           const message = error.error.message ;
-         this.openMessage("ERR", message)
+         this.openMessage("ERR", message,false)
 
         });
 
@@ -117,6 +146,21 @@ export class  StudentService{
 
         this.studentUpdated.next([...this.students]);
 
+
+    },
+    error => {
+        console.log("DELETE call in error", error);
+
+
+
+    })
+
+    }
+
+    destroyUrl(id: number){
+      this.http.delete(this.baseUrlLocal+'/random/'+id,{ headers: this.setHeader() }).subscribe((val) => {
+
+        console.log(val)
 
     },
     error => {
@@ -152,7 +196,7 @@ export class  StudentService{
 
     }
 
-    openMessage(title : String,message : String): void {
+    openMessage(title : String,message : String, so : boolean): void {
       //console.log(data)
       const dialogRef = this.dialog.open(MsgErrorComponent, {
         width: '20%',
@@ -169,6 +213,11 @@ export class  StudentService{
       dialogRef.afterClosed().subscribe(result => {
 
 
+//console.log("close it ")
+if (so === true) {
+  window.location.href = '/thank'
+
+}
 
 
 
@@ -184,6 +233,26 @@ const data = await res.json()
 
 
 return parseInt(data)
+
+
+
+    }
+    async getstudentEvaluation(mat : number){
+        const res = await fetch(this.baseUrlLocal+`/evaluation/`+mat)
+        const data = await res.json()
+
+
+
+        return data
+    }
+    async getSudentById(id : number){
+
+      const res = await fetch(this.baseUrlLocal+`/students/data/`+id)
+      const data = await res.json()
+
+
+
+      return data
 
 
 
@@ -208,6 +277,20 @@ return parseInt(data)
 
 
   }
+  async getEvaMatricule(){
+    const res  =  await fetch(this.baseUrlLocal+`/matricule`)
+    const data = await res.json()
 
+
+    return data
+  }
+async getUrl(id: number){
+
+  const res  =  await fetch(this.baseUrlLocal+`/random/`+id)
+  const data = await res.json()
+
+
+  return data
+}
 
 }//class

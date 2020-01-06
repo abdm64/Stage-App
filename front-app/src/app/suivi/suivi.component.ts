@@ -3,7 +3,7 @@ import { Students } from '../../../models/Student';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { MatIconRegistry, MatDialog, PageEvent } from '@angular/material';
+import { MatIconRegistry, MatDialog, PageEvent, MatSnackBar } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, transition, style, animate } from '@angular/animations';
 import gql from 'graphql-tag';
@@ -13,6 +13,7 @@ import { EvaluationDialogComponent} from '../evaluation-dialog/evaluation-dialog
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { PDFService} from '../pdf.Service';
 import { DatePipe} from '@angular/common';
+import { ClipboardService } from 'ngx-clipboard'
 
 
 
@@ -49,6 +50,7 @@ private studentSub:Subscription;
 
 
 fetchArray : any[]
+matArray : number[]
 searchTerm ='';
 
   end = 9;
@@ -57,7 +59,11 @@ searchTerm ='';
   last : any ;
   pageOption = [9];
   pageIndex = 0;
-
+  baseUrlLocal = "http://localhost:4200/evaluation";
+  baseUrlLocalp = "http://172.16.60.36:3000/"
+  baseUrlLocalk = "http://172.16.60.36:31515/"
+  //http://localhost:4200/evaluation?id=3&name=abdellah%20messelleka
+  url : string ='';
   ascending = false;
   totalMedics: any;
   loading = false;
@@ -104,7 +110,7 @@ searchTerm ='';
 
   // tslint:disable-next-line: max-line-length
   constructor(public datepipe : DatePipe ,public studentsService :StudentService ,public dialog: MatDialog, private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer, public pdf : PDFService) {
+              private domSanitizer: DomSanitizer, public pdf : PDFService, private _clipboardService: ClipboardService,private _snackBar: MatSnackBar) {
 
     /* form init */
     this.form = new FormGroup({
@@ -156,8 +162,11 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
-    
+
+
     this.studentsService.getMatricule()
+    this.getMatArray()
+
 
 
    this.studentsService.getStudentNumber().then(res =>
@@ -187,36 +196,6 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
      }
 
-  // setLoading() {
-  //   /*
-  //     total ====> 100%
-  //     data =====> X
-  //   */
-  //   let result = (this.data.length * 100) / this.totalMedics;
-  //   result = ~~(result);
-  //   this.progress = this.progress > result ? this.progress : result;
-
-
-  // }
-
-
-
-//   setLoad(val) {
-
-//     this.end = val;
-//     this.rests = this.students.length  - this.end
-//     if (this.students.length === 0)
-//       this.rest = 0;
-
-//     else
-//       this.rest = Math.max(this.students.length - this.end, 0);
-//       this.rests = Math.max(this.students.length - this.end, 0);
-
-// }
-
-
-
-
 
   ngOnDestroy(){
     this.studentSub.unsubscribe();
@@ -235,22 +214,41 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
     });
   }
 
-  openStudentEvaluation(student : any){
+  openMail(student : any){
+    let random = this.randomString(10)
+    let randomHash = {
+      id : student.matricule,
+      random : random
+    }
+    //post the randomHash to API
+    this.studentsService.saveRandomHash(randomHash)
+    //console.log(randomHash)
 
 
-    const dialogRef = this.dialog.open(EvaluationDialogComponent, {
-      width: '60%',
-      height: '75%',
-      data: student
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
+this.url = this.baseUrlLocal+`?id=${student.matricule}#${random}`
 
 
-    });
+var addresses = student.encadreurmMail;
+var body =`Hi  ${student.encadreur},
+%0A
+%0A
+%0A
+Please fellow the link below to evaluate the  student  ${student.nom}  ${student.prenom}
+%0A
+%0A
+%0A
+Link :    ${this.url}
+%0A
+%0A
+%0A
+Have a nice day
+%0A
+%0A
+%0ABest Regards,`
+var subject = `Evaluation de  ${student.nom}  ${student.prenom} `
 
-
-
+var mail = `mailto: ${addresses}?subject=${subject}&body=${body}`
+  window.open(mail);
   }
 
 
@@ -270,8 +268,6 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
      else{
 
       this.studentsService.getStudentSearch(term)
-      console.log(this.studentsService.maxNumber)
-      //this.last = this.students.length
 
 
 
@@ -281,7 +277,15 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
  }
-
+  randomString(length) {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 
 
  getStudentDate(student : any){
@@ -367,6 +371,24 @@ onChangePage(pageData : PageEvent){
    this.pdf.createPdfStage(student)
 
 
+ }
+ async createPdfeva(student : any){
+
+  await this.pdf.createEvaPdf(student)
+ }
+ async getMatArray(){
+
+  this.matArray = await this.studentsService.getEvaMatricule()
+
+ }
+
+
+
+
+ checkMatArray(student : any){
+
+   const mat = student.matricule;
+return this.matArray.includes(mat);
  }
 
 

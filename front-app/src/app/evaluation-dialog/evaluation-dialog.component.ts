@@ -31,7 +31,7 @@ export class EvaluationDialogComponent implements OnInit {
   createPdf(evaForm : NgForm ) {
 
 
-this.pdf.createEvaPdf(evaForm,this.student)
+//this.pdf.createEvaPdf(evaForm,this.student)
 
 
 

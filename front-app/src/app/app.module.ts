@@ -44,6 +44,9 @@ import { MsgErrorComponent } from './msg-error/msg-error.component';
 import { AuthMsgComponent } from './auth-msg/auth-msg.component';
 import { EvaluationDialogComponent } from './evaluation-dialog/evaluation-dialog.component';
 import { PDFService} from './pdf.Service';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { ClipboardModule } from 'ngx-clipboard';
+import { ThankComponent } from './thank/thank.component';
 
 
 
@@ -69,7 +72,9 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     EncadreurComponent,
     MsgErrorComponent,
     AuthMsgComponent,
-    EvaluationDialogComponent
+    EvaluationDialogComponent,
+    EvaluationComponent,
+    ThankComponent
   ],
     entryComponents: [DialogOverviewExampleDialog, MsgConfirmComponent, ExcelWindowComponent,EncadreurComponent,MsgErrorComponent,EvaluationDialogComponent] ,
   imports: [
@@ -87,6 +92,7 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
+    ClipboardModule,
 
     MatSnackBarModule,
     CommonModule,
