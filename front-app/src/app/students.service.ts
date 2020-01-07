@@ -86,12 +86,12 @@ export class  StudentService{
 
       this.http.post(this.baseUrlLocal+'/evaluation/'+id, data,{ headers: this.setHeader() }).
       subscribe(respanse => {
-
-        this.openMessage("Thank You ", `your Evaluation for ${ studentName} is submited Have a nice Day`, true )
+        this.destroyUrl(id)
+        this.openMessage("Thank You ", `your Evaluation for ${ studentName} is submited Have a nice Day`, true,false )
       }, error => {
        console.log(error)
         const message = error.error.message ;
-       this.openMessage("ERR", message, true)
+       this.openMessage("ERR", message, true,true)
 
       });
     }
@@ -128,7 +128,7 @@ export class  StudentService{
         }, error => {
          // console.log(error.error.message)
           const message = error.error.message ;
-         this.openMessage("ERR", message,false)
+         this.openMessage("ERR", message,false,true)
 
         });
 
@@ -196,7 +196,7 @@ export class  StudentService{
 
     }
 
-    openMessage(title : String,message : String, so : boolean): void {
+    openMessage(title : String,message : String, so : boolean ,err : boolean): void {
       //console.log(data)
       const dialogRef = this.dialog.open(MsgErrorComponent, {
         width: '20%',
@@ -214,7 +214,7 @@ export class  StudentService{
 
 
 //console.log("close it ")
-if (so === true) {
+if (so === true && err === false) {
   window.location.href = '/thank'
 
 }

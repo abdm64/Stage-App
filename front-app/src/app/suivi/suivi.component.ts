@@ -357,8 +357,6 @@ selectAllStudent(){
 onChangePage(pageData : PageEvent){
   const pageIndex = pageData.pageIndex;
   this.pageIndex = pageIndex
-
-
   this.studentsService.getStudent(9,pageIndex + 1)
 
 

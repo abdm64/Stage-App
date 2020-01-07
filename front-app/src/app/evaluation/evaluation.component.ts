@@ -48,8 +48,8 @@ export class EvaluationComponent implements OnInit {
     this.studentService.sendEvaluation(evaluation, this.name,this.id)
 
      //destroy URL Here by deleting randomHash from database
-     
-    this.studentService.destroyUrl(this.id)
+
+    //this.studentService.destroyUrl(this.id)
 
 
 

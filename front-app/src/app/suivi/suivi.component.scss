@@ -183,7 +183,8 @@
     }
 
     .separation {
-        width: 100%;
+        margin-left: 3%;
+        width: 93%;
         height: 1px;
         background-color: #e1e4e8;
         @include mat-elevation(1);
@@ -192,15 +193,15 @@
     .medicaments {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: normal;
+        //align-items: left;
         width: 98%;
+        margin: 1% 1%;
 
-        margin-top: 12px;
-        margin: 0 1%;
 
         .medic-card {
             margin: 8px 0px;
+            margin-left: 3%;
 
             width: 96%;
 
