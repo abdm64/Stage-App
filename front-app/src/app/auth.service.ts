@@ -20,7 +20,7 @@ import { Subject} from 'rxjs';
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocal = "http://localhost:3000/api";
+  baseUrlLocal = localStorage.getItem('url')+'api';
   baseUrlLocalp = "http://172.16.60.36:3000/api"
   baseUrlLocalk = "http://172.16.60.36:31515/api"
   token = ""
@@ -60,6 +60,7 @@ createUser(email : string, password: string){
 
 }
 login(email : string, password: string){
+  console.log(this.baseUrlLocal)
     const authData : AuthData = {
         email: email, password : password
     }

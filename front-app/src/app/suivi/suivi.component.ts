@@ -59,10 +59,10 @@ searchTerm ='';
   last : any ;
   pageOption = [9];
   pageIndex = 0;
-  baseUrlLocal = "http://localhost:4200/evaluation";
+  baseUrlLocal = localStorage.getItem('url')+"evaluation";
   baseUrlLocalp = "http://172.16.60.36:3000/evaluation"
   baseUrlLocalk = "http://172.16.60.36:31515/"
-  //http://localhost:4200/evaluation?id=3&name=abdellah%20messelleka
+  
   url : string ='';
   ascending = false;
   totalMedics: any;
@@ -162,10 +162,11 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
+    
 
 
     this.studentsService.getMatricule()
-    this.getMatArray()
+  
 
 
 
@@ -192,7 +193,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
 
-
+    this.getMatArray()
 
      }
 
@@ -383,10 +384,16 @@ onChangePage(pageData : PageEvent){
 
 
 
- checkMatArray(student : any){
+  checkMatArray(student : any){
 
    const mat = student.matricule;
-return this.matArray.includes(mat);
+   const so = this.matArray === undefined
+ 
+    if (!so) {
+      return   this.matArray.includes(mat);
+        
+    } 
+
  }
 
 

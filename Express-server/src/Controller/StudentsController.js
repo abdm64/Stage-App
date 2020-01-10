@@ -92,6 +92,7 @@ exports.getStudents =  (req,res, next)=>{
 
 
   exports.addStudent = (req,res,next)=>{
+    
     var  student = new Students(req.body)
     const nom = req.body.nom
     const prenom = req.body.prenom

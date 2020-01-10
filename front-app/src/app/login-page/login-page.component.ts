@@ -14,12 +14,15 @@ import { AuthService } from '../auth.service';
 export class LoginPageComponent implements OnInit {
 
   constructor(public authService : AuthService) { }
+  baseUrl = window.location.href
 
 
 
   ngOnInit() {
     localStorage.removeItem("auth");
     localStorage.removeItem("token");
+    console.log(this.baseUrl)
+    localStorage.setItem('url',this.baseUrl)
   }
 
   login(form : NgForm){

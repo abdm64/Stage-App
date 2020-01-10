@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
 @Injectable({providedIn :'root'})
 
 export class  StudentService{
-   baseUrlLocal = "http://localhost:3000/api";
+   baseUrlLocal = localStorage.getItem('url')+'api';
    baseUrlLocalp = "http://172.16.60.36:3000/api"
    baseUrlLocalk = "http://172.16.60.36:31515/api"
 

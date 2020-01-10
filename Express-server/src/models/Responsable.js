@@ -26,6 +26,6 @@ const RseponsableSchema = new Schema({
     
 });
 
-module.exports =  mongoose.model('Ecadreur',RseponsableSchema,'ecadreur');
+module.exports =  mongoose.model('Ecadreur',RseponsableSchema,'encadreur');
 
 
