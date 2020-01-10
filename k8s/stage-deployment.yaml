@@ -14,7 +14,7 @@ spec: # specify the caractirstique of the deployment
     spec:
       containers: # all information about the container
       - name: stage-app # name of the container should be (stagedb in mongodb deployment file same as code source)
-        image: djezzy-api3:5000/stageapp:v1  # based image container could be from docekr hub or local image
+        image: djezzy-api3:5000/stageapp:v1  # based image container could be from docekr hub or local image mongoku 
         imagePullPolicy: IfNotPresent # image download from docker hub 
         ports: # all information about the ports
         - containerPort: 3000 # container port in (case expose in Dockerfile)
@@ -27,6 +27,7 @@ spec: # specify the caractirstique of the deployment
 # to remove an object u must use : kubectl delete -f 'config file'
 # to update an object  u must delete deployment and created agin soulution 1
 # build image with tag and refer to it  ( docker build -t djezzy-api3:5000/stageapp:v1)
+# docker run -d --name mongoku -p 3100:3100 huggingface/mongoku
 # update image with the following cammand :{kubectl set image deployment/stage-deployment stage-app=djezzy-api3:5000/stageapp:v2 }
 
 
