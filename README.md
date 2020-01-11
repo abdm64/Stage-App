@@ -5,7 +5,7 @@ from idea to deploy on Docker & K8s
 
 ## Getting Started
 
-Intern Management Pro is an app that allow to HR Department In Veon/Djezzy savig much time in the operation of handling interns in the company mor ethan 1000 intens each year the app is made using javascript  stack the following  instructions show how you can use the project and deploy it in private cloud 
+Intern Management Pro is an app that allow to HR Department In Veon/Djezzy savig much time in the operation of handling interns in the company more than 1000 interns each year the app is made using javascript  stack the following  instructions show how you can use the project and deploy it in private cloud 
 
 ### Development environment
 
