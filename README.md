@@ -15,16 +15,27 @@ These instructions will get you a copy of the project up and running on your loc
     to run the server side of the app : 
 
 ```
-cd Express-server 
+$cd Express-server 
 
-npm install
-``` 
-    and then 
+$npm install
+```
  ```
- node app.js 
+ $node app.js 
 
 ```
-make sure than the mongodb is running 
+make sure that the mongodb is running , Now the API is running on localhost:3000
+to run the client-app : 
+```
+$cd front-app
+
+$npm install
+```
+ ```
+ $ng serve
+
+```
+and now the app is running on localhsot:4200
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
