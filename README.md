@@ -5,7 +5,7 @@ from idea to deploy on Docker & K8s
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Intern Management Pro is an app that allow to HR Department In Veon/Djezzy savig much time in the operation of handling interns in the company mor ethan 1000 intens each year the app is made using javascript  stack the following  instructions show how you can use the project and deploy it in private cloud 
 
 ### Development environment
 
@@ -98,11 +98,11 @@ $kubectl delete  -f k8s
 
 * **Messelleka Abdellah** - *DevOps Engineer @* - [Djezzy](http://www.djezzy.dz/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License 
 
 ## Credits
 
