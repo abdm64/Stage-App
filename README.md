@@ -75,7 +75,22 @@ you can customize the build of the app image by changing the Dockerfile in Expre
 
 ### Kubernetes K8s
 
-Explain how to run the automated tests for this system
+you can deploy this app on kubernetes system easily by applying the k8s yaml files, make sure taht you upload the app image to the docke hub or private registry and change image parameter in stage-deployment.yaml to  use your private image name and then apply the following cammand in the root folder
+
+```
+$kubectl apply -f k8s
+
+```
+
+and that's it now you Mean App that is deploy on kubernetes cluster , alwayse you can change the prameter 
+
+to drop the deployment
+
+```
+$kubectl delete  -f k8s
+
+```
+
 
 
 
@@ -89,8 +104,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Credits
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Made with ❤️ by Abdellah & Safaa
