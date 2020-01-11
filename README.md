@@ -58,10 +58,16 @@ make sur that you change url on app.js to stagedb:27017 and simply run the camma
 $docker-compose up 
 ```
 
-And repeat
+drop the app 
 
 ```
-until finished
+$docker-compose down 
+```
+or you can build your own docker image and push it to your repo
+```
+$cd Express-server
+
+$docker build -t myApp:v1 . 
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
