@@ -49,9 +49,9 @@ Home Page
 
 
 
-### Production  environment
+### Deployment
 
-### Docker
+## Docker
 after intalling docker on your machine you run production version on docker by using docker-compsoe 
 make sur that you change url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
@@ -70,49 +70,18 @@ $cd Express-server
 $docker build -t myApp:v1 . 
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+you can customize the build of the app image by changing the Dockerfile in Express-server/Dockerfile
 
-## Running the tests
+
+## Kubernetes K8s
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Messelleka Abdellah** - *DevOps Engineer @* - [Djezzy](https://djezzy.dz)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
