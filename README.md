@@ -1,20 +1,30 @@
 # Intern Managment Pro
 
-One Paragraph of project description goes here
+Full stack App javascript MEAN Stack MongoDB, Express, Angular2+, NodeJs
+from idea to deploy on Docker & K8s
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Development environment
 
- you need to install to install node.js and mongodb and then run npm install in the Express-server folder
+### Prerequisites 
+
+ First you need  to install node.js , mongodb, and Angular CLI  on your machine  
+    to run the server side of the app : 
 
 ```
 cd Express-server 
-npm install
-```
 
+npm install
+``` 
+    and then 
+ ```
+ node app.js 
+
+```
+make sure than the mongodb is running 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
