@@ -8,10 +8,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+ you need to install to install node.js and mongodb and then run npm install in the Express-server folder
 
 ```
-Give examples
+cd Express-server 
+npm install
 ```
 
 ### Installing
