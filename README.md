@@ -38,7 +38,16 @@ $npm install
 ```
 and now the app is running on localhsot:4200
 
+Login Page
+
 ![Alt text](./images/image1.png?raw=true "Title")
+
+Home Page
+
+
+![Alt text](./images/image2.png?raw=true "Title")
+
+
 
 ### Installing
 
