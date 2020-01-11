@@ -49,9 +49,9 @@ Home Page
 
 
 
-### Deployment
+## Deployment
 
-## Docker
+### Docker
 after intalling docker on your machine you run production version on docker by using docker-compsoe 
 make sur that you change url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
@@ -73,7 +73,7 @@ $docker build -t myApp:v1 .
 you can customize the build of the app image by changing the Dockerfile in Express-server/Dockerfile
 
 
-## Kubernetes K8s
+### Kubernetes K8s
 
 Explain how to run the automated tests for this system
 
@@ -81,7 +81,7 @@ Explain how to run the automated tests for this system
 
 ## Authors
 
-* **Messelleka Abdellah** - *DevOps Engineer @* - [Djezzy](https://djezzy.dz)
+* **Messelleka Abdellah** - *DevOps Engineer @* - [Djezzy](http://www.djezzy.dz/)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
