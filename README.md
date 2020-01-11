@@ -49,14 +49,13 @@ Home Page
 
 
 
-### Installing
+### Production  environment
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+### Docker
+after intalling docker on your machine you run production version on docker by using docker-compsoe 
+make sur that you change url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
-Give the example
+$docker-compose up 
 ```
 
 And repeat
