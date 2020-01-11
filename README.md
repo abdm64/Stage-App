@@ -20,11 +20,11 @@ $cd Express-server
 $npm install
 ```
  ```
- $node app.js 
+ $nodemon app.js 
 
 ```
 
-make sure that the mongodb is running , Now the API is running on localhost:3000/api
+make sure that the mongodb is running , Now the API is running on localhost:3000/api;
  to run the client-app : 
 
 ```
@@ -37,6 +37,8 @@ $npm install
 
 ```
 and now the app is running on localhsot:4200
+
+![Alt text](./images/image1.png?raw=true "Title")
 
 ### Installing
 
