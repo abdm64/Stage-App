@@ -24,7 +24,7 @@ $npm install
 
 ```
 
-make sure that the mongodb is running , Now the API is running on localhost:3000/api;
+make sure that the mongodb is running , Now the API is running on localhost:3000/api
    <br/> to run the client-app : 
 
 ```
@@ -36,7 +36,7 @@ $npm install
  $ng serve
 
 ```
-and now the app is running on localhsot:4200
+and now the client-app is running on localhsot:4200
 
 Login Page
 
