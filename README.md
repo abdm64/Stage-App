@@ -67,7 +67,7 @@ or you can build your own docker image and push it to your repo
 ```
 $cd Express-server
 
-$docker build -t myApp:v1 . 
+$docker build -t my-app:v1 . 
 ```
 
 you can customize the build of the app image by changing the Dockerfile in Express-server/Dockerfile
