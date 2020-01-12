@@ -20,3 +20,8 @@ COPY . /usr/src/app
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
+# to build image: $docker build -t my-app:v1 . 
+
+
+# to run Image: $docker run -d -p 20:3000 --restart always --name stageappz stageapp:v1

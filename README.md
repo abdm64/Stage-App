@@ -25,7 +25,7 @@ $npm install
 ```
 
 make sure that the mongodb is running , Now the API is running on localhost:3000/api;
-    to run the client-app : 
+   <br/> to run the client-app : 
 
 ```
 $cd front-app
