@@ -1,7 +1,7 @@
 # Intern Managment Pro
 
 Full stack App javascript MEAN Stack MongoDB, Express, Angular2+, NodeJs
-from idea to deploy on Docker & K8s
+with beautiful UI/UX from scratch to deployed on Docker & K8s
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ $npm install
 ```
 
 make sure that the mongodb is running , Now the API is running on localhost:3000/api;
- to run the client-app : 
+    to run the client-app : 
 
 ```
 $cd front-app
@@ -75,14 +75,14 @@ you can customize the build of the app image by changing the Dockerfile in Expre
 
 ### Kubernetes K8s
 
-you can deploy this app on kubernetes system easily by applying the k8s yaml files, make sure taht you upload the app image to the docke hub or private registry and change image parameter in stage-deployment.yaml to  use your private image name and then apply the following cammand in the root folder
+you can deploy this app on kubernetes system easily by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change image name config in stage-deployment.yaml  and then apply the following cammand in the root folder
 
 ```
 $kubectl apply -f k8s
 
 ```
 
-and that's it now you Mean App that is deploy on kubernetes cluster , alwayse you can change the prameter 
+and that's it, now you MEAN Stack  App  is deployed on kubernetes cluster , "always you can change the config" 
 
 to drop the deployment
 
