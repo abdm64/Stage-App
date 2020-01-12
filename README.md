@@ -1,11 +1,11 @@
-# Intern Managment Pro
+# Interns Managment Pro
 
 Full stack App javascript MEAN Stack MongoDB, Express, Angular2+, NodeJs
 with beautiful UI/UX from scratch to deployed on Docker & K8s
 
 ## Getting Started
 
-Intern Management Pro is an app that allow to HR Department In Veon/Djezzy savig much time in the operation of handling interns in the company more than 1000 interns each year the app is made using javascript  stack the following  instructions show how you can use the project and deploy it in private cloud 
+Interns Management Pro is an app that allow to HR Department In Veon/Djezzy savig much time in the operation of handling interns in the company more than 1000 interns each year the app is made using javascript  stack the following  instructions show how you can use the project and deploy it in private cloud 
 
 ### Development environment
 
@@ -52,7 +52,7 @@ Home Page
 ## Deployment
 
 ### Docker
-after intalling docker on your machine you run production version on docker by using docker-compsoe 
+after installing docker on your machine you run production version on docker by using docker-compsoe 
 make sur that you change url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
 $docker-compose up 
