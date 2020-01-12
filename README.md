@@ -52,7 +52,7 @@ Home Page
 ## Deployment
 
 ### Docker
-after installing docker on your machine you run a production version on docker by using docker-comps make sure that you change the url on app.js to stagedb:27017 and simply run the command docker-compose up  on the root folder
+after installing docker on your machine you run a production version on docker by using docker-comps make sure that you change the url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
 $docker-compose up 
 ```
@@ -74,7 +74,7 @@ you can customize the build of the app image by changing the Dockerfile in Expre
 
 ### Kubernetes K8s
 
-you can deploy this app on kubernetes system easily by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change the image name config in stage-deployment.yaml  and then apply the following command in the root folder
+you can deploy this app on kubernetes system easily by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change the image name config in stage-deployment.yaml  and then apply the following cammand in the root folder
 
 ```
 $kubectl apply -f k8s
