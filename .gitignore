@@ -1,2 +1,4 @@
 /data
 .DS_Store.
+/Express-server/package-lock.json
+/front-app/package-lock.json
