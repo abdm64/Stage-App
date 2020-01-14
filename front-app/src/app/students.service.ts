@@ -9,6 +9,7 @@ import { Router} from '@angular/router';
 
 
 @Injectable({providedIn :'root'})
+// This class handel all the network services related to student
 
 export class  StudentService{
    baseUrlLocal = localStorage.getItem('url')+'api';
