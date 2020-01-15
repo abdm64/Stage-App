@@ -10,7 +10,7 @@ import { Router} from '@angular/router';
 
 @Injectable({providedIn :'root'})
 
-// StudentService handel all networking related to student
+// StudentService handel all networking related to students
 
 export class  StudentService{
    baseUrlLocalk = 'http://localhost:3000/api';
