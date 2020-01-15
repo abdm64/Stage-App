@@ -2,10 +2,45 @@ h2{
     text-align: center;
 }
 
-.shadow{
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
-}
+// .shadow{
+//     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+// }
 
 h2{
     font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+.enc{
+    width: 50%;
+    height: 45%;
+}
+
+.sector{
+   
+    width: 50%;
+    height: 45%;
+ 
+ }
+ .type{
+    // width: 20px;
+ 
+    width: 50%;
+    height: 45%;
+ 
+ }
+ .date{
+    // width: 20px;
+   
+    width: 50%;
+    height: 45%;
+ 
+ 
+ }
+ .flex-container {
+        margin-top: -1.5%;
+         display: flex;
+        height: 98%;
+         flex-wrap: wrap;
+        align-content: space-between;
+   
+  }
+ 

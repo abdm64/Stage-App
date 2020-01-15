@@ -7,15 +7,16 @@ import { DatePipe} from '@angular/common';
 
 
 @Injectable({providedIn :'root'})
+//StudentService handel all networking related to dashboard
 
 export class ChartService  {
 
-  baseUrlLocalp = localStorage.getItem('url')+'api/';
+  baseUrlLocalp = "http://localhost:3000/api/";
   baseUrlLocalk = "http://172.16.60.36:3000/api/"
   baseUrlLocal = "http://172.16.60.36:31515/api/"
 
 
-  constructor(private http:HttpClient , private datepipe :DatePipe) { }
+  constructor(private http:HttpClient) { }
 
   setHeader(){
 
@@ -60,6 +61,14 @@ async getEncadreurSec(){
  async getDateFin(){
 
   var  data  =await  this.http.get(this.baseUrlLocal+'students/datefin',  { headers: this.setHeader() }).toPromise();
+
+
+
+ return data
+ }
+ async getTypes(){
+
+  var  data  =await  this.http.get(this.baseUrlLocal+'students/types',  { headers: this.setHeader() }).toPromise();
 
 
 

@@ -26,8 +26,10 @@ spec: # specify the caractirstique of the deployment
 # to apply the config file  : kubectl apply -f stage-deployment.yaml
 # to remove an object u must use : kubectl delete -f 'config file'
 # to update an object  u must delete deployment and created agin soulution 1
-# build image with tag and refer to it  ( docker build -t djezzy-api3:5000/stageapp:v1)
+# build image with tag and refer to it  ( docker build -t stageapp:v1.3)
 # docker run -d --name mongoku -p 3100:3100 huggingface/mongoku
 # update image with the following cammand :{kubectl set image deployment/stage-deployment stage-app=djezzy-api3:5000/stageapp:v2 }
+# docker tag a8aef50a1691 djezzy-api3:5000/stageapp:v1.3
+#docker push djezzy-api3:5000/stageapp:v1.3
 
 

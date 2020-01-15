@@ -30,6 +30,17 @@ exports.getEcadreurDep = (req,res)=>{
    //console.log(arraySec)
       });
       }
+      exports.getTypes = (req,res)=>{
+        var arrayTypes = []
+       
+        Students.find().then(documents =>{
+          for (docment of documents) {
+            arrayTypes.push(docment.typeStage)
+          }
+       res.status(200).send(getElemnt(arrayTypes))
+       
+          });
+          }
   
 
 

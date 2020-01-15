@@ -344,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" style=\"width: 900px; height: 400px;\">\n<div >\n    <!-- style=\"widows: 450px;\"> -->\n\n\n\n        <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\">\n            <div class=\"card-body p-5\">\n  <h2 style=\"font-size:2rem\">   Nombre de stagiaires par département </h2>\n  <canvas id=\"enc\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block; \"></canvas>\n            </div>\n        </div>\n\n\n        <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n            <div class=\"card-body p-5\">\n    <h2 style=\"font-size:2rem\">\n      Nombre de stagiaires par secteur</h2>\n      <canvas id=\"sector\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n\n\n            </div>\n            </div>\n</div>\n\n\n\n\n\n\n<div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n    <div class=\"card-body p-5\">\n  <div style=\"display: block\">\n    <h2 style=\"font-size:2rem\">Suivi des stagiaires par mois</h2>\n    <canvas id=\"date\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n\n  </div>\n    </div>\n</div>\n\n\n\n\n\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n<div class=\"flex-container\" >\n\n<div class = \"enc\">\n  <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\">\n    <div class=\"card-body p-5\">\n<h2 style=\"font-size:2rem\">   Nombre de stagiaires par département </h2>\n<canvas id=\"enc\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block; \"></canvas>\n    </div>\n</div>\n\n</div>\n\n \n\n\n\n\n<div class = \"sector\">\n  <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n    <div class=\"card-body p-5\">\n  <h2 style=\"font-size:2rem\">\n  Nombre de stagiaires par secteur</h2>\n  <canvas id=\"sector\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n  \n  \n    </div>\n    </div>\n\n</div>\n\n\n\n<div class = \"type\">\n \n            <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\">\n              <div class=\"card-body p-5\">\n    <h2 style=\"font-size:2rem\">   Nombre de stagiaires par type de stage </h2>\n    <canvas id=\"type\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block; \"></canvas>\n              </div>\n          </div>\n</div>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<!-- date  -->\n\n<div class=\"date\">\n\n  <div class=\"card mb-5 wow fadeInUp shadow\" data-wow-delay=\".4s\" >\n    <div class=\"card-body p-5\">\n  <div style=\"display: block\">\n    <h2 style=\"font-size:2rem\">Suivi des stagiaires par mois</h2>\n    <canvas id=\"date\" width=\"850\" height=\"473\" class=\"chartjs-render-monitor\" style=\"display:block;\"></canvas>\n\n  </div>\n    </div>\n</div>\n\n\n</div>\n\n\n\n\n\n</div>\n\n");
 
 /***/ }),
 
@@ -769,7 +769,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: 'suivi', component: _suivi_suivi_component__WEBPACK_IMPORTED_MODULE_4__["SuiviComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]], canLoad: [_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
-    { path: 'insert', component: _form_insert_component__WEBPACK_IMPORTED_MODULE_3__["InsertComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
+    // canActivate : [AuthGuard]
+    { path: 'insert', component: _form_insert_component__WEBPACK_IMPORTED_MODULE_3__["InsertComponent"] },
     { path: '', component: _login_page_login_page_component__WEBPACK_IMPORTED_MODULE_5__["LoginPageComponent"] },
     { path: 'sign', component: _signup_page_signup_page_component__WEBPACK_IMPORTED_MODULE_6__["SignupPageComponent"] },
     { path: 'chart', component: _chart_chart_component__WEBPACK_IMPORTED_MODULE_8__["ChartComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
@@ -1234,16 +1235,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-
 
 
 
 var ChartService = /** @class */ (function () {
-    function ChartService(http, datepipe) {
+    function ChartService(http) {
         this.http = http;
-        this.datepipe = datepipe;
-        this.baseUrlLocalp = localStorage.getItem('url') + 'api/';
+        this.baseUrlLocalp = "http://localhost:3000/api/";
         this.baseUrlLocalk = "http://172.16.60.36:3000/api/";
         this.baseUrlLocal = "http://172.16.60.36:31515/api/";
     }
@@ -1304,12 +1302,25 @@ var ChartService = /** @class */ (function () {
             });
         });
     };
+    ChartService.prototype.getTypes = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var data;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.http.get(this.baseUrlLocal + 'students/types', { headers: this.setHeader() }).toPromise()];
+                    case 1:
+                        data = _a.sent();
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     ChartService.ctorParameters = function () { return [
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
-        { type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"] }
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
     ]; };
     ChartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({ providedIn: 'root' })
+        //StudentService handel all networking related to dashboard
     ], ChartService);
     return ChartService;
 }());
@@ -1327,7 +1338,7 @@ var ChartService = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("h2 {\n  text-align: center;\n}\n\n.shadow {\n  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);\n}\n\nh2 {\n  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcnQvQzpcXFByb2plY3RcXFN0YWdlLUFwcC1tYXN0ZXJcXGZyb250LWFwcC9zcmNcXGFwcFxcY2hhcnRcXGNoYXJ0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jaGFydC9jaGFydC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSwyQ0FBQTtBQ0NKOztBREVBO0VBQ0kseURBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2NoYXJ0L2NoYXJ0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDJ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5zaGFkb3d7XHJcbiAgICBib3gtc2hhZG93OiAwcHggOHB4IDE1cHggcmdiYSgwLCAwLCAwLCAwLjQpO1xyXG59XHJcblxyXG5oMntcclxuICAgIGZvbnQtZmFtaWx5OiAgSGVsdmV0aWNhIE5ldWUsIEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWY7XHJcbn1cclxuIiwiaDIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5zaGFkb3cge1xuICBib3gtc2hhZG93OiAwcHggOHB4IDE1cHggcmdiYSgwLCAwLCAwLCAwLjQpO1xufVxuXG5oMiB7XG4gIGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2EgTmV1ZSwgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("h2 {\n  text-align: center;\n}\n\nh2 {\n  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;\n}\n\n.enc {\n  width: 50%;\n  height: 45%;\n}\n\n.sector {\n  width: 50%;\n  height: 45%;\n}\n\n.type {\n  width: 50%;\n  height: 45%;\n}\n\n.date {\n  width: 50%;\n  height: 45%;\n}\n\n.flex-container {\n  margin-top: -1.5%;\n  display: -webkit-box;\n  display: flex;\n  height: 98%;\n  flex-wrap: wrap;\n  align-content: space-between;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcnQvQzpcXFByb2plY3RcXFN0YWdlLUFwcC1tYXN0ZXJcXGZyb250LWFwcC9zcmNcXGFwcFxcY2hhcnRcXGNoYXJ0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jaGFydC9jaGFydC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FDQ0o7O0FETUE7RUFDSSx5REFBQTtBQ0hKOztBREtBO0VBQ0ksVUFBQTtFQUNBLFdBQUE7QUNGSjs7QURLQTtFQUVJLFVBQUE7RUFDQSxXQUFBO0FDSEo7O0FETUM7RUFHRyxVQUFBO0VBQ0EsV0FBQTtBQ0xKOztBRFFDO0VBR0csVUFBQTtFQUNBLFdBQUE7QUNQSjs7QURXQztFQUNPLGlCQUFBO0VBQ0Msb0JBQUE7RUFBQSxhQUFBO0VBQ0QsV0FBQTtFQUNDLGVBQUE7RUFDRCw0QkFBQTtBQ1JSIiwiZmlsZSI6InNyYy9hcHAvY2hhcnQvY2hhcnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoMntcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLy8gLnNoYWRvd3tcclxuLy8gICAgIGJveC1zaGFkb3c6IDBweCA4cHggMTVweCByZ2JhKDAsIDAsIDAsIDAuNCk7XHJcbi8vIH1cclxuXHJcbmgye1xyXG4gICAgZm9udC1mYW1pbHk6ICBIZWx2ZXRpY2EgTmV1ZSwgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjtcclxufVxyXG4uZW5je1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNDUlO1xyXG59XHJcblxyXG4uc2VjdG9ye1xyXG4gICBcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDQ1JTtcclxuIFxyXG4gfVxyXG4gLnR5cGV7XHJcbiAgICAvLyB3aWR0aDogMjBweDtcclxuIFxyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNDUlO1xyXG4gXHJcbiB9XHJcbiAuZGF0ZXtcclxuICAgIC8vIHdpZHRoOiAyMHB4O1xyXG4gICBcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDQ1JTtcclxuIFxyXG4gXHJcbiB9XHJcbiAuZmxleC1jb250YWluZXIge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IC0xLjUlO1xyXG4gICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGhlaWdodDogOTglO1xyXG4gICAgICAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICAgICAgYWxpZ24tY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgXHJcbiAgfVxyXG4gXHJcbiIsImgyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG5oMiB7XG4gIGZvbnQtZmFtaWx5OiBIZWx2ZXRpY2EgTmV1ZSwgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjtcbn1cblxuLmVuYyB7XG4gIHdpZHRoOiA1MCU7XG4gIGhlaWdodDogNDUlO1xufVxuXG4uc2VjdG9yIHtcbiAgd2lkdGg6IDUwJTtcbiAgaGVpZ2h0OiA0NSU7XG59XG5cbi50eXBlIHtcbiAgd2lkdGg6IDUwJTtcbiAgaGVpZ2h0OiA0NSU7XG59XG5cbi5kYXRlIHtcbiAgd2lkdGg6IDUwJTtcbiAgaGVpZ2h0OiA0NSU7XG59XG5cbi5mbGV4LWNvbnRhaW5lciB7XG4gIG1hcmdpbi10b3A6IC0xLjUlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBoZWlnaHQ6IDk4JTtcbiAgZmxleC13cmFwOiB3cmFwO1xuICBhbGlnbi1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1370,32 +1381,36 @@ var ChartComponent = /** @class */ (function () {
     };
     ChartComponent.prototype.getDatas = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var enc, sec, dateFin, dateDebut, err_1;
+            var enc, sec, type, dateFin, dateDebut, err_1;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 5, , 6]);
+                        _a.trys.push([0, 6, , 7]);
                         return [4 /*yield*/, this.chartservice.getEncadreur()];
                     case 1:
                         enc = _a.sent();
                         return [4 /*yield*/, this.chartservice.getEncadreurSec()];
                     case 2:
                         sec = _a.sent();
-                        return [4 /*yield*/, this.chartservice.getDateFin()];
+                        return [4 /*yield*/, this.chartservice.getTypes()];
                     case 3:
+                        type = _a.sent();
+                        return [4 /*yield*/, this.chartservice.getDateFin()];
+                    case 4:
                         dateFin = _a.sent();
                         return [4 /*yield*/, this.chartservice.getDateDebut()];
-                    case 4:
+                    case 5:
                         dateDebut = _a.sent();
                         this.createPie(enc, "enc");
                         this.createPie(sec, "sector");
+                        this.createPie(type, "type");
                         this.createBar(dateFin, dateDebut, 'date');
-                        return [3 /*break*/, 6];
-                    case 5:
+                        return [3 /*break*/, 7];
+                    case 6:
                         err_1 = _a.sent();
                         console.log(err_1);
-                        return [3 /*break*/, 6];
-                    case 6: return [2 /*return*/];
+                        return [3 /*break*/, 7];
+                    case 7: return [2 /*return*/];
                 }
             });
         });
@@ -2792,7 +2807,7 @@ var StudentService = /** @class */ (function () {
         this.http = http;
         this.dialog = dialog;
         this.router = router;
-        this.baseUrlLocalk = localStorage.getItem('url') + 'api';
+        this.baseUrlLocalk = 'http://localhost:3000/api';
         this.baseUrlLocalp = "http://172.16.60.36:3000/api";
         this.baseUrlLocal = "http://172.16.60.36:31515/api";
         this.result = '#';
@@ -2843,9 +2858,17 @@ var StudentService = /** @class */ (function () {
         var _this = this;
         this.http.post(this.baseUrlLocal + '/students/insertData', data, { headers: this.setHeader() }).
             subscribe(function (respanse) {
+            console.log(respanse);
             _this.studentUpdated.next([_this.students]);
-            _this.router.navigate(['suivi']);
+            //check if token exist 
+            if (localStorage.getItem("token") === null) {
+                _this.openMessage("Susses", "Operation succeeded", false, true);
+            }
+            else {
+                _this.router.navigate(['suivi']);
+            }
         }, function (error) {
+            console.log(error);
             var message = error.error.message;
             _this.openMessage("ERR", message, false, true);
         });
@@ -2961,7 +2984,7 @@ var StudentService = /** @class */ (function () {
             }
         });
         dialogRef.afterClosed().subscribe(function (result) {
-            //console.log("close it ")
+            console.log(result);
             if (so === true && err === false) {
                 window.location.href = '/thank';
             }
@@ -2974,6 +2997,7 @@ var StudentService = /** @class */ (function () {
     ]; };
     StudentService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
+        // StudentService handel all networking related to student
     ], StudentService);
     return StudentService;
 }()); //class
@@ -3052,7 +3076,7 @@ var SuiviComponent = /** @class */ (function () {
         this._snackBar = _snackBar;
         this.students = [];
         this.studentsCopy = [];
-        this.placeHolder = "ALL";
+        this.placeHolder = "Tous";
         this.searchTerm = '';
         this.end = 9;
         this.rest = 0;
@@ -3107,6 +3131,7 @@ var SuiviComponent = /** @class */ (function () {
         this.studentsService.getStudent(9, 1);
         this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(function (students) {
             _this.students = students;
+            _this.studentsCopy = students;
         });
         this.getMatArray();
     };
@@ -3132,8 +3157,7 @@ var SuiviComponent = /** @class */ (function () {
         this.studentsService.saveRandomHash(randomHash);
         this.url = this.baseUrlLocal + ("?id=" + student.matricule + "#" + random);
         var addresses = student.encadreurmMail;
-        var logo;
-        var body = "Bonjour  " + student.encadreur + ",\n%0A\n%0A\n%0A\nMerci de bien vouloir renseigner la fiche d'\u00E9valuation de  " + student.nom + "  " + student.prenom + " en cliquant sur le lien ci-apr\u00E9s\n%0A\n%0A\n%0A\nLien :    " + this.url + "\n%0A\n%0A\n%0A\n%0A\n%0A\n%0ABien cordialement,\n%0A\n%0A\n%0A\n" + logo + "\n";
+        var body = "Bonjour  " + student.encadreur + ",\n%0A\n%0A\n%0A\nMerci de bien vouloir renseigner la fiche d'\u00E9valuation de  " + student.nom + "  " + student.prenom + " en cliquant sur le lien ci-apr\u00E9s\n%0A\n%0A\n%0A\nLien :    " + this.url + "\n%0A\n%0A\n%0A\n%0A\n%0A\n%0ABien cordialement,\n%0A\n%0A\n%0A\nDjezzy Academy\n";
         var subject = "Evaluation de  " + student.nom + "  " + student.prenom + " ";
         var mail = "mailto: " + addresses + "?subject=" + subject + "&body=" + body;
         window.open(mail);
@@ -3171,13 +3195,12 @@ var SuiviComponent = /** @class */ (function () {
     };
     SuiviComponent.prototype.selectEncours = function () {
         var e_1, _a;
-        var studentEnd = [];
         this.students = this.studentsCopy;
+        var studentEnd = [];
         try {
             for (var _b = tslib__WEBPACK_IMPORTED_MODULE_0__["__values"](this.students), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var student = _c.value;
                 if (this.getStudentDate(student)) {
-                    //do the staff
                     studentEnd.push(student);
                 }
             }
@@ -3190,9 +3213,9 @@ var SuiviComponent = /** @class */ (function () {
             finally { if (e_1) throw e_1.error; }
         }
         this.students = studentEnd;
-        this.rests = Math.max(this.students.length - this.end, 0);
         this.placeHolder = "en cours";
     };
+    //
     SuiviComponent.prototype.selectStudenEnd = function () {
         var e_2, _a;
         var studentEnd = [];
@@ -3214,12 +3237,11 @@ var SuiviComponent = /** @class */ (function () {
             finally { if (e_2) throw e_2.error; }
         }
         this.students = studentEnd;
-        this.rests = Math.max(this.students.length - this.end, 0);
         this.placeHolder = "Treminé";
     };
     SuiviComponent.prototype.selectAllStudent = function () {
         this.students = this.studentsCopy;
-        this.placeHolder = "ALL";
+        this.placeHolder = "Tous";
     };
     SuiviComponent.prototype.onChangePage = function (pageData) {
         var pageIndex = pageData.pageIndex;

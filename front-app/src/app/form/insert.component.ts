@@ -54,7 +54,7 @@ export class InsertComponent implements OnInit {
           this.studentsService.addStudent(form.value);
 
 
-
+          //form.reset()
 
 
 

@@ -42,8 +42,9 @@ app.get('/api/students/data' ,auth , studentController.getStudents)
 app.get('/api/students/data/:id',studentController.getStudentById)
 
 
+//,auth
 
-app.post('/api/students/insertData',auth,studentController.addStudent);
+app.post('/api/students/insertData',studentController.addStudent);
 
 
  //delete data by name in the by matrecule

@@ -10,8 +10,10 @@ import { Router} from '@angular/router';
 
 @Injectable({providedIn :'root'})
 
+// StudentService handel all networking related to student
+
 export class  StudentService{
-   baseUrlLocalk = localStorage.getItem('url')+'api';
+   baseUrlLocalk = 'http://localhost:3000/api';
    baseUrlLocalp = "http://172.16.60.36:3000/api"
    baseUrlLocal = "http://172.16.60.36:31515/api"
 
@@ -25,7 +27,7 @@ export class  StudentService{
 
 
 
-    constructor(private http:HttpClient, public dialog: MatDialog, public router : Router){
+    constructor(private http:HttpClient, private dialog: MatDialog, private router : Router){
 
     }
     setHeader(){
@@ -101,10 +103,20 @@ export class  StudentService{
 
    this.http.post(this.baseUrlLocal+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
+          console.log(respanse)
           this.studentUpdated.next([this.students]);
-          this.router.navigate(['suivi'])
-        }, error => {
+          //check if token exist 
+          if ( localStorage.getItem("token") === null) {
+
+            this.openMessage("Susses", "Operation succeeded",false,true)
+
+          } else {
+            this.router.navigate(['suivi'])
+          }
+         
         
+        }, error => {
+        console.log(error)
           const message = error.error.message ;
          this.openMessage("ERR", message,false,true)
 
@@ -260,7 +272,7 @@ openMessage(title : String,message : String, so : boolean ,err : boolean): void 
   dialogRef.afterClosed().subscribe(result => {
 
 
-//console.log("close it ")
+console.log(result)
 if (so === true && err === false) {
 window.location.href = '/thank'
 

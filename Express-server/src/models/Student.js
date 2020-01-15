@@ -133,7 +133,7 @@ encadreurSec:{
 
 user:{
     type:String,
-    required:true
+    required:false
   
   },
 

@@ -16,6 +16,8 @@ router.get('/api/students/enc',auth,chartController.getEcadreurDep)
 //get Sector
   
 router.get('/api/students/encSec',auth,chartController.getEcadreurSec)
+
+router.get('/api/students/types',chartController.getTypes)
     
   
     //************************** chart date debut ,auth */
@@ -24,9 +26,7 @@ router.get('/api/students/encSec',auth,chartController.getEcadreurSec)
   
       //************************** chart date fin ,auth */
 
-      router.get('/api/students/datefin',auth,chartController.getDateFin
-    
-      )
+      router.get('/api/students/datefin',auth,chartController.getDateFin )
 
 
 

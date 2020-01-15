@@ -45,6 +45,7 @@ async getDatas(){
     try {
       let enc = await this.chartservice.getEncadreur()
       let sec = await this.chartservice.getEncadreurSec()
+      let type = await this.chartservice.getTypes()
      let dateFin = await this.chartservice.getDateFin()
      let dateDebut = await this.chartservice.getDateDebut()
 
@@ -52,6 +53,7 @@ async getDatas(){
 
       this.createPie(enc,"enc")
       this.createPie(sec,"sector")
+       this.createPie(type,"type")
       this.createBar(dateFin,dateDebut,'date')
 
 
