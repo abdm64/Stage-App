@@ -1,0 +1,36 @@
+
+
+<h1 fxLayoutAlign="center center" >Bienvenu à Djezzy Espace Stagiaires</h1>
+
+
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title style=" font-family: Helvetica Neue, Helvetica, Arial, sans-serif" >Log in</mat-card-title>
+      </mat-card-header>
+
+
+      <form (submit) = "login(loginForm)" #loginForm = "ngForm" >
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput  name = "email"   ngModel type = "email"  placeholder="E-mail"   #emailInput = "ngModel" required email>
+            <mat-error *ngIf = "emailInput.isValid">please enter valid email</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput  type = "password" name = "password" ngModel placeholder="Password"  #passwordInput = "ngModel" required password>
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button  style="background-color: #E2001A; border-color:#E2001A ; color: white;" class="btn-block" >Login</button>
+        <button mat-stroked-button style="background-color: white; border-color:#E2001A ; color: #E2001A;" routerLink="/sign" class="btn-block" >Sign in</button>
+      </form>
+    </mat-card>
+
+
+
+  </div>
+
+

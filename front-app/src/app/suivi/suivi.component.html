@@ -1,0 +1,153 @@
+
+
+
+
+
+<mat-sidenav-container >
+
+
+        <div class="container">
+
+
+
+
+
+            <div class="filter" [formGroup]="form">
+                <button mat-icon-button class="search-icon search" >
+                    <mat-icon aria-label="label">search</mat-icon>
+                </button>
+                <button mat-icon-button class="search-icon menu" >
+                    <mat-icon aria-label="label">menu</mat-icon>
+                </button>
+                <input  [(ngModel)] = "searchTerm" (ngModelChange) = "search()"  placeholder="Recherche..." type="text" class="mat-body-strong" formControlName="search" />
+                <mat-select placeholder="{{placeHolder}}">
+                    <mat-option (click) =" selectAllStudent()">
+                        Tous
+                       </mat-option>
+                  <mat-option (click)="selectEncours()">
+                    en cours
+                  </mat-option>
+                  <mat-option (click) =" selectStudenEnd()">
+                   Terminé
+                  </mat-option>
+
+                </mat-select>
+
+
+
+            </div>
+
+            <div class="content">
+                <div class="info">
+                    <div class="text">
+                        <span class="title">Stagiaires <button mat-icon-button color="warn">
+                                <mat-icon>info_outline</mat-icon>
+                            </button></span>
+                        <p class="description">Nombre de stagiaires:  {{ last }} <span class="number"></span> </p>
+                    </div>
+
+                </div>
+                <ng-container *ngIf="!loading; else elseTemplate">
+                    <div class="separation"></div>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <mat-progress-bar [mode]="type" [value]="progress" style="width: 100%"></mat-progress-bar>
+                </ng-template>
+
+                <div class="medicaments">
+
+                    <mat-card style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);" *ngFor="let student of students | load : end ;let i = index ;"
+                        [@fade]="{value: '*', params: { delay: (i*300)%2700}}" class="medic-card">
+
+
+                       <div class="remboursement" [ngClass]="{'isremb': getStudentDate(student)}"></div>
+
+
+                        <mat-card-header style="position:relative;">
+                          <div class="app-download" style="position:absolute; margin-left:70%; margin-top:5px;width: 50px;">{{student.matricule}}</div>
+                            <mat-card-title>{{student.nom   }}</mat-card-title>
+                            <mat-card-title>{{" " + student.prenom  }}</mat-card-title>
+                            <mat-card-subtitle class="DCI">{{student.email}}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content class="card-content">
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="therapy"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Date debut</mat-label>
+                                    <input matInput class="input" [value]="student.dateDebut | date:'yyyy-MM-dd'" disabled>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="input_way"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Date fin</mat-label>
+                                    <input matInput class="input" [value]="student.dateFin | date:'yyyy-MM-dd' " disabled>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="labo"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Encadreur</mat-label>
+                                    <input matInput class="input"
+                                        [value]="student.encadreur" disabled>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="row">
+                                <mat-icon class="prefix" svgIcon="price"></mat-icon>
+                                <mat-form-field class="field" appearance="legacy" floatLabel="always">
+                                    <mat-label>Type de stage</mat-label>
+                                    <input matInput class="input" [value]="student.typeStage"
+                                        disabled>
+                                </mat-form-field>
+
+                            </div>
+
+
+
+                        </mat-card-content>
+                        <mat-card-actions  align="center"  >
+
+                          <button mat-button color="black"  [matMenuTriggerFor]="menu" >  <mat-icon >picture_as_pdf</mat-icon></button>
+
+                          <button mat-button   color="black" (click)= " openMail(student)" [disabled] = "checkMatArray(student)"><mat-icon >mail</mat-icon></button>
+                          <button mat-button color="black"  [matMenuTriggerFor]="editMenu"><mat-icon>menu</mat-icon></button>
+
+
+                          <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="createPdf(student)" [disabled] = "!student.attestation"> Attestaion de stage</button>
+                            <button mat-menu-item (click)="createPdfeva(student)" [disabled] = "!checkMatArray(student)">Evaluation</button>
+                          </mat-menu>
+                          <mat-menu #editMenu="matMenu">
+                            <button mat-button color="black" (click)="openDialog(student)"><mat-icon>edit</mat-icon>Editer</button>
+                            <button mat-button color="warn" (click)= " openDialogDelete(student)"><mat-icon >delete</mat-icon>Supprimer</button>
+                          </mat-menu>
+
+
+
+
+
+
+
+
+
+
+
+                        </mat-card-actions>
+                    </mat-card>
+
+                </div>
+
+
+
+            </div>
+
+
+            <mat-paginator [length] = "last"  [pageSize] = "9" [pageSizeOptions] = "pageOption" (page)="onChangePage($event)" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);margin-top: 1rem; margin-bottom:1rem;"></mat-paginator>
+        </div>
+
+
+    </mat-sidenav-container>
+
+
