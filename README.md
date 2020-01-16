@@ -82,7 +82,8 @@ $ng build --prod
 
 ### Docker-compose 
    
-   the easiest  way to launch the app on production environment with docker is using the docker-compose tools: 
+   The easiest  way to launch the app on production environment with docker is using the docker-compose tools: 
+   <br>
        run  "docker-compose up"  from the command line in the root folder (don't forget to change the database url with the name of service "stagedbone" apiUrl )
 
 ```
@@ -90,7 +91,7 @@ $docker-compose up
 ```
 ### Docker image 
 
-   build your own docker image and push it to your repo  by running  d"ocker build -t my-app-name:v1 . "
+   Build your own docker image and push it to your repo  by running  "docker build -t my-app-name:v1 . "
    from the cammand line in Express-server folder you can push it to your own registy 
 
 
@@ -105,21 +106,16 @@ $docker build -t my-app-name:v1 .
 
 ### Kubernetes K8s
 
-you can deploy this app on kubernetes system easily by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change the image name config in stage-deployment.yaml  and then apply the following cammand in the root folder
+ Deploy this app on kubernetes system can be so easy by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change the image name config in stage-deployment.yaml  , then run "kubectl apply -f k8s" from the cammand line in the root folder
 
 ```
 $kubectl apply -f k8s
 
 ```
 
-and that's it, now you MEAN Stack  App  is deployed on kubernetes cluster , "always you can change the config" 
+ Remember : "always you can change the config and the api urls" 
 
-to drop the deployment
 
-```
-$kubectl delete  -f k8s
-
-```
 
 
 
