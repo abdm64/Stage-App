@@ -24,7 +24,7 @@ Download or clone the  project code from https://github.com/abdm64/Stage-App
 
 Install all required npm packages by running npm install from the command line in the  Express-server folder (where the package.json is located).
 
-Start the api by running npm start from the command line in the Express-serverr folder, you should see the message Server listening on port 3000. You can test the api directly using an application such as Postman or you can test it with one of the page web, make sure the mongoDB is running 
+Start the api by running npm start from the command line in the Express-server folder, you should see the message Server listening on port 3000. You can test the api directly using an application such as Postman or you can test it with one of the page web, make sure the mongoDB is running 
 
 ```
 $cd Express-server 
