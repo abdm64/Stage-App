@@ -9,15 +9,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import gql from 'graphql-tag';
 import { StudentService } from '../students.service';
 import { DialogOverviewExampleDialog } from '../dialog/dialog.component';
-import { EvaluationDialogComponent} from '../evaluation-dialog/evaluation-dialog.component';
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { PDFService} from '../pdf.Service';
 import { DatePipe} from '@angular/common';
 import { ClipboardService } from 'ngx-clipboard'
-
-
-
-
+import { environment } from '../../environments/environment';
+const   BASE_URl = environment.apiUrl;
 
 
 export const fade = trigger('fade', [
@@ -59,9 +56,7 @@ searchTerm ='';
   last : any ;
   pageOption = [9];
   pageIndex = 0;
-  baseUrlLocal = localStorage.getItem('url')+"evaluation";
-  baseUrlLocalp = "http://172.16.60.36:3000/evaluation"
-  baseUrlLocalk = "http://172.16.60.36:31515/"
+
 
   url : string ='';
   ascending = false;
@@ -223,7 +218,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
 
-this.url = this.baseUrlLocal+`?id=${student.matricule}#${random}`
+this.url = BASE_URl+`evaluation?id=${student.matricule}#${random}`
 
 
 var addresses = student.encadreurmMail;

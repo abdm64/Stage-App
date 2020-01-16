@@ -1,28 +1,19 @@
 import {Injectable, Input } from  '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from './AuthData';
-
 import {Router} from "@angular/router"
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
-
 import { Subject} from 'rxjs';
+import { environment } from '../environments/environment';
+// StudentService handel all networking related to student
 
 
-
-
-
-
-
-
-
-
+const  BASE_URL = environment.apiUrl+'api';
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  baseUrlLocalk = localStorage.getItem('url')+'api';
-  baseUrlLocalp = "http://172.16.60.36:3000/api"
-  baseUrlLocal = "http://172.16.60.36:31515/api"
+  
   token = ""
   name:Subject<string> = new Subject()
     constructor(private http: HttpClient ,private router: Router,public dialog: MatDialog){
@@ -40,7 +31,7 @@ createUser(email : string, password: string){
     }
 
 
-    this.http.post(this.baseUrlLocal+'/user/sign', authData).subscribe(res => {
+    this.http.post(BASE_URL+'/user/sign', authData).subscribe(res => {
 
       console.log(res)
       this.router.navigate(['suivi']);
@@ -60,12 +51,12 @@ createUser(email : string, password: string){
 
 }
 login(email : string, password: string){
-  console.log(this.baseUrlLocal)
+  
     const authData : AuthData = {
         email: email, password : password
     }
 
-    this.http.post<{token : string}>(this.baseUrlLocal+'/user/login', authData).subscribe(response => {
+    this.http.post<{token : string}>(BASE_URL+'/user/login', authData).subscribe(response => {
 
 
 

@@ -1,6 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DatePipe} from '@angular/common';
+
+import { environment } from '../environments/environment';
+
+const  BASE_URL = environment.apiUrl + 'api';
 
 
 
@@ -11,9 +14,6 @@ import { DatePipe} from '@angular/common';
 
 export class ChartService  {
 
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocalk = "http://172.16.60.36:3000/api/"
-  baseUrlLocal = "http://172.16.60.36:31515/api/"
 
 
   constructor(private http:HttpClient) { }
@@ -32,7 +32,7 @@ export class ChartService  {
 
 
 
- const data =  await this.http.get(this.baseUrlLocal+'students/enc',   { headers: this.setHeader() }).toPromise();
+ const data =  await this.http.get(BASE_URL+'/students/enc',   { headers: this.setHeader() }).toPromise();
 
 
 return data
@@ -41,7 +41,7 @@ return data
 
 async getEncadreurSec(){
 
-  let  data =await  this.http.get(this.baseUrlLocal+'students/encSec',  { headers: this.setHeader() }).toPromise();
+  let  data =await  this.http.get(BASE_URL+'/students/encSec',  { headers: this.setHeader() }).toPromise();
 
 
  return data
@@ -50,7 +50,7 @@ async getEncadreurSec(){
 
  async getDateDebut(){
 
-  var  data  =await  this.http.get(this.baseUrlLocal+'students/datedebut', { headers: this.setHeader() }).toPromise();
+  var  data  =await  this.http.get(BASE_URL+'/students/datedebut', { headers: this.setHeader() }).toPromise();
 
 
 
@@ -60,7 +60,7 @@ async getEncadreurSec(){
 
  async getDateFin(){
 
-  var  data  =await  this.http.get(this.baseUrlLocal+'students/datefin',  { headers: this.setHeader() }).toPromise();
+  var  data  =await  this.http.get(BASE_URL+'/students/datefin',  { headers: this.setHeader() }).toPromise();
 
 
 
@@ -68,7 +68,7 @@ async getEncadreurSec(){
  }
  async getTypes(){
 
-  var  data  =await  this.http.get(this.baseUrlLocal+'students/types',  { headers: this.setHeader() }).toPromise();
+  var  data  =await  this.http.get(BASE_URL+'/students/types',  { headers: this.setHeader() }).toPromise();
 
 
 

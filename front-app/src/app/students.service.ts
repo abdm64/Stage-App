@@ -5,17 +5,13 @@ import {Observable, Subject} from 'rxjs';
 import { MsgErrorComponent} from "./msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
 import { Router} from '@angular/router';
-
-
-
-@Injectable({providedIn :'root'})
-
+import { environment } from '../environments/environment';
 // StudentService handel all networking related to student
-
+const  BASE_URL = environment.apiUrl + 'api';
+@Injectable({providedIn :'root'})
 export class  StudentService{
-   baseUrlLocalk = 'http://localhost:3000/api';
-   baseUrlLocalp = "http://172.16.60.36:3000/api"
-   baseUrlLocal = "http://172.16.60.36:31515/api"
+  
+ 
 
   result : string = '#' ;
 
@@ -41,7 +37,7 @@ export class  StudentService{
     getStudent(pageSize : number, pageIndex : number){
 
       const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
-      this.http.get<{students:Students[],maxNumber : number}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() }).
+      this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+'/students/data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
 
         this.maxNumber = postData.maxNumber
@@ -57,14 +53,14 @@ export class  StudentService{
 
       const queryParms = `?search=${term}`
 
-     return this.http.get<{students:Students[],maxNumber : number}>(this.baseUrlLocal+'/students/data'+queryParms,  { headers: this.setHeader() })
+     return this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+'/students/data'+queryParms,  { headers: this.setHeader() })
    
 
     }
 
     sendEvaluation(data : any, studentName : string,id :number){
 
-      this.http.post(this.baseUrlLocal+'/evaluation/'+id, data,{ headers: this.setHeader() }).
+      this.http.post(BASE_URL+'/evaluation/'+id, data,{ headers: this.setHeader() }).
       subscribe(respanse => {
         this.destroyUrl(id)
         this.openMessage("Thank You ", `your Evaluation for ${ studentName} is submited Have a nice Day`, true,false )
@@ -78,7 +74,7 @@ export class  StudentService{
 
     saveRandomHash(data : any){
 
-      this.http.post(this.baseUrlLocal+'/random', data,{ headers: this.setHeader() }).
+      this.http.post(BASE_URL+'/random', data,{ headers: this.setHeader() }).
       subscribe(respanse => {
 
 
@@ -101,7 +97,7 @@ export class  StudentService{
     addStudent(data: any){
 
 
-   this.http.post(this.baseUrlLocal+'/students/insertData', data,{ headers: this.setHeader() }).
+   this.http.post(BASE_URL+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
           console.log(respanse)
           this.studentUpdated.next([this.students]);
@@ -127,7 +123,7 @@ export class  StudentService{
     }
 
     deleteStudent(matricules : Number){
-      this.http.delete(this.baseUrlLocal+'/students/deleteData/'+matricules,{ headers: this.setHeader() }).subscribe((val) => {
+      this.http.delete(BASE_URL+'/students/deleteData/'+matricules,{ headers: this.setHeader() }).subscribe((val) => {
         this.students.forEach((t, i) => {
           if (t.matricule === matricules) {   this.students.splice(i,  1); }
 
@@ -148,7 +144,7 @@ export class  StudentService{
     }
 
     destroyUrl(id: number){
-      this.http.delete(this.baseUrlLocal+'/random/'+id,{ headers: this.setHeader() }).subscribe((val) => {
+      this.http.delete(BASE_URL+'/random/'+id,{ headers: this.setHeader() }).subscribe((val) => {
 
         console.log(val)
 
@@ -163,7 +159,7 @@ export class  StudentService{
     }
 
     updateStudent(matricule : Number,dataOne : any){
-      this.http.put(this.baseUrlLocal+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
+      this.http.put(BASE_URL+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 
           // console.log("PUT Request is successful ", data);
@@ -191,19 +187,19 @@ export class  StudentService{
 
   getStudentNumber(){
 
-   return this.http.get<number>(this.baseUrlLocal+'/students/number',  { headers: this.setHeader() })
+   return this.http.get<number>(BASE_URL+'/students/number',  { headers: this.setHeader() })
 
 
     }
     async getstudentEvaluation(mat : number){
       // try fetch data with native javascript fetch
-        const res = await fetch(this.baseUrlLocal+`/evaluation/`+mat)
+        const res = await fetch(BASE_URL+`/evaluation/`+mat)
         const data = await res.json()
         return data
     }
     getSudentById(id : number){
 
-      return this.http.get(this.baseUrlLocal+'/students/data/'+id,  { headers: this.setHeader() })
+      return this.http.get(BASE_URL+'/students/data/'+id,  { headers: this.setHeader() })
 
      
 
@@ -215,7 +211,7 @@ export class  StudentService{
 
  
     var  num : number = 0
-    const res  =  await fetch( this.baseUrlLocal+`/students/numberEnd`)
+    const res  =  await fetch(BASE_URL+`/students/numberEnd`)
     const data = await res.json()
 
     
@@ -234,13 +230,13 @@ export class  StudentService{
 
   }
   getEvaMatricule(){
-    return this.http.get<number[]>(this.baseUrlLocal+'/matricule',  { headers: this.setHeader()})
+    return this.http.get<number[]>(BASE_URL+'/matricule',  { headers: this.setHeader()})
    
   }
 async getUrl(id: number){
 
   //return this.http.get<{ : number[]}>(this.baseUrlLocal+'/random/'+id,  { headers: this.setHeader()})
-  const res  =  await fetch(this.baseUrlLocal+`/random/`+id)
+  const res  =  await fetch(BASE_URL+`/random/`+id)
   const data = await res.json()
 
 
