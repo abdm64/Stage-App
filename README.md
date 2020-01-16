@@ -81,25 +81,26 @@ $ng build --prod
 ```
 
 ### Docker-compose 
+   
+   the easiest  way to launch the app on production environment with docker is using the docker-compose tools: 
+       run  "docker-compose up"  from the command line in the root folder (don't forget to change the database url with the name of service "stagedbone" apiUrl )
 
-after installing docker on your machine you run a production version on docker by using docker-comps make sure that you change the url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
 $docker-compose up 
 ```
+### Docker image 
 
-drop the app 
+   build your own docker image and push it to your repo  by running  d"ocker build -t my-app-name:v1 . "
+   from the cammand line in Express-server folder you can push it to your own registy 
 
-```
-$docker-compose down 
-```
-or you can build your own docker image and push it to your repo
+
 ```
 $cd Express-server
 
-$docker build -t my-app:v1 . 
+$docker build -t my-app-name:v1 . 
 ```
 
-you can customize the build of the app image by changing the Dockerfile in Express-server/Dockerfile
+
 
 
 ### Kubernetes K8s
