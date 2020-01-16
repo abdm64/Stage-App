@@ -35,12 +35,36 @@ h2{
  
  
  }
+
+ .encsector{
+
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    
+    flex-direction:row;
+
+
+ }
+ .typedate{
+    margin-top: -50px ;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+  
+    flex-direction:row;
+
+
+
+ }
  .flex-container {
-        margin-top: -1.5%;
+          margin-right: 20px;
+          margin-left: 20px;
          display: flex;
-        height: 98%;
+         height: auto;
          flex-wrap: wrap;
-        align-content: space-between;
+         align-content: space-between;
+         flex-direction:column;
    
   }
  

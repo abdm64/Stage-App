@@ -17,6 +17,7 @@ export class  StudentService{
 
     private students  : any[] ;
     maxNumber : number
+    superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
 
 
     private  studentUpdated = new  Subject<Students[]>();
@@ -95,14 +96,14 @@ export class  StudentService{
         return this.studentUpdated.asObservable();
     }
     addStudent(data: any){
-
+      const user = data.user
 
    this.http.post(BASE_URL+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
           console.log(respanse)
           this.studentUpdated.next([this.students]);
           //check if token exist 
-          if ( localStorage.getItem("token") === null) {
+          if (!this.superusers.includes(user)) {
 
             this.openMessage("Susses", "Operation succeeded",false,true)
 
@@ -191,6 +192,12 @@ export class  StudentService{
 
 
     }
+    getEncadreur(mat : number){
+
+      return this.http.get(BASE_URL+`/encadreur/data/`+mat,  { headers: this.setHeader() })
+   
+   
+       }
     async getstudentEvaluation(mat : number){
       // try fetch data with native javascript fetch
         const res = await fetch(BASE_URL+`/evaluation/`+mat)

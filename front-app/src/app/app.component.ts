@@ -15,8 +15,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  user : String
+  user : string
   auth = [AuthGuard]
+  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
 
   @ViewChild('sidenavID', {static: true}) sidenav: MatSidenav;
 
@@ -87,7 +88,7 @@ getAuth(){
 
 
 
-  return this.user === "abdm64@live.com" || this.user === "Fatma.TILIOUINE@DJEZZY.DZ"
+  return this.superusers.includes(this.user)
 }
 
 

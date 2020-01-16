@@ -13,7 +13,7 @@ const  BASE_URL = environment.apiUrl+'api';
 @Injectable({providedIn :'root'})
 
 export class AuthService {
-  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ"]
+  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
   
   token = ""
   name:Subject<string> = new Subject()
@@ -35,7 +35,7 @@ createUser(email : string, password: string){
     this.http.post(BASE_URL+'/user/sign', authData).subscribe(res => {
 
     
-      this.router.navigate(['login']);
+      this.router.navigate(['']);
 
 
     } ,  err => {
