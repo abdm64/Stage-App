@@ -11,14 +11,19 @@ const express = require('express');
 const path = require('path');
 const mongoose =require('mongoose');
 const bodyParser = require('body-parser');
- const cors = require('cors');
-//app.use(index);
+const cors = require('cors');
+require('dotenv').config();
+
 
 const app = express();
 //stagedb:27017
+const base_url = process.env.BASE_URL || "mongodb://localhost:27017/test"
+
+
+
 
 mongoose
-.connect("mongodb://localhost:27017/test", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+.connect(base_url, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 .then(() => {
   console.log('Connected to database!');
 })
