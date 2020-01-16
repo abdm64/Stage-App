@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import { DatePipe} from '@angular/common';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { NgForm } from '@angular/forms';
 import { StudentService } from './students.service'
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Injectable({providedIn :'root'})
-
 export class PDFService {
   constructor(public datepipe : DatePipe , private studentService : StudentService){
 
@@ -149,14 +147,13 @@ export class PDFService {
      }
 
      async createEvaPdf(student){
-       const evaluation = await this.studentService.getstudentEvaluation(student.matricule)
+       let evaluation = await this.studentService.getstudentEvaluation(student.matricule)
 
-     // console.log(evaluation)
-    // const evaluation = evaluatio.docs
-
+    
 
 
-      const projet = evaluation.project
+
+      let  projet = evaluation.project
       const etude  = evaluation.etude
       const it = evaluation.it
       const  france = evaluation.france
@@ -165,7 +162,7 @@ export class PDFService {
       const commentaire = evaluation.commentaire
       const global = evaluation.global
 
-      console.log(global)
+     
 
 
 

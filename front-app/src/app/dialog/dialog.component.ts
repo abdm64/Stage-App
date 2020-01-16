@@ -76,7 +76,42 @@ export class DialogOverviewExampleDialog implements OnInit {
 
   }
 
+getEncadreur(mat : number,student: any){
 
+this.studentService.getEncadreur(mat).subscribe((data)=>{
+
+  this.pupulatTheData(data,student)
+})
+
+
+
+  
+}
+
+pupulatTheData(data,student){
+  
+  
+   student.encadreurmMail = data.Email_Address
+  student.encadreur = data.First_name + ' ' +  data.Last_Name 
+  student.encadreurID = data.Employee_Number
+  student.encadreurDEP = data.Departement
+  student.encadreurSec = data.Sector
+  student.encadreurmOrg = data.Organisation
+  this.putTheData(data)
+
+}
+putTheData(data){
+
+
+  this.angForm.value.encadreurmMail = data.Email_Address
+  this.angForm.value.encadreur = data.First_name + ' ' +  data.Last_Name 
+  this.angForm.value.encadreurID= data.Employee_Number
+  this.angForm.value.encadreurDEP = data.Departement
+  this.angForm.value.encadreurSec = data.Sector
+  this.angForm.value.encadreurmOrg = data.Organisation
+  
+  
+}
 
 
 
@@ -84,6 +119,7 @@ export class DialogOverviewExampleDialog implements OnInit {
 
   onClickSubmit(){
 
+    
 
 this.studentService.updateStudent(this.student.matricule,this.angForm.value);
 this.dialogRef.close();

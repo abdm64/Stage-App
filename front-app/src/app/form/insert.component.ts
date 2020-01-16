@@ -3,8 +3,11 @@ import { NgForm, FormGroup } from '@angular/forms';
 import { StudentService } from '../students.service';
 import { MatDialog } from '@angular/material';
 import { EncadreurComponent } from '../encadreur/encadreur.component';
+import { environment } from '../../environments/environment';
 
 
+
+const   BASE_URl = environment.apiUrl + 'api';
 
 @Component({
   selector: 'app-insert',
@@ -12,9 +15,7 @@ import { EncadreurComponent } from '../encadreur/encadreur.component';
   styleUrls: ['./insert.component.scss']
 })
 export class InsertComponent implements OnInit {
-  baseUrlLocalp = "http://localhost:3000/api/";
-  baseUrlLocalk  = "http://172.16.60.36:3000/api/"
-  baseUrlLocal = "http://172.16.60.36:31515/api/"
+
 
   encadreur : any = {
 
@@ -77,7 +78,7 @@ export class InsertComponent implements OnInit {
 
  async getEncadreur(encadreurID : Number){
 
-  const res=  await fetch( this.baseUrlLocal+`encadreur/data/`+encadreurID)
+  const res=  await fetch( BASE_URl+`/encadreur/data/`+encadreurID)
   const data = await res.json()
 
 

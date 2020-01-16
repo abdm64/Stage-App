@@ -7,12 +7,24 @@ with beautiful UI/UX from scratch to deploy on Docker & K8s
 
 Interns Management Pro is an app that allows for HR Department In Veon/Djezzy saving much time in the operation of handling interns in the company (more than 2000 interns each year) the app is made using javascript stack the following instructions show how you can use the project and deploy it in a private cloud
 
-### Development environment
 
-### Prerequisites 
+## Development environment
 
- First you need  to install node.js , mongodb, and Angular CLI  on your machine  
-    to run the server side of the app : 
+### Before you begin
+
+Download and Install NodeJS and NPM from https://nodejs.org/en/download/.
+
+Install Angular CLI  globally Using NPM Cammand "npm install -g @angular/cli"
+
+Download and Install MongoDB  from https://www.mongodb.com/download-center (you can use Mongodb Atlas)
+
+### Running the Node.js API
+
+Download or clone the  project code from https://github.com/abdm64/Stage-App
+
+Install all required npm packages by running npm install from the command line in the  Express-server folder (where the package.json is located).
+
+Start the api by running npm start from the command line in the Express-serverr folder, you should see the message Server listening on port 3000. You can test the api directly using an application such as Postman or you can test it with one of the page web, make sure the mongoDB is running 
 
 ```
 $cd Express-server 
@@ -20,12 +32,16 @@ $cd Express-server
 $npm install
 ```
  ```
- $nodemon app.js 
+ $npm start 
 
 ```
+### Running an Angular  client app with the Node.js API
 
-make sure that the mongodb is running , Now the API is running on localhost:3000/api
-   <br/> to run the client-app : 
+Download or clone the Angular client app  code from https://github.com/abdm64/Stage-App
+
+Install all required npm packages by running npm install from the command line in the front-app  folder (where the package.json is located).
+
+Start the application by running ng serve from the command line in the front-app  folder, this will launch a Server listening on port 4200 displaying the Angular application and it should be hooked up with the Node.js API
 
 ```
 $cd front-app
@@ -36,7 +52,7 @@ $npm install
  $ng serve
 
 ```
-and now the client-app is running on localhsot:4200
+
 
 Login Page
 

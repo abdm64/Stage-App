@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
+
+
 
 
 const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const EXCEL_EXTENSION = '.xlsx';
+const  BASE_URL = environment.apiUrl;
 
 @Injectable()
 export class ExcelService {
 
-  baseUrlLocal = localStorage.getItem('url')+'api/';
-  baseUrlLocalk = "http://172.16.60.36:3000/api/"
-  baseUrlLocalp = "http://172.16.60.36:31515/api"
+
   constructor(private http:HttpClient) { }
   setHeader(){
 
@@ -23,7 +25,7 @@ export class ExcelService {
 
   exportEx(gte:String , lte:String){
 
-     this.http.get(this.baseUrlLocal+'students/data/date/'+gte+'/'+lte,  { headers: this.setHeader() })
+     this.http.get(BASE_URL+'/students/data/date/'+gte+'/'+lte,  { headers: this.setHeader() })
      .subscribe(
        (data: any)  => {
 

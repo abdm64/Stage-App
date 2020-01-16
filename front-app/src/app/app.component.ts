@@ -15,8 +15,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  user : String
+  user : string
   auth = [AuthGuard]
+  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
 
   @ViewChild('sidenavID', {static: true}) sidenav: MatSidenav;
 
@@ -31,7 +32,6 @@ export class AppComponent implements OnInit {
       this.user = name
     })
     this.user = localStorage.getItem("user")
-
 
 
 
@@ -84,8 +84,14 @@ logout()
 
 
 }
+getAuth(){
 
 
 
-
+  return this.superusers.includes(this.user)
 }
+
+
+
+
+}//Class 
