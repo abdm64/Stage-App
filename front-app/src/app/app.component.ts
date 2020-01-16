@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
 
 
 
-
   }
 
 
@@ -84,8 +83,14 @@ logout()
 
 
 }
+getAuth(){
 
 
 
-
+  return this.user === "abdm64@live.com" || this.user === "Fatma.TILIOUINE@DJEZZY.DZ"
 }
+
+
+
+
+}//Class 

@@ -14,8 +14,7 @@ import { ThankComponent } from './thank/thank.component'
 
 const routes: Routes = [
   { path: 'suivi', component: SuiviComponent, canActivate : [AuthGuard],canLoad :[AuthGuard] },
-  // canActivate : [AuthGuard]
-  { path: 'insert', component: InsertComponent },
+  { path: 'insert', component: InsertComponent,canActivate : [AuthGuard] },
   { path: '', component: LoginPageComponent },
   { path: 'sign', component: SignupPageComponent },
   { path: 'chart', component: ChartComponent, canActivate : [AuthGuard]  },

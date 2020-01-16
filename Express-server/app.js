@@ -20,7 +20,7 @@ const app = express();
 const base_url = process.env.BASE_URL || "mongodb://localhost:27017/test"
 
 
-
+console.log(base_url)
 
 mongoose
 .connect(base_url, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })

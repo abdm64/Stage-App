@@ -51,7 +51,7 @@
         </button>
 
 
-            <button mat-menu-item routerLink="/suivi" class="btn">
+            <button mat-menu-item routerLink="/suivi" class="btn" [disabled] = "!getAuth()">
               <mat-icon style=" color: #F0F0F0;">home</mat-icon>
               <span >Accueil</span>
             </button>
@@ -59,11 +59,11 @@
               <mat-icon style=" color: #F0F0F0;">add</mat-icon>
               <span>Ajouter Stagiaire</span>
             </button>
-            <button mat-menu-item  routerLink="/chart" class="btn">
+            <button mat-menu-item  routerLink="/chart" class="btn" [disabled] = "!getAuth()">
               <mat-icon style=" color: #F0F0F0;">dashboard</mat-icon>
               <span>Tableau de Bord</span>
             </button>
-            <button mat-menu-item  (click)="export()" class="btn">
+            <button mat-menu-item  (click)="export()" class="btn" [disabled] = "!getAuth()">
                 <mat-icon style=" color: #F0F0F0;">cloud_download</mat-icon>
                 <span>Exporter Excel</span>
               </button>
