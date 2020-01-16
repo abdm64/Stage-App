@@ -65,9 +65,23 @@ Home Page
 
 
 
-## Deployment
+## Production  environment
 
-### Docker
+### Before you begin
+
+Download and install Docker from https://github.com/docker/toolbox
+
+Must have access to kubernetes cluster on AWS or GKE Google Kubernetes Engine or you can download and install minikube (test  purpose) on your machine from https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+Must build a production version of the angular client app by running ng build --prod from the command line in the front-app  folder don't forget to change the apiUrl  for production environment.
+
+```
+$ng build --prod
+
+```
+
+### Docker-compose 
+
 after installing docker on your machine you run a production version on docker by using docker-comps make sure that you change the url on app.js to stagedb:27017 and simply run the cammand docker-compose up  on the root folder
 ```
 $docker-compose up 
