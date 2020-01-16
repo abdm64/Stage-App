@@ -106,7 +106,7 @@ $docker build -t my-app-name:v1 .
 
 ### Kubernetes K8s
 
- Deploy this app on kubernetes system can be so easy by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change the image name config in stage-deployment.yaml  , then run "kubectl apply -f k8s" from the cammand line in the root folder
+ Deploying this app on kubernetes system can be so easy by applying the k8s yaml files, make sure that you upload the app image to the docker hub or private registry and change the image name config in stage-deployment.yaml  , then run "kubectl apply -f k8s" from the cammand line in the root folder
 
 ```
 $kubectl apply -f k8s
