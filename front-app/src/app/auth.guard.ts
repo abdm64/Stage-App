@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
   isAuthenticated(){
     // auth logic
 
-    if (  this.authusers === 'true'  && this.superusers.includes(this.user) ) {
+    if (  this.authusers === 'true' && this.superusers.includes(this.user)) {
     
 
       return true

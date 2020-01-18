@@ -75,22 +75,26 @@ export class InsertComponent implements OnInit {
   ngOnInit() {
 
   }
+   getEncadreur(encadreurID : number){
 
- async getEncadreur(encadreurID : Number){
+    this.studentsService.getEncadreur(encadreurID).subscribe((enc)=> {
+     this.openValidateDialog(enc)
+  
+     })
+  
+    }
 
-  const res=  await fetch( BASE_URl+`/encadreur/data/`+encadreurID)
-  const data = await res.json()
 
 
-  this.openValidateDialog(data)
 
-  return data
-
-  }
 
   confirmEncadreur(data:any, form:NgForm){
     this.encadreur = data
-    this.encadreur = this.getEncadreur(form.value.encadreurID)
+   // this.encadreur = this.getEncadreur(form.value.encadreurID)
+   this.studentsService.getEncadreur(form.value.encadreurID).subscribe((enc)=> {
+    this.encadreur = enc
+
+   })
   }
 
   openValidateDialog(data :any): void {
