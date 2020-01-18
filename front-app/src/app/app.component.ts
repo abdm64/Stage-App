@@ -4,6 +4,7 @@ import { MatDialog, MatSidenav } from '@angular/material';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import {AuthGuard} from './auth.guard';
 import { AuthService } from './auth.service';
+import { StudentService} from './students.service'
 
 
 
@@ -17,11 +18,11 @@ import { AuthService } from './auth.service';
 export class AppComponent implements OnInit {
   user : string
   auth = [AuthGuard]
-  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
+  superusers : string[]
 
   @ViewChild('sidenavID', {static: true}) sidenav: MatSidenav;
 
-  constructor(public dialog: MatDialog ,public router: Router, public authservice : AuthService) {
+  constructor(public dialog: MatDialog ,public router: Router, public authservice : AuthService, private studentService : StudentService) {
 
 
 
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
       this.user = name
     })
     this.user = localStorage.getItem("user")
-
+  this.superusers = this.studentService.getSuperUser()
 
 
 
@@ -85,9 +86,6 @@ logout()
 
 }
 getAuth(){
-
-
-
   return this.superusers.includes(this.user)
 }
 

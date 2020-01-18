@@ -96,7 +96,10 @@ export class  StudentService{
     }
 
 
+getSuperUser(){
 
+  return  ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
+}
 
 
 
