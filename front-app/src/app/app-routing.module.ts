@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'chart', component: ChartComponent, canActivate : [AuthGuard]  },
   { path: 'auth', component: AuthMsgComponent   },
   { path: 'evaluation', component: EvaluationComponent   },
-  { path: 'thank', component: ThankComponent   }
+  { path: 'thank', component: ThankComponent   },
+  { path: '**', component: LoginPageComponent   }
 
 
 
