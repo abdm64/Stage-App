@@ -18,14 +18,14 @@ const  BASE_URL = environment.apiUrl+'api';
 // StudentService handel all networking related to students
 
 export class  StudentService{
-  
- 
+
+
 
   result : string = '#' ;
 
     private students  : any[] ;
     maxNumber : number
-    superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
+    superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ"]
 
 
     private  studentUpdated = new  Subject<Students[]>();
@@ -42,7 +42,7 @@ export class  StudentService{
       return headers
     }
 
-  
+
     getStudent(pageSize : number, pageIndex : number){
 
       const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
@@ -63,7 +63,7 @@ export class  StudentService{
       const queryParms = `?search=${term}`
 
      return this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+'/students/data'+queryParms,  { headers: this.setHeader() })
-   
+
 
     }
 
@@ -98,7 +98,7 @@ export class  StudentService{
 
 getSuperUser(){
 
-  return  ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ"]
+  return   ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ"]
 }
 
 
@@ -113,7 +113,7 @@ getSuperUser(){
         subscribe(respanse => {
           console.log(respanse)
           this.studentUpdated.next([this.students]);
-          //check if token exist 
+          //check if token exist
           if (!this.superusers.includes(user)) {
 
             this.openMessage("Susses", "Operation succeeded",false,true)
@@ -121,8 +121,8 @@ getSuperUser(){
           } else {
             this.router.navigate(['suivi'])
           }
-         
-        
+
+
         }, error => {
         console.log(error)
           const message = error.error.message ;
@@ -193,7 +193,7 @@ getSuperUser(){
 
     }
 
-    
+
     // refactore source
 
   getStudentNumber(){
@@ -205,8 +205,8 @@ getSuperUser(){
     getEncadreur(mat : number){
 
       return this.http.get(BASE_URL+`/encadreur/data/`+mat,  { headers: this.setHeader() })
-   
-   
+
+
        }
     async getstudentEvaluation(mat : number){
       // try fetch data with native javascript fetch
@@ -218,7 +218,7 @@ getSuperUser(){
 
       return this.http.get(BASE_URL+'/students/data/'+id,  { headers: this.setHeader() })
 
-     
+
 
 
 
@@ -226,12 +226,12 @@ getSuperUser(){
 
   async getMatricule(){
 
- 
+
     var  num : number = 0
     const res  =  await fetch(BASE_URL+`/students/numberEnd`)
     const data = await res.json()
 
-    
+
 
     if (data === null ) {
       num = 1
@@ -248,7 +248,7 @@ getSuperUser(){
   }
   getEvaMatricule(){
     return this.http.get<number[]>(BASE_URL+'/matricule',  { headers: this.setHeader()})
-   
+
   }
 async getUrl(id: number){
 
@@ -271,7 +271,7 @@ async getUrl(id: number){
 
 //Make Multi Alerts
 openMessage(title : String,message : String, so : boolean ,err : boolean): void {
- 
+
   const dialogRef = this.dialog.open(MsgErrorComponent, {
     width: '20%',
     data : {

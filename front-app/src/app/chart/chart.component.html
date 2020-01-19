@@ -1,49 +1,41 @@
 
+<mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'10px'" style="margin-left: 2%;margin-right: 2%;">
+  <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
 
 
-<div class="flex-container" >
-  <div class = "encsector">
+    <canvas id="sector"
 
-<div class = "enc">
-  <div class="card mb-5 wow fadeInUp shadow" data-wow-delay=".4s">
-    <div class="card-body p-5">
-<h2 style="font-size:2rem">   Nombre de stagiaires par département </h2>
-<canvas id="enc" width="850" height="473" class="chartjs-render-monitor" style="display:block; "></canvas>
-    </div>
-</div>
-
-</div>
-
- 
+  ></canvas>
 
 
 
 
-<div class = "sector">
-  <div class="card mb-5 wow fadeInUp shadow" data-wow-delay=".4s" >
-    <div class="card-body p-5">
-  <h2 style="font-size:2rem">
-  Nombre de stagiaires par secteur</h2>
-  <canvas id="sector" width="850" height="473" class="chartjs-render-monitor" style="display:block;"></canvas>
-  
-  
-    </div>
-    </div>
 
-</div>
-</div>
+  </mat-grid-tile>
+  <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
 
-<div class = "typedate">
 
-<div class = "type">
- 
-            <div class="card mb-5 wow fadeInUp shadow" data-wow-delay=".4s">
-              <div class="card-body p-5">
-    <h2 style="font-size:2rem">   Nombre de stagiaires par type de stage </h2>
-    <canvas id="type" width="850" height="473" class="chartjs-render-monitor" style="display:block; "></canvas>
-              </div>
-          </div>
-</div>
+
+
+  <canvas
+  id="enc"
+  ></canvas>
+
+
+
+  </mat-grid-tile>
+  <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+
+
+
+
+
+    <canvas
+id="type"
+
+
+>
+</canvas>
 
 
 
@@ -53,31 +45,19 @@
 
 
 
+</mat-grid-tile>
+  <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4)">
+
+
+
+        <canvas id="date"
+
+
+        ></canvas>
 
 
 
 
 
-<!-- date  -->
-
-<div class="date">
-
-  <div class="card mb-5 wow fadeInUp shadow" data-wow-delay=".4s" >
-    <div class="card-body p-5">
-  <div style="display: block">
-    <h2 style="font-size:2rem">Suivi des stagiaires par mois</h2>
-    <canvas id="date" width="850" height="473" class="chartjs-render-monitor" style="display:block;"></canvas>
-
-  </div>
-    </div>
-</div>
-
-
-</div>
-
-</div>
-
-
-
-</div>
-
+  </mat-grid-tile>
+</mat-grid-list>

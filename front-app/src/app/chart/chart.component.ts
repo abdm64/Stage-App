@@ -51,10 +51,10 @@ async getDatas(){
 
 
 
-      this.createPie(enc,"enc")
-      this.createPie(sec,"sector")
-       this.createPie(type,"type")
-      this.createBar(dateFin,dateDebut,'date')
+      this.createPie(enc,"enc", "Nombre de stagiaires par département")
+      this.createPie(sec,"sector","Nombre de stagiaires par secteur")
+       this.createPie(type,"type","Nombre de stagiaires par type de stage")
+      this.createBar(dateFin,dateDebut,'date',"Suivi des stagiaires par mois")
 
 
     } catch (err) {
@@ -69,7 +69,7 @@ async getDatas(){
 
 
 
-  createBar(dateFin,dateDebut, name){
+  createBar(dateFin,dateDebut, name,title){
 
   let dataMonth = Object.keys(dateFin)
   let dateVlaueFin = Object.values(dateFin)
@@ -99,7 +99,16 @@ async getDatas(){
 
 
 
+      options:{
+        title:{
+          text:title,
+          display:true,
+          fontSize:20,
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+        },
+      responsive: true,
 
+      }
 
 
 
@@ -139,7 +148,7 @@ async getDatas(){
 
 
 
- createPie(data1,nameChart){
+ createPie(data1,nameChart,title){
   let dataNum = Object.values(data1)
   let dataLabl = Object.keys(data1)
 
@@ -164,8 +173,10 @@ data :{
 },
 options:{
   title:{
-    text:"",
-    display:true
+    text:title,
+    display:true,
+    fontSize:20,
+    fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
   },
   responsive: true,
 
