@@ -120,7 +120,7 @@ $kubectl apply -f k8s
 
 
 
-## Authors
+## Author
 
 * **Messelleka Abdellah** - *DevOps Engineer @* - [Djezzy](http://www.djezzy.dz/)
 

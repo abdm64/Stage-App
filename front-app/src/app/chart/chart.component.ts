@@ -104,7 +104,8 @@ async getDatas(){
           text:title,
           display:true,
           fontSize:20,
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+         
         },
       responsive: true,
 
