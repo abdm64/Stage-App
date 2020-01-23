@@ -21,6 +21,7 @@ import {
   , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule ,MatDatepickerModule,
   MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule
 } from '@angular/material';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 import { LoadPipe } from './load.pipe';
@@ -52,7 +53,7 @@ import { ThankComponent } from './thank/thank.component';
 
 
 const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
-  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule];
+  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule,MatTooltipModule];
 @NgModule({
   declarations: [
     AppComponent,

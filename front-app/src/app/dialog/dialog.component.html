@@ -39,7 +39,14 @@
           </mat-form-field>
         <mat-form-field style="width: 100%;">
 
-          <input matInput placeholder="WILAYA" name="wilaya"  [value]="student.wilaya" formControlName="wilaya">
+          <!-- <input matInput placeholder="WILAYA" name="wilaya"  [value]="student.wilaya" formControlName="wilaya"> -->
+
+          <input type="text" placeholder="Wilaya"  matInput  [matAutocomplete]="auto" #wilaya  [value]="student.wilaya" formControlName="wilaya">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let wilaya of wilayas" [value]="wilaya" >
+              {{ wilaya }}
+            </mat-option>
+          </mat-autocomplete>
         </mat-form-field>
         <mat-form-field style="width: 100%;">
           <input matInput placeholder="N° DE TÉLÉPHONE" name="nTelephone"  [value]="student.nTelephone" formControlName="nTelephone">

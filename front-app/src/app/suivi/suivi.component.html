@@ -109,13 +109,14 @@
                         </mat-card-content>
                         <mat-card-actions  align="center"  >
 
-                          <button mat-button color="black"  [matMenuTriggerFor]="menu" >  <mat-icon >picture_as_pdf</mat-icon></button>
+                          <button mat-button color="black"  [matMenuTriggerFor]="menu"  matTooltip="
+                          Générer un fichier PDF">  <mat-icon >picture_as_pdf</mat-icon></button>
 
-                          <button mat-button   color="black" (click)= " openMail(student)" [disabled] = "checkMatArray(student)"><mat-icon >mail</mat-icon></button>
-                          <button mat-button color="black"  [matMenuTriggerFor]="editMenu"><mat-icon>menu</mat-icon></button>
+                          <button mat-button   color="black" (click)= " openMail(student)" [disabled] = "checkMatArray(student)" matTooltip="envoyer un email pour evaluation"><mat-icon >mail</mat-icon></button>
+                          <button mat-button color="black"  [matMenuTriggerFor]="editMenu" matTooltip="editer ou supprimer" ><mat-icon>menu</mat-icon></button>
 
 
-                          <mat-menu #menu="matMenu">
+                          <mat-menu #menu="matMenu"    >
                             <button mat-menu-item (click)="createPdf(student)" [disabled] = "!student.attestation"> Attestaion de stage</button>
                             <button mat-menu-item (click)="createPdfeva(student)" [disabled] = "!checkMatArray(student)">Evaluation</button>
                           </mat-menu>
