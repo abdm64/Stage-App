@@ -20,7 +20,7 @@ Download and Install MongoDB  from https://www.mongodb.com/download-center (you 
 
 ### Running the Node.js API
 
-Download or clone the  project code from https://github.com/abdm64/Stage-App
+Download or clone the  project code from http://172.16.60.37:30000/abdm64/stage-app
 
 Install all required npm packages by running npm install from the command line in the  Express-server folder (where the package.json is located).
 
@@ -37,7 +37,7 @@ $npm install
 ```
 ### Running an Angular  client app with the Node.js API
 
-Download or clone the Angular client app  code from https://github.com/abdm64/Stage-App
+Download or clone the Angular client app  code from http://172.16.60.37:30000/abdm64/stage-app
 
 Install all required npm packages by running npm install from the command line in the front-app  folder (where the package.json is located).
 
