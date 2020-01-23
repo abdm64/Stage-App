@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
   , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule ,MatDatepickerModule,
-  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule,MatCheckboxModule,MatRadioModule
+  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule
 } from '@angular/material';
 
 
@@ -52,7 +52,7 @@ import { ThankComponent } from './thank/thank.component';
 
 
 const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
-  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule];
+  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule];
 @NgModule({
   declarations: [
     AppComponent,

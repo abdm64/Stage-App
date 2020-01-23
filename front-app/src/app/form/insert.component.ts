@@ -1,9 +1,11 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { NgForm, FormGroup } from '@angular/forms';
+import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { StudentService } from '../students.service';
 import { MatDialog } from '@angular/material';
 import { EncadreurComponent } from '../encadreur/encadreur.component';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 
 
@@ -16,7 +18,9 @@ const   BASE_URl = environment.apiUrl + 'api';
 })
 export class InsertComponent implements OnInit {
 
-
+  wilayas: string[] = ['Adrar', 'Chlef', 'Laghouat','Oum El Bouaghi','Batna', 'Béjaïa', 'Biskra','Béchar','Blida','Bouira','Tamanrasset','Tébessa','Tlemcen','Tiaret','Tizi Ouzou','Alger','Djelfa','Jijel','Sétif','Saïda','Skikda','Sidi Bel Abbès','Annaba','Guelma','Constantine','Médéa','Mostaganem','Msila','Mascara','Ouargla','Oran','El Bayadh','Illizi','Bordj Bou Arreridj','Boumerdès','El Tarf','Tindouf','Tissemsilt','El Oued','Khenchela','Souk Ahras','Tipaza','Mila','Aïn Defla','Naâma','Aïn Témouchent','Ghardaïa','Relizane'];
+  WilayaFormControl = new FormControl();
+  filteredWilayas: Observable<string[]>;
   encadreur : any = {
 
 
@@ -38,7 +42,7 @@ export class InsertComponent implements OnInit {
    }
 
 
- async onAddPost(form:NgForm){
+ async onAddPost(form:NgForm,wilaya: string){
 
 
   let mat =   await this.studentsService.getMatricule()
@@ -50,8 +54,10 @@ export class InsertComponent implements OnInit {
           form.value.encadreurSec = this.encadreur.Sector
           form.value.encadreurmOrg = this.encadreur.Position
           form.value.user = localStorage.getItem("user")
+          form.value.wilaya = wilaya
           form.value.matricule = mat;
           form.value.nom = form.value.nom.toUpperCase()
+
           this.studentsService.addStudent(form.value);
 
 
@@ -73,15 +79,27 @@ export class InsertComponent implements OnInit {
 
 
   ngOnInit() {
+    this.filteredWilayas = this.WilayaFormControl.valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
 
+
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.wilayas.filter(wilaya => wilaya.toLowerCase().includes(filterValue));
   }
    getEncadreur(encadreurID : number){
 
     this.studentsService.getEncadreur(encadreurID).subscribe((enc)=> {
      this.openValidateDialog(enc)
-  
+
      })
-  
+
     }
 
 

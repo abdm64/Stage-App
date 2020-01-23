@@ -4,6 +4,7 @@ import { StudentService } from '../students.service';
 import { NgForm, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { Observable } from 'rxjs';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
@@ -15,7 +16,9 @@ export class DialogOverviewExampleDialog implements OnInit {
 
   angForm: FormGroup;
   linguistiques: string;
-
+  wilayas: string[] = ['Adrar', 'Chlef', 'Laghouat','Oum El Bouaghi','Batna', 'Béjaïa', 'Biskra','Béchar','Blida','Bouira','Tamanrasset','Tébessa','Tlemcen','Tiaret','Tizi Ouzou','Alger','Djelfa','Jijel','Sétif','Saïda','Skikda','Sidi Bel Abbès','Annaba','Guelma','Constantine','Médéa','Mostaganem','Msila','Mascara','Ouargla','Oran','El Bayadh','Illizi','Bordj Bou Arreridj','Boumerdès','El Tarf','Tindouf','Tissemsilt','El Oued','Khenchela','Souk Ahras','Tipaza','Mila','Aïn Defla','Naâma','Aïn Témouchent','Ghardaïa','Relizane'];
+  WilayaFormControl = new FormControl();
+  filteredWilayas: Observable<string[]>;
 
   constructor( private fb: FormBuilder ,private  studentService: StudentService,
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog> ,
@@ -85,14 +88,14 @@ this.studentService.getEncadreur(mat).subscribe((data)=>{
 
 
 
-  
+
 }
 
 pupulatTheData(data,student){
-  
-  
+
+
    student.encadreurmMail = data.Email_Address
-  student.encadreur = data.First_name + ' ' +  data.Last_Name 
+  student.encadreur = data.First_name + ' ' +  data.Last_Name
   student.encadreurID = data.Employee_Number
   student.encadreurDEP = data.Departement
   student.encadreurSec = data.Sector
@@ -104,13 +107,13 @@ putTheData(data){
 
 
   this.angForm.value.encadreurmMail = data.Email_Address
-  this.angForm.value.encadreur = data.First_name + ' ' +  data.Last_Name 
+  this.angForm.value.encadreur = data.First_name + ' ' +  data.Last_Name
   this.angForm.value.encadreurID= data.Employee_Number
   this.angForm.value.encadreurDEP = data.Departement
   this.angForm.value.encadreurSec = data.Sector
   this.angForm.value.encadreurmOrg = data.Organisation
-  
-  
+
+
 }
 
 
@@ -119,7 +122,7 @@ putTheData(data){
 
   onClickSubmit(){
 
-    
+
 
 this.studentService.updateStudent(this.student.matricule,this.angForm.value);
 this.dialogRef.close();

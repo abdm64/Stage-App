@@ -108,6 +108,7 @@ getSuperUser(){
     }
     addStudent(data: any){
       const user = data.user
+      console.log(data)
 
    this.http.post(BASE_URL+'/students/insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
@@ -116,7 +117,7 @@ getSuperUser(){
           //check if token exist
           if (!this.superusers.includes(user)) {
 
-            this.openMessage("Susses", "Operation succeeded",false,true)
+            this.openMessage("succeed", "Operation succeeded",false,true)
 
           } else {
             this.router.navigate(['suivi'])
@@ -170,6 +171,7 @@ getSuperUser(){
     }
 
     updateStudent(matricule : Number,dataOne : any){
+      console.log(dataOne)
       this.http.put(BASE_URL+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 

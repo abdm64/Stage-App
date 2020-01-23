@@ -2,7 +2,7 @@
 
 
 
-<form  #postForm="ngForm" (ngSubmit)="onAddPost(postForm)">
+<form  #postForm="ngForm" (ngSubmit)="onAddPost(postForm,wilaya.value)">
 <div class="container">
   <div class="row" style="position: relative;">
 
@@ -35,7 +35,12 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Wilaya" name="wilaya"  required ngModel>
+    <input type="text" placeholder="Wilaya"  matInput [formControl]="WilayaFormControl" [matAutocomplete]="auto" #wilaya required ngModel >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let wilaya of filteredWilayas | async" [value]="wilaya" >
+        {{wilaya}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="N° de téléphone" name="nTelephone" required  ngModel>
