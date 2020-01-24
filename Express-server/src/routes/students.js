@@ -27,10 +27,6 @@
 
 app.get('/api', (req,res, next)=>{
 
-
- 
-    
-    
   res.send("API is working ")
 })
 
@@ -39,7 +35,7 @@ app.get('/api', (req,res, next)=>{
 app.get('/api/students/data' ,auth , studentController.getStudents)
 //get student by id
 
-app.get('/api/students/data/:id',studentController.getStudentById)
+app.get('/api/students/data/:id',auth,studentController.getStudentById)
 
 
 //,auth
@@ -60,7 +56,7 @@ app.delete("/api/students/delete" ,auth, studentController.deleteAllStudents);
 
     //get the number of document  to create matricule
 
-    app.get('/api/students/number', studentController.getLastmatriculeStudent)
+    
 
   
 

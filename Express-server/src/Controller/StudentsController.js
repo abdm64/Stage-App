@@ -185,16 +185,7 @@ if (!docs){
  
     }
 
-    exports.getLastmatriculeStudent = (req,res)=>{
-
-
-
-        Students.find().countDocuments((err, count) => {
-            if (err) return res.send(err);
-            res.json(count);
-        });
-  
-    }
+   
 
   
 

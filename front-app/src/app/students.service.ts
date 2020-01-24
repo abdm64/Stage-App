@@ -171,7 +171,7 @@ getSuperUser(){
     }
 
     updateStudent(matricule : Number,dataOne : any){
-      console.log(dataOne)
+     
       this.http.put(BASE_URL+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 
@@ -196,14 +196,9 @@ getSuperUser(){
     }
 
 
-    // refactore source
+   
 
-  getStudentNumber(){
-
-   return this.http.get<number>(BASE_URL+'/students/number',  { headers: this.setHeader() })
-
-
-    }
+  
     getEncadreur(mat : number){
 
       return this.http.get(BASE_URL+`/encadreur/data/`+mat,  { headers: this.setHeader() })

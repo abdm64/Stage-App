@@ -157,22 +157,8 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
-
-
-
   
-   this.studentsService.getStudentNumber().subscribe(
-      (num) => {
-
-          this.last = num
-      }
-
-   )
-
-
-
-
- this.studentsService.getStudent(9,1)
+  this.studentsService.getStudentSearch('').subscribe((postData)=>  this.last = postData.maxNumber); 
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students = students;
