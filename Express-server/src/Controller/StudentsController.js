@@ -196,19 +196,7 @@ if (!docs){
   
     }
 
-    exports.getTheNumberStudents = (req,res)=>{
-
-        Students.findOne({}, {}, { sort: { _id :  -1} }, (err, post) => {
-          
-      
-          if (err) return res.send(err);
-      
-          
-            res.json(post)
-          
-          
-        });
-      }
+  
 
       function escapeRegex(text) {
 

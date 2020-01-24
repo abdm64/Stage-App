@@ -160,7 +160,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
 
-    this.studentsService.getMatricule()
+  
    this.studentsService.getStudentNumber().subscribe(
       (num) => {
 

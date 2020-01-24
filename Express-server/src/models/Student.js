@@ -1,14 +1,10 @@
 const mongoose = require ('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const Schema = mongoose.Schema;
 
 const StudentSchema = new Schema({
-  matricule:{
-    type:Number,
-
-    unique: false,
-    required:true
-},
+ 
 
 
 nom:{
@@ -155,6 +151,7 @@ user:{
 
 
 });
+StudentSchema.plugin(AutoIncrement, {inc_field: 'matricule'});
 
 module.exports =  mongoose.model('Students',StudentSchema);
 

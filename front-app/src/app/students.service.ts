@@ -226,28 +226,7 @@ getSuperUser(){
 
     }
 
-  async getMatricule(){
-
-
-    var  num : number = 0
-    const res  =  await fetch(BASE_URL+`/students/numberEnd`)
-    const data = await res.json()
-
-
-
-    if (data === null ) {
-      num = 1
-      } else {
-
-       num = data.matricule + 1
-      }
-
-
-
-         return num
-
-
-  }
+  
   getEvaMatricule(){
     return this.http.get<number[]>(BASE_URL+'/matricule',  { headers: this.setHeader()})
 

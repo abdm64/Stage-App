@@ -62,7 +62,7 @@ app.delete("/api/students/delete" ,auth, studentController.deleteAllStudents);
 
     app.get('/api/students/number', studentController.getLastmatriculeStudent)
 
-  app.get('/api/students/numberEnd', studentController.getTheNumberStudents)
+  
 
 
 

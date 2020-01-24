@@ -45,7 +45,7 @@ export class InsertComponent implements OnInit {
  async onAddPost(form:NgForm,wilaya: string){
 
 
-  let mat =   await this.studentsService.getMatricule()
+
 
 
           form.value.encadreur = this.encadreur.First_name + " " + this.encadreur.Last_Name
@@ -55,13 +55,12 @@ export class InsertComponent implements OnInit {
           form.value.encadreurmOrg = this.encadreur.Position
           form.value.user = localStorage.getItem("user")
           form.value.wilaya = wilaya
-          form.value.matricule = mat;
           form.value.nom = form.value.nom.toUpperCase()
 
           this.studentsService.addStudent(form.value);
 
 
-          //form.reset()
+        
 
 
 
