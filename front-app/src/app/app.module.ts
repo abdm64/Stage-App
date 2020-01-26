@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
   , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule ,MatDatepickerModule,
-  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule
+  MatNativeDateModule, MatGridListModule, MatSnackBarModule, MatPaginatorModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule,MatTabsModule
 } from '@angular/material';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -48,12 +48,13 @@ import { PDFService} from './pdf.Service';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { ThankComponent } from './thank/thank.component';
+import { SelectDatabaseComponent } from './select-database/select-database.component';
 
 
 
 
 const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatMenuModule
-  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule,MatTooltipModule];
+  , MatDividerModule, MatInputModule, MatProgressBarModule, MatSidenavModule, MatListModule,MatCheckboxModule,MatRadioModule,MatAutocompleteModule,MatTooltipModule, MatTabsModule];
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +76,8 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     AuthMsgComponent,
     EvaluationDialogComponent,
     EvaluationComponent,
-    ThankComponent
+    ThankComponent,
+    SelectDatabaseComponent
   ],
     entryComponents: [DialogOverviewExampleDialog, MsgConfirmComponent, ExcelWindowComponent,EncadreurComponent,MsgErrorComponent,EvaluationDialogComponent] ,
   imports: [

@@ -12,36 +12,56 @@ const path = require('path');
 const mongoose =require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const helmet = require('helmet')
 require('dotenv').config();
 
 
 const app = express();
 //stagedb:27017
-const base_url = process.env.BASE_URL || "mongodb://localhost:27017/test"
+// const base_url = process.env.BASE_URL || "mongodb://localhost:27017/test"
+let base_url = "mongodb://localhost:27017/"
 
 
-console.log(base_url)
+//console.log(base_url)
+app.get('/api/:id', (req,res, next)=>{
+  const id = req.params.id
+  base_url= "mongodb://localhost:27017/"
+  connectToDataBase(id)
 
-mongoose
-.connect(base_url, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-.then(() => {
-  console.log('Connected to database!');
+res.send(base_url)
 })
-.catch(error => {
-  console.log('Connection failed!');
-  console.log(error);
-});
-mongoose.Promise = global.Promise;
+//console.log(base_url)
+
+
+
+
+
+
+function connectToDataBase(id){
+
+  
+  base_url = base_url+id
+  console.log(base_url)
+  mongoose
+  .connect(base_url, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+  .then(() => {
+    console.log('Connected to database!');
+  })
+  .catch(error => {
+    console.log('Connection failed!');
+    console.log(error);
+  });
+  mongoose.Promise = global.Promise;
+  
+
+
+
+
+
+}
+app.use(helmet())
 
 app.use(cors()) 
- 
-
-
-
-
-
-
-
 //how middleware works
 /***********************************/
 app.use((req,res,next)=> {

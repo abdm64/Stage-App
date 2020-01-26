@@ -9,6 +9,7 @@ import { ChartComponent } from './chart/chart.component';
 import { AuthMsgComponent } from './auth-msg/auth-msg.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { ThankComponent } from './thank/thank.component'
+import { SelectDatabaseComponent } from './select-database/select-database.component'
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'auth', component: AuthMsgComponent   },
   { path: 'evaluation', component: EvaluationComponent   },
   { path: 'thank', component: ThankComponent   },
-  { path: '**', component: LoginPageComponent   }
+  { path: '', component: LoginPageComponent   },
+  { path: 'select', component: SelectDatabaseComponent   }
 
 
 

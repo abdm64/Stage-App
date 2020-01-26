@@ -25,10 +25,6 @@
 
 
 
-app.get('/api', (req,res, next)=>{
-
-  res.send("API is working ")
-})
 
 //fetch All student + adding pagination  ,auth
 
