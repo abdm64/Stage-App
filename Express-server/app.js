@@ -9,64 +9,29 @@ const evaluation = require('./src/routes/evaluationRoute')
 const urlRandom = require('./src/routes/URLRoute')
 const express = require('express');
 const path = require('path');
-const mongoose =require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet')
 require('dotenv').config();
+stagedb = require('./config/stagedb')
+//archive = require('./config/archive')
+
+
 
 
 const app = express();
-//stagedb:27017
-// const base_url = process.env.BASE_URL || "mongodb://localhost:27017/test"
-let base_url = "mongodb://localhost:27017/"
-
-
-//console.log(base_url)
-app.get('/api/:id', (req,res, next)=>{
-  const id = req.params.id
-  base_url= "mongodb://localhost:27017/"
-  connectToDataBase(id)
-
-res.send(base_url)
-})
-//console.log(base_url)
 
 
 
+//archive.connection.close()
 
 
 
-function connectToDataBase(id){
-
-  
-  base_url = base_url+id
-  console.log(base_url)
-  mongoose
-  .connect(base_url, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-  .then(() => {
-    console.log('Connected to database!');
-  })
-  .catch(error => {
-    console.log('Connection failed!');
-    console.log(error);
-  });
-  mongoose.Promise = global.Promise;
-  
-
-
-
-
-
-}
 app.use(helmet())
 
 app.use(cors()) 
-//how middleware works
-/***********************************/
+
 app.use((req,res,next)=> {
-    //console.log(Date.now());
-    //req.name='safaa';
     res.setHeader("Access-Control-Allow-Origin" ,"*");
     res.setHeader(
         "Access-Control-Allow-Headers",
@@ -78,8 +43,19 @@ app.use((req,res,next)=> {
     );
     next();
 });
-/************************************/
 
+
+
+app.get('/api', (req,res, next)=>{
+ 
+  const value = req.query.archive
+ 
+ 
+ // connectToDataBase(value,res)
+
+
+
+})
 
 
 // body parse middleware
@@ -100,7 +76,8 @@ app.use(evaluation);
 app.use(urlRandom);
 app.use(express.static(__dirname + '/static'))
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'static/index.html'), function(err) {
+    res.sendFile(path.join(__dirname, 'static/index.html'), (err) => {
+
       if (err) {
         res.status(500).send(err)
       }
@@ -116,4 +93,25 @@ app.listen(port, ()=> {
 });
 
 
+function connectToDataBase(so,res){
 
+  
+  //  stagedb.connection.close()
+  // archive.connection.close()
+  console.log("switching is here")
+
+if (so === 'true'){
+res.send("archive is ready")
+require('./config/archive')
+ 
+} else {
+  res.send("stagedb is ready")
+  stagedb
+ 
+}
+
+     
+
+  
+ 
+ }
