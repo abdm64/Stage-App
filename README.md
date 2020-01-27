@@ -18,7 +18,7 @@ Install Angular CLI  globally Using NPM Cammand "npm install -g @angular/cli"
 
 Download and Install MongoDB  from https://www.mongodb.com/download-center (you can use Mongodb Atlas)
 
-### Running the Node.js API
+### Running the Node.js 
 
 Download or clone the  project code from https://github.com/abdm64/Stage-App.git
 
