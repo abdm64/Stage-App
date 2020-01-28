@@ -12,9 +12,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet')
+const mongoose =require('mongoose');
+const base_url = process.env.BASE_URL || "mongodb://localhost:27017/"
 require('dotenv').config();
-stagedb = require('./config/stagedb')
-//archive = require('./config/archive')
 
 
 
@@ -23,7 +23,7 @@ const app = express();
 
 
 
-//archive.connection.close()
+connectMongo('stage')
 
 
 
@@ -44,18 +44,33 @@ app.use((req,res,next)=> {
     next();
 });
 
-
+//switch database Api must be  protected
 
 app.get('/api', (req,res, next)=>{
  
   const value = req.query.archive
+  let token = req.query.token
+  console.log(token)
+
+
+  if("LdGqSM7RDe2uSQPnwwSN" === token){ 
+
+
+    connectToDataBase(value,res)
+  } else {
+
+    res.status(401).send("Error:Invalid Token"); 
+  }
+
+
+
  
  
- // connectToDataBase(value,res)
+  
 
 
 
-})
+});
 
 
 // body parse middleware
@@ -101,12 +116,27 @@ function connectToDataBase(so,res){
   console.log("switching is here")
 
 if (so === 'true'){
-res.send("archive is ready")
-require('./config/archive')
+  
+
+
+
+
+connectMongo('archive')
+
+
+  
+  res.status(200).json("archive connected to database!"); 
  
 } else {
-  res.send("stagedb is ready")
-  stagedb
+
+
+
+
+connectMongo('stage')
+
+
+res.status(200).json("stagedb connected to database!"); 
+  
  
 }
 
@@ -114,4 +144,26 @@ require('./config/archive')
 
   
  
+ }
+
+ function connectMongo(name){
+   mongoose.connection.close()
+
+  mongoose
+  .connect(base_url+name, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+  .then(() => {
+    console.log(name + ' Connected to database!');
+  })
+  .catch(error => {
+    console.log('Connection failed!');
+    console.log(error);
+  });
+  mongoose.Promise = global.Promise;
+
+
+
+
+
+
+
  }

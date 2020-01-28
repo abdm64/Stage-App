@@ -171,7 +171,7 @@ getSuperUser(){
     }
 
     updateStudent(matricule : Number,dataOne : any){
-     
+
       this.http.put(BASE_URL+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 
@@ -196,9 +196,9 @@ getSuperUser(){
     }
 
 
-   
 
-  
+
+
     getEncadreur(mat : number){
 
       return this.http.get(BASE_URL+`/encadreur/data/`+mat,  { headers: this.setHeader() })
@@ -221,7 +221,7 @@ getSuperUser(){
 
     }
 
-  
+
   getEvaMatricule(){
     return this.http.get<number[]>(BASE_URL+'/matricule',  { headers: this.setHeader()})
 
@@ -271,6 +271,16 @@ window.location.href = '/thank'
 
 
 
+  });
+}
+
+
+selectSide(side) {
+  //`your Evaluation for ${ studentName} is submited Have a nice Day`
+  const random = "LdGqSM7RDe2uSQPnwwSN"
+  return this.http.get(BASE_URL+`?archive=${side}&token=${random}`)
+  .subscribe((res) => {
+    console.log(res)
   });
 }
 

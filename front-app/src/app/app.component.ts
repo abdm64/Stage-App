@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
 
 logout()
 {
-
+this.studentService.selectSide('false')
   localStorage.removeItem("auth");
   localStorage.removeItem("user");
   localStorage.removeItem("token")
@@ -92,4 +92,4 @@ getAuth(){
 
 
 
-}//Class 
+}//Class

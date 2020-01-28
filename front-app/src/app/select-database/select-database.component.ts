@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router"
 import { environment } from '../../environments/environment';
-// StudentService handel all networking related to student
+import { StudentService } from '../students.service'
 
 
-const  BASE_URL = environment.apiUrl+'api';
+const  BASE_URL = environment.apiUrl+'api?archive=';
 
 
 @Component({
@@ -14,35 +14,27 @@ const  BASE_URL = environment.apiUrl+'api';
 })
 export class SelectDatabaseComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public studentService : StudentService) { }
 
   ngOnInit() {
   }
 actuel(){
-  this.selectSide('test')
-  console.log("actuel");
-  //send actuel api and move to login page
+
+  this.studentService.selectSide('false')
+
+
   this.router.navigate(['']);
 
 
 }
 
 archive(){
-  this.selectSide('archive')
-  console.log("Archive");
-  //get archive api and move it to login page
+
+  this.studentService.selectSide('true')
   this.router.navigate(['']);
 
 }
 
-async selectSide(id){
-
-  const res  =  await fetch(BASE_URL+`/`+id)
-  const data = await res.json()
-
-
-  return data
-}
 
 
 
