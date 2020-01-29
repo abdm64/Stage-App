@@ -25,7 +25,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 import { LoadPipe } from './load.pipe';
-import { GraphQLModule } from './graphql.module';
 import { InsertComponent } from './form/insert.component';
 import { StudentService } from './students.service';
 import { SuiviComponent } from './suivi/suivi.component';
@@ -35,11 +34,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-
 import { ExcelService } from './execl.service';
 import { ExcelWindowComponent } from './excel-window/excel-window.component';
 import { ChartComponent } from './chart/chart.component';
-import { FilterPipe } from './filter.pipe';
 import { EncadreurComponent } from './encadreur/encadreur.component';
 import { MsgErrorComponent } from './msg-error/msg-error.component';
 import { AuthMsgComponent } from './auth-msg/auth-msg.component';
@@ -70,7 +67,6 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     SignupPageComponent,
     ExcelWindowComponent,
     ChartComponent,
-    FilterPipe,
     EncadreurComponent,
     MsgErrorComponent,
     AuthMsgComponent,
@@ -87,7 +83,6 @@ const material = [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModul
     AppRoutingModule,
     ...material,
     BrowserAnimationsModule,
-    GraphQLModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
     MDBBootstrapModule,

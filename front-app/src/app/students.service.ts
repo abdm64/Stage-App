@@ -10,12 +10,14 @@ import { environment } from '../environments/environment';
 
 
 const  BASE_URL = environment.apiUrl+'api';
+const random = environment.random;
 
 
 
 @Injectable({providedIn :'root'})
 
 // StudentService handel all networking related to students
+
 
 export class  StudentService{
 
@@ -277,10 +279,10 @@ window.location.href = '/thank'
 
 selectSide(side) {
   //`your Evaluation for ${ studentName} is submited Have a nice Day`
-  const random = "LdGqSM7RDe2uSQPnwwSN"
+
   return this.http.get(BASE_URL+`?archive=${side}&token=${random}`)
   .subscribe((res) => {
-    console.log(res)
+    //console.log(res)
   });
 }
 

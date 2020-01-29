@@ -31,11 +31,30 @@ export class ChartComponent implements OnInit {
 
 
 
+
   constructor(private chartservice : ChartService) { }
 
   ngOnInit() {
-
+console.log(this.getYearsArray())
 this.getDatas()
+
+  }
+
+  getYearsArray(){
+    let stageYear = 2020
+    let arrayYears : number[] = [stageYear]
+    const currectYear = new Date().getFullYear()
+
+
+
+
+    while ( currectYear -stageYear > 0){
+      stageYear++
+      arrayYears.push(stageYear)
+
+    }
+
+return arrayYears
 
   }
 
@@ -105,7 +124,7 @@ async getDatas(){
           display:true,
           fontSize:20,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-         
+
         },
       responsive: true,
 

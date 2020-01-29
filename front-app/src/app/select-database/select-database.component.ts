@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router"
-import { environment } from '../../environments/environment';
-import { StudentService } from '../students.service'
+import { Component, OnInit, OnChanges } from '@angular/core';
+import {Router} from '@angular/router';
+import { StudentService } from '../students.service';
 
 
-const  BASE_URL = environment.apiUrl+'api?archive=';
+
 
 
 @Component({
@@ -13,27 +12,30 @@ const  BASE_URL = environment.apiUrl+'api?archive=';
   styleUrls: ['./select-database.component.scss']
 })
 export class SelectDatabaseComponent implements OnInit {
+ token = "joaGdhXSmCyo1Vs7H7DZ";
+ random : string = window.location.hash.substr(1);
 
   constructor(private router: Router, public studentService : StudentService) { }
 
+
+
   ngOnInit() {
+
+    this.protectRoute()
   }
-actuel(){
-
-  this.studentService.selectSide('false')
-
-
-  this.router.navigate(['']);
-
-
-}
-
-archive(){
-
-  this.studentService.selectSide('true')
+selectSide(value){
+  this.studentService.selectSide(value);
   this.router.navigate(['']);
 
 }
+protectRoute(){
+const equ = this.token === this.random
+  if (!equ){
+    this.router.navigate(['']);
+  }
+
+}
+
 
 
 

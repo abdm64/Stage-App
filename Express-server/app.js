@@ -12,24 +12,29 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet')
-const mongoose =require('mongoose');
-const base_url = process.env.BASE_URL || "mongodb://localhost:27017/"
+const Config = require('./config/config')
 require('dotenv').config();
+const config = new Config()
+const TOKEN = process.env.TOKEN
+
+
+
+
+
+
+
+
 
 
 
 
 const app = express();
 
-
-
-connectMongo('stage')
-
-
+config.connectMongo('stage')
 
 app.use(helmet())
-
 app.use(cors()) 
+
 
 app.use((req,res,next)=> {
     res.setHeader("Access-Control-Allow-Origin" ,"*");
@@ -50,24 +55,15 @@ app.get('/api', (req,res, next)=>{
  
   const value = req.query.archive
   let token = req.query.token
-  console.log(token)
+  
+  if( TOKEN === token){ 
 
 
-  if("LdGqSM7RDe2uSQPnwwSN" === token){ 
-
-
-    connectToDataBase(value,res)
+    config.connectToDataBase(value,res)
   } else {
 
-    res.status(401).send("Error:Invalid Token"); 
+    res.status(401).send("Error:Invalid Token")
   }
-
-
-
- 
- 
-  
-
 
 
 });
@@ -90,6 +86,7 @@ app.use(chartRoute);
 app.use(evaluation);
 app.use(urlRandom);
 app.use(express.static(__dirname + '/static'))
+//serve
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'static/index.html'), (err) => {
 
@@ -108,62 +105,6 @@ app.listen(port, ()=> {
 });
 
 
-function connectToDataBase(so,res){
-
-  
-  //  stagedb.connection.close()
-  // archive.connection.close()
-  console.log("switching is here")
-
-if (so === 'true'){
-  
 
 
-
-
-connectMongo('archive')
-
-
-  
-  res.status(200).json("archive connected to database!"); 
  
-} else {
-
-
-
-
-connectMongo('stage')
-
-
-res.status(200).json("stagedb connected to database!"); 
-  
- 
-}
-
-     
-
-  
- 
- }
-
- function connectMongo(name){
-   mongoose.connection.close()
-
-  mongoose
-  .connect(base_url+name, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-  .then(() => {
-    console.log(name + ' Connected to database!');
-  })
-  .catch(error => {
-    console.log('Connection failed!');
-    console.log(error);
-  });
-  mongoose.Promise = global.Promise;
-
-
-
-
-
-
-
- }

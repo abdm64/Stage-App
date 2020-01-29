@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 
 const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const EXCEL_EXTENSION = '.xlsx';
-const  BASE_URL = environment.apiUrl;
+const  BASE_URL = environment.apiUrl+'api';
 
 @Injectable()
 export class ExcelService {
