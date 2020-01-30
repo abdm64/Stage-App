@@ -54,7 +54,7 @@ theme:{
 
 },
 dateDebut:{
-    type:Date,
+    type: Date,
     default:Date.now,
     required:true
 },
@@ -137,7 +137,12 @@ user:{
       type:String,
       required: false
 
+  },
+  year: {
+      type: Number,
+      required: false
   }
+
 
 
 

@@ -2,49 +2,29 @@ const mongoose =require('mongoose');
 const Students = mongoose.model( 'Students');
 
 exports.getEcadreurDep = (req,res)=>{
-    var arrayEnc = []
     
-   
-    Students.find().then(documents =>{
-      for (docment of documents) {
-          arrayEnc.push(docment.encadreurDEP)
-      }
-      
-  
-
-      
-      res.status(200).send(getElemnt(arrayEnc))
-      
-  });
+    const year = req.query.year
+    getData(Students,res,year,'encadreurDEP')
   
   }
 
   exports.getEcadreurSec = (req,res)=>{
-    var arraySec = []
-   
-    Students.find().then(documents =>{
-      for (docment of documents) {
-        arraySec.push(docment.encadreurSec)
+    
+    const year = req.query.year
+    getData(Students,res,year,'encadreurSec')
       }
-   res.status(200).send(getElemnt(arraySec))
-   //console.log(arraySec)
-      });
-      }
-      exports.getTypes = (req,res)=>{
-        var arrayTypes = []
-       
-        Students.find().then(documents =>{
-          for (docment of documents) {
-            arrayTypes.push(docment.typeStage)
-          }
-       res.status(200).send(getElemnt(arrayTypes))
-       
-          });
+
+
+      exports.getTypes = (req,res)=>{ 
+        const year = req.query.year
+     getData(Students,res,year,'typeStage')
           }
   
 
 
     exports.getDateDebut = (req,res)=>{
+      //can't refector with getData function need a time 
+      const year = req.query.year
         var arraySec = []
         const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -52,7 +32,8 @@ exports.getEcadreurDep = (req,res)=>{
   
        
         Students.find().then(documents =>{
-          for (docment of documents) {
+          const data = getDataPerYear(documents,year)
+          for (docment of data) {
             let month = monthNames[docment.dateDebut.getMonth()]
             arraySec.push(month)
           }
@@ -62,6 +43,7 @@ exports.getEcadreurDep = (req,res)=>{
           }
 
           exports.getDateFin = (req,res)=>{
+            const year = req.query.year
             var arraySec = []
             const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
@@ -69,7 +51,8 @@ exports.getEcadreurDep = (req,res)=>{
       
            
             Students.find().then(documents =>{
-              for (docment of documents) {
+              const data = getDataPerYear(documents,year)
+              for (docment of data) {
                 
                 let month = monthNames[docment.dateFin.getMonth()]
                 arraySec.push(month)
@@ -83,6 +66,8 @@ exports.getEcadreurDep = (req,res)=>{
           
               });
               }
+
+//helper method
 
 
               function getElemnt(arr){
@@ -133,3 +118,49 @@ exports.getEcadreurDep = (req,res)=>{
                 return obj
               }
         
+function getDataPerYear(documents,year){
+
+
+  if (!(year == 0)){
+
+    documents.forEach((doc)=>{
+     
+      doc.year = new Date(doc.dateDebut).getFullYear()
+    
+     })
+    
+     const types = documents.filter((doc)=>{
+  
+  
+        return  doc.year == year
+     })
+
+     return types
+
+  } else {
+
+    return documents
+  }
+
+ 
+
+
+}
+
+function getData(Students,res,year,name){
+
+
+  var arrayTypes = []
+  // { dateDebut: req.params.id }
+  Students.find().then(documents =>{
+
+
+const data = getDataPerYear(documents,year)
+
+    for (docment of data) {
+      arrayTypes.push(docment[name])
+    }
+ res.status(200).send(getElemnt(arrayTypes))
+ 
+    });
+}

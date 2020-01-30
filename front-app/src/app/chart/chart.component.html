@@ -1,4 +1,26 @@
 
+<div style="margin-left: 2%;margin-right: 2%;">
+  <mat-form-field style="width: 10%;">
+    <mat-select #year [(value)]="currectYear" (selectionChange)= "getDataPerYear(year.value)">
+      <mat-option *ngFor="let year of getYearsArray()"  [value]="year" >
+        {{ year }}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+  <!-- <button mat-button (click)="getDataPerYear(year.value)" style="background: #E2001A;color: white;margin-left: 10px;">
+    GO
+  </button> -->
+
+</div>
+
+
+
+
+
+
+
 <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'10px'" style="margin-left: 2%;margin-right: 2%;">
   <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
 
@@ -12,7 +34,7 @@
 
 
   </mat-grid-tile>
-  <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);"> 
+  <mat-grid-tile style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
 
 
 

@@ -17,14 +17,20 @@ export class ChartComponent implements OnInit {
   valueDateDebut :number[]=[];
   labelsDateFin :string[]=[];
   valueDateFin :number[]=[];
-  BarChart : any;
-  PieChart : any;
-   ict_unit = [];
+  pieDep : Chart;
+  pieSec : Chart;
+  pieType : Chart;
+  bar : Chart;
+  ict_unit = [];
   efficiency = [];
    coloR = [];
+  enc : any
+  sec : any
+  type : any
+  dateFin : any
+  dateDebut : any
 
-
-
+   currectYear = 'ALL'
 
 
 
@@ -35,20 +41,27 @@ export class ChartComponent implements OnInit {
   constructor(private chartservice : ChartService) { }
 
   ngOnInit() {
-console.log(this.getYearsArray())
-this.getDatas()
+
+this.getDatas(0)
+
+  }
+  getDataPerYear(year){
+
+
+    if ( year == 'ALL') {
+      this.getDatas(0)
+    } else {
+
+      this.getDatas(year)
+    }
 
   }
 
   getYearsArray(){
-    let stageYear = 2020
-    let arrayYears : number[] = [stageYear]
-    const currectYear = new Date().getFullYear()
-
-
-
-
-    while ( currectYear -stageYear > 0){
+    let stageYear = 2019
+    let arrayYears  = ['ALL',stageYear]
+    let currectYear = new Date().getFullYear()
+    while (currectYear -stageYear > 0){
       stageYear++
       arrayYears.push(stageYear)
 
@@ -58,22 +71,22 @@ return arrayYears
 
   }
 
-async getDatas(){
+async getDatas(year){
 
 
     try {
-      let enc = await this.chartservice.getEncadreur()
-      let sec = await this.chartservice.getEncadreurSec()
-      let type = await this.chartservice.getTypes()
-     let dateFin = await this.chartservice.getDateFin()
-     let dateDebut = await this.chartservice.getDateDebut()
+       this.enc = await this.chartservice.getEncadreur(year)
+      this.sec = await this.chartservice.getEncadreurSec(year)
+       this.type = await this.chartservice.getTypes(year)
+     this.dateFin = await this.chartservice.getDateFin(year)
+      this.dateDebut = await this.chartservice.getDateDebut(year)
 
 
 
-      this.createPie(enc,"enc", "Nombre de stagiaires par département")
-      this.createPie(sec,"sector","Nombre de stagiaires par secteur")
-       this.createPie(type,"type","Nombre de stagiaires par type de stage")
-      this.createBar(dateFin,dateDebut,'date',"Suivi des stagiaires par mois")
+      this.createPie(this.pieDep,this.enc,"enc", "Nombre de stagiaires par département")
+      this.createPie(this.pieSec,this.sec,"sector","Nombre de stagiaires par secteur")
+       this.createPie(this.pieType,this.type,"type","Nombre de stagiaires par type de stage")
+      this.createBar(this.dateFin,this.dateDebut,'date',"Suivi des stagiaires par mois")
 
 
     } catch (err) {
@@ -82,6 +95,7 @@ async getDatas(){
 
       console.log(err)
     }
+
 
 
   }
@@ -95,7 +109,9 @@ async getDatas(){
 
   let dateVlaueDebut = Object.values(dateDebut)
 
-    this.PieChart = new Chart(name,{
+   if(this.bar) this.bar.destroy();
+
+   this.bar = new Chart(name,{
       type: 'bar',
       data: {
           datasets: [{
@@ -168,13 +184,16 @@ async getDatas(){
 
 
 
- createPie(data1,nameChart,title){
+ createPie(chart: Chart,data1,nameChart,title){
+
   let dataNum = Object.values(data1)
   let dataLabl = Object.keys(data1)
 
   this.getRandomColor(dataNum)
-  //const f = await console.log(this.labelsSec)
-  this.PieChart =  new Chart(nameChart,{
+
+  if (chart)  chart.destroy();
+
+ chart =  new Chart(nameChart,{
     type:'pie',
 data :{
 
@@ -203,15 +222,7 @@ options:{
 }
   });
 
-
-
-
-
-
-
-
-
-
+//
 
 
 }
@@ -233,4 +244,4 @@ options:{
 
 
 
-}
+}//class

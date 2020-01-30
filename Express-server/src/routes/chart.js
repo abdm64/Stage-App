@@ -16,6 +16,7 @@ router.get('/api/students/enc',auth,chartController.getEcadreurDep)
 //get Sector
   
 router.get('/api/students/encSec',auth,chartController.getEcadreurSec)
+//get Type
 
 router.get('/api/students/types',chartController.getTypes)
     

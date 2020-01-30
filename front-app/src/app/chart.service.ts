@@ -28,47 +28,47 @@ export class ChartService  {
 
 
 
-  async getEncadreur(){
+  async getEncadreur(year : number){
 
 
 
- const data =  await this.http.get(BASE_URL+'/students/enc',   { headers: this.setHeader() }).toPromise();
+ const data =  await this.http.get(BASE_URL+'/students/enc?year='+year,   { headers: this.setHeader() }).toPromise();
 
 
 return data
 }
 
 
-async getEncadreurSec(){
+async getEncadreurSec(year:number){
 
-  let  data =await  this.http.get(BASE_URL+'/students/encSec',  { headers: this.setHeader() }).toPromise();
-
-
- return data
- }
-
-
- async getDateDebut(){
-
-  var  data  =await  this.http.get(BASE_URL+'/students/datedebut', { headers: this.setHeader() }).toPromise();
-
-
+  let  data =await  this.http.get(BASE_URL+'/students/encSec?year='+year,  { headers: this.setHeader() }).toPromise();
 
 
  return data
  }
 
- async getDateFin(){
 
-  var  data  =await  this.http.get(BASE_URL+'/students/datefin',  { headers: this.setHeader() }).toPromise();
+ async getDateDebut(year){
+
+  var  data  =await  this.http.get(BASE_URL+'/students/datedebut?year='+year, { headers: this.setHeader() }).toPromise();
+
 
 
 
  return data
  }
- async getTypes(){
 
-  var  data  =await  this.http.get(BASE_URL+'/students/types',  { headers: this.setHeader() }).toPromise();
+ async getDateFin(year){
+
+  var  data  =await  this.http.get(BASE_URL+'/students/datefin?year='+year,  { headers: this.setHeader() }).toPromise();
+
+
+
+ return data
+ }
+ async getTypes(year){
+
+  var  data  =await  this.http.get(BASE_URL+'/students/types?year='+year,  { headers: this.setHeader() }).toPromise();
 
 
 
