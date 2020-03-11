@@ -1,0 +1,27 @@
+{
+  "name": "rh-app",
+  "version": "1.0.0",
+  "description": "app for rh department",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "abdm & safa",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": ">=5.7.5",
+    "mongoose-sequence": "^5.2.2",
+    "mongoose-unique-validator": "^2.0.3",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.3.0",
+    "nodemailer-mailgun-transport": "^1.4.0",
+    "path": "^0.12.7"
+  }
+}

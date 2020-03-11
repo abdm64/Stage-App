@@ -1,0 +1,161 @@
+
+
+.toolbardiv{
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+
+
+
+
+
+.sidenav{
+height: 100%;
+
+
+
+}
+.sidenav-content{
+
+background-color:  #E2001A;
+width: 300px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.89);
+
+}
+@media screen and (max-width: 600px) {
+.sidenav-content{
+
+width: 15%;
+
+}
+.noteBox{
+opacity: 0;
+}
+}
+
+
+.btn{
+background: none;
+border: 2px solid #E2001A;
+font-family: "montserrat",sans-serif;
+font-weight: bold;
+font-size: 13.5px;
+text-transform: uppercase;
+padding: 5px 20px 20px 25px;
+min-width: 200px;
+margin: 10px;
+transition: color 0.4s linear;
+position: relative;
+color: #F0F0F0;
+background-color:#E2001A;
+//opacity: 0.6;    bg=roge
+//box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+
+
+
+
+
+width: 230px;
+height: 60px;
+
+
+
+/* Just for presentation */
+display: block;
+margin: 0 auto;
+margin-bottom: 20px;
+
+&:hover{
+background-color: rgb(141, 103, 103,0.3);
+}
+&:focus{
+background-color:rgba(0, 0, 0, 0.3);;
+color: white;
+
+}
+
+}
+.btn1{
+background: none;
+border: 2px solid #E2001A;
+font-family: "montserrat",sans-serif;
+font-weight: bold;
+//text-transform: uppercase;
+padding: 5px 20px 20px 25px;
+min-width: 200px;
+margin: 10px;
+transition: color 0.4s linear;
+position: relative;
+color: #F0F0F0;
+background-color:#E2001A;
+width: 230px;
+height: 60px;
+
+
+
+/* Just for presentation */
+display: block;
+margin: 0 auto;
+margin-bottom: 20px;
+
+&:hover{
+background-color: rgb(141, 103, 103,0.3);
+}
+&:focus{
+background-color:rgba(0, 0, 0, 0.3);;
+color: white;
+
+}
+
+}
+
+
+.content-container {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+min-height: 100vh;
+background-color: #F0F0F0;
+
+.toolbar {
+
+    max-width: 1100px;
+    @media (min-width: 1100px) {
+        margin: 8px 0px;
+    }
+    display: flex;
+    @media (max-width:420px){
+        display: none;
+    }
+
+    .toolbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        .navs{
+            @media (max-width: 480px) {
+                font-size: 16px;
+            }
+            button{
+                margin: 0 0px;
+            }
+        }
+    }
+    .action{
+        background-color: #4dd1e2;
+        color: white;
+    }
+}
+}
+.noteBox {
+
+margin:50px 30px 0 30px ;
+background-color: #F0F0F0;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+}

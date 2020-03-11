@@ -1,0 +1,46 @@
+mat-card {
+  width: 100%;
+
+ }
+ .mat-form-field {
+   width:100% ;
+ }
+
+ button  {
+
+
+
+width: 350px;
+height: 150;
+
+
+ }
+ h1{
+  color: #E2001A;
+  text-align: center;
+}
+
+
+ mat-card{
+ // box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+
+  font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;
+
+}
+
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color:rgb(66, 134, 244);
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  color:rgb(66, 134, 244);
+  background-color:rgb(66, 134, 244) ;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color:rgb(255, 37, 37,.26)
+}
+
+/* Chrome, Safari, Edge, Opera */
+

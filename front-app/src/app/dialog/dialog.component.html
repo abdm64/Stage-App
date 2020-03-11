@@ -1,0 +1,254 @@
+
+<div class="md-dialog-container" >
+
+
+
+
+    <form  [formGroup]="angForm" >
+      <div class="container">
+        <div class="row">
+
+        <div class="col">
+
+
+        <mat-card class = "information" style=" font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+        <div >
+
+
+
+          <h1  style="color: #E2001A;
+  text-align: center;">Personal informations</h1>
+        <mat-form-field style="width: 100%;" >
+          <input matInput placeholder="Nom" name="nom"  [value]="student.nom"  formControlName="nom"   >
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Prenom" name="prenom" [value]="student.prenom" formControlName="prenom">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+            <mat-select placeholder="Sexe" name = "sexe" [value]="student.sexe" formControlName="sexe" >
+              <mat-option value="HOMME">Homme</mat-option>
+              <mat-option value="FEMME">Femme</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field >
+            <input matInput [matDatepicker]="picker" placeholder="Date de naissance" name="dateNaissance" [value]="student.dateNaissance"  formControlName="dateNaissance" >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <mat-form-field style="width: 100%;">
+
+          <!-- <input matInput placeholder="WILAYA" name="wilaya"  [value]="student.wilaya" formControlName="wilaya"> -->
+
+          <input type="text" placeholder="Wilaya"  matInput  [matAutocomplete]="auto" #wilaya  [value]="student.wilaya" formControlName="wilaya">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let wilaya of wilayas" [value]="wilaya" >
+              {{ wilaya }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="N° DE TÉLÉPHONE" name="nTelephone"  [value]="student.nTelephone" formControlName="nTelephone" type="number">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="ADRESSE MAIL" name="email"  [value]="student.email"  formControlName="email">
+        </mat-form-field>
+
+      </div>
+
+
+      </mat-card>
+
+      </div>
+      <div class="col">
+
+      <mat-card   style="font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);"
+>
+
+        <div class="example-container">
+            <h1 style=" color: #E2001A;
+  text-align: center;">Internship informations</h1>
+
+            <mat-form-field style="width: 100%;">
+              <input matInput placeholder="Etablissement"  name="etablissement"  [value]="student.etablissement" formControlName="etablissement" >
+            </mat-form-field>
+
+          <mat-form-field style="width: 100%;" >
+            <mat-select  placeholder="Diplome préparé"  name="diplome" [value]="student.diplome" formControlName="diplome">
+                <mat-option value="Licence 1"> Licence 1</mat-option>
+                <mat-option value="Licence 2">Licence 2</mat-option>
+                <mat-option value="Licence 3">Licence 3</mat-option>
+                <mat-option value="Master 1">Master 1</mat-option>
+                <mat-option value="Master 2">Master 2</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+              <input matInput placeholder="Theme de stage" name="theme" [value]="student.theme" formControlName="theme" >
+            </mat-form-field>
+
+
+          <div class="row">
+              <mat-form-field class="col-6" style="width: 100%;">
+                  <mat-select placeholder="Type de stage" name="typeStage" [value]="student.typeStage" formControlName="typeStage" >
+                    <mat-option value="Projet de fin d'etude">Projet de fin d'études</mat-option>
+                    <mat-option value="Stage de découverte">Stage de découverte</mat-option>
+                    <mat-option value="Stage rémunéré">Stage rémunéré</mat-option>
+                  </mat-select>
+                </mat-form-field>
+          <mat-form-field class="col-6" style="width: 100%;">
+              <mat-select placeholder="Type de rapport" name="typeRapport" [value]="student.typeRapport"  formControlName="typeRapport"  >
+                <mat-option value="Rapport">Rapport</mat-option>
+                <mat-option value="Memoire">Mémoire</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+            </div>
+      <div class="row">
+            <mat-form-field class="col-6">
+                <input matInput [matDatepicker]="debut" placeholder="Date debut" name="dateDebut" [value]="student.dateDebut" formControlName="dateDebut" >
+                <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
+                <mat-datepicker #debut></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field class="col-6">
+                  <input matInput [matDatepicker]="fin" placeholder="Date fin"  name="dateFin" [value]="student.dateFin" formControlName="dateFin" >
+                  <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
+                  <mat-datepicker #fin></mat-datepicker>
+                </mat-form-field>
+      </div>
+
+          <mat-form-field >
+
+            <mat-select placeholder="Nombre de passage par semaine" name="nbJoursPresence"  [value]="student.nbJoursPresence" formControlName="nbJoursPresence">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <input matInput placeholder="Recommandation" name="recommandation" [value]="student.recommandation" formControlName="recommandation" >
+          </mat-form-field>
+
+
+        </div>
+
+      </mat-card>
+
+      </div>
+      <div class="col">
+
+      <mat-card    style="font-family:  Helvetica Neue, Helvetica, Arial, sans-serif;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+
+        <div class="example-container">
+            <h1 style="color: #E2001A;
+  text-align: center;">Encadreur information </h1>
+
+
+<div class="row">
+    <div class="col-6">
+        <mat-form-field style="width: 70%;" >
+            <input matInput placeholder="Identifiant" name="encadreurID" [value]="student.encadreurID"  formControlName="encadreurID" #id >
+          </mat-form-field>
+    </div>
+    <div class="col-6" >
+        <button mat-stroked-button style="background-color: white; border-color:#E2001A ; color: #E2001A;" type="button" id="confirm" (click)="getEncadreur(id.value,student)" >Verifier</button>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+          <mat-form-field style="width: 100%;">
+            <input matInput placeholder="Nom"  name="encadreur" [value]="student.encadreur" formControlName="encadreur" >
+          </mat-form-field>
+
+
+
+
+          <mat-form-field style="width: 100%;">
+              <input matInput placeholder="Email " name="encadreurmMail" [value]="student.encadreurmMail" formControlName="encadreurmMail" >
+            </mat-form-field >
+            <mat-form-field style="width: 100%;">
+              <input matInput placeholder="Département" name="encadreurDEP" [value]="student.encadreurDEP" formControlName="encadreurDEP" >
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+              <input matInput placeholder="Secteur" name="encadreurSec" [value]="student.encadreurSec" formControlName="encadreurSec" >
+            </mat-form-field>
+
+
+              <mat-form-field style="width: 100%;">
+              <input matInput placeholder="Fonction" name="encadreurmOrg"  [value]="student.encadreurmOrg" formControlName="encadreurmOrg"  >
+
+
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Attestation  stage" name= "attestation" [value]="student.attestation" formControlName="attestation" >
+                    <mat-option value="true" >OUI</mat-option>
+                    <mat-option value="false">NO</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+
+
+                    <input matInput placeholder=""   [hidden]="true" name="matricule" formControlName="matricule" >
+
+        </div>
+
+      </mat-card>
+
+      </div>
+      </div>
+      <div style="margin-top: 10px ">
+
+        <mat-card style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+
+        <mat-form-field style="width: 100%;" >
+          <textarea matInput placeholder="Description" style="height: 100px"  name= "description" formControlName="description"></textarea>
+        </mat-form-field>
+
+        </mat-card>
+
+
+
+
+
+
+      </div>
+
+
+    <mat-card-actions align="center" style="margin-top: 5%;">
+
+            <button  mat-button  type= "submit" (click) = "onClickSubmit()" style="background-color: red;color: white; float: right; ">Confirmer</button>
+            <button style="float: right; background-color: red;color: white;" mat-button color="white" type= "submit" (click) = "cancelOperation()" >Annuler</button>
+
+
+
+     </mat-card-actions>
+
+
+      </div>
+
+      </form>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
