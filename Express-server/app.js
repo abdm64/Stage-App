@@ -13,6 +13,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet')
 const Config = require('./config/config')
+const timeMachine = require('./src/routes/timeMachine')
 require('dotenv').config();
 const config = new Config()
 const TOKEN = process.env.TOKEN
@@ -30,7 +31,7 @@ const TOKEN = process.env.TOKEN
 
 const app = express();
 
-config.connectMongo('stage')
+config.connectMongo('test')
 
 app.use(helmet())
 app.use(cors()) 
@@ -85,6 +86,7 @@ app.use(encaRoute);
 app.use(chartRoute);
 app.use(evaluation);
 app.use(urlRandom);
+app.use(timeMachine);
 app.use(express.static(__dirname + '/static'))
 //serve
 app.get('/*', function(req, res) {

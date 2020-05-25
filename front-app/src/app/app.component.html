@@ -61,9 +61,9 @@
         </button>
 
 
-            <button mat-menu-item routerLink="/suivi"  routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}" class="btn" [disabled] = "!getAuth()" >
+            <button mat-menu-item routerLink="/suivi"   class="btn" [disabled] = "!getAuth()" >
               <mat-icon style=" color: #F0F0F0;">home</mat-icon>
-              <span >Accueil</span>
+              <span  routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}">Accueil</span>
             </button>
             <button mat-menu-item routerLink="/insert" class="btn">
               <mat-icon style=" color: #F0F0F0;">add</mat-icon>

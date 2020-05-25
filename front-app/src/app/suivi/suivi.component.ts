@@ -37,6 +37,7 @@ export class SuiviComponent implements OnInit {
   mySubscription: any;
   placeHolder = "Tous"
 private studentSub:Subscription;
+private studentSearch:Subscription;
 
 
 
@@ -158,7 +159,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
   ngOnInit() {
   
-  this.studentsService.getStudentSearch('').subscribe((postData)=>  this.last = postData.maxNumber); 
+this.studentSearch =  this.studentsService.getStudentSearch('').subscribe((postData)=>  this.last = postData.maxNumber); 
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students = students;
@@ -178,6 +179,8 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
   ngOnDestroy(){
     this.studentSub.unsubscribe();
+    this.studentSearch.unsubscribe()
+
   }
 
    openDialogDelete(student : any): void { // hadi dialog ta3 click hadik
@@ -251,7 +254,7 @@ var mail = `mailto: ${addresses}?subject=${subject}&body=${body}`
 
      else{
 
-      this.studentsService.getStudentSearch(term)
+    this.studentSearch =   this.studentsService.getStudentSearch(term)
       .subscribe((postData)=>{
 
         this.last = postData.maxNumber

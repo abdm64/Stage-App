@@ -15,4 +15,14 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
+  webserver:
+    image: nginx 
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf
+      - ./config/nginx/error.log:/etc/nginx/error_log.log
+      - ./config/nginx/cache/:/etc/nginx/cache
+    ports:
+      - 80:80
+      - 443:443
+
   
