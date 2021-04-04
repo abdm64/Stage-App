@@ -1,5 +1,5 @@
  const express =require('express');
- const auth = require('./auth-check')
+ const auth = require('../middleware/auth-check')
  const router= express.Router();
  const exelController = require('../Controller/ExelController')
 

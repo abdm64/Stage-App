@@ -1,12 +1,12 @@
 
-const studentsRoute =require('./src/routes/students');
-const mail =require('./src/routes/mail');
-const exelData = require('./src/routes/dataExel');
-const userRoute = require("./src/routes/user");
-const encaRoute = require("./src/routes/encadreur");
-const chartRoute = require("./src/routes/chart");
-const evaluation = require('./src/routes/evaluationRoute')
-const urlRandom = require('./src/routes/URLRoute')
+const studentsRoute =require('./routes/StudentsRoutes');
+const mail =require('./jobs/mail');
+const exelData = require('./routes/ExelRoutes');
+const userRoute = require("./routes/UserRoutes");
+const encaRoute = require("./routes/EncadreurRoutes");
+const chartRoute = require("./routes/chartRoutes");
+const evaluation = require('./routes/EvaluationRoute')
+const urlRandom = require('./routes/URLRoute')
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -68,12 +68,7 @@ app.get('/api', (req,res, next)=>{
 
 });
 
-app.get('/api/apprenti', (req,res, next)=>{
- 
-  
 
-
-});
 
 
 // body parse middleware
@@ -85,7 +80,6 @@ app.use(bodyParser.json())
 
 
 app.use(studentsRoute);
-app.use(mail)
 app.use(userRoute);
 app.use(exelData);
 app.use(encaRoute);

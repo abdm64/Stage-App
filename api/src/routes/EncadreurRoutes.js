@@ -1,6 +1,6 @@
 
 const encadreurController = require('../Controller/EcadreurController')
-const auth = require('./auth-check')
+const auth = require('../middleware/auth-check')
 const express = require("express");
 const router = express.Router();
 

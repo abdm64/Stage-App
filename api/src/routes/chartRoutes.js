@@ -1,6 +1,6 @@
 
 const express = require("express");
-const auth = require('./auth-check');
+const auth = require('../middleware/auth-check');
 
 const chartController = require('../Controller/ChartController')
 

@@ -4,10 +4,10 @@
   "description": "app for rh department",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
-  "author": "abdm & safa",
+  "author": "abdm & safaa",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",

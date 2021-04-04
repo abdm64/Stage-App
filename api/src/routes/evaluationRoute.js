@@ -2,7 +2,7 @@
 
 const express =require('express');
 const evaluationController = require('../Controller/EvaluationController')
-const auth = require('./auth-check')
+
 const app = express.Router();
 
 

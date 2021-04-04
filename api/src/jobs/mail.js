@@ -1,9 +1,8 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
 
+const nodemailer = require('nodemailer');
 const mongoose =require('mongoose');
 var cron = require('node-cron');
-const app = express.Router();
+
 //var data = {}
 
 
@@ -80,7 +79,7 @@ if(getNbDay(item.dateFin) <= 0) {
 
  
 
-  console.log(item.nom)
+  
   transporter.sendMail(Options(item), function(err, data) {
     if(err)  console.log(err) ;
 
@@ -90,11 +89,11 @@ if(getNbDay(item.dateFin) <= 0) {
 
  } else {
 
-  console.log(" il lui reste plus que 7 jours")
+  //console.log(" il lui reste plus que 7 jours")
 }
 
 }else{
-  console.log("il a deja fini son stage")
+ // console.log("il a deja fini son stage")
 }
 }
 return true
@@ -158,4 +157,4 @@ async function info(){
   
 
 
-module.exports = app;
+
