@@ -68,6 +68,13 @@ app.get('/api', (req,res, next)=>{
 
 });
 
+app.get('/api/apprenti', (req,res, next)=>{
+ 
+  
+
+
+});
+
 
 // body parse middleware
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -101,7 +108,7 @@ const port =process.env.PORT || 3000;
 
 app.listen(port, ()=> {
 
-  console.log('Server listening on port ' + port);
+  console.log('HR App  listening on port ' + port);
 });
 
 

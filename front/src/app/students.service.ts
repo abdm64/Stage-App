@@ -24,10 +24,13 @@ export class  StudentService{
 
 
   result : string = '#' ;
+  type : string
+  urlType : string
+  
 
     private students  : any[] ;
     maxNumber : number
-    superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ"]
+    superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ","Sihem.Mouci@DJEZZY.DZ","Adnane.Zeribi@DJEZZY.DZ"]
 
 
     private  studentUpdated = new  Subject<Students[]>();
@@ -35,7 +38,8 @@ export class  StudentService{
 
 
     constructor(private http:HttpClient, private dialog: MatDialog, private router : Router){
-
+      const type = localStorage.getItem('type') || '0'
+      this.urlType = `/students/${type}/`
     }
     setHeader(){
 
@@ -48,7 +52,8 @@ export class  StudentService{
     getStudent(pageSize : number, pageIndex : number){
 
       const queryParms = `?pageSize=${pageSize}&pageIndex=${pageIndex}`
-      this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+'/students/data'+queryParms,  { headers: this.setHeader() }).
+      const type = 1
+      this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+this.urlType+'data'+queryParms,  { headers: this.setHeader() }).
       subscribe((postData)=>{
 
         this.maxNumber = postData.maxNumber
@@ -64,7 +69,7 @@ export class  StudentService{
 
       const queryParms = `?search=${term}`
 
-     return this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+'/students/data'+queryParms,  { headers: this.setHeader() })
+     return this.http.get<{students:Students[],maxNumber : number}>(BASE_URL+this.urlType+'data'+queryParms,  { headers: this.setHeader() })
 
 
     }
@@ -100,7 +105,7 @@ export class  StudentService{
 
 getSuperUser(){
 
-  return   ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ"]
+  return    ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ","Sihem.Mouci@DJEZZY.DZ","Adnane.Zeribi@DJEZZY.DZ"]
 }
 
 
@@ -110,9 +115,9 @@ getSuperUser(){
     }
     addStudent(data: any){
       const user = data.user
-      console.log(data)
 
-   this.http.post(BASE_URL+'/students/insertData', data,{ headers: this.setHeader() }).
+
+   this.http.post(BASE_URL+this.urlType+'insertData', data,{ headers: this.setHeader() }).
         subscribe(respanse => {
           console.log(respanse)
           this.studentUpdated.next([this.students]);
@@ -138,7 +143,7 @@ getSuperUser(){
     }
 
     deleteStudent(matricules : Number){
-      this.http.delete(BASE_URL+'/students/deleteData/'+matricules,{ headers: this.setHeader() }).subscribe((val) => {
+      this.http.delete(BASE_URL+this.urlType+'delete/'+matricules,{ headers: this.setHeader() }).subscribe((val) => {
         this.students.forEach((t, i) => {
           if (t.matricule === matricules) {   this.students.splice(i,  1); }
 
@@ -174,7 +179,7 @@ getSuperUser(){
 
     updateStudent(matricule : Number,dataOne : any){
 
-      this.http.put(BASE_URL+'/students/update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
+      this.http.put(BASE_URL+this.urlType+'update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
         data  => {
 
           // console.log("PUT Request is successful ", data);
@@ -215,7 +220,7 @@ getSuperUser(){
     }
     getSudentById(id : number){
 
-      return this.http.get(BASE_URL+'/students/data/'+id,  { headers: this.setHeader() })
+      return this.http.get(BASE_URL+this.urlType+'data/'+id,  { headers: this.setHeader() })
 
 
 
@@ -240,7 +245,16 @@ async getUrl(id: number){
 
 
 
+setType(type : string){
 
+
+      this.type = type
+}
+
+getType() : string {
+
+  return this.type
+}
 
 
 

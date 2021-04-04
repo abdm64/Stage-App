@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   user : string
   auth = [AuthGuard]
   superusers : string[]
+  defaultType = "0"
 
   @ViewChild('sidenavID', {static: true}) sidenav: MatSidenav;
 
@@ -76,7 +77,8 @@ logout()
 this.studentService.selectSide('false')
   localStorage.removeItem("auth");
   localStorage.removeItem("user");
-  localStorage.removeItem("token")
+  localStorage.removeItem("token");
+  localStorage.removeItem('type')
   this.router.navigate(['/'])
 
  this.sidenav.close();
@@ -87,6 +89,15 @@ this.studentService.selectSide('false')
 }
 getAuth(){
   return this.superusers.includes(this.user)
+}
+
+changeType(type : string){
+  
+ this.studentService.setType(type)
+ localStorage.setItem("type", type)
+ this.defaultType = localStorage.getItem("type")
+ location.reload();
+
 }
 
 

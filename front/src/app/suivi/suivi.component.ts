@@ -35,7 +35,9 @@ export class SuiviComponent implements OnInit {
   students: Students[] =[];
   studentsCopy: Students[] =[];
   mySubscription: any;
-  placeHolder = "Tous"
+  placeHolder = "Tous";
+  studentType : string[] = ["Stagiaires","Apprentis"]
+  defaultType : string = "stagiairess"
 private studentSub:Subscription;
 
 
@@ -157,8 +159,8 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 }
 
   ngOnInit() {
-  
-  this.studentsService.getStudentSearch('').subscribe((postData)=>  this.last = postData.maxNumber); 
+
+  this.studentsService.getStudentSearch('').subscribe((postData)=>  this.last = postData.maxNumber);
     this.studentSub = this.studentsService.getStudentUpdateListener().subscribe(
       (students:Students[]) =>{
         this.students = students;
@@ -171,6 +173,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
     this.getMatArray()
+    console.log(localStorage.getItem('type'))
 
 
      }
@@ -295,16 +298,16 @@ var mail = `mailto: ${addresses}?subject=${subject}&body=${body}`
  }
 
 
- selectEncours(){ 
+ selectEncours(){
   this.students = this.studentsCopy
- 
+
    var studentEnd : any[] = []
-  
+
 
   for (let student of this.students){
 
   if (this.getStudentDate(student)) {
-    
+
     studentEnd.push(student)
 
 
@@ -322,7 +325,7 @@ this.placeHolder = "en cours"
  selectStudenEnd(){
 
   var studentEnd : any[] = []
- 
+
   this.students = this.studentsCopy
 
  for (let student of this.students ){
@@ -341,9 +344,9 @@ this.placeHolder = "Treminé"
 
 }
 selectAllStudent(){
- 
+
   this.students = this.studentsCopy
-  
+
   this.placeHolder = "Tous"
 }
 
@@ -396,7 +399,6 @@ onChangePage(pageData : PageEvent){
     }
 
  }
-
 
 
 

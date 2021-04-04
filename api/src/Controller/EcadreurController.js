@@ -3,6 +3,7 @@ const Encadreur = require('../models/Responsable');
 
 exports.getEcadreur = (req,res, next)=>{
 
+  
     Encadreur.findOne( {Employee_Number  : req.params.id }  , { _id : false},
 
         (err, docs) => {

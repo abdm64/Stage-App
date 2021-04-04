@@ -1,17 +1,22 @@
 const mongoose =require('mongoose');
 require('../models/Student');
+require('../models/Apprenti');
 const Students = mongoose.model( 'Students');
+const Apprenti = mongoose.model('Apprenti')
 
 
 
 
 exports.getStudents =  (req,res, next)=>{
-  
+
+   
     const pageSize = +req.query.pageSize
     const pageIndex = +req.query.pageIndex
     const search = req.query.search
+    const type = req.params.type
+    const ModelType = getModelType(type,Students,Apprenti)
     
-    const studentQuary =  Students.find({}, {}, { sort: { _id :  -1} }) ;
+    const studentQuary =  ModelType.find({}, {}, { sort: { _id :  -1} }) ;
   
   
     if( pageSize && pageIndex){
@@ -25,7 +30,7 @@ exports.getStudents =  (req,res, next)=>{
         students = docs
   
   
-    return Students.countDocuments()
+    return ModelType.countDocuments()
   
   })   
   .then(count => {
@@ -39,7 +44,7 @@ exports.getStudents =  (req,res, next)=>{
     } else 
     if ((search)) {
       const regex = new RegExp(escapeRegex(search),'ig');
-          Students.find({$or: [
+          ModelType.find({$or: [
             {nom: regex}, 
             {prenom: regex}, 
             {matricule:checkIfNumber(search)},
@@ -68,7 +73,7 @@ exports.getStudents =  (req,res, next)=>{
   
     students = docs
   
-    return Students.countDocuments()
+    return ModelType.countDocuments()
   })   
   .then(count => {
     res.status(200).json({
@@ -92,15 +97,17 @@ exports.getStudents =  (req,res, next)=>{
 
 
   exports.addStudent = (req,res,next)=>{
+    const type = req.params.type
+    const ModelType = getModelType(type,Students,Apprenti)
     
-    var  student = new Students(req.body)
+    var  student = new ModelType(req.body)
     const nom = req.body.nom
     const prenom = req.body.prenom
     const dateNaissance = req.body.dateNaissance
     const nTelephone = req.body.nTelephone
 
 
- Students.findOne({nom : nom, prenom : prenom,dateNaissance: dateNaissance,nTelephone:nTelephone}, (err, docs) => {
+ ModelType.findOne({nom : nom, prenom : prenom,dateNaissance: dateNaissance,nTelephone:nTelephone}, (err, docs) => {
   if (err) console.log(err);
 
 
@@ -136,19 +143,24 @@ if (!docs){
   }
 
   exports.deleteStudent = (req,res)=> {
+    const type = req.params.type
+    const ModelType = getModelType(type,Students,Apprenti)
+ 
 
-    Students.deleteOne({ matricule: req.params.id }, (err)  => {
+  ModelType.deleteOne({ matricule: req.params.id }, (err)  => {
         if (err) return console.log(err);
         
-        res.status(200).send() ;
+        res.status(200).send("deleted") ;
       });
 
 
 
  }
  exports.getStudentById =  (req,res)=> {
+  const type = req.params.type
+  const ModelType = getModelType(type,Students,Apprenti)
 
-  Students.findOne({ matricule: req.params.id }, (err, doc)   => {
+  ModelType.findOne({ matricule: req.params.id }, (err, doc)   => {
       if (err) return console.log(err);
       
       res.status(200).json({
@@ -162,8 +174,10 @@ if (!docs){
  
 
  exports.updateStudent = (req,res) => {
+  const type = req.params.type
+  const ModelType = getModelType(type,Students,Apprenti)
 
-    Students.findOneAndUpdate( {matricule : req.params.matricule} , req.body , {new: true} ,
+    ModelType.findOneAndUpdate( {matricule : req.params.matricule} , req.body , {new: true} ,
  
      (err, docs) => {
          // Handle any possible database errors
@@ -176,8 +190,10 @@ if (!docs){
    }
 
    exports.deleteAllStudents = (req,res) => {
+    const type = req.params.type
+    const ModelType = getModelType(type,Students,Apprenti)
 
-    Students.deleteMany( function (err) {
+    ModelType.deleteMany( function (err) {
      if (err) return console.log(err), res.send(err);
      // deleted at most one tank document
      res.status(200).send("students deleted") ;
@@ -263,3 +279,14 @@ function addStudent(res,student){
 
 }
    
+function getModelType(type,studentModel,apprentiModel){
+  if ( type === "0"){
+
+
+    return  studentModel
+  }
+
+  return apprentiModel
+
+
+}

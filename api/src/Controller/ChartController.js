@@ -1,29 +1,42 @@
-const mongoose =require('mongoose');
-const Students = mongoose.model( 'Students');
+
+
+ const mongoose =require('mongoose');
+ require('../models/Student');
+ require('../models/Apprenti');
+ const Students = mongoose.model( 'Students');
+ const Apprenti = mongoose.model('Apprenti')
 
 exports.getEcadreurDep = (req,res)=>{
+  const type = req.params.type
+  const ModelType = getModelType(type,Students,Apprenti)
     
     const year = req.query.year
-    getData(Students,res,year,'encadreurDEP')
+    getData(ModelType,res,year,'encadreurDEP')
   
   }
 
   exports.getEcadreurSec = (req,res)=>{
+    const type = req.params.type
+    const ModelType = getModelType(type,Students,Apprenti)
     
     const year = req.query.year
-    getData(Students,res,year,'encadreurSec')
+    getData(ModelType,res,year,'encadreurSec')
       }
 
 
       exports.getTypes = (req,res)=>{ 
+        const type = req.params.type
+        const ModelType = getModelType(type,Students,Apprenti)
         const year = req.query.year
-     getData(Students,res,year,'typeStage')
+     getData(ModelType,res,year,'typeStage')
           }
   
 
 
     exports.getDateDebut = (req,res)=>{
       //can't refector with getData function need a time 
+      const type = req.params.type
+      const ModelType = getModelType(type,Students,Apprenti)
       const year = req.query.year
         var arraySec = []
         const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -31,7 +44,7 @@ exports.getEcadreurDep = (req,res)=>{
   ];
   
        
-        Students.find().then(documents =>{
+        ModelType.find().then(documents =>{
           const data = getDataPerYear(documents,year)
           for (docment of data) {
             let month = monthNames[docment.dateDebut.getMonth()]
@@ -43,6 +56,8 @@ exports.getEcadreurDep = (req,res)=>{
           }
 
           exports.getDateFin = (req,res)=>{
+            const type = req.params.type
+            const ModelType = getModelType(type,Students,Apprenti)
             const year = req.query.year
             var arraySec = []
             const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -50,7 +65,7 @@ exports.getEcadreurDep = (req,res)=>{
       ];
       
            
-            Students.find().then(documents =>{
+            ModelType.find().then(documents =>{
               const data = getDataPerYear(documents,year) // fix Big Problem 
               for (docment of data) {
                 

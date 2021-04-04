@@ -1,11 +1,17 @@
 const mongoose = require ('mongoose');
-const AutoIncrement = require('mongoose-sequence')(mongoose);
+const autoInc = require('mongoose-sequence')(mongoose);
+const autoIncrement = require('mongoose-auto-increment');
 
-const Schema = mongoose.Schema;
 
-const StudentSchema = new Schema({
- 
+var Schema = mongoose.Schema;
 
+const ApprentiSchema = new Schema({
+ matricule : {
+
+    type:Number,
+    required : true
+ }
+,
 
 nom:{
     type:String,
@@ -156,9 +162,16 @@ user:{
 
 
 });
-StudentSchema.plugin(AutoIncrement, {inc_field: 'matricule'});
+//ApprentiSchema.plugin(autoInc, {inc_field: 'matricule'});
+autoIncrement.initialize(mongoose.connection)
+ApprentiSchema.plugin(autoIncrement.plugin, {
+    model: 'Apprenti',
+    field: 'matricule',
+    startAt: 1,
+    incrementBy: 1
+  });
 
-module.exports =  mongoose.model('Students',StudentSchema);
+module.exports =  mongoose.model('Apprenti',ApprentiSchema,'Apprentis');
 
 
 

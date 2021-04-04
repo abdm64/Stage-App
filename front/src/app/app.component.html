@@ -9,7 +9,22 @@
       <img class="logo-image" src="../assets/logo.png">
       <span  style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 25px;">Djezzy Espace Stagiaires</span>
   </div>
-  <span style=" flex: 1 1 auto;" ></span>
+  <span style=" flex: 1 1 auto;" >
+   </span>
+   <div >
+
+
+    <mat-form-field  style="width:70%;" >
+      <mat-select #type [(value)]="defaultType" (selectionChange)= "changeType(type.value)" >
+        <mat-option value="0" >Stagiaires</mat-option>
+        <mat-option value="1">Apprentis</mat-option>
+      </mat-select>
+
+  </mat-form-field>
+
+
+
+          </div>
 
 <img class="logo-image" src="../assets/djezzyAcademy.png">
 
@@ -65,6 +80,8 @@
           <mat-icon style=" color: #F0F0F0;">home</mat-icon>
           <span >Accueil</span>
         </button>
+
+
         <button mat-menu-item routerLink="/insert" class="btn">
           <mat-icon style=" color: #F0F0F0;">add</mat-icon>
           <span>Ajouter Stagiaire</span>

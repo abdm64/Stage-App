@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 
 
 const  BASE_URL = environment.apiUrl+'api';
+
 @Injectable({providedIn :'root'})
 
 export class AuthService {

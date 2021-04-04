@@ -39,7 +39,6 @@ const Evaluation = mongoose.model( 'Evaluation');
    
        res.status(201).json(
               arr
-     
          );
      
      

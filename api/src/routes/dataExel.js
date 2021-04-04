@@ -6,7 +6,7 @@
 
 
 
- router.get('/api/students/data/date/:gte/:lte',auth, exelController.getStudents);
+ router.get('/api/v2/exel/:type/data/date/:gte/:lte',auth, exelController.getStudents);
 
 
 

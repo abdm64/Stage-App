@@ -11,23 +11,23 @@ const router= express.Router();
 
 // get Departemnet
 
-router.get('/api/students/enc',auth,chartController.getEcadreurDep)
+router.get('/api/v2/dashboard/:type/enc',auth,chartController.getEcadreurDep)
 
 //get Sector
   
-router.get('/api/students/encSec',auth,chartController.getEcadreurSec)
+router.get('/api/v2/dashboard/:type/encSec',auth,chartController.getEcadreurSec)
 //get Type
 
-router.get('/api/students/types',chartController.getTypes)
+router.get('/api/v2/dashboard/:type/types',chartController.getTypes)
     
   
     //************************** chart date debut ,auth */
 
-    router.get('/api/students/datedebut',auth,chartController.getDateDebut)
+    router.get('/api/students/:type/datedebut',auth,chartController.getDateDebut)
   
       //************************** chart date fin ,auth */
 
-      router.get('/api/students/datefin',auth,chartController.getDateFin )
+      router.get('/api/students/:type/datefin',auth,chartController.getDateFin )
 
 
 
