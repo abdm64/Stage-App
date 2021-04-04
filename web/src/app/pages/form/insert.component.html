@@ -1,0 +1,269 @@
+
+
+
+
+<form  #postForm="ngForm" (ngSubmit)="onAddPost(postForm,wilaya.value)">
+<div class="container">
+  <div class="row" style="position: relative;">
+
+  <div class="col">
+
+
+  <mat-card class = "information " style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+  <div >
+
+
+
+    <h1 color = "primary">Informations personal</h1>
+  <mat-form-field >
+    <input matInput placeholder = "Nom" name="nom" required ngModel>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Prénom" name="prenom" required  ngModel>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select placeholder="Sexe" name = "sexe" required  ngModel>
+        <mat-option value="HOMME">Homme</mat-option>
+        <mat-option value="FEMME">Femme</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Date de naissance" name="dateNaissance"   required  ngModel >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  <mat-form-field>
+    <input type="text" placeholder="Wilaya"  matInput [formControl]="WilayaFormControl" [matAutocomplete]="auto" #wilaya required ngModel >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let wilaya of filteredWilayas | async" [value]="wilaya" >
+        {{wilaya}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="N° de téléphone" name="nTelephone" required type='number' ngModel>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Adresse mail" name="email" required  ngModel >
+  </mat-form-field>
+
+</div>
+
+
+</mat-card>
+
+
+</div>
+<div class="col">
+
+<mat-card   style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+
+  <div class="example-container">
+      <h1>Informations relatives au stage</h1>
+
+      <mat-form-field>
+        <input matInput placeholder="Etablissement"  name="etablissement" required  ngModel>
+      </mat-form-field>
+
+      <mat-form-field >
+          <mat-select placeholder="Diplome préparé" name="diplome" required  ngModel>
+            <mat-option value="Licence 1"> Licence 1</mat-option>
+            <mat-option value="Licence 2">Licence 2</mat-option>
+            <mat-option value="Licence 3">Licence 3</mat-option>
+            <mat-option value="Master 1">Master 1</mat-option>
+            <mat-option value="Master 2">Master 2</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+
+
+
+    <mat-form-field>
+        <input matInput placeholder="Thème de stage" name="theme" required  ngModel >
+      </mat-form-field>
+
+
+    <div class="row">
+        <mat-form-field class="col-6">
+            <mat-select placeholder="Type de stage" name="typeStage" required  ngModel>
+              <mat-option value="Projet de fin d'etude">Projet de fin d'études</mat-option>
+              <mat-option value="Stage de découverte">Stage de découverte</mat-option>
+              <mat-option value="Stage rémunéré">Stage rémunéré</mat-option>
+            </mat-select>
+          </mat-form-field>
+    <mat-form-field class="col-6">
+        <mat-select placeholder="Type de rapport" name="typeRapport" required  ngModel >
+          <mat-option value="Rapport">Rapport</mat-option>
+          <mat-option value="Memoire">Mémoire</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      </div>
+<div class="row">
+      <mat-form-field class="col-6">
+          <input matInput [matDatepicker]="debut" placeholder="Date début" name="dateDebut"  required  ngModel>
+          <mat-datepicker-toggle matSuffix [for]="debut"></mat-datepicker-toggle>
+          <mat-datepicker #debut></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+            <input matInput [matDatepicker]="fin" placeholder="Date fin"  name="dateFin" required  ngModel>
+            <mat-datepicker-toggle matSuffix [for]="fin"></mat-datepicker-toggle>
+            <mat-datepicker #fin></mat-datepicker>
+          </mat-form-field>
+</div>
+
+    <mat-form-field>
+
+      <mat-select placeholder="Nombre de passage par semaine" name="nbJoursPresence" required  ngModel >
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+
+  </div>
+
+  <mat-form-field>
+
+      <mat-select placeholder="Attestation de stage" name= "attestation" required  ngModel>
+          <mat-option value="true" >Oui</mat-option>
+          <mat-option value="false">No</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Recommandation" name="recommandation"  ngModel >
+      </mat-form-field>
+
+</mat-card>
+
+</div>
+<div class="col">
+
+<mat-card  style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);" >
+
+  <div class="example-container">
+      <h1>Encadreur </h1>
+
+<div class="row">
+  <div class="col-6">
+      <mat-form-field >
+          <input matInput placeholder="Identifiant" name="encadreurID" #id  required ngModel >
+
+
+        </mat-form-field >
+  </div>
+  <div class="col-6" >
+      <button mat-stroked-button style="background-color: white; border-color:#E2001A ; color: #E2001A;" type="button" id="confirm" (click)="getEncadreur(id.value)" >Verifier</button>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+<mat-form-field >
+    <input matInput placeholder="Nom"  name="encadreur"    [value]= "encadreur.First_name+' '+encadreur.Last_Name" required  >
+</mat-form-field>
+
+
+
+<mat-form-field >
+    <input matInput placeholder="Email " name="encadreurmMail"  [value]= "encadreur.Email_Address" required  >
+
+</mat-form-field>
+
+
+
+
+
+
+<mat-form-field>
+    <input matInput placeholder="Département" name="encadreurDEP"  [value]= "encadreur.Departement" required   >
+</mat-form-field>
+
+
+
+
+<mat-form-field>
+    <input matInput placeholder="Secteur" name="encadreurSec"   [value]= "encadreur.Sector" required   >
+
+</mat-form-field>
+
+
+
+<mat-form-field>
+    <input matInput placeholder="Fonction" name="encadreurmOrg"  [value]= "encadreur.Position"  required   >
+
+</mat-form-field>
+
+
+
+
+
+              <input matInput placeholder=""   [hidden]="true" name="matricule" ngModel >
+              <input matInput placeholder=""   [hidden]="true" name="user" ngModel >
+
+
+  </div>
+
+
+
+</mat-card>
+
+
+
+<div style="margin-top: 10px ">
+
+  <mat-card style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);">
+
+  <mat-form-field  >
+    <textarea matInput placeholder="Description du projet" style="height: 100px;"  name= "description"   ngModel></textarea>
+  </mat-form-field>
+
+  </mat-card>
+
+
+</div>
+
+</div>
+
+<div style="position: absolute; right: 0; bottom: 0;top: 700px;" ><button mat-flat-button  id="save" type="submit" >Enregistrer</button></div>
+
+</div>
+
+<div class="row" >
+  <div class="col-4" >
+</div>
+<div class="col-4"> </div>
+
+
+<div class="col-4">  </div>
+
+</div>
+
+
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+

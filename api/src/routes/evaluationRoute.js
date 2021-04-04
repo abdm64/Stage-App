@@ -9,7 +9,7 @@ const app = express.Router();
 
 // ,auth
 
-app.get('/api/evaluation/:id' , evaluationController.getEvaluation)
+app.get('/api/v2/evaluation/:id' , evaluationController.getEvaluation)
 
 app.post('/api/evaluation/:id', evaluationController.postEvaluation)
 

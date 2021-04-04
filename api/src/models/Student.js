@@ -140,11 +140,6 @@ user:{
   year: {
       type: Number,
       required: false
-  },
-  matricule : {
-    type: Number,
-    required: true
-
   }
 });
 StudentSchema.plugin(AutoIncrement, {inc_field: 'matricule'});

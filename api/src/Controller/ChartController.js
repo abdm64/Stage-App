@@ -35,6 +35,7 @@ exports.getEcadreurDep = (req,res)=>{
 
     exports.getDateDebut = (req,res)=>{
       //can't refector with getData function need a time 
+     
       const type = req.params.type
       const ModelType = getModelType(type,Students,Apprenti)
       const year = req.query.year
@@ -43,6 +44,7 @@ exports.getEcadreurDep = (req,res)=>{
     "July", "August", "September", "October", "November", "December"
   ];
   
+  
        
         ModelType.find().then(documents =>{
           const data = getDataPerYear(documents,year)
@@ -50,12 +52,14 @@ exports.getEcadreurDep = (req,res)=>{
             let month = monthNames[docment.dateDebut.getMonth()]
             arraySec.push(month)
           }
+        
        res.status(200).send(sendDataDate(getElemnt(arraySec.sort())))
       
           });
           }
 
           exports.getDateFin = (req,res)=>{
+       
             const type = req.params.type
             const ModelType = getModelType(type,Students,Apprenti)
             const year = req.query.year
@@ -178,4 +182,17 @@ const data = getDataPerYear(documents,year)
  res.status(200).send(getElemnt(arrayTypes))
  
     });
+}
+
+   
+function getModelType(type,studentModel,apprentiModel){
+  if ( type === "0"){
+
+
+    return  studentModel
+  }
+
+  return apprentiModel
+
+
 }

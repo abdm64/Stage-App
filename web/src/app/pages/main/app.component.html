@@ -1,0 +1,127 @@
+
+
+
+
+<mat-toolbar style="    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;background-color:#EFEFEF;">
+
+  <div  >
+
+      <img class="logo-image" src="../assets/logo.png">
+      <span  style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 25px;">Djezzy Espace Stagiaires</span>
+  </div>
+  <span style=" flex: 1 1 auto;" >
+   </span>
+   <div >
+
+
+    <mat-form-field  style="width:70%;" [hidden] = "!isLargeScreen()">
+      <mat-select #type [(value)]="defaultType" (selectionChange)= "changeType(type.value)" >
+        <mat-option value="0"  >Stagiaires</mat-option>
+        <mat-option value="1" >Apprentis</mat-option>
+      </mat-select>
+
+  </mat-form-field>
+
+
+
+          </div>
+
+<img class="logo-image" src="../assets/djezzyAcademy.png">
+
+
+
+
+
+
+
+<span class="fill-remaining-space"  style=" position: absolute; margin-left: 1110px;">
+
+<ul fxLayout fxLayoutGap="20px" style="list-style-type: none; margin-top: 10px;">
+
+
+
+     <li>
+
+      <mat-menu #auth="matMenu" style="background-color: black;margin-right: 50;"></mat-menu>
+
+
+    </li>
+
+  </ul>
+</span>
+
+
+
+
+
+
+
+</mat-toolbar>
+
+
+
+<mat-sidenav-container  class="sidenav"  >
+
+  <mat-sidenav [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()" class="sidenav-content" #sidenavID>
+
+
+    <mat-nav-list >
+
+
+
+     <div style="margin-top: 10px;"  >
+      <button mat-menu-item   class="btn1">
+        <mat-icon style=" color: #F0F0F0;">person_pin</mat-icon>
+      <span>{{ user }}</span>
+    </button>
+
+
+        <button mat-menu-item routerLink="/suivi"  routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}" class="btn" [disabled] = "!getAuth()" >
+          <mat-icon style=" color: #F0F0F0;">home</mat-icon>
+          <span >Accueil</span>
+        </button>
+
+
+        <button mat-menu-item routerLink="/insert" class="btn">
+          <mat-icon style=" color: #F0F0F0;">add</mat-icon>
+          <span>Ajouter </span>
+        </button>
+        <button mat-menu-item  routerLink="/chart" class="btn" [disabled] = "!getAuth()">
+          <mat-icon style=" color: #F0F0F0;">dashboard</mat-icon>
+          <span>Tableau de Bord</span>
+        </button>
+        <button mat-menu-item  (click)="export()" class="btn" [disabled] = "!getAuth()">
+            <mat-icon style=" color: #F0F0F0;">cloud_download</mat-icon>
+            <span>Exporter Excel</span>
+          </button>
+        <button mat-menu-item (click)="logout()" class="btn">
+          <mat-icon style=" color: #F0F0F0;">exit_to_app</mat-icon>
+          <span>Sign out</span>
+        </button>
+
+    </div>
+
+
+    </mat-nav-list>
+    <mat-card class="noteBox"  >
+      N'oubliez pas de consulter les emails envoyés automatiquement par la plateforme sur votre email.
+    </mat-card>
+
+
+  </mat-sidenav>
+
+
+  <mat-sidenav-content >
+<br>
+
+      <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
+
+
+

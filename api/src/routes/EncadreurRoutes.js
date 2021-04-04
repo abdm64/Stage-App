@@ -5,7 +5,7 @@ const express = require("express");
 const router = express.Router();
 
 
-router.get('/api/encadreur/data/:id',auth,encadreurController.getEcadreur)
+router.get('/api/v2/encadreur/data/:id',auth,encadreurController.getEcadreur)
 
 
   module.exports = router;

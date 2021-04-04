@@ -97,6 +97,7 @@ exports.getStudents =  (req,res, next)=>{
 
 
   exports.addStudent = (req,res,next)=>{
+    
     const type = req.params.type
     const ModelType = getModelType(type,Students,Apprenti)
     
@@ -265,6 +266,7 @@ function addStudent(res,student){
 
 
   ).catch(err => {
+    console.log(err)
 
     res.status(500).json({
       message : "Operation failed",

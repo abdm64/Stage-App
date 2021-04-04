@@ -6,12 +6,7 @@ const autoIncrement = require('mongoose-auto-increment');
 var Schema = mongoose.Schema;
 
 const ApprentiSchema = new Schema({
- matricule : {
-
-    type:Number,
-    required : true
- }
-,
+ 
 
 nom:{
     type:String,

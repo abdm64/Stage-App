@@ -23,11 +23,11 @@ router.get('/api/v2/dashboard/:type/types',chartController.getTypes)
   
     //************************** chart date debut ,auth */
 
-    router.get('/api/students/:type/datedebut',auth,chartController.getDateDebut)
+    router.get('/api/v2/dashboard/:type/datedebut',auth,chartController.getDateDebut)
   
       //************************** chart date fin ,auth */
 
-      router.get('/api/students/:type/datefin',auth,chartController.getDateFin )
+      router.get('/api/v2/dashboard/:type/datefin',auth,chartController.getDateFin )
 
 
 

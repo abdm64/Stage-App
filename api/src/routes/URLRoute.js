@@ -4,11 +4,11 @@ const urlController = require('../Controller/URLController')
 const app = express.Router();
 
 
-app.post("/api/random", urlController.postRandomhash)
+app.post("/api/v2/random", urlController.postRandomhash)
 
-app.get("/api/random/:id", urlController.getUrlById)
+app.get("/api/v2/random/:id", urlController.getUrlById)
 
-app.delete("/api/random/:id", urlController.deleteUrlById)
+app.delete("/api/v2/random/:id", urlController.deleteUrlById)
 
 
 
