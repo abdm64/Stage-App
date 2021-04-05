@@ -1,9 +1,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: stage-pvc
-  annotations:
-    volume.beta.kubernetes.io/storage-class: gluster-heketi
+  name: stage-db-pvc
+  namespace: stage-app-prod
 spec:
   accessModes:
     - ReadWriteOnce
@@ -16,8 +15,7 @@ spec:
 
 
       
- # kubectl get pod -n kube-system -o wide | grep api1
- # journalctl -u kubelet -f 
+
 
  
 

@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
      
   }
   ngOnInit() {
+    this.disableScrolling()
     this.authservice.name.subscribe((name) => {
       this.user = name
     })
@@ -102,6 +103,12 @@ changeType(type : string){
  
  location.reload();
 
+}
+
+disableScrolling(){
+  var x=window.scrollX;
+  var y=window.scrollY;
+  window.onscroll=function(){window.scrollTo(x, y);};
 }
 
 

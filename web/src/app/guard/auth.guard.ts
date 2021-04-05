@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ"]
+  superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ","Sihem.Mouci@DJEZZY.DZ","Adnane.Zeribi@DJEZZY.DZ"]
   authusers = localStorage.getItem("auth")
   user = localStorage.getItem("user")
   constructor(public auth : AuthService, private router: Router){}

@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stage-app-dep
+  namespace: stage-app-prod
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels:
+        component: stage-app 
+  template: 
+    metadata:
+      labels: 
+        component: stage-app
+    spec:
+ 
+     containers: 
+      - name: stage-app 
+        image:   dmp-api-k8s-registry.com:443/stage-app:v0.0.2 # abdm6464/dte-dnbo:V0.0.8
+        imagePullPolicy: IfNotPresent 
+        ports: 
+        - containerPort: 3000 
+        env:  
+          - name: DB_BASE_URL
+            value: mongodb://stage-db-svc:27017/
+
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+    name: stage-app-svc
+    namespace: stage-app-prod
+spec: 
+  type: LoadBalancer
+  ports: 
+    - port: 3000 
+      targetPort: 3000 
+      nodePort: 31516
+  selector: 
+    component: stage-app 
+          
+
+
+
+
+
+
+
+
+
+
+
+
+

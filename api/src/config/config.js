@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 require('dotenv').config();
-const base_url = process.env.BASE_URL || "mongodb://localhost:27017/"
+const base_url = process.env.DB_BASE_URL || "mongodb://localhost:27017/"
 
 'use strict';
 console.log(base_url)
