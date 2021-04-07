@@ -28,11 +28,11 @@ export class EvaluationComponent implements OnInit {
  async  ngOnInit() {
 
     const compare = await  this.getUrl()
-    if (!compare === true) {
+    if (!compare) {
       this.route.navigate(['/thank'])
     }
-    this.getName()
-   
+  
+
 
 
 
@@ -53,26 +53,28 @@ getName(){
        this.studentService.getSudentById(this.id)
          .subscribe((data) => {
            const fullName = data['doc']
-     
+
             this.name = fullName.nom
             this.prenome = fullName.prenom
 
          });
-       
-    
+
+
 
   }
 
-  async getUrl(){
+  async getUrl() : Promise<boolean>{
     const data = await this.studentService.getUrl(this.id)
     const randomHash = data.doc;
+    
+    this.name = randomHash.lastName
+    this.prenome = randomHash.firstName
 
 
-    const compare =  (JSON.stringify(randomHash) === JSON.stringify(this.randomHash) )
 
 
 
-    return compare;
+    return (randomHash.id === this.randomHash.id && randomHash.random === this.randomHash.random)
 
   }
 

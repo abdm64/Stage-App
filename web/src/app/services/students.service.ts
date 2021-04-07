@@ -6,6 +6,7 @@ import { MsgErrorComponent} from "../pages/msg-error/msg-error.component"
 import { MatDialog } from '@angular/material';
 import { Router} from '@angular/router';
 import { environment } from '../../environments/environment';
+import { Student } from '../models/Student.model'
 // StudentService handel all networking related to student
 
 
@@ -28,7 +29,7 @@ export class  StudentService {
   urlType : string
   
 
-    private students  : any[] ;
+    private students  : Student[] ;
     maxNumber : number
     superusers = ["abdm64@live.com","Fatma.TILIOUINE@DJEZZY.DZ","Kamel.Naitdjoudi@DJEZZY.DZ","Farah.ASSOUL@DJEZZY.DZ","Sihem.Mouci@DJEZZY.DZ","Adnane.Zeribi@DJEZZY.DZ"]
 
@@ -177,10 +178,10 @@ getSuperUser(){
 
     }
 
-    updateStudent(matricule : Number,dataOne : any){
+    updateStudent(matricule : Number,dataOne : Student){
 
       this.http.put(BASE_URL+this.urlType+'update/'+matricule, dataOne,{ headers: this.setHeader() }).subscribe(
-        data  => {
+        (data: Student )  => {
 
           // console.log("PUT Request is successful ", data);
           this.students.forEach((t, i) => {
@@ -193,7 +194,7 @@ getSuperUser(){
 
           error  => {
 
-          // console.log("error", error, dataOne);
+           console.log("error", error);
 
           }
       )

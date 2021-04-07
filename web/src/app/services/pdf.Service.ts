@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { DatePipe} from '@angular/common';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { StudentService } from './students.service'
+import { StudentService } from './students.service';
+import { Student } from '../models/Student.model';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Injectable({providedIn :'root'})
@@ -12,7 +13,7 @@ export class PDFService {
   }
 
 
-  createPdfStage(student : any){
+  createPdfStage(student : Student){
 
     //console.log("pdf created")
         let db = student.dateDebut

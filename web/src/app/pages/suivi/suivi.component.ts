@@ -6,15 +6,14 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { MatIconRegistry, MatDialog, PageEvent, MatSnackBar } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, transition, style, animate } from '@angular/animations';
-import gql from 'graphql-tag';
 import { StudentService } from '../../services/students.service';
 import { DialogOverviewExampleDialog } from '../dialog/dialog.component';
 import { MsgConfirmComponent } from '../msg-confirm/msg-confirm.component';
 import { PDFService} from '../../services/pdf.Service';
 import { DatePipe} from '@angular/common';
 import { ClipboardService } from 'ngx-clipboard'
-import { environment } from '../../../environments/environment';
-const   BASE_URl = environment.apiUrl;
+import { Student} from  '../../models/Student.model'
+
 
 
 export const fade = trigger('fade', [
@@ -32,13 +31,13 @@ export const fade = trigger('fade', [
 
 })
 export class SuiviComponent implements OnInit {
-  students: any[] =[];
-  studentsCopy: any[] =[];
+  students: Student[] =[];
+  studentsCopy: Student[] =[];
   mySubscription: any;
   placeHolder = "Tous";
   studentType : string[] = ["Stagiaires","Apprentis"]
   studentTitle : string
-private studentSub:Subscription;
+  private studentSub:Subscription;
 
 
 
@@ -74,36 +73,7 @@ searchTerm ='';
   filterObj = new FormControl();
   searchObj = new FormControl('');
   filterList: Array<string>;
-  totalQuery = gql`query{totalMedics}`;
-  dataQuery = gql`
-    query($start:Int!,$end:Int!){
-      medicaments(start:$start,end:$end){
-        ID
-        DRUG_CLASS
-        PHARMACOLOGY_CLASS
-        NUM_ENREGISTREMENT
-        CODE
-        DENOMINATION_COMMUNE_INTERNATIONALE
-        NOM_DE_MARQUE
-        FORME
-        DOSAGE
-        COND
-        LISTE
-        P1
-        P2
-        OBS
-        LABORATOIRES_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT
-        PAYS_DU_LABORATOIRE_DETENTEUR_DE_LA_DECISION_DENREGISTREMENT
-        DATE_DENREGISTREMENT_INITIAL
-        DATE_DENREGISTREMENT_FINAL
-        TYPE
-        STATUT
-        DUREE_DE_STABILITE
-        PRIX_PORTE_SUR_LA_DECISION_DENREGISTREMENT
-        REMBOURSEMENT
-      }
-    }
-  `;
+  
 
   // tslint:disable-next-line: max-line-length
   constructor(public datepipe : DatePipe ,public studentsService :StudentService ,public dialog: MatDialog, private matIconRegistry: MatIconRegistry,
@@ -115,7 +85,7 @@ searchTerm ='';
               this.studentTitle = 'Apprentis '
 
             }
-            
+
 
     /* form init */
     this.form = new FormGroup({
@@ -181,7 +151,7 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
 
 
     this.getMatArray()
- 
+
 
 
      }
@@ -205,17 +175,21 @@ openDialog(student : any): void { // hadi dialog ta3 click hadik
   }
 
   openMail(student : any){
+    var rootUrl = location.protocol + '//' + location.host
+
     let random = this.randomString(10)
     let randomHash = {
       id : student.matricule,
-      random : random
+      random : random,
+      firstName : student.prenom,
+      lastName : student.nom
     }
     //post the randomHash to API
     this.studentsService.saveRandomHash(randomHash)
 
 
 
-this.url = BASE_URl+`evaluation?id=${student.matricule}#${random}`
+this.url = rootUrl+`/evaluation?id=${student.matricule}#${random}`
 
 
 var addresses = student.encadreurmMail;
@@ -281,7 +255,7 @@ var mail = `mailto: ${addresses}?subject=${subject}&body=${body}`
 
 
  }
-  randomString(length) {
+  randomString(length): string {
   var result           = '';
   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var charactersLength = characters.length;

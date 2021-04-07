@@ -32,6 +32,8 @@ export class InsertComponent implements OnInit {
     Position: null,
     Job: null,
     Email_Address: null,
+    TEL:null,
+    Location: null
 
   }
 
@@ -53,6 +55,8 @@ export class InsertComponent implements OnInit {
           form.value.encadreurmMail = this.encadreur.Email_Address
           form.value.encadreurSec = this.encadreur.Sector
           form.value.encadreurmOrg = this.encadreur.Position
+          form.value.encadreurLocation = this.encadreur.Location
+          form.value.encadreurPhone = this.encadreur.TEL
           form.value.user = localStorage.getItem("user")
           form.value.wilaya = wilaya
           form.value.nom = form.value.nom.toUpperCase()
@@ -95,6 +99,7 @@ export class InsertComponent implements OnInit {
    getEncadreur(encadreurID : number){
 
     this.studentsService.getEncadreur(encadreurID).subscribe((enc)=> {
+      
      this.openValidateDialog(enc)
 
      })

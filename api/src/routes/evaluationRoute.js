@@ -1,7 +1,8 @@
 
 
 const express =require('express');
-const evaluationController = require('../Controller/EvaluationController')
+const evaluationController = require('../controller/EvaluationController')
+const auth = require('../middleware/auth-check')
 
 const app = express.Router();
 
@@ -11,9 +12,9 @@ const app = express.Router();
 
 app.get('/api/v2/evaluation/:id' , evaluationController.getEvaluation)
 
-app.post('/api/evaluation/:id', evaluationController.postEvaluation)
+app.post('/api/v2/evaluation/:id', evaluationController.postEvaluation)
 
-app.get('/api/matricule' , evaluationController.getMat)
+app.get('/api/v2/matricule',auth , evaluationController.getMat)
 
 
 

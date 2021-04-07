@@ -1,6 +1,5 @@
-
+require('./config/config.env')
 const studentsRoute =require('./routes/StudentsRoutes');
-const mail =require('./jobs/mail');
 const exelData = require('./routes/ExelRoutes');
 const userRoute = require("./routes/UserRoutes");
 const encaRoute = require("./routes/EncadreurRoutes");
@@ -13,7 +12,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet')
 const Config = require('./config/config')
-require('dotenv').config();
 const config = new Config()
 const TOKEN = process.env.TOKEN
 
@@ -97,7 +95,7 @@ app.get('/*', function(req, res) {
     })
   })
 
-const port =process.env.PORT || 3001;
+const port =process.env.PORT || 3000;
 
 
 app.listen(port, ()=> {

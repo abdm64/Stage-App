@@ -2,7 +2,7 @@
 const express = require("express");
 const auth = require('../middleware/auth-check');
 
-const chartController = require('../Controller/ChartController')
+const chartController = require('../controller/ChartController')
 
 
 
@@ -18,7 +18,7 @@ router.get('/api/v2/dashboard/:type/enc',auth,chartController.getEcadreurDep)
 router.get('/api/v2/dashboard/:type/encSec',auth,chartController.getEcadreurSec)
 //get Type
 
-router.get('/api/v2/dashboard/:type/types',chartController.getTypes)
+router.get('/api/v2/dashboard/:type/types' ,auth,chartController.getTypes)
     
   
     //************************** chart date debut ,auth */

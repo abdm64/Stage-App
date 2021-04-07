@@ -12,9 +12,12 @@ export class EncadreurComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<EncadreurComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+    
+     }
 
   ngOnInit() {
+
 
   }
   onConfirmClick() {

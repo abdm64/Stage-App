@@ -1,5 +1,5 @@
  const express =require('express');
- const studentController = require('../Controller/StudentsController')
+ const studentController = require('../controller/StudentsController')
  const auth = require('../middleware/auth-check')
  const router = express.Router();
 
@@ -20,10 +20,10 @@
 
 //fetch All student + adding pagination  ,auth ,auth
 
-router.get('/api/v2/students/:type'  , studentController.getStudents)
+router.get('/api/v2/students/:type' ,auth , studentController.getStudents)
 //get student by id ,auth,
 
-router.get('/api/v2/students/:type/:id',studentController.getStudentById)
+router.get('/api/v2/students/:type/:id ',auth,studentController.getStudentById)
 
 
 //,auth
@@ -32,12 +32,12 @@ router.post('/api/v2/students/:type/add',auth, studentController.addStudent);
 
 
  //delete data by name in the by matrecule,auth
- router.delete('/api/v2/students/:type/delete/:id',studentController.deleteStudent)
+ router.delete('/api/v2/students/:type/delete/:id' ,auth,studentController.deleteStudent)
 
 
  // update data
 
- router.put("/api/v2/students/:type/update/:matricule",auth,studentController.updateStudent);
+ router.put("/api/v2/students/:type/update/:matricule" ,auth,studentController.updateStudent);
 
 //delete All data ,auth
 router.delete("/api/v2/students/:type/delete" ,auth, studentController.deleteAllStudents);
