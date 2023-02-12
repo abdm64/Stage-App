@@ -132,4 +132,4 @@ This project is licensed under the MIT License
 
 ## Credits
 
-Made with ❤️ by Abdellah & Safaa
+Made with ❤️ by Abdellah
