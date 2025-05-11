@@ -150,20 +150,20 @@ export class PDFService {
      async createEvaPdf(student){
        let evaluation = await this.studentService.getstudentEvaluation(student.matricule)
 
-    
+
 
 
 
       let  projet = evaluation.project
       const etude  = evaluation.etude
       const it = evaluation.it
-      const  france = evaluation.france
+      const france = evaluation.france
       const anglais = evaluation.anglais
       const motivation = evaluation.motivation
       const commentaire = evaluation.commentaire
       const global = evaluation.global
 
-     
+
 
 
 

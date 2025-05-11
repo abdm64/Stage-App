@@ -3,11 +3,13 @@ version: '2'
 
 services:
   express: 
-    build: Express-server 
+    build: api
     ports:
       - "3000:3000"
     depends_on:
       - stagedbone
+    environment:
+      - DB_BASE_URL=mongodb://stagedbone:27017/stage-db
       
   stagedbone: 
     image: mongo 

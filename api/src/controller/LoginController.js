@@ -28,6 +28,7 @@ exports.signUser = (req, res, next) => {
 
   exports.loginUser = (req,res,next)=> {
     let fetchedUser;
+    const key = process.env.KEY || "secret_this_should_be_longer";
     User.findOne({ email: req.body.email })
       .then(user => {
         if (!user) {
@@ -46,7 +47,7 @@ exports.signUser = (req, res, next) => {
         }
         const token = jwt.sign(
           { email: fetchedUser.email, userId: fetchedUser._id },
-          "secret_this_should_be_longer",
+          key,
           { expiresIn: "4h" }
         );
         res.status(200).json({
